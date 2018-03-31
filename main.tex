@@ -1,0 +1,228 @@
+%Author: Wei-Lin (Linisac) Wu
+\documentclass[11pt, leqno]{report}
+
+
+%Packages
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{stmaryrd}
+\usepackage{colonequals}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amscd}
+\usepackage{paralist}
+\usepackage{bm}
+\usepackage{titlesec}
+
+
+%ifthen package
+\usepackage{ifthen}
+
+
+%New Commands for Abbreviations
+%%Catalog <
+%%%general
+%%%definition
+%%%enumeration, sequence, pair, tuple, vector
+%%%set operations
+%%%function type, function operations
+%%%special set(s)
+%%%structure, symbol interpretation, structure operations, structure relations
+%%%partial isomorphism
+%%%elementary equivalence
+%%%winning positions
+%%%Ehrenfeucht-Fraisse game
+%%%isomorphism types
+%%%graph, graph functions, graph relations
+%%%logic
+%%%counting specifiers
+%%%connectives, quantifiers, formula operations
+%%%substitution
+%%%logic relations
+%%%logic operations
+%%%finite notions
+%%%nullary relations and predicates
+%%%operations on formulas and structures
+%%%global relations
+%%%special classes of structures
+%% >
+
+%%general <
+\newcommand{\header}[1]{\textbf{#1.}}
+%% >
+
+%%definition <
+\newcommand{\defas}{\colonequals}
+%% >
+
+%%enumeration, sequence, pair, tuple, vector <
+\newcommand{\enum}[3][1]{#2_{#1} \ldots #2_{#3}} %enumeration. \enum{a}{n} = a_1 \ldots a_n, \enum[0]{b}{n + 1} = b_0 \ldots b_{n + 1}
+\newcommand{\seq}[3][1]{#2_{#1}, \ldots, #2_{#3}} %seq. \seq{a}{n} = a_1, \ldots, a_n, \enumc[0]{b}{n + 1} = b_0, \ldots, b_{n + 1}
+\newcommand{\tuple}[3][1]{(#2_{#1}, \ldots, #2_{#3}} %tuple. \tuple{a}{n} = (a_1, \ldots, a_n), \tuple[0]{b}{n + 1} = (b_0, \ldots, b_{n + 1})
+\newcommand{\emptyseq}{\emptyset} %empty sequence
+\newcommand{\seqi}[2]{(#1)_{#2}} %indexed sequence
+\newcommand{\vect}[1]{\overline{#1}} %vector, \vect{a} = \overbar{a}
+%% >
+
+%%some common operators <
+\newcommand{\abs}[1]{\left|#1\right|}
+%% >
+
+%%set operations <
+\newcommand{\sete}[1]{{\{#1\}}} %set by enumeration. sete{a, b, c} = {a, b, c}
+\newcommand{\setm}[2]{{\{#1 \mid #2\}}} %set by math description. setd{#1}{#2} = {#1 | #2}
+\newcommand{\sett}[2]{{\{#1 \mid \mbox{#2}\}}} %set by text description. sett{#1}{#2} = {#1 | #2}, where #2 is a text
+\newcommand{\cart}{\times} %cartesian product of two sets
+\newcommand{\cartpwr}[2]{#1^{#2}} %(#2)nd cartesian power of set #1
+\newcommand{\intsc}{\cap} %intersection
+\newcommand{\union}{\cup} %union
+\newcommand{\card}[1]{\|#1\|} %cardinality. card{A} = || A ||
+%% >
+
+%%function type, function operations <
+\newcommand{\dom}[1]{{\mathrm{do}({#1})}} %domain of function #1
+\newcommand{\rg}[1]{{\mathrm{rg}({#1})}} %range of function #1
+\newcommand{\emptymap}{\emptyset} %empty map
+\newcommand{\inv}[1]{#1^{-1}} %inverse of function #1
+%% >
+
+%%special set(s) <
+\newcommand{\nat}{\mathbb{N}} %set of natural numbers
+%% >
+
+%%structure, symbol interpretation, structure operations, structure relations <
+\newcommand{\strct}[1]{\mathcal{#1}} %structure
+\newcommand{\intpr}[2]{#1^{#2}} %symbol #1 interpreted under #2
+\newcommand{\substr}[2]{#1^{#2}} %substructure of #2 induced by the subset #1
+\newcommand{\isom}[1][]{\ifthenelse{\equal{#1}{}}{\cong}{\cong_{#1}}} %(#1-)isomorphic
+\newcommand{\prodct}{\cart} %product of two structures
+\newcommand{\dsjuni}{\mathop{\dot{\cup}}} %disjoint union of two structures
+\newcommand{\ordsum}{\mathop{\lhd}} %ordered sum of two ordered structures
+\newcommand{\ultprd}[2]{#1^{#2}} %ultra product. \ultprd{A}{I} = A^I
+%% >
+
+%%partial isomorphism <
+\newcommand{\partisoms}[2]{{\mathrm{Part}(#1, #2)}} %set of partial isomorphisms between structures #1 and #2
+%% >
+
+%%elementary equivalence <
+\newcommand{\equv}[1][]{\ifthenelse{\equal{#1}{}}{\equiv}{\equiv_{#1}}} %(#1-)equivalence
+%% >
+
+%%winning positions <
+\newcommand{\winpos}[4][]{\ifthenelse{\equal{#1}{}}{{W_{#2}(#3, #4)}}{{W^{#1}_{#2}(#3, #4)}}} %the set of winning positions for the game G^#1_#2(#3, #4)
+\newcommand{\seqwinpos}[5][]{{(\winpos[#1]{#2}{#3}{#4})_{#2 \leq #5}}} %the sequence of sets of winning positions for the game G^#1_#2(#3, #4) indexed by #2 with length #5
+%% >
+
+%%Ehrenfeucht-Fraisse game <
+\newcommand{\game}[3][]{\ifthenelse{\equal{#1}{}}{{\mathrm{G}_{#2}(#3)}}{{\mathrm{G}^{#1}_{#2}(#3)}}} %the game G^#1_#2 with argument(s) #3
+%% >
+
+%%isomorphism types <
+\newcommand{\ityp}[2]{\varphi^{#1}_{#2}} %(#1)-isomorphic type over #2
+%% >
+
+%%graph, graph functions, graph relations <
+\newcommand{\graph}{\mathrm{GRAPH}} %set of finite graphs
+\newcommand{\conn}{\mathrm{CONN}} %the set of connected graphs
+\newcommand{\dist}[3][]{\ifthenelse{\equal{#1}{}}{\mathit{d}(#2, #3)}{\mathit{d}_{#1}(#2, #3)}} %distance between two points in a graph
+\newcommand{\tree}{\mathrm{TREE}} %the set of finite trees
+%% >
+
+%%logics <
+\newcommand{\folog}{\mathrm{FO}} %first-order logic
+\newcommand{\folang}[1]{{\mathrm{FO}[{#1}]}} %first-order language with vocabulary #1
+\newcommand{\logic}{\mathcal{L}} %logic
+%% >
+
+%%counting specifiers <
+\newcommand{\atleast}[1]{\geq{#1}} %at least #1
+\newcommand{\atmost}[1]{\leq{#1}} %at most #1
+\newcommand{\exactly}[1]{={#1}} %exactly #1
+\newcommand{\cardatleast}[1]{\varphi_{\atleast{#1}}} %cardinality at least #1
+\newcommand{\cardatmost}[1]{\varphi_{\atmost{#1}}} %cardinality at most #1
+\newcommand{\cardexactly}[1]{\varphi_{\exactly{#1}}} %cardinality exactly #1
+%% >
+
+%%connectives, quantifiers, formula operations <
+\newcommand{\lthen}{\rightarrow} %logicial then
+\newcommand{\liff}{\leftrightarrow} %logical iff (between two formulas)
+\newcommand{\blor}{\bigvee} %big disjunction
+\newcommand{\bland}{\bigwedge} %big conjunction
+\newcommand{\existatleast}[1]{\exists^{\atleast{#1}}} %exist at least #1
+\newcommand{\existatmost}[1]{\exists^{\atmost{#1}}} %exist at most #1
+\newcommand{\existexactly}[1]{\exists^{\exactly{#1}}} %exist exactly #1
+\newcommand{\free}[1]{{\mathrm{free}({#1})}} %set of free variables of #1
+\newcommand{\qr}[1]{{\mathrm{qr}({#1})}} %quantifier rank of #1
+\newcommand{\modclass}[1]{{\mathrm{Mod}({#1})}} %model class of #1
+%% >
+
+%%substitution <
+\newcommand{\sbst}[2]{{\scriptstyle\frac{\displaystyle #1}{\displaystyle #2}}} %substitution of #2 with #1
+%% >
+
+%%logic relations <
+\newcommand{\satis}{\models} %satisfaction relation
+\newcommand{\consq}{\models} %consequence relation
+%% >
+
+%%logic operations <
+\newcommand{\rel}[1]{#1^\mathit{r}} %#1 relationalized
+\newcommand{\invrel}[1]{#1^{-\mathit{r}}} %#1 inverse-relationalized
+%% >
+
+%%finite notions <
+\newcommand{\fin}{\mathrm{fin}} %finite
+\newcommand{\consqfin}{\consq_\fin} %consequence relation restricted to finite structures
+%% >
+
+%%nullary relations and predicates <
+\newcommand{\true}{\mathrm{TRUE}} %TRUE symbol
+\newcommand{\false}{\mathrm{FALSE}} %FALSE symbol
+\newcommand{\tr}{\mathrm{T}} %T symbol
+\newcommand{\fls}{\mathrm{F}} %F symbol
+%% >
+
+%%operations on formulas and structures <
+\newcommand{\tupsby}[2]{{#1^{#2}(\_)}} %tuples defined by formula #1 and structure #2
+%% >
+
+%%global relations <
+\newcommand{\transcls}{\mathrm{TC}} %transitive closure relation
+%% >
+
+%%special classes of structures <
+\newcommand{\finordstr}[1]{{\mathcal{O}[#1]}} %class of finite ordered #1-structures
+\newcommand{\even}[1]{{\mathrm{EVEN}[#1]}} %class of #1-structures with even cardinality
+%% >
+
+
+\newenvironment{quoteno}[1]{(#1)\hfill}{\hfill\phantom{(+)}}
+
+
+%if resetting of equation counter is required, use the instruction below:
+%\setcounter{equation}{0}
+
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+
+\begin{document}
+%\begin{titlepage}
+%\noindent\textsc{\LARGE Annotations to ``Finite Model Theory''}\bigskip\\
+%\textsc{\large with Solutions Hints}
+%\end{titlepage}
+\titleformat{\chapter}[hang]{\Large\bfseries}{\thechapter.}{.5em}{}
+\titleformat{\section}[hang]{\large\bfseries}{\thesection}{.5em}{}
+\input{chapter1}
+\input{chapter2}
+
+
+\begin{thebibliography}{10}
+\bibitem{EFT} H.-D.\ Ebbinghaus, J.\ Flum and W.\ Thomas \textsl{Mathematical Logic} 2nd edition, Springer, 1995.
+%
+\end{thebibliography}
+\end{document}

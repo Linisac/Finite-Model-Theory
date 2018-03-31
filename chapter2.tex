@@ -1,0 +1,130 @@
+%\setcounter{chapter}{1}
+\chapter{The Ehrenfeucht-Fra\"{i}ss\'{e} Method}
+\setcounter{section}{1}
+%section 2------------------------------------------------------------------------------------
+\section{Ehrenfeucht's Theorem}
+\begin{enumerate}[1.]
+%
+\item \header{Note on Definition 2.2.1} The condition for a map $p$ to be a partial isomorphism between $\strct{A}$ and $\strct{B}$ is slightly different in \cite{EFT}: the designated constants $\intpr{c}{A}$ are not required to be in $\dom{p}$ but if they are, the condition $p(\intpr{c}{A}) = \intpr{c}{B}$ must be satisfied.
+%
+\item \header{Note on Remarks 2.2.2} For part (a), note that the empty map $p = \emptyset$ is \emph{not} a partial isomorphism if $\tau$ does contain constants, by Definition 2.2.1.
+\medskip\\
+For part (c), the notation $\vect{a} \mapsto \vect{b}$ can be seen as a shorthand for the set
+\[
+\setm{(a_i, b_i)}{i \leq s} \union \setm{(\intpr{c}{\strct{A}}, \intpr{c}{\strct{B}})}{c \in \tau},\]
+which may not define a map, nor a partial isomorphism. If the above set does define a map, then it is the graph of this map. Statement (i) says $\vect{a} \mapsto \vect{b}$ not only defines a map but even a partial isomorphism between $\strct{A}$ and $\strct{B}$.
+\medskip\\
+Also note that if $\tau$ contains constants then the notation $\vect{a} \mapsto \vect{b}$ contains mapping of the constants, which are \emph{hidden} from it; in this case, $\emptyseq \mapsto \emptyseq$ does not equal the empty map $\emptymap$. $\emptyseq \mapsto \emptyseq = \emptymap$ when $\tau$ contains no constants.
+%
+\item \header{Conjecture} (INCOMPLETE) \emph{For any structures $\strct{A}, \strct{B}$, $m, s \in \nat$ and $\vect{a} \in \cartpwr{A}{s}, \vect{b} \in \cartpwr{B}{s}$, either the spoiler or the duplicator wins the game\\$\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$, i.e.\ either of them has a winning strategy for that game.}
+\medskip\\
+I think it may be proved by induction on $m$. This conjecture might be a direct consequence of Zermelo's Theorem.
+%
+\item \header{Note on the Proof of Lemma 2.2.3(b)} The statement ``Then $p : \vect{a} \mapsto \vect{b} \in \partisoms{\strct{A}}{\strct{B}}$ with $\dom{p} = A$'' is derived implicitly using the fact that a submap of a partial isomorphism is also a partial isomorphism (see the next note).
+%
+\item \header{Note on Lemma 2.2.4(c)} It is equivalent to say that a submap (i.e.\ a map that is a subset of another map in terms of their graphs) of a partial isomorphism is also a partial isomorphism.
+%
+\item \header{Note on Lemma 2.2.6 and the Remark below It} It is better to prove the lemma and the remark that ``the conjunctions and disjunctions in the definition of $\ityp{m}{\strct{A}, \vect{a}}$ are finite'' all at once:
+\medskip\\
+\emph{For $s, m \geq 0$, $\ityp{m}{\strct{A}, \vect{a}}$ is a well-formed formula - i.e.\ the conjunctions and disjunctions (if any) in it are finite - for any structure $\strct{A}$ and $\vect{a} \in \cartpwr{A}{s}$ and the set $\sett{\ityp{m}{\strct{A}, \vect{a}}}{\begin{math}\strct{A}\end{math} a structure and \begin{math}\vect{a} \in \cartpwr{A}{s}\end{math}}$ is finite.}
+\medskip\\
+The induction is performed on $m$. The base case follows from that for $s > 0$, the set $\sett{\varphi(\seq{v}{s})}{\begin{math}\varphi\end{math} atomic or negated atomic}$ is finite.
+%
+\item \header{Note on the Proof of Theorem 2.2.8 (Ehrenfeucht's Theorem)} To prove (i) implies (iii), the case $m = 0$ can be handled by applying 2.2.4(a) in addition to the equivalence between (i) and (ii) of 2.2.2(c).
+\medskip\\
+The induction part of (i) implying (iii) in fact proves $\strct{A} \satis \varphi[\vect{a}]$ iff $\strct{B} \satis \varphi[\vect{b}]$.
+%
+\item \header{Note on Theorem 2.2.11} There is typo in the statement of this theorem: ``$\vect{a} \in \strct{A}$'' should be replaced by ``$\vect{a} \in \cartpwr{A}{s}$''.
+%
+\end{enumerate}
+%end of section 2-----------------------------------------------------------------------------
+
+
+%section 3------------------------------------------------------------------------------------
+\section{Examples and Fra\"{i}ss\'{e}'s Theorem}
+\begin{enumerate}[1.]
+%
+\item \header{Hint to Exercise 2.3.2} Note that $I_j \subseteq \tilde{I}_j$ and that if $p \in \partisoms{\strct{A}}{\strct{B}}$ and if $q \subseteq p$ then $q \in \partisoms{\strct{A}}{\strct{B}}$.
+\begin{remark}
+There is a typo: ``$\emptyseq \mapsto \emptyseq \in I_j$'' should be replaced by ``$\emptyset \mapsto \emptyset \in \tilde{I}_j$''.
+\end{remark}
+%
+\item \header{Note on Corollary 2.3.4} For $s = 0$ the statement of 2.3.3(iii) becomes
+\begin{quoteno}{$\ast$}
+There is $\seqi{I_j}{j \leq m}$ with $\emptyseq \mapsto \emptyseq \in I_m$ such that $\seqi{I_j}{j \leq m} : \strct{A} \isom[m] \strct{B}$.
+\end{quoteno}
+\medskip\\
+It is equivalent to 2.3.4(iii): The latter obviously follows the former; to derive the former from the latter, note that by 2.3.2 if $\seqi{I_j}{j \leq m} : \strct{A} \isom[m] \strct{B}$ then $\seqi{\tilde{I}_j}{j \leq m} : \strct{A} \isom[m] \strct{B}$ and $\emptyseq \mapsto \emptyseq \in \tilde{I}_m$.
+%
+\item \header{Note on Example 2.3.5} Let $\tau$ be an arbitrary symbol set that consists of relation symbols $\seq{P}{n}$ and constants $\seq{c}{k}$ where $n, k \in \nat$.
+\medskip\\
+For any $m \in \nat$, consider the two $\tau$-structures $\strct{A}$ and $\strct{B}$ where $A$ consists of elements $\seq{a}{m + 1}$ other than $\seq{\intpr{c}{\strct{A}}}{n}$, $\intpr{c_i}{\strct{A}} \neq \intpr{c_j}{\strct{A}}$ if $i \neq j$, $\intpr{P_i}{\strct{A}} = \emptyset$, $B$ consists of elements $\seq{b}{m + 2}$ other than $\seq{\intpr{c}{\strct{B}}}{n}$, $\intpr{c_i}{\strct{B}} \neq \intpr{c_j}{\strct{B}}$ if $i \neq j$, $\intpr{P_i}{\strct{B}} = \emptyset$.
+\medskip\\
+Obviously, exactly one between $\strct{A}$ and $\strct{B}$ is a member of $\even{\tau}$. However, it is also true that $\strct{A} \equv[m] \strct{B}$: the map $\enum{a}{m + 1} \mapsto \enum{b}{m + 1}$ can be used as a winning strategy (note that implicitly $\intpr{c_i}{\strct{A}}$ is mapped to $\intpr{c_i}{\strct{B}}$, cf.\ 2.2.2(c)(i)) for the duplicator in the game $\game{m}{\strct{A}, \strct{B}}$. Thus $\even{\tau}$ is not axiomatizable by 2.2.12.
+%
+\item \header{Note on Example 2.3.8} There is a typo: ``$\dist[j]{a}{a^\prime}$'' appearing in the definition of distance function should be replaced by ``$\dist[j]{a}{b}$''.
+%
+\item \header{Hint to Exercise 2.3.9} For simplicity, take the structure $\strct{C}_l$ that is isomorphic to $\strct{B}_l \dsjuni \strct{D}_l$, where $C_l \defas \sete{0, \ldots, 2l + 1}$ and the substructures $\substr{\sete{0, \ldots, l}}{\strct{C}_l}$ induced by $\sete{0, \ldots, l}$ and $\substr{\sete{l + 1, \ldots, 2l + 1}}{\strct{C}_l}$ induced by $\sete{l + 1, \ldots, 2l + 1}$ are isomorphic to $\strct{B}_l$ and $\strct{D}_l$, respectively.
+\medskip\\
+For $\strct{B}_l$ and $\strct{C}_l$ define the distance function $d$ on $B_l \cart B_l$ and on $C_l \cart C_l$ as
+\[
+d(h, k) \defas
+\begin{cases}
+\mbox{length of the shortest path from \begin{math}h\end{math} to \begin{math}k\end{math}} & \mbox{if there is one} \cr
+\infty & \mbox{else},
+\end{cases}
+\]
+and take the truncated version $d_j$ where
+\[
+d_j(h, k) \defas
+\begin{cases}
+d(h, k) & \mbox{if \begin{math}d(h, k) < 2^j\end{math}} \cr
+\infty & \mbox{else}.
+\end{cases}
+\]
+For $m \geq 0$ choose $l \geq 2^m$. Consider $\seqi{I_j}{j \leq m}$ where $p \in I_j$ if and only if $p$ is a partial isomorphism between $\strct{B}_l$ and $\strct{C}_l$ such that $\card{p} \leq m - j + 2$, $p(0) = 0$, $p(l) = l$ and $d_j(h, k) = d_j(p(h), p(k))$ for $h, k \in \dom{p}$.
+\medskip\\
+It remains to verify $\seqi{I_j}{j \leq m} : \strct{B}_l \isom[m] \strct{C}_l$, which is omitted here. (For the forth-property, if $p \in I_{j + 1}$ and $b \in B_l$ then distinguish two cases according to whether it is true that ``there is a $b^\prime \in B_l$ such that $d_j(b, b^\prime) < 2^j$ or $d_j(b^\prime, b) < 2^j$'', a technique used in 2.3.6.)
+%
+\item \header{Note on Corollary 2.3.11} Here $(\strct{A}, \vect{a}) \equv[m] (\strct{B}, \vect{b})$ means ``$\vect{a}$ satisfies in $\strct{A}$ the same formulas of quantifier rank $\leq m$ as $\vect{b}$ in $\strct{B}$.'' (Consider the transition from 2.2.8(iii) to 2.2.9(iii).)
+%
+\item \header{Note on Corollary 2.3.11} Is it true that
+\begin{quote}
+``\emph{If $(\strct{A}_1, \vect{a}_1) \equv[m] (\strct{B}_1, \vect{b}_1)$ and $(\strct{A}_2, \vect{a}_2) \equv[m] (\strct{B}_2, \vect{b}_2)$ then $(\strct{A}_1 \cart \strct{A}_2, \vect{a}_1 \cart \vect{a}_2) \equv[m] (\strct{B}_1 \cart \strct{B}_2, \vect{b}_1 \cart \vect{b}_2)$}''?
+\end{quote}
+My guess is yes. Note that if $\vect{a}_1 \isom \vect{b}_1$ and $\vect{a}_2 \isom \vect{b}_2$ then $\vect{a}_1 \cart \vect{a}_2 \isom \vect{b}_1 \cart \vect{b}_2$.
+%
+\item \header{Hint to Exercise 2.3.12} An equivalent condition to ``$\min\sete{\card{A_\alpha}, m} = \min\sete{\card{B_\alpha}, m}$'' is:
+\begin{quote}
+$\card{B_\alpha} = \card{A_\alpha}$ if $\card{A_\alpha} < m$, and $\card{B_\alpha} \geq m$ otherwise.
+\end{quote}
+In addition, an alternative statement to the condition ``$\card{B_\alpha} \geq m$'' is:
+\begin{quote}
+For $0 \leq j < m$, $\card{B_\alpha} \neq j$.
+\end{quote}
+And for this exercise it is appropriate to define $\existexactly{0}x Rx \defas \neg\exists x Rx$.
+\begin{remark}
+A similar exercise is XII.3.17 in \cite{EFT}.
+\end{remark}
+%
+\item \header{Hint to Exercise 2.3.13} (INCOMPLETE)
+Think of $\ordsum^n \strct{A}$ as an $n$-element linear ordering in which every point ``expands'' to $\strct{A}$.\\
+\medskip\\
+More precisely, define for $a, a^\prime$ in the domain of $\ordsum^n \strct{A}$ the distance function
+\[
+\dist{a}{a^\prime} \defas \abs{i - j},
+\]
+where $a$ is an element from the $i$th copy of $\strct{A}$ and $a^\prime$ from the $j$th. The truncated versions of distance function are defined analogously. A winning strategy for the duplicator is the same as that in 2.3.6 except that if the spoiler chooses an element from a copy $\strct{A}$ of $\ordsum^l \strct{A}$ (or $\ordsum^k \strct{A}$) then the duplicator chooses exactly the same element from the corresponding copy $\strct{A}$ of $\ordsum^k \strct{A}$ (or $\ordsum^l \strct{A}$, respectively).
+%
+\item \header{Hint to Exercise 2.3.14} (INCOMPLETE)
+The notation ``$(\strct{A}, \vect{a}) \isom[m] (\strct{B}, \vect{b})$'' is undefined in text, however it can be understood as:
+\begin{quote}
+There is $\seqi{I_j}{j \leq m}$ with $\vect{a} \mapsto \vect{b} \in I_m$ such that $\seqi{I_j}{j \leq m} : \strct{A} \isom[m] \strct{B}$.
+\end{quote}
+This is statement (iii) of 2.3.3. Therefore this exercise is an immediate consequence of 2.3.3.
+\begin{remark}
+The premise ``for $\vect{a} \mapsto \vect{b} \in \partisoms{\strct{A}}{\strct{B}}$'' is implied by the statements on both sides of ``iff'', so it can be weakened to ``for $\vect{a} \in A, \vect{b} \in B$''.
+\end{remark}
+%
+\end{enumerate}
+%end of section 3-----------------------------------------------------------------------------
