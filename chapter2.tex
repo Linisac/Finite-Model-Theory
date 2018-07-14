@@ -16,7 +16,7 @@ which may not define a map, nor a partial isomorphism. If the above set does def
 \medskip\\
 Also note that if $\tau$ contains constants then the notation $\vect{a} \mapsto \vect{b}$ contains mapping of the constants, which are \emph{hidden} from it; in this case, $\emptyseq \mapsto \emptyseq$ does not equal the empty map $\emptymap$. $\emptyseq \mapsto \emptyseq = \emptymap$ when $\tau$ contains no constants.
 %
-\item \header{Conjecture} (INCOMPLETE) \emph{For any structures $\strct{A}, \strct{B}$, $m, s \in \nat$ and $\vect{a} \in \cartpwr{A}{s}, \vect{b} \in \cartpwr{B}{s}$, either the spoiler or the duplicator wins the game\\$\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$, i.e.\ either of them has a winning strategy for that game.}
+\item\label{conjecture} \header{Conjecture} (INCOMPLETE) \emph{For any structures $\strct{A}, \strct{B}$, $m, s \in \nat$ and $\vect{a} \in \cartpwr{A}{s}, \vect{b} \in \cartpwr{B}{s}$, either the spoiler or the duplicator wins the game\\$\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$, i.e.\ either of them has a winning strategy for that game.}
 \medskip\\
 I think it may be proved by induction on $m$. This conjecture might be a direct consequence of Zermelo's Theorem.
 %
@@ -125,6 +125,10 @@ This is statement (iii) of 2.3.3. Therefore this exercise is an immediate conseq
 \begin{remark}
 The premise ``for $\vect{a} \mapsto \vect{b} \in \partisoms{\strct{A}}{\strct{B}}$'' is implied by the statements on both sides of ``iff'', so it can be weakened to ``for $\vect{a} \in A, \vect{b} \in B$''.
 \end{remark}
+%
+\item \header{Note on Remark 2.3.16} (INCOMPLETE) As an alternative proof for the last part of 2.2.8, one can show, contrapositively, that ``not (iii) implies not (i).'' To be more precise, let $m > 0, \qr{\varphi} = m$, and suppose that $\varphi(\vect{x}) = \exists y \psi$ where $\strct{A} \satis \varphi[\vect{a}]$ but not $\strct{B} \satis \varphi[\vect{b}]$. It follows that there is an $a \in A$ such that for all $b \in B$, $\strct{A} \satis \psi[\vect{a}a]$ and not $\strct{B} \satis \psi[\vect{b}b]$, hence by induction hypothesis the duplicator does not win the game $\game{m - 1}{\strct{A}, \vect{a}a, \strct{B}, \vect{b}b}$ or, equivalently, the spoiler wins the game $\game{m - 1}{\strct{A}, \vect{a}a, \strct{B}, \vect{b}b}$ (cf.\ \ref{conjecture}.\ in the previous section). By 2.2.4(b), therefore, we have that the spoiler wins the game $\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$. The other case where $\strct{B} \satis \varphi[\vect{b}]$ but not $\strct{A} \satis \varphi[\vect{a}]$ can be done symmetrically.
+\medskip\\
+The above argument suggests (the essential part of) a winning strategy of the game $\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$ for the spoiler when (iii) in 2.2.8 is false: For a formula $\varphi = \exists y \psi$ of quantifier rank $m > 0$, he looks at the structure that satisfies $\varphi$, say $\strct{A}$, and picks an element $a \in A$ such that $\strct{A} \satis \psi[\vect{a}a]$; if $\varphi = \forall y \chi$, then he looks at the structure that does \emph{not} satisfy $\varphi$, say $\strct{B}$, i.e.\ $\strct{B} \satis \exists y \neg\chi$, and picks an element $b \in B$ such that $\strct{B} \satis \neg\chi[\vect{b}b]$. The spoiler then makes his choice according to this technique after each move made by his opponent, the duplicator.
 %
 \end{enumerate}
 %end of section 3-----------------------------------------------------------------------------
