@@ -61,6 +61,7 @@
 \newcommand{\enum}[3][1]{#2_{#1} \ldots #2_{#3}} %enumeration. \enum{a}{n} = a_1 \ldots a_n, \enum[0]{b}{n + 1} = b_0 \ldots b_{n + 1}
 \newcommand{\seq}[3][1]{#2_{#1}, \ldots, #2_{#3}} %seq. \seq{a}{n} = a_1, \ldots, a_n, \enumc[0]{b}{n + 1} = b_0, \ldots, b_{n + 1}
 \newcommand{\tuple}[3][1]{(#2_{#1}, \ldots, #2_{#3}} %tuple. \tuple{a}{n} = (a_1, \ldots, a_n), \tuple[0]{b}{n + 1} = (b_0, \ldots, b_{n + 1})
+\newcommand{\length}[1]{{\mathrm{length}(#1)}}
 \newcommand{\emptyseq}{\emptyset} %empty sequence
 \newcommand{\seqi}[2]{(#1)_{#2}} %indexed sequence
 \newcommand{\vect}[1]{\overline{#1}} %vector, \vect{a} = \overbar{a}
@@ -81,7 +82,7 @@
 \newcommand{\card}[1]{\|#1\|} %cardinality. card{A} = || A ||
 %% >
 
-%%function type, function operations <
+%%function operations <
 \newcommand{\dom}[1]{{\mathrm{do}({#1})}} %domain of function #1
 \newcommand{\rg}[1]{{\mathrm{rg}({#1})}} %range of function #1
 \newcommand{\emptymap}{\emptyset} %empty map
@@ -101,6 +102,8 @@
 \newcommand{\dsjuni}{\mathop{\dot{\cup}}} %disjoint union of two structures
 \newcommand{\ordsum}{\mathop{\lhd}} %ordered sum of two ordered structures
 \newcommand{\ultprd}[2]{#1^{#2}} %ultra product. \ultprd{A}{I} = A^I
+\newcommand{\ball}[2][]{\ifthenelse{\equal{#1}{}}{{\mathit{S}(#2)}}{{\mathit{S}^{#1}(#2)}}}
+\newcommand{\ballstrct}[2][]{\ifthenelse{\equal{#1}{}}{{\mathcal{S}(#2)}}{{\mathcal{S}^{#1}(#2)}}}
 %% >
 
 %%partial isomorphism <
@@ -125,10 +128,11 @@
 %% >
 
 %%graph, graph functions, graph relations <
-\newcommand{\graph}{\mathrm{GRAPH}} %set of finite graphs
+\newcommand{\graph}{\mathrm{GRAPH}} %the set of finite graphs
 \newcommand{\conn}{\mathrm{CONN}} %the set of connected graphs
 \newcommand{\dist}[3][]{\ifthenelse{\equal{#1}{}}{\mathit{d}(#2, #3)}{\mathit{d}_{#1}(#2, #3)}} %distance between two points in a graph
 \newcommand{\tree}{\mathrm{TREE}} %the set of finite trees
+\newcommand{\gaifman}[1]{{\mathcal{G}(#1)}} %the Gaifman graph of #1 (structure)
 %% >
 
 %%logics <
