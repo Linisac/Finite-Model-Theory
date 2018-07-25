@@ -64,29 +64,29 @@ For any $m \in \nat$, consider the two $\tau$-structures $\strct{A}$ and $\strct
 \medskip\\
 Obviously, exactly one between $\strct{A}$ and $\strct{B}$ is a member of $\even{\tau}$. However, it is also true that $\strct{A} \equv[m] \strct{B}$: the map $\enum{a}{m + 1} \mapsto \enum{b}{m + 1}$ can be used as a winning strategy (note that implicitly $\intpr{c_i}{\strct{A}}$ is mapped to $\intpr{c_i}{\strct{B}}$, cf.\ 2.2.2(c)(i)) for the duplicator in the game $\game{m}{\strct{A}, \strct{B}}$. Thus $\even{\tau}$ is not axiomatizable by 2.2.12.
 %
-\item \header{Note on Example 2.3.8} There is a typo: ``$\dist[j]{a}{a^\prime}$'' appearing in the definition of distance function should be replaced by ``$\dist[j]{a}{b}$''.
+\item \header{Note on Example 2.3.8} There is a typo: ``$\dist[j](a, a^\prime)$'' appearing in the definition of distance function should be replaced by ``$\dist[j](a, b)$''.
 %
 \item \header{Hint to Exercise 2.3.9} For simplicity, take the structure $\strct{C}_l$ that is isomorphic to $\strct{B}_l \dsjuni \strct{D}_l$, where $C_l \defas \sete{0, \ldots, 2l + 1}$ and the substructures $\substr{\sete{0, \ldots, l}}{\strct{C}_l}$ induced by $\sete{0, \ldots, l}$ and $\substr{\sete{l + 1, \ldots, 2l + 1}}{\strct{C}_l}$ induced by $\sete{l + 1, \ldots, 2l + 1}$ are isomorphic to $\strct{B}_l$ and $\strct{D}_l$, respectively.
 \medskip\\
 For $\strct{B}_l$ and $\strct{C}_l$ define the distance function $d$ on $B_l \cart B_l$ and on $C_l \cart C_l$ as
 \[
-d(h, k) \defas
+\dist(h, k) \defas
 \begin{cases}
 \mbox{length of the shortest path from \begin{math}h\end{math} to \begin{math}k\end{math}} & \mbox{if there is one} \cr
 \infty & \mbox{else},
 \end{cases}
 \]
-and take the truncated version $d_j$ where
+and take the truncated version $\dist[j]$ where
 \[
-d_j(h, k) \defas
+\dist[j](h, k) \defas
 \begin{cases}
-d(h, k) & \mbox{if \begin{math}d(h, k) < 2^j\end{math}} \cr
+\dist(h, k) & \mbox{if \begin{math}\dist(h, k) < 2^j\end{math}} \cr
 \infty & \mbox{else}.
 \end{cases}
 \]
-For $m \geq 0$ choose $l \geq 2^m$. Consider $\seqi{I_j}{j \leq m}$ where $p \in I_j$ if and only if $p$ is a partial isomorphism between $\strct{B}_l$ and $\strct{C}_l$ such that $\card{p} \leq m - j + 2$, $p(0) = 0$, $p(l) = l$ and $d_j(h, k) = d_j(p(h), p(k))$ for $h, k \in \dom{p}$.
+For $m \geq 0$ choose $l \geq 2^m$. Consider $\seqi{I_j}{j \leq m}$ where $p \in I_j$ if and only if $p$ is a partial isomorphism between $\strct{B}_l$ and $\strct{C}_l$ such that $\card{p} \leq m - j + 2$, $p(0) = 0$, $p(l) = l$ and $\dist[j](h, k) = \dist[j](p(h), p(k))$ for $h, k \in \dom{p}$.
 \medskip\\
-It remains to verify $\seqi{I_j}{j \leq m} : \strct{B}_l \isom[m] \strct{C}_l$, which is omitted here. (For the forth-property, if $p \in I_{j + 1}$ and $b \in B_l$ then distinguish two cases according to whether it is true that ``there is a $b^\prime \in B_l$ such that $d_j(b, b^\prime) < 2^j$ or $d_j(b^\prime, b) < 2^j$'', a technique used in 2.3.6.)
+It remains to verify $\seqi{I_j}{j \leq m} : \strct{B}_l \isom[m] \strct{C}_l$, which is omitted here. (For the forth-property, if $p \in I_{j + 1}$ and $b \in B_l$ then distinguish two cases according to whether it is true that ``there is a $b^\prime \in B_l$ such that $\dist[j](b, b^\prime) < 2^j$ or $\dist[j](b^\prime, b) < 2^j$'', a technique used in 2.3.6.)
 %
 \item \header{Note on Corollary 2.3.11} Here $(\strct{A}, \vect{a}) \equv[m] (\strct{B}, \vect{b})$ means ``$\vect{a}$ satisfies in $\strct{A}$ the same formulas of quantifier rank $\leq m$ as $\vect{b}$ in $\strct{B}$.'' (Consider the transition from 2.2.8(iii) to 2.2.9(iii).)
 %
@@ -114,7 +114,7 @@ Think of $\ordsum^n \strct{A}$ as an $n$-element linear ordering in which every 
 \medskip\\
 More precisely, define for $a, a^\prime$ in the domain of $\ordsum^n \strct{A}$ the distance function
 \[
-\dist{a}{a^\prime} \defas \abs{i - j},
+\dist(a, a^\prime) \defas \abs{i - j},
 \]
 where $a$ is an element from the $i$th copy of $\strct{A}$ and $a^\prime$ from the $j$th. The truncated versions of distance function are defined analogously. A winning strategy for the duplicator is the same as that in 2.3.6 except that if the spoiler chooses an element from a copy $\strct{A}$ of $\ordsum^l \strct{A}$ (or $\ordsum^k \strct{A}$) then the duplicator chooses exactly the same element from the corresponding copy $\strct{A}$ of $\ordsum^k \strct{A}$ (or $\ordsum^l \strct{A}$, respectively).
 %
@@ -128,7 +128,7 @@ This is statement (iii) of 2.3.3. Therefore this exercise is an immediate conseq
 The premise ``for $\vect{a} \mapsto \vect{b} \in \partisoms{\strct{A}}{\strct{B}}$'' is implied by the statements on both sides of ``iff'', so it can be weakened to ``for $\vect{a} \in A, \vect{b} \in B$''.
 \end{remark}
 %
-\item \header{Note on Remark 2.3.16} As an alternative proof for the last part of 2.2.8, one can show, contrapositively, that \emph{not (iii) implies not (i)}. To be more precise, in the inductive step let $m > 0, \qr{\varphi} = m$, and suppose that $\varphi(\vect{x}) = \exists y \psi$ where $\strct{A} \satis \varphi[\vect{a}]$ but not $\strct{B} \satis \varphi[\vect{b}]$. It follows that there is an $a \in A$ such that for all $b \in B$, $\strct{A} \satis \psi[\vect{a}a]$ but not $\strct{B} \satis \psi[\vect{b}b]$, hence by induction hypothesis the duplicator does not win the game $\game{m - 1}{\strct{A}, \vect{a}a, \strct{B}, \vect{b}b}$. By 2.2.4(b), therefore, we have that the duplicator does not win the game $\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$. The other case where $\strct{B} \satis \varphi[\vect{b}]$ but not $\strct{A} \satis \varphi[\vect{a}]$ can be done symmetrically.
+\item \header{Note on Remark 2.3.16} As an alternative proof for the last part of 2.2.8, one can show, contrapositively, that \emph{not \refitem{(iii)} implies not \refitem{(i)}}. To be more precise, in the inductive step let $m > 0, \qr{\varphi} = m$, and suppose that $\varphi(\vect{x}) = \exists y \psi$ where $\strct{A} \satis \varphi[\vect{a}]$ but not $\strct{B} \satis \varphi[\vect{b}]$. It follows that there is an $a \in A$ such that for all $b \in B$, $\strct{A} \satis \psi[\vect{a}a]$ but not $\strct{B} \satis \psi[\vect{b}b]$, hence by induction hypothesis the duplicator does not win the game $\game{m - 1}{\strct{A}, \vect{a}a, \strct{B}, \vect{b}b}$. By 2.2.4(b), therefore, we have that the duplicator does not win the game $\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$. The other case where $\strct{B} \satis \varphi[\vect{b}]$ but not $\strct{A} \satis \varphi[\vect{a}]$ can be done symmetrically.
 \medskip\\
 The above argument suggests (the essential part of) a winning strategy of the game $\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$ for the spoiler when (iii) in 2.2.8 is false: If a formula $\varphi = \exists y \psi$ has quantifier rank $m > 0$ and if, say, $\strct{A} \satis \varphi[\vect{a}]$, then he picks an element $a \in A$ such that $\strct{A} \satis \psi[\vect{a}a]$; if $\varphi = \forall y \chi$ has quantifier rank $m > 0$ and if, say, not $\strct{B} \satis \varphi[\vect{b}]$ (namely if $\strct{B} \satis \exists y \neg\chi[\vect{b}]$), then he picks an element $b \in B$ such that $\strct{B} \satis \neg\chi[\vect{b}b]$. The spoiler then makes his successive choices accordingly in his turns in every play of the game.
 %
@@ -146,7 +146,30 @@ The above argument suggests (the essential part of) a winning strategy of the ga
 \medskip\\
 On the other hand, by the proof the requirement on the cardinality of $3^m$-balls may be weakened to ``at most $e$ elements.''
 %
+\item \header{Note on 2.4.2 and 2.4.3} For the proof of 2.4.3 to be valid, in the structure $(D_l, E^\prime_l, P_1, \etl, P_r)$ there must be a point on each of the paths from $a$ to $b_-$ and from $b$ to $a_-$ that is in neither of the $3^m$-balls of $a$ and $b$, in other words, both cycles in the structure must have length greater than $2 \mul 3^m + 1$; otherwise the $3^m$-ball type of $a$ (or $b$) would be different from that of $a$ (or $b$, respectively) in $(\strct{D}_l, P_1, \etl, P_r)$ - the former $3^m$-ball is a cycle, whereas the latter is not.
+\medskip\\
+In fact, 2.4.3 can be strengthened to allow such points.
+%
 \item \header{Note on 2.4.4} By definition, the Gaifman graph $\gaifman{\strct{A}}$ of a digraph $\strct{A}$ is the associated (undirected) graph of $\strct{A}$.
+%
+\item \header{Note on 2.4.5} By the same argument in the proof, it follows that \emph{the class of finite graphs that are not connected cannot be axiomatized by a formula of the form $\exists P_1 \etl \exists P_r \psi$, either.}
+\medskip\\
+As an immediate consequence, we have that \emph{both classes cannot be axiomatized by a formula of the form $\forall P_1 \etl \forall P_r \chi$.}
+%
+\item \header{Note on 2.4.6} In the proof there is a (possible) typo: $\intpr{R}{A}$ in $(\strct{G}, \intpr{R}{A})$ should be replaced by $\intpr{R}{G}$ or $\intpr{R}{\strct{G}}$.
+\medskip\\
+On the other hand, this proposition implies that \emph{the class of finite graphs that are not connected can be axiomatized by a formula of the form $\forall R \chi$.} (Just take the negation of $\exists R \psi$.)
+%
+\item \header{Brief Solution to Exercise 2.4.7} Using a similar method (basically the pigeonhole principle) we can obtain the corresponding result to 2.4.2, in which the distance $\dist(a, b)$ is greater than $2 \mul 3^m + 1$ (cf.\ \header{Note on 2.4.2 and 2.4.3}). Now let $a_-$ and $b_-$ be the two points such that $(a_-, a)$ and $(b_-, b)$ are edges in $\strct{H}_l$. Obtain the structure $\strct{H}_l^\prime$ from $\strct{H}_l$ by removing these two edges and adding $(b_-, a)$ and $(a_-, b)$. Then likewise we obtain the corresponding result to 2.4.3, and hence that to 2.4.5.
+\medskip\\
+As for the corresponding result to 2.4.6, note that a digraph is cyclic if and only if there is a linear ordering over a set of at least two points in which there is an edge from $x$ to $y$ if and only if $y$ is immediately greater than $x$ or $x$ is the greatest element and $y$ the least in the linear ordering. Finally, formulate the condition and take the negation.
+\begin{note}
+It does not seem possible to axiomatize this class by a formula of the form $\forall P \psi$ where $P$ is unary and $\psi$ first-order (by the corresponding result to 2.4.5 mentioned above and the discussion in \header{Note on 2.4.5}) or the form $\exists R \psi$ where $R$ is binary and $\psi$ first-order as required (this is conjectured, however).
+\end{note}
+%
+\item \header{Brief Solution to Exercise 2.4.8} An informal formulation for $\psi(x, y)$ is already present in the description of the exercise.
+\medskip\\
+Also observe that the formula $\forall x \forall y \exists P \varphi$ axiomatizes the class of finite and connected graphs, and hence by 2.4.5 is not equivalent to a sentence of the form $\exists P_1 \etl \exists P_r \chi$.
 %
 \end{enumerate}
 %end of section 4-----------------------------------------------------------------------------

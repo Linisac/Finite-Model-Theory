@@ -50,7 +50,8 @@
 %% >
 
 %%general <
-\newcommand{\header}[1]{\textbf{#1.}}
+\newcommand{\header}[1]{{\rm\textbf{#1.}}}
+\newcommand{\refitem}[1]{{\rm#1}}
 %% >
 
 %%definition <
@@ -58,6 +59,8 @@
 %% >
 
 %%enumeration, sequence, pair, tuple, vector <
+\newcommand{\etc}{\cdots} %c for 'center'
+\newcommand{\etl}{\ldots} %l for 'low'
 \newcommand{\enum}[3][1]{#2_{#1} \ldots #2_{#3}} %enumeration. \enum{a}{n} = a_1 \ldots a_n, \enum[0]{b}{n + 1} = b_0 \ldots b_{n + 1}
 \newcommand{\seq}[3][1]{#2_{#1}, \ldots, #2_{#3}} %seq. \seq{a}{n} = a_1, \ldots, a_n, \enumc[0]{b}{n + 1} = b_0, \ldots, b_{n + 1}
 \newcommand{\tuple}[3][1]{(#2_{#1}, \ldots, #2_{#3}} %tuple. \tuple{a}{n} = (a_1, \ldots, a_n), \tuple[0]{b}{n + 1} = (b_0, \ldots, b_{n + 1})
@@ -68,6 +71,7 @@
 %% >
 
 %%some common operators <
+\newcommand{\mul}{\cdot} %multiplication
 \newcommand{\abs}[1]{\left|#1\right|}
 %% >
 
@@ -130,7 +134,7 @@
 %%graph, graph functions, graph relations <
 \newcommand{\graph}{\mathrm{GRAPH}} %the set of finite graphs
 \newcommand{\conn}{\mathrm{CONN}} %the set of connected graphs
-\newcommand{\dist}[3][]{\ifthenelse{\equal{#1}{}}{\mathit{d}(#2, #3)}{\mathit{d}_{#1}(#2, #3)}} %distance between two points in a graph
+\newcommand{\dist}[1][]{\ifthenelse{\equal{#1}{}}{\mathit{d}}{\mathit{d}_{#1}}} %distance between two points in a graph
 \newcommand{\tree}{\mathrm{TREE}} %the set of finite trees
 \newcommand{\gaifman}[1]{{\mathcal{G}(#1)}} %the Gaifman graph of #1 (structure)
 %% >
@@ -213,6 +217,8 @@
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 
+\theoremstyle{note}
+\newtheorem*{note}{Note}
 
 \begin{document}
 %\begin{titlepage}
