@@ -171,5 +171,13 @@ It does not seem possible to axiomatize this class by a formula of the form $\fo
 \medskip\\
 Also observe that the formula $\forall x \forall y \exists P \varphi$ axiomatizes the class of finite and connected graphs, and hence by 2.4.5 is not equivalent to a sentence of the form $\exists P_1 \etl \exists P_r \chi$.
 %
+\item \header{Note on the Definition of Sentences Being Basic Local} In the definition given in textbook, the condition $\rltv{\psi}{\ball{r, x_n}}$ is missing; therefore, it should be replaced by
+\[
+\exists x_1 \etl \exists x_n (\bland_{1 \leq i < j \leq n}\dist(x_i, x_j) > 2r \land \bland_{1 \leq i \leq n} \rltv{\psi}{\ball{r, x_i}}(x_i)).
+\]
+(The sentence that precedes 2.5.1 thus should be modified accordingly.)
+\medskip\\
+On the other hand, a basic local sentence as above only asserts that there are $n$ elements $a_1, \etl, a_n \in A$ that are pairwise separated by a distance greater than $2r$ in which $\ballstrct{r, a_i} \satis \psi[a_i]$ for $1 \leq i \leq n$, and does not state that there is a set $M$ of cardinality at least $n$ such that $\ballstrct{r, a} \satis \psi[a]$ \emph{for all $a \in M$.}
+%
 \end{enumerate}
 %end of section 4-----------------------------------------------------------------------------
