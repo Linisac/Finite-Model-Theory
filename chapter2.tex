@@ -171,11 +171,46 @@ It does not seem possible to axiomatize this class by a formula of the form $\fo
 \medskip\\
 Also observe that the formula $\forall x \forall y \exists P \varphi$ axiomatizes the class of finite and connected graphs, and hence by 2.4.5 is not equivalent to a sentence of the form $\exists P_1 \etl \exists P_r \chi$.
 %
-\item \header{Note on the Definition of Sentences Being Basic Local} In the definition given in textbook, the condition $\rltv{\psi}{\ball{r, x_n}}$ is missing; therefore, it should be replaced by
+\item \header{Note on the Definition of Basic Local Sentences} In the definition given in textbook, the condition $\rltv{\psi}{\ball{r, x_n}}$ is missing; therefore, it should be replaced by
 \[
-\exists x_1 \etl \exists x_n (\bland_{1 \leq i < j \leq n}\dist(x_i, x_j) > 2r \land \bland_{1 \leq i \leq n} \rltv{\psi}{\ball{r, x_i}}(x_i)).
+\exists x_1 \etl \exists x_n (\bland_{1 \leq i < j \leq n}\dist(x_i, x_j) > 2r \land \bland_{1 \leq i \leq n} \rltv{\psi}{\ball{r, x_i}}(x_i)),
 \]
-(The sentence that precedes 2.5.1 thus should be modified accordingly.)
+where $n \geq 1$. (The sentence that precedes 2.5.1 thus should be modified accordingly.)
 %
 \end{enumerate}
 %end of section 4-----------------------------------------------------------------------------
+
+
+%section 5------------------------------------------------------------------------------------
+\section{Gaifman's Theorem}
+\begin{enumerate}[1.]
+%
+\item \header{Note on the Proof of 2.5.2} In case 1, note that, as in the proof of 2.4.1, $\ball{7^j, \vect{a}a} \subseteq \ball{7^{j + 1}, \vect{a}}$, so $\ballstrct[{\ballstrct[\strct{A}]{7^{j + 1}, \vect{a}}}]{7^j, \vect{a}a} = \ballstrct[\strct{A}]{7^j, \vect{a}a}$.
+\medskip\\
+In case 2, it seems sufficient to have $g(j + 1)$ no smaller than the quantifier rank of sentences in (2) and (3). Moreover, we have $\strct{A} \satis \psi^j_a(a)$ and hence $\strct{A} \satis \exists x_1 \delta_1(x_1)$ (here $\exists x_1 \delta_1(x_1) = \exists x_1 \psi^j_a(x_1)$), so $i \geq 1$. Also note the following:
+\begin{enumerate}[(a)]
+%%
+\item In case 2.1, we have $e \geq 1$ (recall that $i \geq 1$) so the argument on the upper bound of the distance of any element (in $A$) from $\vect{a}$ satisfying $\psi^j_a$ is valid. There is a typo: ``$a \not\in \ball{2 \mul 7^{j + 1}, \vect{a}}$'' should be replaced with ``$a \not\in \ball{2 \mul 7^j, \vect{a}}$''. The condition $\dist(\vect{a}, a) \leq 6 \mul 7^j$ implies that $\ball{7^j, a} \subseteq \ball{7^{j + 1}, \vect{a}}$ and hence $\ballstrct[\ballstrct{7^{j + 1}, \vect{a}}]{7^j, a} = \ballstrct[\strct{A}]{7^j, a}$, which -- together with the assumption that $a \not\in \ball{2 \mul 7^j, \vect{a}}$ and the fact that $\ballstrct[\ballstrct{7^{j + 1}, \vect{a}}]{7^j, \vect{a}} = \ballstrct[\strct{A}]{7^j, \vect{a}}$ (since $\ball{7^j, \vect{a}} \subseteq \ball{7^{j + 1}, \vect{a}}$) -- gives
+\[
+\ballstrct{7^{j + 1}, \vect{a}} \satis \exists z (2 \mul 7^j < \dist(\vect{a}, z) \leq 6 \mul 7^j \land \psi^j_a(z) \land \psi^j_{\vect{a}}(\vect{a})).
+\]
+Also, the condition
+\[
+\ballstrct{7^{j + 1}, \vect{b}} \satis \exists z (2 \mul 7^j < \dist(\vect{b}, z) \leq 6 \mul 7^j \land \psi^j_a(z) \land \psi^j_{\vect{a}}(\vect{b}))
+\]
+guarantees a $b \in B$ such that $\ball{7^j, \vect{b}} \intsc \ball{7^j, b} = \emptyset$ and $\ball{7^j, b} \subseteq \ball{7^{j + 1}, \vect{b}}$ and hence $\ballstrct[\ballstrct{7^{j + 1}, \vect{b}}]{7^j, b} = \ballstrct[\strct{B}]{7^j, b}$ which justifies (5); this condition also justifies (6) because $\ball{7^j, \vect{b}} \subseteq \ball{7^{j + 1}, \vect{b}}$ which implies $\ballstrct[\ballstrct{7^{j + 1}, \vect{b}}]{7^j, \vect{b}} = \ballstrct[\strct{B}]{7^j, \vect{b}}$.
+%%
+\item In case 2.2, we also have
+\[
+\ballstrct{7^{j + 1}, \vect{b}} \satis \psi^j_{\vect{a}}[\vect{b}]
+\]
+because $\ballstrct{7^{j + 1}, \vect{a}} \satis \psi^j_{\vect{a}}[\vect{a}]$ (since $\ball{7^j, \vect{a}} \subseteq \ball{7^{j + 1}, \vect{a}}$ and hence $\ballstrct[{\ballstrct[\strct{A}]{7^{j + 1}, \vect{a}}}]{7^j, \vect{a}} = \ballstrct[\strct{A}]{7^j, \vect{a}}$) and (1);\footnote{The quantifier rank of $\psi^j_{\vect{a}}$ is smaller than $g(j + 1)$, by the third condition on the value of $g(j + 1)$ mentioned in case 2.1; although this condition is specified there, it is also applicable here because $g$ depends only on $\strct{A}$ and $\strct{B}$ but not on specific cases among 1, 2.1 or 2.2.} this implies
+\[
+(\ballstrct{7^j, \vect{a}}, \vect{a}) \equv[g(j)] (\ballstrct{7^j, \vect{b}}, \vect{b})
+\]
+since, similarly, $\ball{7^j, \vect{b}} \subseteq \ball{7^{j + 1}, \vect{b}}$ and hence $\ballstrct[\ballstrct{7^{j + 1}, \vect{b}}]{7^j, \vect{b}} = \ballstrct[\strct{B}]{7^j, \vect{b}}$.
+%%
+\end{enumerate}
+%
+\end{enumerate}
+%end of section 5-----------------------------------------------------------------------------
