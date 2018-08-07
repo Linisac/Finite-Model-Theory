@@ -5,7 +5,7 @@
 \section{Ehrenfeucht's Theorem}
 \begin{enumerate}[1.]
 %
-\item \header{Note on Definition 2.2.1} The condition for a map $p$ to be a partial isomorphism between $\strct{A}$ and $\strct{B}$ is slightly different in \cite{EFT}: the designated constants $\intpr{c}{A}$ are not required to be in $\dom{p}$ but if they are, the condition $p(\intpr{c}{A}) = \intpr{c}{B}$ must be satisfied.
+\item \header{Note on Definition 2.2.1} The condition for a map $p$ to be a partial isomorphism between $\strct{A}$ and $\strct{B}$ is slightly different in \cite{EFT}: the designated constants $\intpr{c}{A}$ are not required to be in $\dm(p)$ but if they are, the condition $p(\intpr{c}{A}) = \intpr{c}{B}$ must be satisfied.
 %
 \item \header{Note on Remarks 2.2.2} For part (a), note that the empty map $p = \emptyset$ is \emph{not} a partial isomorphism if $\tau$ does contain constants, by Definition 2.2.1.
 \medskip\\
@@ -16,11 +16,11 @@ which may not define a map, nor a partial isomorphism. If the above set does def
 \medskip\\
 Also note that if $\tau$ contains constants then the notation $\vect{a} \mapsto \vect{b}$ contains mapping of the constants, which are \emph{hidden} from it; in this case, $\emptyseq \mapsto \emptyseq$ does not equal the empty map $\emptymap$. $\emptyseq \mapsto \emptyseq = \emptymap$ when $\tau$ contains no constants.
 %
-\item \header{Note on Ehrenfeucht Games.} It is clear from definition that at most one of the players has a winning strategy for the game $\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$.
+\item \header{Note on Ehrenfeucht Games.} It is clear from definition that at most one of the players has a winning strategy for the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
 \medskip\\
-Moreover, it is also true that at least one of the players has a winning strategy for the game $\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$, i.e.\ \emph{if the duplicator does not win $\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$ then the spoiler wins it.} See 2.3.16 in text.
+Moreover, it is also true that at least one of the players has a winning strategy for the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$, i.e.\ \emph{if the duplicator does not win $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ then the spoiler wins it.} See 2.3.16 in text.
 %
-\item \header{Note on the Proof of Lemma 2.2.3(b)} The statement ``Then $p : \vect{a} \mapsto \vect{b} \in \partisoms{\strct{A}}{\strct{B}}$ with $\dom{p} = A$'' follows from the fact that a submap of a partial isomorphism is also a partial isomorphism (see the next note).
+\item \header{Note on the Proof of Lemma 2.2.3(b)} The statement ``Then $p : \vect{a} \mapsto \vect{b} \in \partisoms(\strct{A}, \strct{B})$ with $\dm(p) = A$'' follows from the fact that a submap of a partial isomorphism is also a partial isomorphism (see the next note).
 %
 \item \header{Note on Lemma 2.2.4} Part (c) is equivalent to say that a submap (i.e.\ a map that is a subset of another map in terms of their graphs) of a partial isomorphism is also a partial isomorphism.
 \medskip\\
@@ -30,7 +30,7 @@ On the other hand, it is useful to use the alternative logically equivalent form
 \medskip\\
 \emph{For $s, m \geq 0$, $\ityp{m}{\strct{A}, \vect{a}}$ is a well-formed formula - i.e.\ the conjunctions and disjunctions (if any) in it are finite - for any structure $\strct{A}$ and $\vect{a} \in \cartpwr{A}{s}$ and the set $\sett{\ityp{m}{\strct{A}, \vect{a}}}{\begin{math}\strct{A}\end{math} a structure and \begin{math}\vect{a} \in \cartpwr{A}{s}\end{math}}$ is finite.}
 \medskip\\
-The induction is performed on $m$. The base case follows from that for $s > 0$, the set $\sett{\varphi(\seq{v}{s})}{\begin{math}\varphi\end{math} atomic or negated atomic}$ is finite.
+The induction is performed on $m$. The base case follows from that for $s > 0$, the set $\sett{\varphi(v_1, \etc, v_s)}{\begin{math}\varphi\end{math} atomic or negated atomic}$ is finite.
 %
 \item \header{Note on the Proof of Theorem 2.2.8 (Ehrenfeucht's Theorem)} To prove (i) implies (iii), the case $m = 0$ can be handled by applying 2.2.4(a) in addition to the equivalence between (i) and (ii) of 2.2.2(c).
 \medskip\\
@@ -46,27 +46,27 @@ The induction part of (i) implying (iii) in fact proves $\strct{A} \satis \varph
 \section{Examples and Fra\"{i}ss\'{e}'s Theorem}
 \begin{enumerate}[1.]
 %
-\item \header{Hint to Exercise 2.3.2} Note that $I_j \subseteq \tilde{I}_j$ and that if $p \in \partisoms{\strct{A}}{\strct{B}}$ and if $q \subseteq p$ then $q \in \partisoms{\strct{A}}{\strct{B}}$.
+\item \header{Hint to Exercise 2.3.2} Note that $I_j \subseteq \tilde{I}_j$ and that if $p \in \partisoms(\strct{A}, \strct{B})$ and if $q \subseteq p$ then $q \in \partisoms(\strct{A}, \strct{B})$.
 \begin{remark}
 There is a typo: ``$\emptyseq \mapsto \emptyseq \in I_j$'' should be replaced by ``$\emptyset \mapsto \emptyset \in \tilde{I}_j$''.
 \end{remark}
 %
 \item \header{Note on Corollary 2.3.4} For $s = 0$ the statement of 2.3.3(iii) becomes
 \begin{quoteno}{$\ast$}
-There is $\seqi{I_j}{j \leq m}$ with $\emptyseq \mapsto \emptyseq \in I_m$ such that $\seqi{I_j}{j \leq m} : \strct{A} \isom[m] \strct{B}$.
+There is $\seq{I_j}{j \leq m}$ with $\emptyseq \mapsto \emptyseq \in I_m$ such that $\seq{I_j}{j \leq m} : \strct{A} \isom[m] \strct{B}$.
 \end{quoteno}
 \medskip\\
-It is equivalent to 2.3.4(iii): The latter obviously follows the former; to derive the former from the latter, note that by 2.3.2 if $\seqi{I_j}{j \leq m} : \strct{A} \isom[m] \strct{B}$ then $\seqi{\tilde{I}_j}{j \leq m} : \strct{A} \isom[m] \strct{B}$ and $\emptyseq \mapsto \emptyseq \in \tilde{I}_m$.
+It is equivalent to 2.3.4(iii): The latter obviously follows the former; to derive the former from the latter, note that by 2.3.2 if $\seq{I_j}{j \leq m} : \strct{A} \isom[m] \strct{B}$ then $\seq{\tilde{I}_j}{j \leq m} : \strct{A} \isom[m] \strct{B}$ and $\emptyseq \mapsto \emptyseq \in \tilde{I}_m$.
 %
-\item \header{Note on Example 2.3.5} Let $\tau$ be an arbitrary symbol set that consists of relation symbols $\seq{P}{n}$ and constants $\seq{c}{k}$ where $n, k \in \nat$.
+\item \header{Note on Example 2.3.5} Let $\tau$ be an arbitrary symbol set that consists of relation symbols $P_1, \etc, P_n$ and constants $c_1, \etc, c_k$ where $n, k \in \nat$.
 \medskip\\
-For any $m \in \nat$, consider the two $\tau$-structures $\strct{A}$ and $\strct{B}$ where $A$ consists of elements $\seq{a}{m + 1}$ other than $\seq{\intpr{c}{\strct{A}}}{n}$, $\intpr{c_i}{\strct{A}} \neq \intpr{c_j}{\strct{A}}$ if $i \neq j$, $\intpr{P_i}{\strct{A}} = \emptyset$, $B$ consists of elements $\seq{b}{m + 2}$ other than $\seq{\intpr{c}{\strct{B}}}{n}$, $\intpr{c_i}{\strct{B}} \neq \intpr{c_j}{\strct{B}}$ if $i \neq j$, $\intpr{P_i}{\strct{B}} = \emptyset$.
+For any $m \in \nat$, consider the two $\tau$-structures $\strct{A}$ and $\strct{B}$ where $A$ consists of elements $a_1, \etc, a_{m + 1}$ other than $\intpr{c_1}{\strct{A}}, \etc, \intpr{c_n}{\strct{A}}$, $\intpr{c_i}{\strct{A}} \neq \intpr{c_j}{\strct{A}}$ if $i \neq j$, $\intpr{P_i}{\strct{A}} = \emptyset$, $B$ consists of elements $b_1, \etc, b_{m + 2}$ other than $\intpr{c_1}{\strct{B}}, \etc, \intpr{c_n}{\strct{B}}$, $\intpr{c_i}{\strct{B}} \neq \intpr{c_j}{\strct{B}}$ if $i \neq j$, $\intpr{P_i}{\strct{B}} = \emptyset$.
 \medskip\\
-Obviously, exactly one between $\strct{A}$ and $\strct{B}$ is a member of $\even{\tau}$. However, it is also true that $\strct{A} \equv[m] \strct{B}$: the map $\enum{a}{m + 1} \mapsto \enum{b}{m + 1}$ can be used as a winning strategy (note that implicitly $\intpr{c_i}{\strct{A}}$ is mapped to $\intpr{c_i}{\strct{B}}$, cf.\ 2.2.2(c)(i)) for the duplicator in the game $\game{m}{\strct{A}, \strct{B}}$. Thus $\even{\tau}$ is not axiomatizable by 2.2.12.
+Obviously, exactly one between $\strct{A}$ and $\strct{B}$ is a member of $\even[\tau]$. However, it is also true that $\strct{A} \equv[m] \strct{B}$: the map $a_1 \etc a_{m + 1} \mapsto b_1 \etc b_{m + 1}$ can be used as a winning strategy (note that implicitly $\intpr{c_i}{\strct{A}}$ is mapped to $\intpr{c_i}{\strct{B}}$, cf.\ 2.2.2(c)(i)) for the duplicator in the game $\game{m}(\strct{A}, \strct{B})$. Thus $\even[\tau]$ is not axiomatizable by 2.2.12.
 %
 \item \header{Note on Example 2.3.8} There is a typo: ``$\dist[j](a, a^\prime)$'' appearing in the definition of distance function should be replaced by ``$\dist[j](a, b)$''.
 %
-\item \header{Hint to Exercise 2.3.9} For simplicity, take the structure $\strct{C}_l$ that is isomorphic to $\strct{B}_l \dsjuni \strct{D}_l$, where $C_l \defas \sete{0, \ldots, 2l + 1}$ and the substructures $\substr{\sete{0, \ldots, l}}{\strct{C}_l}$ induced by $\sete{0, \ldots, l}$ and $\substr{\sete{l + 1, \ldots, 2l + 1}}{\strct{C}_l}$ induced by $\sete{l + 1, \ldots, 2l + 1}$ are isomorphic to $\strct{B}_l$ and $\strct{D}_l$, respectively.
+\item \header{Hint to Exercise 2.3.9} For simplicity, take the structure $\strct{C}_l$ that is isomorphic to $\strct{B}_l \dsjuni \strct{D}_l$, where $C_l \defas \sete{0, \ldots, 2l + 1}$ and the substructures $\sbstrct{\sete{0, \ldots, l}}{\strct{C}_l}$ induced by $\sete{0, \ldots, l}$ and $\sbstrct{\sete{l + 1, \ldots, 2l + 1}}{\strct{C}_l}$ induced by $\sete{l + 1, \ldots, 2l + 1}$ are isomorphic to $\strct{B}_l$ and $\strct{D}_l$, respectively.
 \medskip\\
 For $\strct{B}_l$ and $\strct{C}_l$ define the distance function $d$ on $B_l \cart B_l$ and on $C_l \cart C_l$ as
 \[
@@ -84,15 +84,15 @@ and take the truncated version $\dist[j]$ where
 \infty & \mbox{else}.
 \end{cases}
 \]
-For $m \geq 0$ choose $l \geq 2^m$. Consider $\seqi{I_j}{j \leq m}$ where $p \in I_j$ if and only if $p$ is a partial isomorphism between $\strct{B}_l$ and $\strct{C}_l$ such that $\card{p} \leq m - j + 2$, $p(0) = 0$, $p(l) = l$ and $\dist[j](h, k) = \dist[j](p(h), p(k))$ for $h, k \in \dom{p}$.
+For $m \geq 0$ choose $l \geq 2^m$. Consider $\seq{I_j}{j \leq m}$ where $p \in I_j$ if and only if $p$ is a partial isomorphism between $\strct{B}_l$ and $\strct{C}_l$ such that $\card{p} \leq m - j + 2$, $p(0) = 0$, $p(l) = l$ and $\dist[j](h, k) = \dist[j](p(h), p(k))$ for $h, k \in \dm(p)$.
 \medskip\\
-It remains to verify $\seqi{I_j}{j \leq m} : \strct{B}_l \isom[m] \strct{C}_l$, which is omitted here. (For the forth-property, if $p \in I_{j + 1}$ and $b \in B_l$ then distinguish two cases according to whether it is true that ``there is a $b^\prime \in B_l$ such that $\dist[j](b, b^\prime) < 2^j$ or $\dist[j](b^\prime, b) < 2^j$'', a technique used in 2.3.6.)
+It remains to verify $\seq{I_j}{j \leq m} : \strct{B}_l \isom[m] \strct{C}_l$, which is omitted here. (For the forth-property, if $p \in I_{j + 1}$ and $b \in B_l$ then distinguish two cases according to whether it is true that ``there is a $b^\prime \in B_l$ such that $\dist[j](b, b^\prime) < 2^j$ or $\dist[j](b^\prime, b) < 2^j$'', a technique used in 2.3.6.)
 %
 \item \header{Note on Corollary 2.3.11} Here $(\strct{A}, \vect{a}) \equv[m] (\strct{B}, \vect{b})$ means ``$\vect{a}$ satisfies in $\strct{A}$ the same formulas of quantifier rank $\leq m$ as $\vect{b}$ in $\strct{B}$.'' (Consider the transition from 2.2.8(iii) to 2.2.9(iii).)
 %
 \item \header{Note on Corollary 2.3.11} Is it true that
 \begin{quote}
-``\emph{If $(\strct{A}_1, \vect{a}_1) \equv[m] (\strct{B}_1, \vect{b}_1)$ and $(\strct{A}_2, \vect{a}_2) \equv[m] (\strct{B}_2, \vect{b}_2)$ then $(\strct{A}_1 \cart \strct{A}_2, \vect{a}_1 \cart \vect{a}_2) \equv[m] (\strct{B}_1 \cart \strct{B}_2, \vect{b}_1 \cart \vect{b}_2)$}''?
+``\emph{If $(\strct{A}_1, \vect{a}_1) \equv[m] (\strct{B}_1, \vect{b}_1)$ and $(\strct{A}_2, \vect{a}_2) \equv[m] (\strct{B}_2, \vect{b}_2)$ then $(\strct{A}_1 \product \strct{A}_2, \vect{a}_1 \cart \vect{a}_2) \equv[m] (\strct{B}_1 \product \strct{B}_2, \vect{b}_1 \cart \vect{b}_2)$}''?
 \end{quote}
 My guess is yes. Note that if $\vect{a}_1 \isom \vect{b}_1$ and $\vect{a}_2 \isom \vect{b}_2$ then $\vect{a}_1 \cart \vect{a}_2 \isom \vect{b}_1 \cart \vect{b}_2$.
 %
@@ -121,16 +121,16 @@ where $a$ is an element from the $i$th copy of $\strct{A}$ and $a^\prime$ from t
 \item \header{Hint to Exercise 2.3.14} (INCOMPLETE)
 The notation ``$(\strct{A}, \vect{a}) \isom[m] (\strct{B}, \vect{b})$'' is undefined in text, however it can be understood as:
 \begin{quote}
-There is $\seqi{I_j}{j \leq m}$ with $\vect{a} \mapsto \vect{b} \in I_m$ such that $\seqi{I_j}{j \leq m} : \strct{A} \isom[m] \strct{B}$.
+There is $\seq{I_j}{j \leq m}$ with $\vect{a} \mapsto \vect{b} \in I_m$ such that $\seq{I_j}{j \leq m} : \strct{A} \isom[m] \strct{B}$.
 \end{quote}
 This is statement (iii) of 2.3.3. Therefore this exercise is an immediate consequence of 2.3.3.
 \begin{remark}
-The premise ``for $\vect{a} \mapsto \vect{b} \in \partisoms{\strct{A}}{\strct{B}}$'' is implied by the statements on both sides of ``iff'', so it can be weakened to ``for $\vect{a} \in A, \vect{b} \in B$''.
+The premise ``for $\vect{a} \mapsto \vect{b} \in \partisoms(\strct{A}, \strct{B})$'' is implied by the statements on both sides of ``iff'', so it can be weakened to ``for $\vect{a} \in A, \vect{b} \in B$''.
 \end{remark}
 %
-\item \header{Note on Remark 2.3.16} As an alternative proof for the last part of 2.2.8, one can show, contrapositively, that \emph{not \refitem{(iii)} implies not \refitem{(i)}}. To be more precise, in the inductive step let $m > 0, \qr{\varphi} = m$, and suppose that $\varphi(\vect{x}) = \exists y \psi$ where $\strct{A} \satis \varphi[\vect{a}]$ but not $\strct{B} \satis \varphi[\vect{b}]$. It follows that there is an $a \in A$ such that for all $b \in B$, $\strct{A} \satis \psi[\vect{a}a]$ but not $\strct{B} \satis \psi[\vect{b}b]$, hence by induction hypothesis the duplicator does not win the game $\game{m - 1}{\strct{A}, \vect{a}a, \strct{B}, \vect{b}b}$. By 2.2.4(b), therefore, we have that the duplicator does not win the game $\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$. The other case where $\strct{B} \satis \varphi[\vect{b}]$ but not $\strct{A} \satis \varphi[\vect{a}]$ can be done symmetrically.
+\item \header{Note on Remark 2.3.16} As an alternative proof for the last part of 2.2.8, one can show, contrapositively, that \emph{not \refitem{(iii)} implies not \refitem{(i)}}. To be more precise, in the inductive step let $m > 0, \qr(\varphi) = m$, and suppose that $\varphi(\vect{x}) = \exists y \psi$ where $\strct{A} \satis \varphi[\vect{a}]$ but not $\strct{B} \satis \varphi[\vect{b}]$. It follows that there is an $a \in A$ such that for all $b \in B$, $\strct{A} \satis \psi[\vect{a}a]$ but not $\strct{B} \satis \psi[\vect{b}b]$, hence by induction hypothesis the duplicator does not win the game $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}, \vect{b}b)$. By 2.2.4(b), therefore, we have that the duplicator does not win the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$. The other case where $\strct{B} \satis \varphi[\vect{b}]$ but not $\strct{A} \satis \varphi[\vect{a}]$ can be done symmetrically.
 \medskip\\
-The above argument suggests (the essential part of) a winning strategy of the game $\game{m}{\strct{A}, \vect{a}, \strct{B}, \vect{b}}$ for the spoiler when (iii) in 2.2.8 is false: If a formula $\varphi = \exists y \psi$ has quantifier rank $m > 0$ and if, say, $\strct{A} \satis \varphi[\vect{a}]$, then he picks an element $a \in A$ such that $\strct{A} \satis \psi[\vect{a}a]$; if $\varphi = \forall y \chi$ has quantifier rank $m > 0$ and if, say, not $\strct{B} \satis \varphi[\vect{b}]$ (namely if $\strct{B} \satis \exists y \neg\chi[\vect{b}]$), then he picks an element $b \in B$ such that $\strct{B} \satis \neg\chi[\vect{b}b]$. The spoiler then makes his successive choices accordingly in his turns in every play of the game.
+The above argument suggests (the essential part of) a winning strategy of the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ for the spoiler when (iii) in 2.2.8 is false: If a formula $\varphi = \exists y \psi$ has quantifier rank $m > 0$ and if, say, $\strct{A} \satis \varphi[\vect{a}]$, then he picks an element $a \in A$ such that $\strct{A} \satis \psi[\vect{a}a]$; if $\varphi = \forall y \chi$ has quantifier rank $m > 0$ and if, say, not $\strct{B} \satis \varphi[\vect{b}]$ (namely if $\strct{B} \satis \exists y \neg\chi[\vect{b}]$), then he picks an element $b \in B$ such that $\strct{B} \satis \neg\chi[\vect{b}b]$. The spoiler then makes his successive choices accordingly in his turns in every play of the game.
 %
 \end{enumerate}
 %end of section 3-----------------------------------------------------------------------------
@@ -140,21 +140,21 @@ The above argument suggests (the essential part of) a winning strategy of the ga
 \section{Hanf's Theorem}
 \begin{enumerate}[1.]
 %
-\item \header{Note on the First Paragraph on Page 27} Here the \emph{isomorphism type} of $(\ballstrct{r, a}, a)$ might refer to the equivalent class of $(\ballstrct{r, a}, a)$ induced by the isomorphism relation, i.e.\ the set of structures that are isomorphic to $(\ballstrct{r, a}, a)$, where $(\ballstrct{r, a}, a)$ might refer to the expansion of the structure $\ballstrct{r, a}$ in which $a$ is a distinguished constant.
+\item \header{Note on the First Paragraph on Page 27} Here the \emph{isomorphism type} of $(\ballstrct(r, a), a)$ might refer to the equivalent class of $(\ballstrct(r, a), a)$ induced by the isomorphism relation, i.e.\ the set of structures that are isomorphic to $(\ballstrct(r, a), a)$, where $(\ballstrct(r, a), a)$ might refer to the expansion of the structure $\ballstrct(r, a)$ in which $a$ is a distinguished constant.
 %
 \item \header{Note on the Proof of 2.4.1} Here $\length{\vect{a}}$ refers to the length of the tuple $\vect{a}$, see the first paragraph on page 6.
 \medskip\\
 On the other hand, by the proof the requirement on the cardinality of $3^m$-balls may be weakened to ``at most $e$ elements.''
 %
-\item \header{Note on 2.4.2 and 2.4.3} For the proof of 2.4.3 to be valid, in the structure $(D_l, E^\prime_l, P_1, \etl, P_r)$ there must be a point on each of the paths from $a$ to $b_-$ and from $b$ to $a_-$ that is in neither of the $3^m$-balls of $a$ and $b$, in other words, both cycles in the structure must have length greater than $2 \mul 3^m + 1$; otherwise the $3^m$-ball type of $a$ (or $b$) would be different from that of $a$ (or $b$, respectively) in $(\strct{D}_l, P_1, \etl, P_r)$ - the former $3^m$-ball is a cycle, whereas the latter is not.
+\item \header{Note on 2.4.2 and 2.4.3} For the proof of 2.4.3 to be valid, in the structure $(D_l, E^\prime_l, P_1, \etc, P_r)$ there must be a point on each of the paths from $a$ to $b_-$ and from $b$ to $a_-$ that is in neither of the $3^m$-balls of $a$ and $b$, in other words, both cycles in the structure must have length greater than $2 \mul 3^m + 1$; otherwise the $3^m$-ball type of $a$ (or $b$) would be different from that of $a$ (or $b$, respectively) in $(\strct{D}_l, P_1, \etc, P_r)$ - the former $3^m$-ball is a cycle, whereas the latter is not.
 \medskip\\
 In fact, 2.4.3 can be strengthened to allow such points.
 %
-\item \header{Note on 2.4.4} By definition, the Gaifman graph $\gaifman{\strct{A}}$ of a digraph $\strct{A}$ is the associated (undirected) graph of $\strct{A}$.
+\item \header{Note on 2.4.4} By definition, the Gaifman graph $\gaifman(\strct{A})$ of a digraph $\strct{A}$ is the associated (undirected) graph of $\strct{A}$.
 %
-\item \header{Note on 2.4.5} By the same argument in the proof, it follows that \emph{the class of finite graphs that are not connected cannot be axiomatized by a formula of the form $\exists P_1 \etl \exists P_r \psi$, either.}
+\item \header{Note on 2.4.5} By the same argument in the proof, it follows that \emph{the class of finite graphs that are not connected cannot be axiomatized by a formula of the form $\exists P_1 \etc \exists P_r \psi$, either.}
 \medskip\\
-As an immediate consequence, we have that \emph{both classes cannot be axiomatized by a formula of the form $\forall P_1 \etl \forall P_r \chi$.}
+As an immediate consequence, we have that \emph{both classes cannot be axiomatized by a formula of the form $\forall P_1 \etc \forall P_r \chi$.}
 %
 \item \header{Note on 2.4.6} In the proof there is a (possible) typo: $\intpr{R}{A}$ in $(\strct{G}, \intpr{R}{A})$ should be replaced by $\intpr{R}{G}$ or $\intpr{R}{\strct{G}}$.
 \medskip\\
@@ -169,11 +169,11 @@ It does not seem possible to axiomatize this class by a formula of the form $\fo
 %
 \item \header{Brief Solution to Exercise 2.4.8} An informal formulation for $\psi(x, y)$ is already present in the description of the exercise.
 \medskip\\
-Also observe that the formula $\forall x \forall y \exists P \varphi$ axiomatizes the class of finite and connected graphs, and hence by 2.4.5 is not equivalent to a sentence of the form $\exists P_1 \etl \exists P_r \chi$.
+Also observe that the formula $\forall x \forall y \exists P \varphi$ axiomatizes the class of finite and connected graphs, and hence by 2.4.5 is not equivalent to a sentence of the form $\exists P_1 \etc \exists P_r \chi$.
 %
-\item \header{Note on the Definition of Basic Local Sentences} In the definition given in textbook, the condition $\rltv{\psi}{\ball{r, x_n}}$ is missing; therefore, it should be replaced by
+\item \header{Note on the Definition of Basic Local Sentences} In the definition given in textbook, the condition $\rltv{\psi}{\ball(r, x_n)}$ is missing; therefore, it should be replaced by
 \[
-\exists x_1 \etl \exists x_n (\bland_{1 \leq i < j \leq n}\dist(x_i, x_j) > 2r \land \bland_{1 \leq i \leq n} \rltv{\psi}{\ball{r, x_i}}(x_i)),
+\exists x_1 \etc \exists x_n (\bland_{1 \leq i < j \leq n}\dist(x_i, x_j) > 2r \land \bland_{1 \leq i \leq n} \rltv{\psi}{\ball(r, x_i)}(x_i)),
 \]
 where $n \geq 1$. (The sentence that precedes 2.5.1 thus should be modified accordingly.)
 %
@@ -185,36 +185,40 @@ where $n \geq 1$. (The sentence that precedes 2.5.1 thus should be modified acco
 \section{Gaifman's Theorem}
 \begin{enumerate}[1.]
 %
-\item \header{Note on the Proof of 2.5.2} In case 1, note that, as in the proof of 2.4.1, $\ball{7^j, \vect{a}a} \subseteq \ball{7^{j + 1}, \vect{a}}$, so $\ballstrct[{\ballstrct[\strct{A}]{7^{j + 1}, \vect{a}}}]{7^j, \vect{a}a} = \ballstrct[\strct{A}]{7^j, \vect{a}a}$.
+\item \header{Note on the Proof of 2.5.2} In case 1, note that, as in the proof of 2.4.1, $\ball(7^j, \vect{a}a) \subseteq \ball(7^{j + 1}, \vect{a})$, so $\ballstrct[{\ballstrct[\strct{A}](7^{j + 1}, \vect{a})}](7^j, \vect{a}a) = \ballstrct[\strct{A}](7^j, \vect{a}a)$.
 \medskip\\
 In case 2, it seems sufficient to have $g(j + 1)$ no smaller than the quantifier rank of sentences in (2) and (3). Moreover, we have $\strct{A} \satis \psi^j_a(a)$ and hence $\strct{A} \satis \exists x_1 \delta_1(x_1)$ (here $\exists x_1 \delta_1(x_1) = \exists x_1 \psi^j_a(x_1)$), so $i \geq 1$. Also note the following:
 \begin{enumerate}[(a)]
 %%
-\item In case 2.1, we have $e \geq 1$ (recall that $i \geq 1$) so the argument on the upper bound of the distance of any element (in $A$) from $\vect{a}$ satisfying $\psi^j_a$ is valid. There is a typo: ``$a \not\in \ball{2 \mul 7^{j + 1}, \vect{a}}$'' should be replaced with ``$a \not\in \ball{2 \mul 7^j, \vect{a}}$''. The condition $\dist(\vect{a}, a) \leq 6 \mul 7^j$ implies that $\ball{7^j, a} \subseteq \ball{7^{j + 1}, \vect{a}}$ and hence $\ballstrct[\ballstrct{7^{j + 1}, \vect{a}}]{7^j, a} = \ballstrct[\strct{A}]{7^j, a}$, which -- together with the assumption that $a \not\in \ball{2 \mul 7^j, \vect{a}}$ and the fact that $\ballstrct[\ballstrct{7^{j + 1}, \vect{a}}]{7^j, \vect{a}} = \ballstrct[\strct{A}]{7^j, \vect{a}}$ (since $\ball{7^j, \vect{a}} \subseteq \ball{7^{j + 1}, \vect{a}}$) -- gives
+\item In case 2.1, we have $e \geq 1$ (recall that $i \geq 1$) so the argument on the upper bound of the distance of any element (in $A$) from $\vect{a}$ satisfying $\psi^j_a$ is valid. There is a typo: ``$a \not\in \ball(2 \mul 7^{j + 1}, \vect{a})$'' should be replaced with ``$a \not\in \ball(2 \mul 7^j, \vect{a})$''. The condition $\dist(\vect{a}, a) \leq 6 \mul 7^j$ implies that $\ball(7^j, a) \subseteq \ball(7^{j + 1}, \vect{a})$ and hence $\ballstrct[\ballstrct(7^{j + 1}, \vect{a})](7^j, a) = \ballstrct[\strct{A}](7^j, a)$, which -- together with the assumption that $a \not\in \ball(2 \mul 7^j, \vect{a})$ and the fact that $\ballstrct[\ballstrct(7^{j + 1}, \vect{a})](7^j, \vect{a}) = \ballstrct[\strct{A}](7^j, \vect{a})$ (since $\ball(7^j, \vect{a}) \subseteq \ball(7^{j + 1}, \vect{a})$) -- gives
 \[
-\ballstrct{7^{j + 1}, \vect{a}} \satis \exists z (2 \mul 7^j < \dist(\vect{a}, z) \leq 6 \mul 7^j \land \psi^j_a(z) \land \psi^j_{\vect{a}}(\vect{a})).
+\ballstrct(7^{j + 1}, \vect{a}) \satis \exists z (2 \mul 7^j < \dist(\vect{a}, z) \leq 6 \mul 7^j \land \psi^j_a(z) \land \psi^j_{\vect{a}}(\vect{a})).
 \]
 Also, the condition
 \[
-\ballstrct{7^{j + 1}, \vect{b}} \satis \exists z (2 \mul 7^j < \dist(\vect{b}, z) \leq 6 \mul 7^j \land \psi^j_a(z) \land \psi^j_{\vect{a}}(\vect{b}))
+\ballstrct(7^{j + 1}, \vect{b}) \satis \exists z (2 \mul 7^j < \dist(\vect{b}, z) \leq 6 \mul 7^j \land \psi^j_a(z) \land \psi^j_{\vect{a}}(\vect{b}))
 \]
-guarantees a $b \in B$ such that $\ball{7^j, \vect{b}} \intsc \ball{7^j, b} = \emptyset$ and $\ball{7^j, b} \subseteq \ball{7^{j + 1}, \vect{b}}$ and hence $\ballstrct[\ballstrct{7^{j + 1}, \vect{b}}]{7^j, b} = \ballstrct[\strct{B}]{7^j, b}$ which justifies (5); this condition also justifies (6) because $\ball{7^j, \vect{b}} \subseteq \ball{7^{j + 1}, \vect{b}}$ which implies $\ballstrct[\ballstrct{7^{j + 1}, \vect{b}}]{7^j, \vect{b}} = \ballstrct[\strct{B}]{7^j, \vect{b}}$.
+guarantees a $b \in B$ such that $\ball(7^j, \vect{b}) \intsc \ball(7^j, b) = \emptyset$ and $\ball(7^j, b) \subseteq \ball(7^{j + 1}, \vect{b})$ and hence $\ballstrct[\ballstrct(7^{j + 1}, \vect{b})](7^j, b) = \ballstrct[\strct{B}](7^j, b)$ which justifies (5); this condition also justifies (6) because $\ball(7^j, \vect{b}) \subseteq \ball(7^{j + 1}, \vect{b})$ which implies $\ballstrct[\ballstrct(7^{j + 1}, \vect{b})](7^j, \vect{b}) = \ballstrct[\strct{B}](7^j, \vect{b})$.
 %%
 \item In case 2.2, we also have
 \[
-\ballstrct{7^{j + 1}, \vect{b}} \satis \psi^j_{\vect{a}}[\vect{b}]
+\ballstrct(7^{j + 1}, \vect{b}) \satis \psi^j_{\vect{a}}[\vect{b}]
 \]
-because $\ballstrct{7^{j + 1}, \vect{a}} \satis \psi^j_{\vect{a}}[\vect{a}]$ (since $\ball{7^j, \vect{a}} \subseteq \ball{7^{j + 1}, \vect{a}}$ and hence $\ballstrct[{\ballstrct[\strct{A}]{7^{j + 1}, \vect{a}}}]{7^j, \vect{a}} = \ballstrct[\strct{A}]{7^j, \vect{a}}$) and (1);\footnote{The quantifier rank of $\psi^j_{\vect{a}}$ is smaller than $g(j + 1)$, by the third condition on the value of $g(j + 1)$ mentioned in case 2.1; although this condition is specified there, it is also applicable here because $g$ depends only on $\strct{A}$ and $\strct{B}$ but not on specific cases among 1, 2.1 or 2.2.} this implies
+because $\ballstrct(7^{j + 1}, \vect{a}) \satis \psi^j_{\vect{a}}[\vect{a}]$ (since $\ball(7^j, \vect{a}) \subseteq \ball(7^{j + 1}, \vect{a})$ and hence $\ballstrct[{\ballstrct[\strct{A}](7^{j + 1}, \vect{a})}](7^j, \vect{a}) = \ballstrct[\strct{A}](7^j, \vect{a})$) and (1);\footnote{The quantifier rank of $\psi^j_{\vect{a}}$ is smaller than $g(j + 1)$, by the third condition on the value of $g(j + 1)$ mentioned in case 2.1; although this condition is specified there, it is also applicable here because $g$ depends only on $\strct{A}$ and $\strct{B}$ but not on specific cases among 1, 2.1 or 2.2.} this implies
 \[
-(\ballstrct{7^j, \vect{a}}, \vect{a}) \equv[g(j)] (\ballstrct{7^j, \vect{b}}, \vect{b})
+(\ballstrct(7^j, \vect{a}), \vect{a}) \equv[g(j)] (\ballstrct(7^j, \vect{b}), \vect{b})
 \]
-since, similarly, $\ball{7^j, \vect{b}} \subseteq \ball{7^{j + 1}, \vect{b}}$ and hence $\ballstrct[\ballstrct{7^{j + 1}, \vect{b}}]{7^j, \vect{b}} = \ballstrct[\strct{B}]{7^j, \vect{b}}$.
+since, similarly, $\ball(7^j, \vect{b}) \subseteq \ball(7^{j + 1}, \vect{b})$ and hence $\ballstrct[\ballstrct(7^{j + 1}, \vect{b})](7^j, \vect{b}) = \ballstrct[\strct{B}](7^j, \vect{b})$.
 %%
 \end{enumerate}
 %
 \item \header{Hint to Exercise 2.5.3} Prove by induction a more general statement that every existential positive \emph{formula} is preserved under homomorphisms.
 %
 \item \header{Hint to Exercise 2.5.4} Use the fact that $\nat$ is well-founded.
+%
+\item \header{Note on Sentences Preserved under Homomorphisms} If a sentence $\varphi$ is preserved under homomorphisms, then it is preserved under strict homomorphisms. Thus, Theorem 2.5.5 can be strengthened accordingly.
+%
+\item \header{Note on the Proof of 2.5.5} The choice of $m \defas 2^k + 1$ ensures that there are $a, a' \in M$ such that $a \neq a'$ and they satisfy the same formulas among $\rho_1, \etc, \rho_k$, by the Pigeonhole Principle. $\fo$
 %
 \end{enumerate}
 %end of section 5-----------------------------------------------------------------------------

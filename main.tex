@@ -25,14 +25,13 @@
 %%Catalog <
 %%%general
 %%%definition
-%%%enumeration, sequence, pair, tuple, vector
+%%%enumeration, sequence, tuple, vector
 %%%set operations
 %%%function type, function operations
 %%%special set(s)
 %%%structure, symbol interpretation, structure operations, structure relations
 %%%partial isomorphism
 %%%elementary equivalence
-%%%winning positions
 %%%Ehrenfeucht-Fraisse game
 %%%isomorphism types
 %%%graph, graph functions, graph relations
@@ -58,15 +57,11 @@
 \newcommand{\defas}{\colonequals}
 %% >
 
-%%enumeration, sequence, pair, tuple, vector <
-\newcommand{\etc}{\cdots} %c for 'center'
-\newcommand{\etl}{\ldots} %l for 'low'
-\newcommand{\enum}[3][1]{#2_{#1} \ldots #2_{#3}} %enumeration. \enum{a}{n} = a_1 \ldots a_n, \enum[0]{b}{n + 1} = b_0 \ldots b_{n + 1}
-\newcommand{\seq}[3][1]{#2_{#1}, \ldots, #2_{#3}} %seq. \seq{a}{n} = a_1, \ldots, a_n, \enumc[0]{b}{n + 1} = b_0, \ldots, b_{n + 1}
-\newcommand{\tuple}[3][1]{(#2_{#1}, \ldots, #2_{#3}} %tuple. \tuple{a}{n} = (a_1, \ldots, a_n), \tuple[0]{b}{n + 1} = (b_0, \ldots, b_{n + 1})
+%%enumeration, sequence, tuple, vector <
+\newcommand{\etc}{\ldots} %et cetera
 \newcommand{\length}[1]{{\mathrm{length}(#1)}}
 \newcommand{\emptyseq}{\emptyset} %empty sequence
-\newcommand{\seqi}[2]{(#1)_{#2}} %indexed sequence
+\newcommand{\seq}[2]{(#1)_{#2}} %indexed sequence
 \newcommand{\vect}[1]{\overline{#1}} %vector, \vect{a} = \overbar{a}
 %% >
 
@@ -87,8 +82,8 @@
 %% >
 
 %%function operations <
-\newcommand{\dom}[1]{{\mathrm{do}({#1})}} %domain of function #1
-\newcommand{\rg}[1]{{\mathrm{rg}({#1})}} %range of function #1
+\newcommand{\dm}{\mathrm{do}} %domain (of a function)
+\newcommand{\rg}{\mathrm{rg}} %range (of a function)
 \newcommand{\emptymap}{\emptyset} %empty map
 \newcommand{\inv}[1]{#1^{-1}} %inverse of function #1
 %% >
@@ -100,31 +95,26 @@
 %%structure, symbol interpretation, structure operations, structure relations <
 \newcommand{\strct}[1]{\mathcal{#1}} %structure
 \newcommand{\intpr}[2]{#1^{#2}} %symbol #1 interpreted under #2
-\newcommand{\substr}[2]{#1^{#2}} %substructure of #2 induced by the subset #1
+\newcommand{\sbstrct}[2]{#1^{#2}} %substructure of #2 induced by the subset #1
 \newcommand{\isom}[1][]{\ifthenelse{\equal{#1}{}}{\cong}{\cong_{#1}}} %(#1-)isomorphic
-\newcommand{\prodct}{\cart} %product of two structures
+\newcommand{\product}{\cart} %product of two structures
 \newcommand{\dsjuni}{\mathop{\dot{\cup}}} %disjoint union of two structures
 \newcommand{\ordsum}{\mathop{\lhd}} %ordered sum of two ordered structures
 \newcommand{\ultprd}[2]{#1^{#2}} %ultra product. \ultprd{A}{I} = A^I
-\newcommand{\ball}[2][]{\ifthenelse{\equal{#1}{}}{{\mathit{S}(#2)}}{{\mathit{S}^{#1}(#2)}}}
-\newcommand{\ballstrct}[2][]{\ifthenelse{\equal{#1}{}}{{\mathcal{S}(#2)}}{{\mathcal{S}^{#1}(#2)}}}
+\newcommand{\ball}[1][]{\ifthenelse{\equal{#1}{}}{{\mathit{S}}}{{\mathit{S}^{#1}}}}
+\newcommand{\ballstrct}[1][]{\ifthenelse{\equal{#1}{}}{{\mathcal{S}}}{{\mathcal{S}^{#1}}}}
 %% >
 
 %%partial isomorphism <
-\newcommand{\partisoms}[2]{{\mathrm{Part}(#1, #2)}} %set of partial isomorphisms between structures #1 and #2
+\newcommand{\partisoms}{\mathrm{Part}} %set of partial isomorphisms between structures #1 and #2
 %% >
 
 %%elementary equivalence <
 \newcommand{\equv}[1][]{\ifthenelse{\equal{#1}{}}{\equiv}{\equiv_{#1}}} %(#1-)equivalence
 %% >
 
-%%winning positions <
-\newcommand{\winpos}[4][]{\ifthenelse{\equal{#1}{}}{{W_{#2}(#3, #4)}}{{W^{#1}_{#2}(#3, #4)}}} %the set of winning positions for the game G^#1_#2(#3, #4)
-\newcommand{\seqwinpos}[5][]{{(\winpos[#1]{#2}{#3}{#4})_{#2 \leq #5}}} %the sequence of sets of winning positions for the game G^#1_#2(#3, #4) indexed by #2 with length #5
-%% >
-
 %%Ehrenfeucht-Fraisse game <
-\newcommand{\game}[3][]{\ifthenelse{\equal{#1}{}}{{\mathrm{G}_{#2}(#3)}}{{\mathrm{G}^{#1}_{#2}(#3)}}} %the game G^#1_#2 with argument(s) #3
+\newcommand{\game}[2][]{\ifthenelse{\equal{#1}{}}{{\mathrm{G}_{#2}}}{{\mathrm{G}^{#1}_{#2}}}} %the game G^#1_#2
 %% >
 
 %%isomorphism types <
@@ -136,19 +126,19 @@
 \newcommand{\conn}{\mathrm{CONN}} %the set of connected graphs
 \newcommand{\dist}[1][]{\ifthenelse{\equal{#1}{}}{\mathit{d}}{\mathit{d}_{#1}}} %distance between two points in a graph
 \newcommand{\tree}{\mathrm{TREE}} %the set of finite trees
-\newcommand{\gaifman}[1]{{\mathcal{G}(#1)}} %the Gaifman graph of #1 (structure)
+\newcommand{\gaifman}{\mathcal{G}} %the Gaifman graph of #1 (structure)
 %% >
 
 %%logics <
-\newcommand{\folog}{\mathrm{FO}} %first-order logic
-\newcommand{\folang}[1]{{\mathrm{FO}[{#1}]}} %first-order language with vocabulary #1
+\newcommand{\fo}{\mathrm{FO}} %first-order logic
+\newcommand{\mso}{\mathrm{MSO}} %monadic second-order logic
 \newcommand{\logic}{\mathcal{L}} %logic
 %% >
 
 %%counting specifiers <
-\newcommand{\atleast}[1]{\geq{#1}} %at least #1
-\newcommand{\atmost}[1]{\leq{#1}} %at most #1
-\newcommand{\exactly}[1]{={#1}} %exactly #1
+\newcommand{\atleast}[1]{\geq #1} %at least #1
+\newcommand{\atmost}[1]{\leq #1} %at most #1
+\newcommand{\exactly}[1]{= #1} %exactly #1
 \newcommand{\cardatleast}[1]{\varphi_{\atleast{#1}}} %cardinality at least #1
 \newcommand{\cardatmost}[1]{\varphi_{\atmost{#1}}} %cardinality at most #1
 \newcommand{\cardexactly}[1]{\varphi_{\exactly{#1}}} %cardinality exactly #1
@@ -162,9 +152,9 @@
 \newcommand{\existatleast}[1]{\exists^{\atleast{#1}}} %exist at least #1
 \newcommand{\existatmost}[1]{\exists^{\atmost{#1}}} %exist at most #1
 \newcommand{\existexactly}[1]{\exists^{\exactly{#1}}} %exist exactly #1
-\newcommand{\free}[1]{{\mathrm{free}({#1})}} %set of free variables of #1
-\newcommand{\qr}[1]{{\mathrm{qr}({#1})}} %quantifier rank of #1
-\newcommand{\modclass}[1]{{\mathrm{Mod}({#1})}} %model class of #1
+\newcommand{\free}{\mathrm{free}} %set of free variables of #1
+\newcommand{\qr}{\mathrm{qr}} %quantifier rank (of a formula)
+\newcommand{\modclass}{\mathrm{Mod}} %model class (of a formula)
 %% >
 
 %%substitution <
@@ -194,7 +184,7 @@
 %% >
 
 %%operations on formulas and structures <
-\newcommand{\tupsby}[2]{{#1^{#2}(\_)}} %tuples defined by formula #1 and structure #2
+\newcommand{\tuplesby}[2]{{#1^{#2}(\_)}} %tuples defined by formula #1 and structure #2
 \newcommand{\rltv}[2]{#1^{#2}} %formula #1 relativized to the set #2
 %% >
 
@@ -203,8 +193,8 @@
 %% >
 
 %%special classes of structures <
-\newcommand{\finordstr}[1]{{\mathcal{O}[#1]}} %class of finite ordered #1-structures
-\newcommand{\even}[1]{{\mathrm{EVEN}[#1]}} %class of #1-structures with even cardinality
+\newcommand{\ordclass}{\mathcal{O}} %class of finite ordered structures (in a vocabulary)
+\newcommand{\even}{\mathrm{EVEN}} %class of finite structures of even cardinality (in a vocabulary)
 %% >
 
 
