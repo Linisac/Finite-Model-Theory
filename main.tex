@@ -96,7 +96,7 @@
 \newcommand{\strct}[1]{\mathcal{#1}} %structure
 \newcommand{\intpr}[2]{#1^{#2}} %symbol #1 interpreted under #2
 \newcommand{\sbstrct}[2]{#1^{#2}} %substructure of #2 induced by the subset #1
-\newcommand{\isom}[1][]{\ifthenelse{\equal{#1}{}}{\cong}{\cong_{#1}}} %(#1-)isomorphic
+\newcommand{\isom}[1][]{\ifthenelse{\equal{#1}{}}{\cong}{\cong^{#1}}} %isomorphic in #1 number of variables
 \newcommand{\product}{\cart} %product of two structures
 \newcommand{\dsjuni}{\mathop{\dot{\cup}}} %disjoint union of two structures
 \newcommand{\ordsum}{\mathop{\lhd}} %ordered sum of two ordered structures
@@ -110,15 +110,17 @@
 %% >
 
 %%elementary equivalence <
-\newcommand{\equv}[1][]{\ifthenelse{\equal{#1}{}}{\equiv}{\equiv_{#1}}} %(#1-)equivalence
+\newcommand{\equv}[1][]{\ifthenelse{\equal{#1}{}}{\equiv}{\equiv^{#1}}} %equivalence in (#1)-logic
 %% >
 
-%%Ehrenfeucht-Fraisse game <
+%%Ehrenfeucht-Fraisse games <
 \newcommand{\game}[2][]{\ifthenelse{\equal{#1}{}}{{\mathrm{G}_{#2}}}{{\mathrm{G}^{#1}_{#2}}}} %the game G^#1_#2
+\newcommand{\msogame}[1]{\operatorname{\mso-\mathrm{G}}_{#1}} %the game in monadic second-order logic
 %% >
 
 %%isomorphism types <
-\newcommand{\ityp}[2]{\varphi^{#1}_{#2}} %(#1)-isomorphic type over #2
+\newcommand{\hint}[2]{\varphi^{#1}_{#2}} %(#1)-isomorphic type (Hintikka formula) over #2 in first-order logic
+\newcommand{\ityp}[3][]{\ifthenelse{\equal{#1}{}}{{\psi^{#2}_{#3}}}{{^{#1}\psi^{#2}_{#3}}}} %(#2)-isomorphism type over #2 in other logics in #1 number of variables
 %% >
 
 %%graph, graph functions, graph relations <
