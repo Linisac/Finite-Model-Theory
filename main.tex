@@ -59,14 +59,14 @@
 
 %%enumeration, sequence, tuple, vector <
 \newcommand{\etc}{\ldots} %et cetera
-\newcommand{\length}[1]{{\mathrm{length}(#1)}}
+\newcommand{\length}{\mathrm{length}}
 \newcommand{\emptyseq}{\emptyset} %empty sequence
 \newcommand{\seq}[2]{(#1)_{#2}} %indexed sequence
 \newcommand{\vect}[1]{\overline{#1}} %vector, \vect{a} = \overbar{a}
 %% >
 
 %%some common operators <
-\newcommand{\mul}{\cdot} %multiplication
+\newcommand{\mul}{\mathop{\cdot}} %multiplication
 \newcommand{\abs}[1]{\left|#1\right|}
 %% >
 
@@ -74,11 +74,12 @@
 \newcommand{\sete}[1]{{\{#1\}}} %set by enumeration. sete{a, b, c} = {a, b, c}
 \newcommand{\setm}[2]{{\{#1 \mid #2\}}} %set by math description. setd{#1}{#2} = {#1 | #2}
 \newcommand{\sett}[2]{{\{#1 \mid \mbox{#2}\}}} %set by text description. sett{#1}{#2} = {#1 | #2}, where #2 is a text
-\newcommand{\cart}{\times} %cartesian product of two sets
+\newcommand{\cart}{\mathop{\times}} %cartesian product of two sets
 \newcommand{\cartpwr}[2]{#1^{#2}} %(#2)nd cartesian power of set #1
-\newcommand{\intsc}{\cap} %intersection
-\newcommand{\union}{\cup} %union
+\newcommand{\intsc}{\mathop{\cap}} %intersection
+\newcommand{\union}{\mathop{\cup}} %union
 \newcommand{\card}[1]{\|#1\|} %cardinality. card{A} = || A ||
+\newcommand{\cmpl}[1]{#1^\mathit{c}} %complement of the set #1
 %% >
 
 %%function operations <
@@ -115,7 +116,8 @@
 
 %%Ehrenfeucht-Fraisse games <
 \newcommand{\game}[2][]{\ifthenelse{\equal{#1}{}}{{\mathrm{G}_{#2}}}{{\mathrm{G}^{#1}_{#2}}}} %the game G^#1_#2
-\newcommand{\msogame}[1]{\operatorname{\mso-\mathrm{G}}_{#1}} %the game in monadic second-order logic
+\newcommand{\winpos}[2][]{\ifthenelse{\equal{#1}{}}{\mathit{W}_{#2}}{\mathit{W}^{#1}_{#2}}}
+\newcommand{\msogame}[1]{\operatorname{\MSO-\mathrm{G}}_{#1}} %the game in monadic second-order logic
 %% >
 
 %%isomorphism types <
@@ -132,8 +134,9 @@
 %% >
 
 %%logics <
-\newcommand{\fo}{\mathrm{FO}} %first-order logic
-\newcommand{\mso}{\mathrm{MSO}} %monadic second-order logic
+%\newcommand{\FO}{\mathrm{FO}} %first-order logic
+%\newcommand{\MSO}{\mathrm{MSO}} %monadic second-order logic
+\newcommand{\Logic}[2][]{\ifthenelse{\equal{#1}{}}{\mathrm{L}_{#2}}{\mathrm{L}^{#1}_{#2}}} %parameterized logic (like infinitary logics)
 \newcommand{\logic}{\mathcal{L}} %logic
 %% >
 

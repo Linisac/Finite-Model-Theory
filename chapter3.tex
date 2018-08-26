@@ -1,6 +1,6 @@
-%\setcounter{chapter}{2}
+\setcounter{chapter}{2}
 \chapter{More on Games}
-%section 1------------------------------------------------------------------------------------
+%section 1-------------------------------------------------------------------------------------
 \section{Second-Order Logic}
 \begin{enumerate}[1.]
 %
@@ -8,3 +8,30 @@
 %
 \end{enumerate}
 %end of section 1-----------------------------------------------------------------------------
+
+
+%section 2------------------------------------------------------------------------------------
+\section{Infinitary Logic: The Logics $\Logic{\infty\omega}$ and $\Logic{\omega_1\omega}$}
+\begin{enumerate}[1.]
+%
+\item \header{Subformulas of $\Logic{\infty\omega}$-Sentences Only Have Finitely Many Free Variables.} If $\varphi \in \Logic{\infty\omega}$ has infinitely many free variables, then one can show by induction on formation that any $\Logic{\infty\omega}$-formula having $\varphi$ as a subformula must also have infinitely many free variables.
+%
+\item \header{Note on 3.2.3} One can easily see that $\varphi(\vect{x})$ is equivalent to a countable conjunction of first-order formulas:
+\[
+\bland \setm{\cardexactly{n} \lthen \blor\setm{\hint{\card{A} + 1}{\strct{A}, \vect{a}}(\vect{x})}{\card{A} = n, \vect{a} \in A, \strct{A} \satis \varphi[\vect{a}]}}{n \geq 1}.
+\]
+The above disjunction is finite.
+%
+\item \header{Note on the Proof of 3.2.7} In the direction from \refitem{(iii)} to \refitem{(iv)}, the length $s$ of tuples in \refitem{($\ast$)} is better to be replaced by say $r$, since $s$ is fixed for the length of $\vect{a}$ and $\vect{b}$ whereas the tuples in \refitem{($\ast$)} may have different lengths.
+\medskip\\
+There is a typo in the direction from \refitem{(iv)} to \refitem{(iii)}: ``$a \in I$'' should change to ``$a \in A$''.
+%
+\item \header{Note on \refitem{(iii)} of 3.2.8} To transition from \refitem{(iii)} of 3.2.7 for $s = 0$, one refers to 2.3.2 (also cf.\ the transition from 2.3.3 to 2.3.4 using 2.3.2).
+%
+\item \header{Note on 3.2.11} In case $r = 1$ an extension axiom has the form
+\[
+\forall v_1 \exists v_2 (v_1 \neq v_2 \land \bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi).
+\]
+%
+\end{enumerate}
+%end of section 2-----------------------------------------------------------------------------
