@@ -28,10 +28,45 @@ There is a typo in the direction from \refitem{(iv)} to \refitem{(iii)}: ``$a \i
 %
 \item \header{Note on \refitem{(iii)} of 3.2.8} To transition from \refitem{(iii)} of 3.2.7 for $s = 0$, one refers to 2.3.2 (also cf.\ the transition from 2.3.3 to 2.3.4 using 2.3.2).
 %
-\item \header{Note on 3.2.11} In case $r = 1$ an extension axiom has the form
+\item \header{Note on 3.2.11}
+\begin{enumerate}[(a)]
+%%
+\item For $r \geq 0$, the set $\Delta_{r + 1}$ is finite.
+%%
+\item In case $r = 1$ an extension axiom has the form
 \[
 \forall v_1 \exists v_2 (v_1 \neq v_2 \land \bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi).
 \]
+%%
+\item The condition ``$\hint{0}{\strct{A}, \vect{a}} = \hint{0}{\strct{B}, \vect{b}}$'' in the definition of the set $I$ of maps is equivalent to ``$\vect{a} \mapsto \vect{b} \in \partisoms(\strct{A}, \strct{B})$'', by 2.2.5 and parts (b) and (c) of 2.2.7.
+%%
+\item Here we may assume $\tr, \fls$ are included as \emph{atomic sentences} in the language (cf.\ part B in chapter 1) so that $\hint{0}{\strct{A}, \emptyseq}, \hint{0}{\strct{B}, \emptyseq}$ are defined; in fact, both formulas are equal to $\tr \land \neg\fls$.
+%%
+\end{enumerate}
+%
+\item \header{Hint to Exercise 3.2.13} Note that $x_1$ is the first element of the tuple $\vect{x}$ and therefore the sentence $\forall \vect{x} (\existexactly{1}x F\vect{x}x \land F\vect{x}x_1)$ formalizes the idea that $F$ is a (total) function that projects a tuple of parameter(s) onto its first parameter.
+%
+\item \header{Solution to Exercise 3.2.14} Without loss of generality let us assume that $A$ is finite and that $\card{A} = \min\sete{\card{A}, \card{B}}$. We also assume, for simplicity, that partial isomorphisms from $\strct{A}$ to $\strct{B}$ take the form $\vect{a} \mapsto \vect{b}$ (having finite domains and ranges) in which $\vect{a}$ and $\vect{b}$ consist of distinct elements.
+\medskip\\
+By ?? we can distinguish three cases:
+\begin{enumerate}[(1)]
+%%
+\item $\strct{A} \isom \strct{B}$.
+%%
+\item For $m \in \nat$, not $\strct{A} \isom_m \strct{B}$.
+%%
+\item For some $m \leq \card{A}$, $\strct{A} \isom_m \strct{B}$ but not $\strct{A} \isom_{m + 1} \strct{B}$.
+%%
+\end{enumerate}
+In case (1), we have $\winpos{0}(\strct{A}, \strct{B}) = \partisoms(\strct{A}, \strct{B}) = \winpos{\infty}(\strct{A}, \strct{B})$, which contains all isomorphisms from $\strct{A}$ to $\strct{B}$. Thus, set $m_0 \defas 0$.
+\medskip\\
+In case (2), we have $\winpos{0}(\strct{A}, \strct{B}) = \emptyset = \winpos{\infty}(\strct{A}, \strct{B})$. Thus, set $m_0 \defas 0$.
+\medskip\\
+In case (3), observe that for $j < m$,
+\[
+\winpos{j}(\strct{A}, \strct{B}) \supsetneq \winpos{j + 1}(\strct{A}, \strct{B}).
+\]
+In fact, the sets $\winpos{0}(\strct{A}, \strct{B}), \etc, \winpos{m}(\strct{A}, \strct{B})$ are all nonempty (??). And for $\winpos{j + 1}(\strct{A}, \strct{B})$ there must be a maximal (in the sense of set inclusion) partial isomorphism $q$ in it, i.e.\ there is $q \in \winpos{j + 1}(\strct{A}, \strct{B})$ such that there is no $q' \in \winpos{j + 1}(\strct{A}, \strct{B})$ with $q' \supset q$; otherwise there would be an isomorphism from $\strct{A}$ to $\strct{B}$ (??). By definition of $\winpos{j + 1}(\strct{A}, \strct{B})$ there must be an $a \in A$ so that $q$ can be extended to a $p \in \winpos{j}(\strct{A}, \strct{B})$ with $\dm(p) = \dm(q) \union \sete{a}$ and moreover this $a$ can be chosen not in $\dm(q)$; if there is no such $a$ then we would have that $q : \strct{A} \isom \strct{B}$ or $\strct{A} \isom_j \strct{B}$ (??). Note that $p \notin \winpos{j + 1}(\strct{A}, \strct{B})$ which would otherwise contradict the maximality of $q \in \winpos{j + 1}(\strct{A}, \strct{B})$; thereby we have $\winpos{j}(\strct{A}, \strct{B}) \neq \winpos{j + 1}(\strct{A}, \strct{B})$. To obtain that $\winpos{j}(\strct{A}, \strct{B}) \supseteq \winpos{j + 1}(\strct{A}, \strct{B})$, we use ??. Finally, it is clear that $\winpos{m + 1}(\strct{A}, \strct{B}) = \emptyset = \winpos{\infty}(\strct{A}, \strct{B})$. Thus, set $m_0 \defas m + 1$.
 %
 \end{enumerate}
 %end of section 2-----------------------------------------------------------------------------

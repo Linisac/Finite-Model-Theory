@@ -5,16 +5,18 @@
 \section{Ehrenfeucht's Theorem}
 \begin{enumerate}[1.]
 %
-\item \header{Note on Definition 2.2.1} The condition for a map $p$ to be a partial isomorphism between $\strct{A}$ and $\strct{B}$ is slightly different in \cite{EFT}: the designated constants $\intpr{c}{A}$ are not required to be in $\dm(p)$ but if they are, the condition $p(\intpr{c}{A}) = \intpr{c}{B}$ must be satisfied.
+\item \header{Note on Definition 2.2.1} A partial isomorphism need not be finite.
+\medskip\\
+Also note that the condition for a map $p$ to be a partial isomorphism between $\strct{A}$ and $\strct{B}$ is slightly different in \cite{EFT}: the designated constants $\intpr{c}{A}$ are not required to be in $\dm(p)$ but if they are, the condition $p(\intpr{c}{A}) = \intpr{c}{B}$ must be satisfied.
 %
-\item \header{Note on Remarks 2.2.2} For part (a), note that the empty map $p = \emptyset$ is \emph{not} a partial isomorphism if $\tau$ does contain constants, by Definition 2.2.1.
+\item \header{Note on Remarks 2.2.2} For part (a), note that the empty map $p = \emptyset$ is \emph{not} a partial isomorphism if $\tau$ does contain constants, 2.2.1.
 \medskip\\
 For part (c), the notation $\vect{a} \mapsto \vect{b}$ can be seen as a shorthand for the set
 \[
 \setm{(a_i, b_i)}{i \leq s} \union \setm{(\intpr{c}{\strct{A}}, \intpr{c}{\strct{B}})}{c \in \tau},\]
-which may not define a map, nor a partial isomorphism. If the above set does define a map, then it is the graph of this map. Statement (i) says $\vect{a} \mapsto \vect{b}$ not only defines a map but even a partial isomorphism between $\strct{A}$ and $\strct{B}$.
+which may not define a map, nor even a partial isomorphism. If the above set does define a map, then it is the graph of this map. Statement (i) says $\vect{a} \mapsto \vect{b}$ not only defines a map but also a partial isomorphism between $\strct{A}$ and $\strct{B}$.
 \medskip\\
-Also note that if $\tau$ contains constants then the notation $\vect{a} \mapsto \vect{b}$ contains mapping of the constants, which are \emph{hidden} from it; in this case, $\emptyseq \mapsto \emptyseq$ does not equal the empty map $\emptymap$. $\emptyseq \mapsto \emptyseq = \emptymap$ when $\tau$ contains no constants.
+Also note that if $\tau$ contains constants then the notation $\vect{a} \mapsto \vect{b}$ contains mapping of the constants, which are \emph{hidden} from it; in this case, $\emptyseq \mapsto \emptyseq$ does not equal the empty map $\emptymap$. We have $\emptyseq \mapsto \emptyseq = \emptymap$ when $\tau$ is relational.
 %
 \item \header{Note on Ehrenfeucht Games} It is clear from definition that at most one of the players has a winning strategy for the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
 \medskip\\
@@ -24,7 +26,9 @@ Moreover, it is also true that at least one of the players has a winning strateg
 %
 \item \header{Note on Lemma 2.2.4} Part (c) is equivalent to say that a submap (i.e.\ a map that is a subset of another map in terms of their graphs) of a partial isomorphism is also a partial isomorphism.
 \medskip\\
-On the other hand, it is useful to use the alternative logically equivalent forms (such as contraposition) of parts (b) or (c) in deriving properties of the Ehrenfeucht games.
+On the other hand, it is useful to use the alternative logically equivalent forms (such as contraposition) of parts (b) or (c) in deriving properties of the Ehrenfeucht games. For example, part (c) implies that
+\medskip\\
+\emph{If the spoiler wins $\game{m'}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ and if $m' < m$, then the spoiler wins $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.}
 %
 \item \header{Note on Lemma 2.2.6 and the Remark below It} It is better to prove the lemma and the remark that ``the conjunctions and disjunctions in the definition of $\hint{m}{\strct{A}, \vect{a}}$ are finite'' all at once:
 \medskip\\
@@ -32,11 +36,18 @@ On the other hand, it is useful to use the alternative logically equivalent form
 \medskip\\
 The induction is performed on $m$. The base case follows from that for $s > 0$, the set $\sett{\varphi(v_1, \etc, v_s)}{\begin{math}\varphi\end{math} atomic or negated atomic}$ is finite.
 %
-\item \header{Note on the Proof of Theorem 2.2.8 (Ehrenfeucht's Theorem)} To prove (i) implies (iii), the case $m = 0$ can be handled by applying 2.2.4(a) in addition to the equivalence between (i) and (ii) of 2.2.2(c).
+\item \header{Note on the Proof of 2.2.8 (Ehrenfeucht's Theorem)} To prove (i) implies (iii), the case $m = 0$ can be handled by applying 2.2.4(a) in addition to the equivalence between (i) and (ii) of 2.2.2(c).
 \medskip\\
 The induction part of (i) implying (iii) in fact proves $\strct{A} \satis \varphi[\vect{a}]$ iff $\strct{B} \satis \varphi[\vect{b}]$.
 %
-\item \header{Note on Theorem 2.2.11} There is typo in the statement of this theorem: ``$\vect{a} \in \strct{A}$'' should be replaced by ``$\vect{a} \in \cartpwr{A}{s}$''.
+\item \header{Note on 2.2.10} The direction from left to right is obtained by 2.2.3(b) and 2.2.9; the direction from right to left is by definition of $\strct{A}$ and $\strct{B}$ being isomorphic.
+\medskip\\
+By 2.2.4(c) and 2.2.9, in fact, we get a stronger statement than the original equivalence
+\begin{center}
+\emph{for $m' > m$: \ \ $\strct{B} \satis \hint{m'}{\strct{A}}$ \ iff \ $\strct{A} \isom \strct{B}$.}
+\end{center}
+%
+\item \header{Note on 2.2.11} There is typo in the statement of this theorem: ``$\vect{a} \in \strct{A}$'' should be replaced by ``$\vect{a} \in \cartpwr{A}{s}$''.
 %
 \end{enumerate}
 %end of section 2-----------------------------------------------------------------------------
@@ -52,11 +63,26 @@ There is a typo: ``$\emptyseq \mapsto \emptyseq \in I_j$'' should be replaced by
 \end{remark}
 %
 \item \header{Note on Corollary 2.3.4} For $s = 0$ the statement of 2.3.3(iii) becomes
+\medskip\\
 \begin{quoteno}{$\ast$}
 There is $\seq{I_j}{j \leq m}$ with $\emptyseq \mapsto \emptyseq \in I_m$ such that $\seq{I_j}{j \leq m} : \strct{A} \isom_m \strct{B}$.
 \end{quoteno}
 \medskip\\
 It is equivalent to 2.3.4(iii): The latter obviously follows the former; to derive the former from the latter, note that by 2.3.2 if $\seq{I_j}{j \leq m} : \strct{A} \isom_m \strct{B}$ then $\seq{\tilde{I}_j}{j \leq m} : \strct{A} \isom_m \strct{B}$ and $\emptyseq \mapsto \emptyseq \in \tilde{I}_m$.
+\medskip\\
+On the other hand, we have for any relational $\tau$ and any $\tau$-structures $\strct{A}$ and $\strct{B}$ the following
+\begin{enumerate}[(1)]
+%%
+\item The duplicator wins $\game{0}(\strct{A}, \strct{B})$.
+%%
+\item $\strct{A} \isom_0 \strct{B}$.
+%%
+\item $\strct{B} \satis \hint{0}{\strct{A}}$ (in which $\hint{0}{\strct{A}} = \tr \land \neg\fls$; see part B of chapter 1).
+%%
+\item $\strct{A} \equv_0 \strct{B}$.
+%%
+\end{enumerate}
+by 2.2.2(a) (that $\emptymap \in \partisoms(\strct{A}, \strct{B})$) and 2.3.4.
 %
 \item \header{Note on Example 2.3.5} Let $\tau$ be an arbitrary symbol set that consists of relation symbols $P_1, \etc, P_n$ and constants $c_1, \etc, c_k$ where $n, k \in \nat$.
 \medskip\\
