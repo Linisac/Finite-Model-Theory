@@ -48,25 +48,39 @@ There is a typo in the direction from \refitem{(iv)} to \refitem{(iii)}: ``$a \i
 %
 \item \header{Solution to Exercise 3.2.14} Without loss of generality let us assume that $A$ is finite and that $\card{A} = \min\sete{\card{A}, \card{B}}$. We also assume, for simplicity, that partial isomorphisms from $\strct{A}$ to $\strct{B}$ take the form $\vect{a} \mapsto \vect{b}$ (having finite domains and ranges) in which $\vect{a}$ and $\vect{b}$ consist of distinct elements.
 \medskip\\
-By ?? we can distinguish three cases:
+Now we distinguish three cases:
 \begin{enumerate}[(1)]
 %%
 \item $\strct{A} \isom \strct{B}$.
 %%
-\item For $m \in \nat$, not $\strct{A} \isom_m \strct{B}$.
+\item For any $m \in \nat$, $\vect{a} \in A$ and $\vect{b} \in B$, not $(\strct{A}, \vect{a}) \isom_m (\strct{B}, \vect{b})$.
 %%
-\item For some $m \leq \card{A}$, $\strct{A} \isom_m \strct{B}$ but not $\strct{A} \isom_{m + 1} \strct{B}$.
+\item Not $\strct{A} \isom \strct{B}$, and there are $m \in \nat$, $\vect{a} \in A$ and $\vect{b} \in B$ such that $(\strct{A}, \vect{a}) \isom_m (\strct{B}, \vect{b})$.
 %%
 \end{enumerate}
-In case (1), we have $\winpos{0}(\strct{A}, \strct{B}) = \partisoms(\strct{A}, \strct{B}) = \winpos{\infty}(\strct{A}, \strct{B})$, which contains all isomorphisms from $\strct{A}$ to $\strct{B}$. Thus, set $m_0 \defas 0$.
+In case (1), we have that $\winpos{\infty}(\strct{A}, \strct{B}) = \winpos{0}(\strct{A}, \strct{B}) = \partisoms(\strct{A}, \strct{B}) \neq \emptyset$, which contains all isomorphisms from $\strct{A}$ to $\strct{B}$. Thus, set $m_0 \defas 0$.
 \medskip\\
-In case (2), we have $\winpos{0}(\strct{A}, \strct{B}) = \emptyset = \winpos{\infty}(\strct{A}, \strct{B})$. Thus, set $m_0 \defas 0$.
+In case (2), it follows in particular that for any $\vect{a} \in A$ and $\vect{b} \in B$, not $(\strct{A}, \vect{a}) \isom_0 (\strct{B}, \vect{b})$. Hence $\winpos{\infty}(\strct{A}, \strct{B}) = \winpos{0}(\strct{A}, \strct{B}) = \partisoms(\strct{A}, \strct{B}) = \emptyset$. Thus, set $m_0 \defas 0$.
 \medskip\\
-In case (3), observe that for $j < m$,
+In case (3), we may assume, with no loss of generality, that $m \leq \card{A}$ and for any $\vect{a'} \in A$ and $\vect{b'} \in B$, not $(\strct{A}, \vect{a'}) \isom_{m + 1} (\strct{B}, \vect{b'})$. So we have
 \[
-\winpos{j}(\strct{A}, \strct{B}) \supsetneq \winpos{j + 1}(\strct{A}, \strct{B}).
+\winpos{0}(\strct{A}, \strct{B}) \neq \emptyset, \etc, \winpos{m}(\strct{A}, \strct{B}) \neq \emptyset
 \]
-In fact, the sets $\winpos{0}(\strct{A}, \strct{B}), \etc, \winpos{m}(\strct{A}, \strct{B})$ are all nonempty (??). And for $\winpos{j + 1}(\strct{A}, \strct{B})$ there must be a maximal (in the sense of set inclusion) partial isomorphism $q$ in it, i.e.\ there is $q \in \winpos{j + 1}(\strct{A}, \strct{B})$ such that there is no $q' \in \winpos{j + 1}(\strct{A}, \strct{B})$ with $q' \supset q$; otherwise there would be an isomorphism from $\strct{A}$ to $\strct{B}$ (??). By definition of $\winpos{j + 1}(\strct{A}, \strct{B})$ there must be an $a \in A$ so that $q$ can be extended to a $p \in \winpos{j}(\strct{A}, \strct{B})$ with $\dm(p) = \dm(q) \union \sete{a}$ and moreover this $a$ can be chosen not in $\dm(q)$; if there is no such $a$ then we would have that $q : \strct{A} \isom \strct{B}$ or $\strct{A} \isom_j \strct{B}$ (??). Note that $p \notin \winpos{j + 1}(\strct{A}, \strct{B})$ which would otherwise contradict the maximality of $q \in \winpos{j + 1}(\strct{A}, \strct{B})$; thereby we have $\winpos{j}(\strct{A}, \strct{B}) \neq \winpos{j + 1}(\strct{A}, \strct{B})$. To obtain that $\winpos{j}(\strct{A}, \strct{B}) \supseteq \winpos{j + 1}(\strct{A}, \strct{B})$, we use ??. Finally, it is clear that $\winpos{m + 1}(\strct{A}, \strct{B}) = \emptyset = \winpos{\infty}(\strct{A}, \strct{B})$. Thus, set $m_0 \defas m + 1$.
+(cf.\ 2.2.4(c)) but
+\[
+\winpos{\infty}(\strct{A}, \strct{B}) = \winpos{m + 1}(\strct{A}, \strct{B}) = \emptyset.
+\]
+It then suffices to show that for $j < m$, 
+\[
+\winpos{j}(\strct{A}, \strct{B}) \neq \winpos{j + 1}(\strct{A}, \strct{B}).
+\]
+In fact, in any $\winpos{j + 1}(\strct{A}, \strct{B})$ there must be a maximal -- in the sense of set inclusion -- partial isomorphism $q$ (i.e.\ there is $q \in \winpos{j + 1}(\strct{A}, \strct{B})$ such that there is no $q' \in \winpos{j + 1}(\strct{A}, \strct{B})$ with $q' \supset q$) for which there is an $a \in A$ with $a \notin \dm(q)$, since $A$ is finite and $\strct{A}$ and $\strct{B}$ are not isomorphic (also cf.\ the proof of 2.2.3(b)). By 2.2.4(b) there is a $p \in \winpos{j}(\strct{A}, \strct{B})$ with $\dm(p) = \dm(q) \union \sete{a}$; note that $p \notin \winpos{j + 1}(\strct{A}, \strct{B})$ because $p \supset q$ and $q$ is maximal in $\winpos{j + 1}(\strct{A}, \strct{B})$. Thus, set $m_0 \defas m + 1$.
+\begin{remark}
+By definition (cf.\ 3.2.4) and 2.2.4(c), we immediately have
+\[
+\winpos{0}(\strct{A}, \strct{B}) \supseteq \etc \supseteq \winpos{m}(\strct{A}, \strct{B}) \supseteq \etc \supseteq \winpos{\infty}(\strct{A}, \strct{B}).
+\]
+\end{remark}
 %
 \end{enumerate}
 %end of section 2-----------------------------------------------------------------------------
