@@ -11,10 +11,10 @@
 
 
 %section 2------------------------------------------------------------------------------------
-\section{Infinitary Logic: The Logics $\logic{\infty\omega}$ and $\logic{\omega_1\omega}$}
+\section{Infinitary Logic: The Logics $\inflog{\infty}$ and $\inflog{\omega_1}$}
 \begin{enumerate}[1.]
 %
-\item \header{Subformulas of $\logic{\infty\omega}$-Sentences Only Have Finitely Many Free Variables} In fact, one can show by induction on the formation of formulas that if $\varphi \in \logic{\infty\omega}$ has infinitely many free variables, then any $\logic{\infty\omega}$-formula having $\varphi$ as a subformula must also have infinitely many free variables.
+\item \header{Subformulas of $\inflog{\infty}$-Sentences Only Have Finitely Many Free Variables} In fact, one can show by induction on the formation of formulas that if $\varphi \in \inflog{\infty}$ has infinitely many free variables, then any $\inflog{\infty}$-formula having $\varphi$ as a subformula must also have infinitely many free variables.
 %
 \item \header{Note on 3.2.3} One can easily see that $\varphi(\vect{x})$ is equivalent to a countable conjunction of first-order formulas:
 \[
@@ -84,3 +84,49 @@ By definition (cf.\ 3.2.4) and 2.2.4(c), we immediately have
 %
 \end{enumerate}
 %end of section 2-----------------------------------------------------------------------------
+
+
+%section 3------------------------------------------------------------------------------------
+\section{The Logics $\folog[s]$ and $\inflog[s]{\infty}$}
+\begin{enumerate}[1.]
+%
+\item \header{Note on Pebble Games $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$} They are different from the usual Ehrenfeucht-Fra\"iss\'e games $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ in that the number of pebbles are fixed ($s$ for each of $\strct{A}$ and $\strct{B}$ here) and the pebbles are on or off (denoted by $\ast$) the board; once a pebble is placed onto the board, it is never removed off of it. Thus, pebble games consist of putting the pebbles onto the board (extensions) and moving them around on the board (moves).
+%
+\item \header{Hint to Exercise \thesection.7}
+\begin{enumerate}[(a)]
+%%
+\item For the `if' direction, assume that $A = \sete{a_0, \etc, a_k}$, where
+\[
+a_0 \mathrel{\intpr{<}{A}} \etc \mathrel{\intpr{<}{A}} a_k.
+\]
+Then take the conjunction of the following $\folog[2]$-sentences that together describe $\strct{A}$ up to isomorphism (where $\psi'_n$ is as in Examples \thesection.1).
+\begin{itemize}
+%%%
+\item The size of $A$ ($\card{A} = k + 1$):
+\[
+\exists x \psi'_{k - 1} \land \forall x \neg\psi'_k.
+\]
+%%%
+\item The interpretation of $c \in \tau$ in $\strct{A}$ ($\intpr{c}{\strct{A}} = a_i$):
+\[
+\exists x (x = c \land \psi'_i).
+\]
+%%%
+\item The elements of the interpretation $\intpr{P}{\strct{A}}$ of unary $P \in \tau$ in $\strct{A}$:
+\[
+\forall x (Px \liff \blor \setm{\psi'_i}{a_i \in \intpr{P}{\strct{A}}}).
+\]
+%%%
+\item The elements of the interpretation $\intpr{R}{\strct{A}}$ of binary $R \in \tau$ in $\strct{A}$:
+\[
+\forall x \forall y (Rxy \liff \blor \setm{\psi'_i \land \psi'_j\begin{perm}{c} yx \cr xy \end{perm}}{(a_i, a_j) \in \intpr{R}{\strct{A}}}).
+\]
+%%%
+\end{itemize}
+%%
+\item For the `if' direction, note that the partial isomorphisms of size $s$ from $\strct{A}$ to $\strct{B}$ resulted from all possible rounds of the game $\game[s]{m}(\strct{A}, \strct{B})$ with the additional condition after $s$ moves provide a winning strategy for the duplicator in the same game without that condition.
+%%
+\end{enumerate}
+%
+\end{enumerate}
+%end of section 3-----------------------------------------------------------------------------

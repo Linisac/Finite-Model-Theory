@@ -25,7 +25,7 @@
 %%Catalog <
 %%%general
 %%%definition
-%%%enumeration, sequence, tuple, vector
+%%%enumeration, sequence, vector (tuple), support
 %%%set operations
 %%%function type, function operations
 %%%special set(s)
@@ -51,18 +51,20 @@
 %%general <
 \newcommand{\header}[1]{{\rm\textbf{#1.}}}
 \newcommand{\refitem}[1]{{\rm#1}}
+\newcommand{\mathmode}[1]{\begin{math}#1\end{math}}
 %% >
 
 %%definition <
 \newcommand{\defas}{\colonequals}
 %% >
 
-%%enumeration, sequence, tuple, vector <
+%%enumeration, sequence, vector (tuple), support <
 \newcommand{\etc}{\ldots} %et cetera
 \newcommand{\length}{\mathrm{length}}
 \newcommand{\emptyseq}{\emptyset} %empty sequence
 \newcommand{\seq}[2]{(#1)_{#2}} %indexed sequence
 \newcommand{\vect}[1]{\overline{#1}} %vector, \vect{a} = \overbar{a}
+\newcommand{\supp}{\mathrm{supp}}
 %% >
 
 %%some common operators <
@@ -73,7 +75,7 @@
 %%set operations <
 \newcommand{\sete}[1]{{\{#1\}}} %set by enumeration. sete{a, b, c} = {a, b, c}
 \newcommand{\setm}[2]{{\{#1 \mid #2\}}} %set by math description. setd{#1}{#2} = {#1 | #2}
-\newcommand{\sett}[2]{{\{#1 \mid \mbox{#2}\}}} %set by text description. sett{#1}{#2} = {#1 | #2}, where #2 is a text
+\newcommand{\sett}[2]{{\{#1 \mid \text{\rm #2}\}}} %set by text description. sett{#1}{#2} = {#1 | #2}, where #2 is a text
 \newcommand{\cart}{\mathop{\times}} %cartesian product of two sets
 \newcommand{\cartpwr}[2]{#1^{#2}} %(#2)nd cartesian power of set #1
 \newcommand{\intsc}{\mathop{\cap}} %intersection
@@ -136,10 +138,12 @@
 %% >
 
 %%logics <
-%\newcommand{\FO}{\mathrm{FO}} %first-order logic
-%\newcommand{\MSO}{\mathrm{MSO}} %monadic second-order logic
-\newcommand{\logic}[2][]{\ifthenelse{\equal{#1}{}}{\mathrm{L}_{#2}}{\mathrm{L}^{#1}_{#2}}} %parameterized logic (like infinitary logics)
-\newcommand{\logicvar}{\mathcal{L}} %(variable for ) logic
+\newcommand{\folog}[1][]{\ifthenelse{\equal{#1}{}}{\mathrm{FO}}{\mathrm{FO}^{#1}}} %first-order logic
+\newcommand{\solog}{\mathrm{SO}} %second-order logic
+\newcommand{\msolog}{\mathrm{MSO}} %monadic second-order logic
+\newcommand{\inflog}[2][]{\ifthenelse{\equal{#1}{}}{\mathrm{L}_{#2\omega}}{\mathrm{L}^{#1}_{#2\omega}}} %infinitary logic parameterized by the number of distinct variables (#1) and the upper bound on the sizes of sets over which disjunctions or conjunctions can be taken (#2), the upper bound on the lengths of strings of quantifiers is fixed, i.e. \omega
+%\newcommand{\logic}[2][]{\ifthenelse{\equal{#1}{}}{\mathrm{L}_{#2}}{\mathrm{L}^{#1}_{#2}}} %parameterized logic (like infinitary logics)
+\newcommand{\logic}{\mathcal{L}} %(general) logic
 %% >
 
 %%counting specifiers <
@@ -226,8 +230,8 @@
 %\end{titlepage}
 \titleformat{\chapter}[hang]{\Large\bfseries}{\thechapter.}{.5em}{}
 \titleformat{\section}[hang]{\large\bfseries}{\thesection}{.5em}{}
-\input{chapter1}
-\input{chapter2}
+%\input{chapter1}
+%\input{chapter2}
 \input{chapter3}
 
 
