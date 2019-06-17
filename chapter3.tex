@@ -92,6 +92,8 @@ By definition (cf.\ 3.2.4) and 2.2.4(c), we immediately have
 %
 \item \header{Note on Pebble Games $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$} They are different from the usual Ehrenfeucht-Fra\"iss\'e games $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ in that the number of pebbles are fixed ($s$ for each of $\strct{A}$ and $\strct{B}$ here) and the pebbles are on or off (denoted by $\ast$) the board; once a pebble is placed onto the board, it is never removed off of it. Thus, pebble games consist of putting the pebbles onto the board (extensions) and moving them around on the board (moves).
 %
+\item \header{Note on \thesection.6(a)} (INCOMPLETE) For arbitrary $\emptyvoc$-structures $\strct{A}$ and $\strct{B}$, the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ iff he wins $\game[s]{s}(\strct{A}, \strct{B})$.
+%
 \item \header{Hint to Exercise \thesection.7}
 \begin{enumerate}[(a)]
 %%
@@ -125,6 +127,53 @@ Then take the conjunction of the following $\folog[2]$-sentences that together d
 \end{itemize}
 %%
 \item For the `if' direction, note that the partial isomorphisms of size $s$ from $\strct{A}$ to $\strct{B}$ resulted from all possible rounds of the game $\game[s]{m}(\strct{A}, \strct{B})$ with the additional condition after $s$ moves provide a winning strategy for the duplicator in the same game without that condition.
+%%
+\item Suppose that $\tau$ is relational and all its relation symbols have arity $\leq s$, where $s \geq 1$ by definition (cf.\ paragraph A in chapter 1). Moreover, suppose that $\card{A} = \card{B} \leq s + 1$ and that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$. Our goal then is to show that $\strct{A} \isom \strct{B}$. We further assume $\tau \neq \emptyvoc$, since otherwise it is trivial that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ and $\strct{A} \isom \strct{B}$.
+\medskip\\
+First observe the assumption that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ immediately implies that he wins $\game[s]{m}(\strct{A}, \strct{B})$ for $m \geq 1$. By Theorem \thesection.5, then, we have for every $m \geq 1$, $\strct{A} \equv[s]_m \strct{B}$. Therefore, it suffices to find a sentence $\varphi_\strct{A} \in \folog[s]\of{\tau}$ that characterizes $\strct{A}$ up to isomorphism given the fixed cardinality $\card{A}$, i.e.
+\begin{center}
+for every structure $\strct{A}'$ with $\card{A'} = \card{A}$, \ $\strct{A}' \satis \varphi_\strct{A}$ \ iff \ $\strct{A}' \isom \strct{A}$.
+\end{center}
+Then we are done: The first-order sentence $\varphi_\strct{A}$ has a (finite) quantifier rank, say $m$, and it follows that $\strct{A} \isom \strct{B}$ because $\strct{B} \satis \varphi_\strct{A}$ (implied by $\strct{A} \equv[s]_m \strct{B}$ above).
+\medskip\\
+Next, the sentence $\varphi_\strct{A}$ depends on whether $\card{A} \leq s$ or $\card{A} = s + 1$. Recall the set of atomic formulas
+\[
+\Theta_n \defas \sett{\psi}{\mathmode{\psi} has the form \mathmode{Rx_1 \etc x_k}, \mathmode{x = y} and variables among \mathmode{v_1, \etc, v_n}}
+\]
+used in the proof of 2.1.1. (There are no formulas of the form $c = x$ in $\Theta_n$ as $\tau$ is assumed to be relational.)
+\medskip\\
+The case $\card{A} \leq s$ is simple: If $\card{A} = n$, i.e.\ $A = \sete{a_1, \etc, a_n}$ then we choose
+\[
+\varphi_\strct{A} \defas \exists v_1 \etc \exists v_n (\bland\setm{\psi}{\psi \in \Theta_n, \strct{A} \satis \psi[\vect{a}]} \land \bland\setm{\neg\psi}{\psi \in \Theta_n, \strct{A} \satis \neg\psi[\vect{a}]})
+\]
+where $\vect{a}$ denotes $a_1 \etc a_n$.
+\medskip\\
+It remains to deal with the case $\card{A} = s + 1$, i.e.\ $A = \sete{a_1, \etc, a_{s + 1}}$. Remember that we only have $s$ distinct variables $v_1, \etc, v_s$ to describe $\strct{A}$. The idea is that, using these $s$ (quantified) variables, we describe the relations and (in)equalities
+\begin{enumerate}[(1)]
+%%
+\item among $a_1, \etc, a_s$ first, where $v_1, \etc, v_s$ are intended to represent $a_1, \etc, a_s$ respectively, and then
+%%
+\item among $a_1, \etc, a_{i - 1}, a_{i + 1}, \etc, a_{s + 1}$ for each $1 \leq i \leq s$, where $v_1, \etc, v_{i - 1}, v_i, v_{i + 1}, \etc, v_s$ are intended to represent $a_1, \etc, a_{i - 1}, a_{s + 1}, a_{i + 1}, \etc, a_s$ ($a_{s + 1}$ is between $a_{i - 1}$ and $a_{i + 1}$ in this order), respectively.
+%%
+\end{enumerate}
+Note that this is feasible as every relation symbol has arity at most $s$.
+\medskip\\
+For brevity, let us denote $a_1, \etc, a_{i - 1}, a_{s + 1}, a_{i + 1}, \etc, a_s$ ($a_{s + 1}$ is between $a_{i - 1}$ and $a_{i + 1}$ in this order) by $\vect{a}_i$ for $1 \leq i \leq s$; moreover, we also let $\vect{a}_0$ denote $a_1, \etc, a_s$. The desired sentence is thus
+\[
+\varphi_\strct{A} \defas \exists v_1 \etc \exists v_s \bland^s_{i = 0} \varphi_i,
+\]
+where
+\[
+\varphi_0 \defas \bland \setm{\psi}{\psi \in \Theta_s, \strct{A} \satis \psi[\vect{a}_0]} \land \bland \setm{\neg\psi}{\psi \in \Theta_s, \strct{A} \satis \neg\psi[\vect{a}_0]}
+\]
+and for $1 \leq i \leq s$,
+\[
+\varphi_i \defas
+\begin{cases}
+\forall v_i (\bland_{1 \leq j \leq s, j \neq i} \neg v_i = v_j \lthen \varphi_0) & \text{if \mathmode{\strct{A} \satis \varphi_0[\vect{a}_i]}}\cr
+\exists v_i (\bland \setm{\psi}{\psi \in \Theta_s, \strct{A} \satis \psi[\vect{a}_i]} \land \bland \setm{\neg\psi}{\psi \in \Theta_s, \strct{A} \satis \neg\psi[\vect{a}_i]}) & \text{otherwise}.\cr
+\end{cases}
+\]
 %%
 \end{enumerate}
 %

@@ -15,7 +15,7 @@
 \usepackage{paralist}
 \usepackage{bm}
 \usepackage{titlesec}
-\usepackage[margin=3cm]{geometry}
+\usepackage[margin=2cm]{geometry}
 
 %ifthen package
 \usepackage{ifthen}
@@ -37,7 +37,7 @@
 %%%graph, graph functions, graph relations
 %%%logic
 %%%counting specifiers
-%%%connectives, quantifiers, formula operations
+%%%vocabulary, connectives, quantifiers, formula operations
 %%%substitution
 %%%logic relations
 %%%logic operations
@@ -138,6 +138,7 @@
 %% >
 
 %%logics <
+\newcommand{\of}[1]{{[#1]}}
 \newcommand{\folog}[1][]{\ifthenelse{\equal{#1}{}}{\mathrm{FO}}{\mathrm{FO}^{#1}}} %first-order logic
 \newcommand{\solog}{\mathrm{SO}} %second-order logic
 \newcommand{\msolog}{\mathrm{MSO}} %monadic second-order logic
@@ -155,7 +156,8 @@
 \newcommand{\cardexactly}[1]{\varphi_{\exactly{#1}}} %cardinality exactly #1
 %% >
 
-%%connectives, quantifiers, formula operations <
+%%vocabulary, connectives, quantifiers, formula operations <
+\newcommand{\emptyvoc}{\emptyset} %empty vocabulary
 \newcommand{\lthen}{\rightarrow} %logicial then
 \newcommand{\liff}{\leftrightarrow} %logical iff (between two formulas)
 \newcommand{\blor}{\bigvee} %big disjunction
