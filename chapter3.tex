@@ -22,9 +22,55 @@
 \]
 The above disjunction is finite.
 %
-\item \header{Note on the Proof of 3.2.7} In the direction from \refitem{(iii)} to \refitem{(iv)}, the length $s$ of tuples in \refitem{($\ast$)} is better to be replaced by say $r$, since $s$ is fixed for the length of $\vect{a}$ and $\vect{b}$ whereas the tuples in \refitem{($\ast$)} may have different lengths.
-\medskip\\
-There is a typo in the direction from \refitem{(iv)} to \refitem{(iii)}: ``$a \in I$'' should change to ``$a \in A$''.
+\item \header{Note on 3.2.4 and 3.2.6} In fact, for any (finite) vocabulary $\tau$ and any $\tau$-structures $\strct{A}, \strct{B}$ the following statements are equivalent (cf.\ Chapter XII in \cite{EFT} for more details):
+\begin{enumerate}[(1)]
+%%
+\item $\strct{A} \equv \strct{B}$, i.e.\ $\strct{A}$ and $\strct{B}$ are \emph{elementarily equivalent} ($\strct{A}$ and $\strct{B}$ satisfy the same $\folog\of{\tau}$-sentences)
+%%
+\item $\strct{A} \isom_\fin \strct{B}$, namely $\strct{A}$ and $\strct{B}$ are \emph{finitely isomorphic} (there is an infinite sequence $\seq{I_j}{j \in \nat}$ that satisfies the properties \refitem{(a) - (c)} in Definition 2.3.1 except that ``$j < m$'' is replaced by ``$j \in \nat$'' in conditions \refitem{(b)} and \refitem{(c)})
+%%
+\item For $j \in \nat$, the duplicator wins the game $\game{j}(\strct{A}, \strct{B})$
+%%
+\item The duplicator wins the game $\fingame(\strct{A}, \strct{B})$ in which the spoiler begins the game by first choosing a natural number $r$ and then the game proceeds as in $\game{r}(\strct{A}, \strct{B})$.
+%%
+\end{enumerate}
+Using Corollary 2.3.4, we obtain a further equivalent statement:
+\begin{enumerate}[(1)]
+\setcounter{enumii}{4}
+%%
+\item $\strct{B} \satis \bland_{j \in \nat} \hint{j}{\strct{A}}$,
+%%
+\end{enumerate}
+and, using Lemma 2.2.4(b), yet another equivalent statement, in parallel to Corollary 2.3.4(ii):
+\begin{enumerate}[(1)]
+\setcounter{enumii}{5}
+%%
+\item $\seq{\winpos{j}(\strct{A}, \strct{B})}{j \in \nat} : \strct{A} \isom_\fin \strct{B}$.
+%%
+\end{enumerate}
+
+The above should be easy to generalize so that we have $(\strct{A}, \vect{a}), (\strct{B}, \vect{b})$ in place of $\strct{A}, \strct{B}$, and $\vect{a} \mapsto \vect{b} \in I_j$ (or $\vect{a} \mapsto \vect{b} \in \winpos{j}(\strct{A}, \strct{B})$) for all $j$ in \refitem{(2)} (or \refitem{(6)}, respectively). For example, we can regard $(\strct{A}, \vect{a})$ and $(\strct{B}, \vect{b})$ as the $\tau \union \sete{\vect{c}}$-expansion of $\strct{A}$ and of $\strct{B}$ in which $\vect{c}$ is interpreted by $\vect{a}$ and $\vect{b}$, respectively.
+
+Notice that, however, the condition that the duplicator wins $\fingame(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ generally does not imply that he wins $\game{\infty}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ although the converse is obviously true. See Exercise XII.1.10 in \cite{EFT} to give an example of two finitely isomorphic structures that are not partially isomorphic; the same exercise problem also asks to give an example of two partially isomorphic structures that are not isomorphic.
+
+On the other hand, consider the $\emptyvoc$-structures (i.e.\ sets) $\strct{A}, \strct{B}$ that consist of the domains $A = \sete{0, 1}, B = \sete{0, 1, 2}$, respectively. Then it follows that $\strct{A} \isom_2 \strct{B}$ but not $\strct{A} \isom_\fin \strct{B}$ (since not $\strct{A} \isom_3 \strct{B}$).
+
+To summarize, we have the successively weaker notions (where \refitem{(1)} clearly implies \refitem{(2)}):
+\begin{enumerate}[(1)]
+%%
+\item $\strct{A} \isom \strct{B}$
+%%
+\item $\strct{A} \isom_\partially \strct{B}$
+%%
+\item $\strct{A} \isom_\fin \strct{B}$
+%%
+\item $\strct{A} \isom_j \strct{B}$ in which $j \in \nat$.
+%%
+\end{enumerate}
+%
+\item \header{Note on Theorem 3.2.7} In the direction from \refitem{(iii)} to \refitem{(iv)} of the proof, the length $s$ of tuples in \refitem{($\ast$)} is better to be replaced by say $r$, since $s$ is fixed for the length of $\vect{a}$ and $\vect{b}$ whereas the tuples in \refitem{($\ast$)} may have different lengths. Also, there is a typo in the direction from \refitem{(iv)} to \refitem{(iii)}: ``$a \in I$'' should change to ``$a \in A$''.
+
+On the other hand, this theorem does not seem to have a corresponding statement \refitem{(iv)} to that of Theorem 2.3.3. The statement $(\strct{B}, \vect{b}) \satis \bland_{j \in \nat} \hint{j}{\strct{A}, \vect{a}}$ does not work because it is equivalent to $(\strct{A}, \vect{a}) \equv (\strct{B}, \vect{b})$, namely $(\strct{A}, \vect{a}), (\strct{B}, \vect{b})$ satisfy the same first-order formulas $\varphi$ in which it is decisive whether or not $\strct{A} \satis \varphi[\vect{a}]$ (or equivalently, $\strct{B} \satis \varphi[\vect{b}]$) is the case (see the discussion in Note on 3.2.4 and 3.2.6).
 %
 \item \header{Note on \refitem{(iii)} of 3.2.8} To transition from \refitem{(iii)} of 3.2.7 for $s = 0$, one refers to 2.3.2 (also cf.\ the transition from 2.3.3 to 2.3.4 using 2.3.2).
 %

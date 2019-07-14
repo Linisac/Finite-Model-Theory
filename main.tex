@@ -112,6 +112,7 @@
 
 %%partial isomorphism <
 \newcommand{\partisoms}{\mathrm{Part}} %set of partial isomorphisms between structures #1 and #2
+\newcommand{\partially}{\mathrm{part}} %partially (isomorphic)
 %% >
 
 %%elementary equivalence <
@@ -119,7 +120,9 @@
 %% >
 
 %%Ehrenfeucht-Fraisse games <
-\newcommand{\game}[2][]{\ifthenelse{\equal{#1}{}}{{\mathrm{G}_{#2}}}{{\mathrm{G}^{#1}_{#2}}}} %the game G^#1_#2
+\newcommand{\efgame}{\mathrm{G}} %Ehrenfeucht-Fraisse game
+\newcommand{\fingame}{\efgame} %finite Ehrenfeucht-Fraisse game
+\newcommand{\game}[2][]{\ifthenelse{\equal{#1}{}}{{\efgame_{#2}}}{{\efgame^{#1}_{#2}}}} %the game G^#1_#2
 \newcommand{\winpos}[2][]{\ifthenelse{\equal{#1}{}}{\mathit{W}_{#2}}{\mathit{W}^{#1}_{#2}}}
 \newcommand{\msogame}[1]{\operatorname{\MSO-\mathrm{G}}_{#1}} %the game in monadic second-order logic
 %% >
@@ -235,7 +238,7 @@
 %\input{chapter1}
 %\input{chapter2}
 \input{chapter3}
-
+%\input{chapter4}
 
 \begin{thebibliography}{10}
 \bibitem{EFT} H.-D.\ Ebbinghaus, J.\ Flum and W.\ Thomas \textsl{Mathematical Logic} 2nd edition, Springer, 1995.
