@@ -90,6 +90,16 @@ Moreover, by the assumption that $\tau$ is relational (containing no constants),
 
 In case that $\tau$ is not relational, we have that the empty map $\emptymap$ is not equal to $\emptyseq \mapsto \emptyseq$. If in addition $\tau$ contains two constants $c_1, c_2$ so that $\intpr{c_1}{\strct{A}} = \intpr{c_2}{\strct{A}}$ but $\intpr{c_1}{\strct{B}} \neq \intpr{c_2}{\strct{B}}$, then $\emptyseq \mapsto \emptyseq$ is not even a partial isomorphism and $I = \emptyset$.
 %%
+\item In the proof $I$ has the forth property, note that
+\[
+\begin{array}{lll}
+\ & \hint{0}{\strct{B}, \vect{b}b_{r + 1}} & \cr
+= & \hint{0}{\strct{B}, \vect{b}} \land \bland\limits_{1 \leq i \leq r} \neg v_i = v_{r + 1} \land \bland\limits_{\varphi \in \Phi} \varphi \land \bland\limits_{\varphi \in \cmpl{\Phi}} \neg\varphi & \text{(since \mathmode{(\strct{B}, \vect{b}b_{r + 1}) \satis \Phi})} \cr
+= & \hint{0}{\strct{A}, \vect{a}} \land \bland\limits_{1 \leq i \leq r} \neg v_i = v_{r + 1}\land \bland\limits_{\varphi \in \Phi} \varphi \land \bland\limits_{\varphi \in \cmpl{\Phi}} \neg\varphi & \text{(since \mathmode{\vect{a} \mapsto \vect{b} \in I})} \cr
+= & \hint{0}{\strct{A}, \vect{a}a_{r + 1}} & \text{(since \mathmode{(\strct{A}, \vect{a}a_{r + 1}) \satis \Phi})}. \cr
+\end{array}
+\]
+%%
 \end{enumerate}
 %
 \item \header{Hint to Exercise 3.2.13} Note that $x_1$ is the first element of the tuple $\vect{x}$ and therefore the sentence $\forall \vect{x} (\existexactly{1}x F\vect{x}x \land F\vect{x}x_1)$ formalizes the idea that $F$ is a (total) function that projects a tuple of parameter(s) onto its first parameter.
@@ -261,6 +271,14 @@ iff & for every $m \in \nat$, $\strct{B} \satis \ityp[s]{m}{\strct{A}, \vect{a}}
 iff & $\strct{B} \satis (\bland\limits_{m \in \nat} \ityp[s]{m}{\strct{A}, \vect{a}})[\vect{b}]$. \cr
 \end{tabular}
 \end{center}
+%
+\item \header{Note on 3.3.11} The underlying vocabulary $\tau$ is relational, as in 3.2.11.
+
+To prove the second statement that \emph{every two models $\strct{A}$ and $\strct{B}$ of $\epsilon_s$ are $s$-partially isomorphic}, consider the set
+\[
+I \defas \sett{\vect{a} \mapsto \vect{b}}{\mathmode{\vect{a} \in (A \union \sete{\ast})^s}, \mathmode{\vect{b} \in (B \union \sete{\ast})^s}, and \mathmode{\ityp{0}{\strct{A}, \vect{a}} = \ityp{0}{\strct{B}, \vect{b}}}}
+\]
+and show that it has the back and forth properties. Since $\tau$ is relational, $\ast\etc\ast \mapsto \ast\etc\ast \in I$.
 %
 \end{enumerate}
 %end of section 3-----------------------------------------------------------------------------
