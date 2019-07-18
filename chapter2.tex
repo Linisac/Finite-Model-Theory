@@ -7,20 +7,23 @@
 %
 \item \header{Note on Definition 2.2.1} A partial isomorphism need not be finite.
 \medskip\\
-Also note that the condition for a map $p$ to be a partial isomorphism between $\strct{A}$ and $\strct{B}$ is slightly different in \cite{EFT}: the designated constants $\intpr{c}{A}$ are not required to be in $\dm(p)$ but if they are, the condition $p(\intpr{c}{A}) = \intpr{c}{B}$ must be satisfied.
+Also note that the condition for a map $p$ to be a partial isomorphism from $\strct{A}$ to $\strct{B}$ is slightly different in \cite{EFT}: there the designated constants $\intpr{c}{A}$ are not required to be in $\dm(p)$ but if they are, the condition $p(\intpr{c}{A}) = \intpr{c}{B}$ must be satisfied.
 %
-\item \header{Note on Remarks 2.2.2} For part (a), note that the empty map $p = \emptymap$ is \emph{not} a partial isomorphism if $\tau$ does contain constants, 2.2.1.
-\medskip\\
+\item \header{Note on Remarks 2.2.2} For part (a), note that the empty map $p = \emptymap$ is \emph{not} a partial isomorphism if $\tau$ does contain constants (cf.\ 2.2.1).
+
 For part (c), the notation $\vect{a} \mapsto \vect{b}$ can be seen as a shorthand for the set
 \[
-\setm{(a_i, b_i)}{i \leq s} \union \setm{(\intpr{c}{\strct{A}}, \intpr{c}{\strct{B}})}{c \in \tau},\]
-which may not define a map, nor even a partial isomorphism. If the above set does define a map, then it is the graph of this map. Statement (i) says $\vect{a} \mapsto \vect{b}$ not only defines a map but also a partial isomorphism between $\strct{A}$ and $\strct{B}$.
-\medskip\\
-Also note that if $\tau$ contains constants then the notation $\vect{a} \mapsto \vect{b}$ contains mapping of the constants, which are \emph{hidden} from it; in this case, $\emptyseq \mapsto \emptyseq$ does not equal the empty map $\emptymap$. We have $\emptyseq \mapsto \emptyseq = \emptymap$ when $\tau$ is relational.
+\setm{(a_i, b_i)}{i \leq s} \union \setm{(\intpr{c}{\strct{A}}, \intpr{c}{\strct{B}})}{c \in \tau},
+\]
+which may not define a map, nor even a partial isomorphism. If the above set does define a map (with domain $\dm(p) = \setm{a_i}{i \leq s} \union \setm{\intpr{c}{\strct{A}}}{c \in \tau}$), then it is the graph of this map. Statement (i) says $\vect{a} \mapsto \vect{b}$ not only defines a map but also a partial isomorphism from $\strct{A}$ to $\strct{B}$.
+
+Also note that if $\tau$ contains constants then the notation $\vect{a} \mapsto \vect{b}$ contains mapping of the constants, which are \emph{hidden} from it; in this case, $\emptyseq \mapsto \emptyseq$ does not equal the empty map $\emptymap$. We have $\emptyseq \mapsto \emptyseq = \emptymap$ only when $\tau$ is relational.
+
+Finally, if $\vect{a} \mapsto \vect{b}$ is a partial isomorphism, then so are its permutations (rearrangements of the indices of the pairs $(a_i, b_i)$ in $\vect{a} \mapsto \vect{b}$) and repetitions (in which some pair(s) $(a_i, b_i)$ are repeated in $\vect{a} \mapsto \vect{b}$).
 %
 \item \header{Note on Ehrenfeucht Games} It is clear from definition that at most one of the players has a winning strategy for the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
 \medskip\\
-Moreover, it is also true that at least one of the players has a winning strategy for the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$, i.e.\ \emph{if the duplicator does not win $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ then the spoiler wins it.} See 2.3.16 in text.
+On the other hand, it is also true that at least one of the players has a winning strategy for the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$, i.e.\ \emph{if the duplicator does not win $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ then the spoiler wins it.} See 2.3.16 in text.
 %
 \item \header{Note on the Proof of Lemma 2.2.3(b)} The statement ``Then $p : \vect{a} \mapsto \vect{b} \in \partisoms(\strct{A}, \strct{B})$ with $\dm(p) = A$'' follows from the fact that a submap of a partial isomorphism is also a partial isomorphism (see the next note).
 %
@@ -30,11 +33,17 @@ On the other hand, it is useful to use the alternative logically equivalent form
 \medskip\\
 \emph{If the spoiler wins $\game{m'}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ and if $m' < m$, then the spoiler wins $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.}
 %
+\item \header{Note on Definition 2.2.5} What is $\hint{0}{\strct{A}, \emptyseq}$? If the underlying vocabulary $\tau$ contains constants, then it is the conjunction of sentences that are atomic or negated atomic formulas describing the relation between the constants. If $\tau$ is relational, then it is $\tr \land \neg\fls$ (see Part B in Chapter 1).
+%
 \item \header{Note on Lemma 2.2.6 and the Remark below It} It is better to prove the lemma and the remark that ``the conjunctions and disjunctions in the definition of $\hint{m}{\strct{A}, \vect{a}}$ are finite'' all at once:
 \medskip\\
 \emph{For $s, m \geq 0$, $\hint{m}{\strct{A}, \vect{a}}$ is a well-formed formula - i.e.\ the conjunctions and disjunctions (if any) in it are finite - for any structure $\strct{A}$ and $\vect{a} \in \cartpwr{A}{s}$ and the set $\sett{\hint{m}{\strct{A}, \vect{a}}}{\begin{math}\strct{A}\end{math} a structure and \begin{math}\vect{a} \in \cartpwr{A}{s}\end{math}}$ is finite.}
 \medskip\\
-The induction is performed on $m$. The base case follows from that for $s > 0$, the set $\sett{\varphi(v_1, \etc, v_s)}{\begin{math}\varphi\end{math} atomic or negated atomic}$ is finite.
+The induction is performed on $m$. The base case follows from that for $s > 0$, the set
+\[
+\sett{\varphi(v_1, \etc, v_s)}{\begin{math}\varphi\end{math} atomic or negated atomic}
+\]
+is finite.
 %
 \item \header{Note on the Proof of 2.2.8 (Ehrenfeucht's Theorem)} To prove (i) implies (iii), the case $m = 0$ can be handled by applying 2.2.4(a) in addition to the equivalence between (i) and (ii) of 2.2.2(c).
 \medskip\\
@@ -79,7 +88,7 @@ On the other hand, we have for any relational $\tau$ and any $\tau$-structures $
 %%
 \item $\strct{A} \isom_0 \strct{B}$.
 %%
-\item $\strct{B} \satis \hint{0}{\strct{A}}$ (in which $\hint{0}{\strct{A}} = \tr \land \neg\fls$; see part B of chapter 1).
+\item $\strct{B} \satis \hint{0}{\strct{A}}$ (where $\hint{0}{\strct{A}} = \tr \land \neg\fls$; see Part B of Chapter 1).
 %%
 \item $\strct{A} \equv_0 \strct{B}$.
 %%
@@ -112,16 +121,14 @@ and take the truncated version $\dist[j]$ where
 \infty & \mbox{else}.
 \end{cases}
 \]
-For $m \geq 0$ choose $l \geq 2^m$. Consider $\seq{I_j}{j \leq m}$ where $p \in I_j$ if and only if $p$ is a partial isomorphism between $\strct{B}_l$ and $\strct{C}_l$ such that $\card{p} \leq m - j + 2$, $p(0) = 0$, $p(l) = l$ and $\dist[j](h, k) = \dist[j](p(h), p(k))$ for $h, k \in \dm(p)$.
+For $m \geq 0$ choose $l \geq 2^m$. Consider $\seq{I_j}{j \leq m}$ where $p \in I_j$ if and only if $p$ is a partial isomorphism from $\strct{B}_l$ to $\strct{C}_l$ such that $\card{p} \leq m - j + 2$, $p(0) = 0$, $p(l) = l$ and $\dist[j](h, k) = \dist[j](p(h), p(k))$ for $h, k \in \dm(p)$.
 \medskip\\
 It remains to verify $\seq{I_j}{j \leq m} : \strct{B}_l \isom_m \strct{C}_l$, which is omitted here. (For the forth-property, if $p \in I_{j + 1}$ and $b \in B_l$ then distinguish two cases according to whether it is true that ``there is a $b^\prime \in B_l$ such that $\dist[j](b, b^\prime) < 2^j$ or $\dist[j](b^\prime, b) < 2^j$'', a technique used in 2.3.6.)
 %
 \item \header{Note on Corollary 2.3.11} Here $(\strct{A}, \vect{a}) \equv_m (\strct{B}, \vect{b})$ means ``$\vect{a}$ satisfies in $\strct{A}$ the same formulas of quantifier rank $\leq m$ as $\vect{b}$ in $\strct{B}$.'' (Consider the transition from 2.2.8(iii) to 2.2.9(iii).)
 %
-\item \header{Note on Corollary 2.3.11} Is it true that
-\begin{quote}
-``\emph{If $(\strct{A}_1, \vect{a}_1) \equv_m (\strct{B}_1, \vect{b}_1)$ and $(\strct{A}_2, \vect{a}_2) \equv_m (\strct{B}_2, \vect{b}_2)$ then $(\strct{A}_1 \product \strct{A}_2, \vect{a}_1 \cart \vect{a}_2) \equv_m (\strct{B}_1 \product \strct{B}_2, \vect{b}_1 \cart \vect{b}_2)$}''?
-\end{quote}
+\item \header{Note on Corollary 2.3.11} Is it true that ``\emph{if $(\strct{A}_1, \vect{a}_1) \equv_m (\strct{B}_1, \vect{b}_1)$ and $(\strct{A}_2, \vect{a}_2) \equv_m (\strct{B}_2, \vect{b}_2)$ then $(\strct{A}_1 \product \strct{A}_2, \vect{a}_1 \cart \vect{a}_2) \equv_m (\strct{B}_1 \product \strct{B}_2, \vect{b}_1 \cart \vect{b}_2)$}''?
+
 My guess is yes. Note that if $\vect{a}_1 \isom \vect{b}_1$ and $\vect{a}_2 \isom \vect{b}_2$ then $\vect{a}_1 \cart \vect{a}_2 \isom \vect{b}_1 \cart \vect{b}_2$.
 %
 \item \header{Hint to Exercise 2.3.12} An equivalent condition to ``$\min\sete{\card{A_\alpha}, m} = \min\sete{\card{B_\alpha}, m}$'' is:
@@ -226,7 +233,11 @@ Also, the condition
 \[
 \ballstrct(7^{j + 1}, \vect{b}) \satis \exists z (2 \mul 7^j < \dist(\vect{b}, z) \leq 6 \mul 7^j \land \psi^j_a(z) \land \psi^j_{\vect{a}}(\vect{b}))
 \]
-guarantees a $b \in B$ such that $\ball(7^j, \vect{b}) \intsc \ball(7^j, b) = \emptyset$ and $\ball(7^j, b) \subseteq \ball(7^{j + 1}, \vect{b})$ and hence $\ballstrct[\ballstrct(7^{j + 1}, \vect{b})](7^j, b) = \ballstrct[\strct{B}](7^j, b)$ which justifies (5); this condition also justifies (6) because $\ball(7^j, \vect{b}) \subseteq \ball(7^{j + 1}, \vect{b})$ which implies $\ballstrct[\ballstrct(7^{j + 1}, \vect{b})](7^j, \vect{b}) = \ballstrct[\strct{B}](7^j, \vect{b})$.
+guarantees a $b \in B$ such that $\ball(7^j, \vect{b}) \intsc \ball(7^j, b) = \emptyset$ and $\ball(7^j, b) \subseteq \ball(7^{j + 1}, \vect{b})$ and hence
+\[
+\ballstrct[\ballstrct(7^{j + 1}, \vect{b})](7^j, b) = \ballstrct[\strct{B}](7^j, b)
+\]
+which justifies (5); this condition also justifies (6) because $\ball(7^j, \vect{b}) \subseteq \ball(7^{j + 1}, \vect{b})$ which implies $\ballstrct[\ballstrct(7^{j + 1}, \vect{b})](7^j, \vect{b}) = \ballstrct[\strct{B}](7^j, \vect{b})$.
 %%
 \item In case 2.2, we also have
 \[

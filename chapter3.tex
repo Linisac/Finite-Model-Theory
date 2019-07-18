@@ -75,7 +75,7 @@ On the other hand, this theorem does not seem to have a corresponding statement 
 \item \header{Note on \refitem{(iii)} of 3.2.8} To transition from \refitem{(iii)} of 3.2.7 for $s = 0$, one refers to 2.3.2 (also cf.\ the transition from 2.3.3 to 2.3.4 using 2.3.2).
 %
 \item \header{Note on 3.2.11}
-\begin{enumerate}[(a)]
+\begin{enumerate}[(1)]
 %%
 \item For $r \geq 0$, the set $\Delta_{r + 1}$ is finite.
 %%
@@ -84,9 +84,11 @@ On the other hand, this theorem does not seem to have a corresponding statement 
 \forall v_1 \exists v_2 (v_1 \neq v_2 \land \bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi).
 \]
 %%
-\item The condition ``$\hint{0}{\strct{A}, \vect{a}} = \hint{0}{\strct{B}, \vect{b}}$'' in the definition of the set $I$ of maps is equivalent to ``$\vect{a} \mapsto \vect{b} \in \partisoms(\strct{A}, \strct{B})$'', by 2.2.5 and parts (b) and (c) of 2.2.7.
-%%
-\item Here we may assume $\tr, \fls$ are included as \emph{atomic sentences} in the language (cf.\ part B in chapter 1) so that $\hint{0}{\strct{A}, \emptyseq}, \hint{0}{\strct{B}, \emptyseq}$ are defined; in fact, both formulas are equal to $\tr \land \neg\fls$.
+\item In fact, the condition ``$\hint{0}{\strct{A}, \vect{a}} = \hint{0}{\strct{B}, \vect{b}}$'' in the definition of the set $I$ of maps is equivalent to ``$\vect{a} \mapsto \vect{b}$ is a partial isomorphism from $\strct{A}$ to $\strct{B}$'', by 2.2.5 and parts (b) and (c) of 2.2.7, whether or not $\tau$ is relational; in other words, $I = \partisoms(\strct{A}, \strct{B})$.
+
+Moreover, by the assumption that $\tau$ is relational (containing no constants), we then have that the empty map $\emptymap$ is a partial isomorphism from $\strct{A}$ to $\strct{B}$ (see 2.2.2(a)) and is equal to $\emptyseq \mapsto \emptyseq$; it then follows that $\hint{0}{\strct{A}, \emptyseq} = \hint{0}{\strct{B}, \emptyseq}$, which in turn are equal to $\tr \land \neg\fls$ (cf.\ Part B in Chapter 1).
+
+In case that $\tau$ is not relational, we have that the empty map $\emptymap$ is not equal to $\emptyseq \mapsto \emptyseq$. If in addition $\tau$ contains two constants $c_1, c_2$ so that $\intpr{c_1}{\strct{A}} = \intpr{c_2}{\strct{A}}$ but $\intpr{c_1}{\strct{B}} \neq \intpr{c_2}{\strct{B}}$, then $\emptyseq \mapsto \emptyseq$ is not even a partial isomorphism and $I = \emptyset$.
 %%
 \end{enumerate}
 %
@@ -182,7 +184,7 @@ Then take the conjunction of the following $\folog[2]$-sentences that together d
 %%
 \item For the `if' direction, note that the partial isomorphisms of size $s$ from $\strct{A}$ to $\strct{B}$ resulted from all possible rounds of the game $\game[s]{m}(\strct{A}, \strct{B})$ with the additional condition after $s$ moves provide a winning strategy for the duplicator in the same game without that condition.
 %%
-\item Suppose that $\tau$ is relational and all its relation symbols have arity $\leq s$, where $s \geq 1$ by definition (cf.\ paragraph A in chapter 1). Moreover, suppose that $\card{A} = \card{B} \leq s + 1$ and that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$. Our goal then is to show that $\strct{A} \isom \strct{B}$. We further assume $\tau \neq \emptyvoc$, since otherwise it is trivial that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ and $\strct{A} \isom \strct{B}$.
+\item Suppose that $\tau$ is relational and all its relation symbols have arity $\leq s$, where $s \geq 1$ by definition (cf.\ Part A in Chapter 1). Moreover, suppose that $\card{A} = \card{B} \leq s + 1$ and that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$. Our goal then is to show that $\strct{A} \isom \strct{B}$. We further assume $\tau \neq \emptyvoc$, since otherwise it is trivial that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ and $\strct{A} \isom \strct{B}$.
 \medskip\\
 First observe the assumption that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ immediately implies that he wins $\game[s]{m}(\strct{A}, \strct{B})$ for $m \geq 1$. By Theorem \thesection.5, then, we have for every $m \geq 1$, $\strct{A} \equv[s]_m \strct{B}$. Therefore, it suffices to find a sentence $\varphi_\strct{A} \in \folog[s]\of{\tau}$ that characterizes $\strct{A}$ up to isomorphism given the fixed cardinality $\card{A}$, i.e.
 \begin{center}
@@ -228,6 +230,25 @@ and for $1 \leq i \leq s$,
 \exists v_i (\bland \setm{\psi}{\psi \in \Theta_s, \strct{A} \satis \psi[\vect{a}_i]} \land \bland \setm{\neg\psi}{\psi \in \Theta_s, \strct{A} \satis \neg\psi[\vect{a}_i]}) & \text{otherwise}.\cr
 \end{cases}
 \]
+%%
+\end{enumerate}
+%
+\item \header{Note on the $s$-$m$-Isomorphism Type $\ityp[s]{m}{\strct{A}, \vect{a}}$} Unlike $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$, the game $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ consists of moves that \emph{replace} pairs of elements in partial isomorphisms rather than \emph{extend} partial isomorphisms with pairs of elements. This is reflected in the definition of $\ityp{m + 1}{\strct{A}, \vect{a}}$:
+\begin{enumerate}[(1)]
+%%
+\item The running conjunction $\bland\limits_{1 \leq i \leq s}$ specifies the valid positions for replacement, and the formula $\ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}}$ specifies that $\vect{a}\sbst{a}{i} \mapsto \vect{b}\sbst{b}{i}$ is an $s$-partial isomorphism whose constituent pairs can be replaced $m$ times (given the premise $\strct{B} \satis \ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}}[\vect{b}\sbst{b}{i}]$).
+%%
+\item The conjunct $\ityp{0}{\strct{A}, \vect{a}}$ is necessary because it describes the relation among the elements in $\vect{a}$ so that if $\strct{B} \satis \ityp{0}{\strct{A}, \vect{a}}[\vect{b}]$ then $\vect{a} \mapsto \vect{b}$ is an $s$-partial isomorphism from $\strct{A}$ to $\strct{B}$ (and vice versa), whereas the other conjunct $\bland\limits_{1 \leq i \leq s}(\bland\limits_{a \in A} \exists v_i \ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}} \land \forall v_i \blor\limits_{a \in A} \ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}})$ does not have this effect. In fact, we have
+\[
+\consq \hint{m + 1}{\strct{A}, \vect{a}} \lthen \hint{0}{\strct{A}, \vect{a}}
+\]
+(cf.\ 2.2.4(c)) but
+\begin{center}
+not $\consq \bland\limits_{1 \leq i \leq s}(\bland\limits_{a \in A} \exists v_i \ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}} \land \forall v_i \blor\limits_{a \in A} \ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}}) \lthen \ityp{0}{\strct{A}, \vect{a}}$
+\end{center}
+(for $\vect{a} \mapsto \vect{b}$ there may be an $a' \neq a_i$ or a $b' \neq b_i$ such that $\vect{a}\sbst{a'}{i} \mapsto \vect{b}$ or $\vect{a} \mapsto \vect{b}\sbst{b'}{i}$ is an $s$-partial isomorphism).
+
+Note that the conjunct $\ityp{0}{\strct{A}, \vect{a}}$ is redundant and is implied by the other conjunct only when $\vect{a} = \ast \etc \ast$.
 %%
 \end{enumerate}
 %
