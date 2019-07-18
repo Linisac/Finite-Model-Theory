@@ -252,5 +252,15 @@ Note that the conjunct $\ityp{0}{\strct{A}, \vect{a}}$ is redundant and is impli
 %%
 \end{enumerate}
 %
+\item \header{Note on Part (a) of 3.3.9 and 3.3.10} It gives that
+\begin{center}
+\begin{tabular}{ll}
+\   & $(\strct{A}, \vect{a}) \equv[s] (\strct{B}, \vect{b})$ \cr
+iff & for every $m \in \nat$, $(\strct{A}, \vect{a}) \equv[s]_m (\strct{B}, \vect{b})$ \cr
+iff & for every $m \in \nat$, $\strct{B} \satis \ityp[s]{m}{\strct{A}, \vect{a}}[\vect{b}]$ \cr
+iff & $\strct{B} \satis (\bland\limits_{m \in \nat} \ityp[s]{m}{\strct{A}, \vect{a}})[\vect{b}]$. \cr
+\end{tabular}
+\end{center}
+%
 \end{enumerate}
 %end of section 3-----------------------------------------------------------------------------
