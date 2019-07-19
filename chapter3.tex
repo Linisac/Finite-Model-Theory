@@ -276,9 +276,17 @@ iff & $\strct{B} \satis (\bland\limits_{m \in \nat} \ityp[s]{m}{\strct{A}, \vect
 
 To prove the second statement that \emph{every two models $\strct{A}$ and $\strct{B}$ of $\epsilon_s$ are $s$-partially isomorphic}, consider the set
 \[
-I \defas \sett{\vect{a} \mapsto \vect{b}}{\mathmode{\vect{a} \in (A \union \sete{\ast})^s}, \mathmode{\vect{b} \in (B \union \sete{\ast})^s}, and \mathmode{\ityp{0}{\strct{A}, \vect{a}} = \ityp{0}{\strct{B}, \vect{b}}}}
+I \defas \sett{\vect{a} \mapsto \vect{b}}{\mathmode{\vect{a} \in \cartpwr{(A \union \sete{\ast})}{s}}, \mathmode{\vect{b} \in \cartpwr{(B \union \sete{\ast})}{s}}, and \mathmode{\ityp{0}{\strct{A}, \vect{a}} = \ityp{0}{\strct{B}, \vect{b}}}}
 \]
 and show that it has the back and forth properties. Since $\tau$ is relational, $\ast\etc\ast \mapsto \ast\etc\ast \in I$.
+%
+\item \header{Note on 3.3.13} See Note on Example 2.3.5 on how to extend the result to arbitrary $\tau$.
+%
+\item \header{Hint to 3.3.14} In part (a), note that for $s, m \in \nat$, the set
+\[
+\sett{\ityp{m}{\strct{A}, \vect{a}}}{\mathmode{\strct{A}} a structure and \mathmode{\vect{a} \in \cartpwr{A}{s}}}
+\]
+is finite.
 %
 \end{enumerate}
 %end of section 3-----------------------------------------------------------------------------

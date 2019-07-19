@@ -52,6 +52,7 @@
 \newcommand{\header}[1]{{\rm\textbf{#1.}}}
 \newcommand{\refitem}[1]{{\rm#1}}
 \newcommand{\mathmode}[1]{\begin{math}#1\end{math}}
+\newcommand{\of}[1]{{[#1]}} %logic or class with vocabulary #1
 %% >
 
 %%definition <
@@ -141,7 +142,6 @@
 %% >
 
 %%logics <
-\newcommand{\of}[1]{{[#1]}}
 \newcommand{\folog}[1][]{\ifthenelse{\equal{#1}{}}{\mathrm{FO}}{\mathrm{FO}^{#1}}} %first-order logic
 \newcommand{\solog}{\mathrm{SO}} %second-order logic
 \newcommand{\msolog}{\mathrm{MSO}} %monadic second-order logic
@@ -235,10 +235,10 @@
 %\end{titlepage}
 \titleformat{\chapter}[hang]{\Large\bfseries}{\thechapter.}{.5em}{}
 \titleformat{\section}[hang]{\large\bfseries}{\thesection}{.5em}{}
-%\input{chapter1}
-%\input{chapter2}
+\input{chapter1}
+\input{chapter2}
 \input{chapter3}
-%\input{chapter4}
+\input{chapter4}
 
 \begin{thebibliography}{10}
 \bibitem{EFT} H.-D.\ Ebbinghaus, J.\ Flum and W.\ Thomas \textsl{Mathematical Logic} 2nd edition, Springer, 1995.

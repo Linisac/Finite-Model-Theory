@@ -95,13 +95,36 @@ On the other hand, we have for any relational $\tau$ and any $\tau$-structures $
 \end{enumerate}
 by 2.2.2(a) (that $\emptymap \in \partisoms(\strct{A}, \strct{B})$) and 2.3.4.
 %
-\item \header{Note on Example 2.3.5} Let $\tau$ be an arbitrary symbol set that consists of relation symbols $P_1, \etc, P_n$ and constants $c_1, \etc, c_k$ where $n, k \in \nat$.
-\medskip\\
-For any $m \in \nat$, consider the two $\tau$-structures $\strct{A}$ and $\strct{B}$ where $A$ consists of elements $a_1, \etc, a_{m + 1}$ other than $\intpr{c_1}{\strct{A}}, \etc, \intpr{c_n}{\strct{A}}$, $\intpr{c_i}{\strct{A}} \neq \intpr{c_j}{\strct{A}}$ if $i \neq j$, $\intpr{P_i}{\strct{A}} = \emptyset$, $B$ consists of elements $b_1, \etc, b_{m + 2}$ other than $\intpr{c_1}{\strct{B}}, \etc, \intpr{c_n}{\strct{B}}$, $\intpr{c_i}{\strct{B}} \neq \intpr{c_j}{\strct{B}}$ if $i \neq j$, $\intpr{P_i}{\strct{B}} = \emptyset$.
-\medskip\\
-Obviously, exactly one between $\strct{A}$ and $\strct{B}$ is a member of $\even[\tau]$. However, it is also true that $\strct{A} \equv_m \strct{B}$: the map $a_1 \etc a_{m + 1} \mapsto b_1 \etc b_{m + 1}$ can be used as a winning strategy (note that implicitly $\intpr{c_i}{\strct{A}}$ is mapped to $\intpr{c_i}{\strct{B}}$, cf.\ 2.2.2(c)(i)) for the duplicator in the game $\game{m}(\strct{A}, \strct{B})$. Thus $\even[\tau]$ is not axiomatizable by 2.2.12.
+\item \header{Note on Example 2.3.5} Consider an arbitrary vocabulary $\tau = \sete{c_1, \etc, c_n} \union \sete{P_1, \etc, P_r}$ for some $n, r \in \nat$.
+
+Also, for any $m \in \nat$, consider the two $\tau$-structures $\strct{A}$ and $\strct{B}$:
+\begin{enumerate}[(1)]
+%%
+\item \begin{itemize}
+%%%
+\item $A = \sete{a_1, \etc, a_{m + 1}} \union \sete{\intpr{c_1}{\strct{A}}, \etc, \intpr{c_n}{\strct{A}}}$
+%%%
+\item for $1 \leq i < j \leq n$, $\intpr{c_i}{\strct{A}} \neq \intpr{c_j}{\strct{A}}$
+%%%
+\item for $1 \leq k \leq r$, $\intpr{P_k}{\strct{A}} = \emptyset$
+%%%
+\end{itemize}
+%%
+\item \begin{itemize}
+%%%
+\item $B = \sete{b_1, \etc, b_{m + 2}} \union \sete{\intpr{c_1}{\strct{B}}, \etc, \intpr{c_n}{\strct{B}}}$
+%%%
+\item for $1 \leq i < j \leq n$, $\intpr{c_i}{\strct{B}} \neq \intpr{c_j}{\strct{B}}$
+%%%
+\item for $1 \leq k \leq r$, $\intpr{P_k}{\strct{B}} = \emptyset$
+%%%
+\end{itemize}
+%%
+\end{enumerate}
+
+Obviously, $\strct{A} \in \even\of{\tau}$ iff $\strct{B} \notin \even\of{\tau}$. However, clearly the duplicator wins $\game{m}(\strct{A}, \strct{B})$. Thus $\even\of{\tau}$ is not axiomatizable by 2.2.12.
 %
-\item \header{Note on Example 2.3.8} There is a typo: ``$\dist[j](a, a^\prime)$'' appearing in the definition of distance function should be replaced by ``$\dist[j](a, b)$''.
+\item \header{Note on Example 2.3.8} There is a typo: ``$\dist[j](a, a')$'' appearing in the definition of distance function should be replaced by ``$\dist[j](a, b)$''.
 %
 \item \header{Hint to Exercise 2.3.9} For simplicity, take the structure $\strct{C}_l$ that is isomorphic to $\strct{B}_l \dunion \strct{D}_l$, where $C_l \defas \sete{0, \ldots, 2l + 1}$ and the substructures $\sbstrct{\sete{0, \ldots, l}}{\strct{C}_l}$ induced by $\sete{0, \ldots, l}$ and $\sbstrct{\sete{l + 1, \ldots, 2l + 1}}{\strct{C}_l}$ induced by $\sete{l + 1, \ldots, 2l + 1}$ are isomorphic to $\strct{B}_l$ and $\strct{D}_l$, respectively.
 \medskip\\
@@ -123,7 +146,7 @@ and take the truncated version $\dist[j]$ where
 \]
 For $m \geq 0$ choose $l \geq 2^m$. Consider $\seq{I_j}{j \leq m}$ where $p \in I_j$ if and only if $p$ is a partial isomorphism from $\strct{B}_l$ to $\strct{C}_l$ such that $\card{p} \leq m - j + 2$, $p(0) = 0$, $p(l) = l$ and $\dist[j](h, k) = \dist[j](p(h), p(k))$ for $h, k \in \dm(p)$.
 \medskip\\
-It remains to verify $\seq{I_j}{j \leq m} : \strct{B}_l \isom_m \strct{C}_l$, which is omitted here. (For the forth-property, if $p \in I_{j + 1}$ and $b \in B_l$ then distinguish two cases according to whether it is true that ``there is a $b^\prime \in B_l$ such that $\dist[j](b, b^\prime) < 2^j$ or $\dist[j](b^\prime, b) < 2^j$'', a technique used in 2.3.6.)
+It remains to verify $\seq{I_j}{j \leq m} : \strct{B}_l \isom_m \strct{C}_l$, which is omitted here. (For the forth-property, if $p \in I_{j + 1}$ and $b \in B_l$ then distinguish two cases according to whether it is true that ``there is a $b' \in B_l$ such that $\dist[j](b, b') < 2^j$ or $\dist[j](b', b) < 2^j$'', a technique used in 2.3.6.)
 %
 \item \header{Note on Corollary 2.3.11} Here $(\strct{A}, \vect{a}) \equv_m (\strct{B}, \vect{b})$ means ``$\vect{a}$ satisfies in $\strct{A}$ the same formulas of quantifier rank $\leq m$ as $\vect{b}$ in $\strct{B}$.'' (Consider the transition from 2.2.8(iii) to 2.2.9(iii).)
 %
@@ -147,11 +170,11 @@ A similar exercise is XII.3.17 in \cite{EFT}.
 \item \header{Hint to Exercise 2.3.13} (INCOMPLETE)
 Think of $\ordsum^n \strct{A}$ as an $n$-element linear ordering in which every point ``expands'' to $\strct{A}$.\\
 \medskip\\
-More precisely, define for $a, a^\prime$ in the domain of $\ordsum^n \strct{A}$ the distance function
+More precisely, define for $a, a'$ in the domain of $\ordsum^n \strct{A}$ the distance function
 \[
-\dist(a, a^\prime) \defas \abs{i - j},
+\dist(a, a') \defas \abs{i - j},
 \]
-where $a$ is an element from the $i$th copy of $\strct{A}$ and $a^\prime$ from the $j$th. The truncated versions of distance function are defined analogously. A winning strategy for the duplicator is the same as that in 2.3.6 except that if the spoiler chooses an element from a copy $\strct{A}$ of $\ordsum^l \strct{A}$ (or $\ordsum^k \strct{A}$) then the duplicator chooses exactly the same element from the corresponding copy $\strct{A}$ of $\ordsum^k \strct{A}$ (or $\ordsum^l \strct{A}$, respectively).
+where $a$ is an element from the $i$th copy of $\strct{A}$ and $a'$ from the $j$th. The truncated versions of distance function are defined analogously. A winning strategy for the duplicator is the same as that in 2.3.6 except that if the spoiler chooses an element from a copy $\strct{A}$ of $\ordsum^l \strct{A}$ (or $\ordsum^k \strct{A}$) then the duplicator chooses exactly the same element from the corresponding copy $\strct{A}$ of $\ordsum^k \strct{A}$ (or $\ordsum^l \strct{A}$, respectively).
 %
 \item \header{Hint to Exercise 2.3.14} (INCOMPLETE)
 The notation ``$(\strct{A}, \vect{a}) \isom_m (\strct{B}, \vect{b})$'' is undefined in text, however it can be understood as:
@@ -181,7 +204,7 @@ The above argument suggests (the essential part of) a winning strategy of the ga
 \medskip\\
 On the other hand, by the proof the requirement on the cardinality of $3^m$-balls may be weakened to ``at most $e$ elements.''
 %
-\item \header{Note on 2.4.2 and 2.4.3} For the proof of 2.4.3 to be valid, in the structure $(D_l, E^\prime_l, P_1, \etc, P_r)$ there must be a point on each of the paths from $a$ to $b_-$ and from $b$ to $a_-$ that is in neither of the $3^m$-balls of $a$ and $b$, in other words, both cycles in the structure must have length greater than $2 \mul 3^m + 1$; otherwise the $3^m$-ball type of $a$ (or $b$) would be different from that of $a$ (or $b$, respectively) in $(\strct{D}_l, P_1, \etc, P_r)$ - the former $3^m$-ball is a cycle, whereas the latter is not.
+\item \header{Note on 2.4.2 and 2.4.3} For the proof of 2.4.3 to be valid, in the structure $(D_l, E'_l, P_1, \etc, P_r)$ there must be a point on each of the paths from $a$ to $b_-$ and from $b$ to $a_-$ that is in neither of the $3^m$-balls of $a$ and $b$, in other words, both cycles in the structure must have length greater than $2 \mul 3^m + 1$; otherwise the $3^m$-ball type of $a$ (or $b$) would be different from that of $a$ (or $b$, respectively) in $(\strct{D}_l, P_1, \etc, P_r)$ - the former $3^m$-ball is a cycle, whereas the latter is not.
 \medskip\\
 In fact, 2.4.3 can be strengthened to allow such points.
 %
@@ -195,7 +218,7 @@ As an immediate consequence, we have that \emph{both classes cannot be axiomatiz
 \medskip\\
 On the other hand, this proposition implies that \emph{the class of finite graphs that are not connected can be axiomatized by a formula of the form $\forall R \chi$.} (Just take the negation of $\exists R \psi$.)
 %
-\item \header{Brief Solution to Exercise 2.4.7} Using a similar method (basically the pigeonhole principle) we can obtain the corresponding result to 2.4.2, in which the distance $\dist(a, b)$ is greater than $2 \mul 3^m + 1$ (cf.\ \header{Note on 2.4.2 and 2.4.3}). Now let $a_-$ and $b_-$ be the two points such that $(a_-, a)$ and $(b_-, b)$ are edges in $\strct{H}_l$. Obtain the structure $\strct{H}_l^\prime$ from $\strct{H}_l$ by removing these two edges and adding $(b_-, a)$ and $(a_-, b)$. Then likewise we obtain the corresponding result to 2.4.3, and hence that to 2.4.5.
+\item \header{Brief Solution to Exercise 2.4.7} Using a similar method (basically the pigeonhole principle) we can obtain the corresponding result to 2.4.2, in which the distance $\dist(a, b)$ is greater than $2 \mul 3^m + 1$ (cf.\ \header{Note on 2.4.2 and 2.4.3}). Now let $a_-$ and $b_-$ be the two points such that $(a_-, a)$ and $(b_-, b)$ are edges in $\strct{H}_l$. Obtain the structure $\strct{H}'_l$ from $\strct{H}_l$ by removing these two edges and adding $(b_-, a)$ and $(a_-, b)$. Then likewise we obtain the corresponding result to 2.4.3, and hence that to 2.4.5.
 \medskip\\
 As for the corresponding result to 2.4.6, note that a digraph is cyclic if and only if there is a linear ordering over a set of at least two points in which there is an edge from $x$ to $y$ if and only if $y$ is immediately greater than $x$ or $x$ is the greatest element and $y$ the least in the linear ordering. Finally, formulate the condition and take the negation.
 \begin{note}
