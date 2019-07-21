@@ -46,6 +46,7 @@
 %%%operations on formulas and structures
 %%%global relations
 %%%special classes of structures
+%%%labeled/unlabeled classes and probabilities
 %% >
 
 %%general <
@@ -79,8 +80,10 @@
 \newcommand{\sett}[2]{{\{#1 \mid \text{\rm #2}\}}} %set by text description. sett{#1}{#2} = {#1 | #2}, where #2 is a text
 \newcommand{\cart}{\mathop{\times}} %cartesian product of two sets
 \newcommand{\cartpwr}[2]{#1^{#2}} %(#2)nd cartesian power of set #1
-\newcommand{\intsc}{\mathop{\cap}} %intersection
-\newcommand{\union}{\mathop{\cup}} %union
+\newcommand{\intsc}{\cap} %intersection
+\newcommand{\union}{\cup} %union
+\newcommand{\bintsc}{\bigcap} %big intersection
+\newcommand{\bunion}{\bigcup} %big union
 \newcommand{\card}[1]{\|#1\|} %cardinality. card{A} = || A ||
 \newcommand{\cmpl}[1]{#1^\mathit{c}} %complement of the set #1
 %% >
@@ -214,6 +217,13 @@
 \newcommand{\even}{\mathrm{EVEN}} %class of finite structures of even cardinality (in a vocabulary)
 %% >
 
+%%labeled/unlabeled classes and probabilities <
+\newcommand{\lclass}[1]{\mathit{L}_{#1}} %labeled class of strcutures
+\newcommand{\lprob}[1][]{\ifthenelse{\equal{#1}{}}{\mathit{l}}{\mathit{l}_{#1}}} %labeled probability over the class of structures of cardinality #1 or labeld asymptotic probability
+\newcommand{\uclass}[1]{\mathit{U}_{#1}} %unlabeled class of strcutures
+\newcommand{\uprob}[1][]{\ifthenelse{\equal{#1}{}}{\mathit{u}}{\mathit{u}_{#1}}} %unlabeled probability over the class of structures of cardinality #1 or unlabeld asymptotic probability
+%% >
+
 
 \newenvironment{quoteno}[1]{(#1)\hfill}{\hfill\phantom{(+)}}
 
@@ -235,9 +245,9 @@
 %\end{titlepage}
 \titleformat{\chapter}[hang]{\Large\bfseries}{\thechapter.}{.5em}{}
 \titleformat{\section}[hang]{\large\bfseries}{\thesection}{.5em}{}
-\input{chapter1}
-\input{chapter2}
-\input{chapter3}
+%\input{chapter1}
+%\input{chapter2}
+%\input{chapter3}
 \input{chapter4}
 
 \begin{thebibliography}{10}
