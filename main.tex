@@ -46,6 +46,7 @@
 %%%operations on formulas and structures
 %%%global relations
 %%%special classes of structures
+%%%extension axioms
 %%%labeled/unlabeled classes and probabilities
 %% >
 
@@ -53,7 +54,10 @@
 \newcommand{\header}[1]{{\rm\textbf{#1.}}}
 \newcommand{\refitem}[1]{{\rm#1}}
 \newcommand{\mathmode}[1]{\begin{math}#1\end{math}}
+\newcommand{\paren}[1]{\left(#1\right)} %flexible parentheses
 \newcommand{\of}[1]{{[#1]}} %logic or class with vocabulary #1
+\newcommand{\prmt}[2]{\mathrm{P}^{#1}_{#2}} %permutation (in combinatorics)
+\newcommand{\cmbn}[2]{\mathrm{C}^{#1}_{#2}} %combination (in combinatorics)
 %% >
 
 %%definition <
@@ -215,6 +219,11 @@
 %%special classes of structures <
 \newcommand{\ordclass}{\mathcal{O}} %class of finite ordered structures (in a vocabulary)
 \newcommand{\even}{\mathrm{EVEN}} %class of finite structures of even cardinality (in a vocabulary)
+%% >
+
+%%extension axioms <
+\newcommand{\extaxm}[1][]{\ifthenelse{\equal{#1}{}}{\chi}{\chi_{#1}}} %extension axiom with optional parameter #1 (set of formulas)
+\newcommand{\conjextaxm}[1]{\epsilon_{#1}} %conjunction of extension axioms with variables indexed no more than #1
 %% >
 
 %%labeled/unlabeled classes and probabilities <

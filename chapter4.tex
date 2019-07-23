@@ -3,6 +3,25 @@
 %section 1------------------------------------------------------------------------------------
 \begin{enumerate}[1.]
 %
+\item \header{Note on the Proof of Lemma 4.1.2} Denote
+\[
+\psi \defas \blor_{\varphi \in \Phi} \neg\varphi \lor \blor_{\varphi \in \cmpl{\Phi}} \varphi
+\]
+and let $\strct{A}$ with domain $A = \sete{1, \etc, n}$ be a random structure. Then
+\[
+\begin{array}{ll}
+\    & \lprob[n](\neg\extaxm[\Phi]) \cr
+=    & \paren{\mbox{the probability that \mathmode{\strct{A} \satis \neg\extaxm[\Phi]}}} \cr
+=    & \paren{\parbox{40em}{the probability that there is an injective \mathmode{f : \sete{1, \etc, r} \to A} such that for every \mathmode{a \in A \setminus \rg(f)}, \mathmode{\strct{A} \satis \psi[f(1), \etc, f(r), a]}}} \cr
+\leq & \sum\limits_{\text{injective \mathmode{f : \sete{1, \etc, r} \to A}}} \paren{\mbox{the probability that for every \mathmode{a \in A \setminus \rg(f)}, \mathmode{\strct{A} \satis \psi[f(1), \etc, f(r), a]}}} \cr
+=    & \prmt{n}{r} \mul \paren{\mbox{the probability that for every \mathmode{a \in A \setminus \rg(f)} given injective \mathmode{f}, \mathmode{\strct{A} \satis \psi[f(1), \etc, f(r), a]}}} \cr
+=    & \prmt{n}{r} \mul \paren{\parbox{35em}{the probability that for every \mathmode{a \in A \setminus \rg(f)} given injective \mathmode{f}, the assignment \mathmode{f(1), \etc, f(r), a} does not satisfy in \mathmode{\strct{A}} the type characterized by \mathmode{\Phi}}} \cr
+=    & \prmt{n}{r} \mul \prod\limits_{\text{\mathmode{a \in A \setminus \rg(f)} given injective \mathmode{f}}} \paren{\parbox{25em}{the probability that the assignment \mathmode{f(1), \etc, f(r), a} does not satisfy in \mathmode{\strct{A}} the type characterized by \mathmode{\Phi}}} \cr
+=    & \prmt{n}{r} \mul (\frac{c - 1}{c})^{n - r} \cr
+\leq & n^r \mul (\frac{c - 1}{c})^{n - r}. \cr
+\end{array}
+\]
+%
 \item \header{Hint to Exercise 4.1.6} By 2.2.6, the set
 \[
 \Phi \defas \sett{\hint{m}{\strct{C}}}{\mathmode{\strct{C}} is a structure}
@@ -12,6 +31,24 @@ is finite. Thus, for $s \geq 1$, the binary relation $\isom_m$ induces a finite 
 1 = \lprob(\bunion_{\varphi \in \Phi} \modclass(\varphi)) = \sum_{\varphi \in \Phi} \lprob(\varphi).
 \]
 Finally, observe that the probability $\strct{A} \isom_m \strct{B}$ is $\geq$ the probability that both $\strct{A} \satis \varphi_0$ and $\strct{B} \satis \varphi_0$.
+%
+\item \header{Solution to Exercise 4.1.7} Let $\varphi \defas \extaxm[\Phi]$ be an $(r + 1)$-extension axiom, where $\Phi$ is a subset of $\Delta_{r + 1}$ as defined in 3.2.11. Assume that $\card{\Delta_{r + 1}} = c$ and $\card{\Phi} = k$.
+
+Let $\strct{A}$ with domain $A = \sete{1, \etc, n}$ be a random structure constructed with a biased coin so that $R i_1 \etc i_m$ holds with probability $p$ where $0 < p < 1$. Then
+\[
+\begin{array}{ll}
+\    & \lprob[n](\neg\extaxm[\Phi]) \cr
+=    & \paren{\mbox{the probability that \mathmode{\strct{A} \satis \neg\extaxm[\Phi]}}} \cr
+=    & \paren{\parbox{40em}{the probability that there is an injective \mathmode{f : \sete{1, \etc, r} \to A} such that for every \mathmode{a \in A \setminus \rg(f)}, \mathmode{\strct{A} \satis \psi[f(1), \etc, f(r), a]}}} \cr
+\leq & \sum\limits_{\text{injective \mathmode{f : \sete{1, \etc, r} \to A}}} \paren{\mbox{the probability that for every \mathmode{a \in A \setminus \rg(f)}, \mathmode{\strct{A} \satis \psi[f(1), \etc, f(r), a]}}} \cr
+=    & \prmt{n}{r} \mul \paren{\mbox{the probability that for every \mathmode{a \in A \setminus \rg(f)} given injective \mathmode{f}, \mathmode{\strct{A} \satis \psi[f(1), \etc, f(r), a]}}} \cr
+=    & \prmt{n}{r} \mul \paren{\parbox{35em}{the probability that for every \mathmode{a \in A \setminus \rg(f)} given injective \mathmode{f}, the assignment \mathmode{f(1), \etc, f(r), a} does not satisfy in \mathmode{\strct{A}} the type characterized by \mathmode{\Phi}}} \cr
+=    & \prmt{n}{r} \mul \prod\limits_{\text{\mathmode{a \in A \setminus \rg(f)} given injective \mathmode{f}}} \paren{\parbox{25em}{the probability that the assignment \mathmode{f(1), \etc, f(r), a} does not satisfy in \mathmode{\strct{A}} the type characterized by \mathmode{\Phi}}} \cr
+=    & \prmt{n}{r} \mul (1 - p^k(1 - p)^{c - k})^{n - r} \cr
+\leq & n^r \mul (1 - p^k(1 - p)^{c - k})^{n - r}. \cr
+\end{array}
+\]
+It follows that $\lprob(\neg\extaxm[\Phi]) = \lim_{n \to \infty} \lprob[n](\neg\extaxm[\Phi]) = 0$.
 %
 \end{enumerate}
 %end of section 1-----------------------------------------------------------------------------
