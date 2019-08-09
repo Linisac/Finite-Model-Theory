@@ -50,6 +50,85 @@ Let $\strct{A}$ with domain $A = \sete{1, \etc, n}$ be a random structure constr
 \]
 It follows that $\lprob(\neg\extaxm[\Phi]) = \lim_{n \to \infty} \lprob[n](\neg\extaxm[\Phi]) = 0$.
 %
+\item \header{Solution to Exercise 4.1.8} Let $\strct{R}'$ denote the random structure defined as in the description of the exercise. Note that $\strct{R}'$ is a \emph{random variable}. In the following for $n > 0$ and for any (finite or infinite) structure $\strct{A}$ we let $\strct{A}_n$ be the substructure of $\strct{A}$ induced by the domain $\sete{1, \etc, n}$, provided that the domain $A$ of $\strct{A}$ contains $\sete{1, \etc, n}$ as a subset.
+
+Observe that there are finitely many $\tau$-structures with domain $\sete{1, \etc, n}$, i.e.\ the class $\lclass{n}(\tau)$ is finite. Since $\tau$ is relational, the structures $\strct{B} \in \lclass{n}(\tau)$ altogether induce an \emph{equal partition} of
+\[
+C \defas \sett{\strct{A}}{\mathmode{\strct{A}} is a \mathmode{\tau}-structure of domain \mathmode{A = \sete{1, 2, \etc}}}
+\]
+such that the equivalence classes
+\[
+\setm{\strct{A} \in C}{\strct{A}_n = \strct{B}}
+\]
+for the structures $\strct{B}$ have the same size. Thus, if $K$ is a class of (finite) $\tau$-structures, then
+\begin{equation}\label{e4_1_8+1}
+(\text{the probability that for the random structure \mathmode{\strct{R}'}, its substructure \mathmode{\strct{R}'_n} is in \mathmode{K}}) = \lprob[n](K). \tag{$+$}
+\end{equation}
+
+Now consider any $(r + 1)$-extension axiom $\chi$ so that $\neg\chi$ is logically equivalent to
+\[
+\exists v_1 \etc \exists v_r \rho,
+\]
+where
+\[
+\rho = (\bland_{1 \leq i < j \leq r} \neg v_i = v_j \land \forall v_{r + 1} (\bland_{1 \leq i \leq r} \neg v_{r + 1} = v_i \lthen (\blor_{\varphi \in \Phi} \neg\varphi \lor \blor_{\varphi \in \cmpl{\Phi}} \varphi)))
+\]
+and $\Phi \subseteq \Delta_{r + 1}$. For every $r$-tuple $\vect{i} = (i_1, \etc, i_r) \in \cartpwr{\posint}{r}$ of positive integers, let
+\[
+m(\vect{i}) \defas
+\begin{cases}
+\max(i_1, \etc, i_r) & \text{if \mathmode{r > 0}} \cr
+1                    & \text{otherwise (i.e.\ \mathmode{\vect{i} = \emptyseq})} \cr
+\end{cases}
+\]
+and further for every positive integer $j \in \posint$ let $E^{\vect{i}}_j$ be the event that $\strct{R}'_{m(\vect{i}) + j} \satis \rho[\vect{i}]$. Then we have
+\[
+E^{\vect{i}}_1 \supseteq E^{\vect{i}}_2 \supseteq \etc
+\]
+and hence
+\begin{equation}\label{e4_1_8+2}
+(\text{the probability for the event \mathmode{\bintsc^\infty_{j = 1} E^{\vect{i}}_j}}) = \lim_{j \to \infty} (\text{the probability for the event \mathmode{E^{\vect{i}}_j}}). \tag{$\ast$}
+\end{equation}
+Moreover, it is true that
+\[
+\begin{array}{lll}
+\    & (\text{the probability for the event \mathmode{E^{\vect{i}}_j}}) & \cr
+\leq & (\text{the probability for the event that \mathmode{\strct{R}'_{m(\vect{i}) + j} \satis \exists v_1 \etc \exists v_r \rho}}) & \cr
+=    & (\text{the probability for the event that \mathmode{\strct{R}'_{m(\vect{i}) + j} \satis \neg\chi}}) & \cr
+=    & \lprob[m(\vect{i}) + j](\neg\chi) & \text{(by (\ref{e4_1_8+1}))} \cr
+\end{array} 
+\]
+and hence
+\begin{equation}\label{e4_1_8+3}
+\lim_{j \to \infty} (\text{the probability for the event \mathmode{E^{\vect{i}}_j}}) \leq \lim_{j \to \infty} \lprob[m(\vect{i}) + j](\neg\chi) = 0 \tag{$\ast\ast$}
+\end{equation}
+by (the proof of) Lemma 4.1.2.
+
+Finally, for brevity, for every $\vect{i} \in \cartpwr{\posint}{r}$ let $F^{\vect{i}}$ be the event that $\strct{R}' \satis \rho[\vect{i}]$; then we have
+\begin{equation}\label{e4_1_8+4}
+F^{\vect{i}} = \bintsc^\infty_{j = 1} E^{\vect{i}}_j. \tag{$\ast\ast\ast$}
+\end{equation}
+It follows that
+\[
+\begin{array}{lll}
+\    & (\text{the probability that \mathmode{\strct{R} \satis \neg\chi}}) & \cr
+=    & (\text{the probability for the event \mathmode{\bunion_{\vect{i} \in \cartpwr{\posint}{r}} F^{\vect{i}}}}) & \cr
+\leq & \sum_{\vect{i} \in \cartpwr{\posint}{r}} (\text{the probability for the event \mathmode{F^{\vect{i}}}}) & \cr
+=    & \sum_{\vect{i} \in \cartpwr{\posint}{r}} (\text{the probability for the event \mathmode{\bintsc^\infty_{j = 1} E^{\vect{i}}_j}}) & \text{(by (\ref{e4_1_8+4}))} \cr
+=    & \sum_{\vect{i} \in \cartpwr{\posint}{r}} \lim_{j \to \infty} (\text{the probability for the event \mathmode{E^{\vect{i}}_j}}) & \text{(by (\ref{e4_1_8+2}))} \cr
+\leq & \sum_{\vect{i} \in \cartpwr{\posint}{r}} 0 & \text{(by (\ref{e4_1_8+3}))} \cr
+=    & 0.
+\end{array}
+\]
+
+Therefore, we conclude that, with probability $1$, $\strct{R}'$ is a model of any extension axiom $\chi$ and hence of $\theory_\rand$.
+
+\begin{note}
+The \emph{values} of the random variable $\strct{R}'$ for which $\strct{R}'$ is a model of $\theory_\rand$ are exactly those $\tau$-structures that are isomorphic to the infinite random structure $\strct{R}$.
+\end{note}
+%
+\item \header{Hint to Exercise 4.1.9}
+%
 \end{enumerate}
 %end of section 1-----------------------------------------------------------------------------
 

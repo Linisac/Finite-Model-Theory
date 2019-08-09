@@ -28,7 +28,7 @@
 %%%enumeration, sequence, vector (tuple), support
 %%%set operations
 %%%function type, function operations
-%%%special set(s)
+%%%special set(s), theory
 %%%structure, symbol interpretation, structure operations, structure relations
 %%%partial isomorphism
 %%%elementary equivalence
@@ -99,8 +99,11 @@
 \newcommand{\inv}[1]{#1^{-1}} %inverse of function #1
 %% >
 
-%%special set(s) <
+%%special set(s), theory <
 \newcommand{\nat}{\mathbb{N}} %set of natural numbers
+\newcommand{\zah}{\mathbb{Z}} %set of integers
+\newcommand{\posint}{\mathbb{Z}_+} %set of positive integers
+\newcommand{\theory}{\mathit{T}} %theory
 \newcommand{\rand}{\mathrm{rand}} %random
 \newcommand{\spec}{\mathrm{Spec}} %spectrum
 %% >
@@ -240,12 +243,14 @@
 %if resetting of equation counter is required, use the instruction below:
 %\setcounter{equation}{0}
 
+\theoremstyle{plain}
+\newtheorem*{fact}{Fact}
 
 \theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-
-\theoremstyle{note}
 \newtheorem*{note}{Note}
+
+\theoremstyle{definition}
+\newtheorem*{remark}{Remark}
 
 \begin{document}
 %\begin{titlepage}
