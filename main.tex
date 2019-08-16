@@ -42,12 +42,13 @@
 %%%logic relations
 %%%logic operations
 %%%finite notions
+%%%random notions and theory
 %%%nullary relations and predicates
-%%%operations on formulas and structures
+%%%operations on formulas with structures
 %%%global relations
 %%%special classes of structures
 %%%extension axioms
-%%%labeled/unlabeled classes and probabilities
+%%labeled/unlabeled classes and probabilities
 %% >
 
 %%general <
@@ -103,8 +104,6 @@
 \newcommand{\nat}{\mathbb{N}} %set of natural numbers
 \newcommand{\zah}{\mathbb{Z}} %set of integers
 \newcommand{\posint}{\mathbb{Z}_+} %set of positive integers
-\newcommand{\theory}{\mathit{T}} %theory
-\newcommand{\rand}{\mathrm{rand}} %random
 \newcommand{\spec}{\mathrm{Spec}} %spectrum
 %% >
 
@@ -145,6 +144,7 @@
 
 %%graph, graph functions, graph relations <
 \newcommand{\graph}{\mathrm{GRAPH}} %the set of finite graphs
+\newcommand{\gr}{\mathit{G}} %notion of graphs
 \newcommand{\conn}{\mathrm{CONN}} %the set of connected graphs
 \newcommand{\dist}[1][]{\ifthenelse{\equal{#1}{}}{\mathit{d}}{\mathit{d}_{#1}}} %distance between two points in a graph
 \newcommand{\tree}{\mathrm{TREE}} %the set of finite trees
@@ -178,6 +178,7 @@
 \newcommand{\existatleast}[1]{\exists^{\atleast{#1}}} %exist at least #1
 \newcommand{\existatmost}[1]{\exists^{\atmost{#1}}} %exist at most #1
 \newcommand{\existexactly}[1]{\exists^{\exactly{#1}}} %exist exactly #1
+\newcommand{\distinct}{\mathrel{\mathrm{distinct}}} %distinct variables in formulas
 \newcommand{\free}{\mathrm{free}} %set of free variables of #1
 \newcommand{\qr}{\mathrm{qr}} %quantifier rank (of a formula)
 \newcommand{\modclass}{\mathrm{Mod}} %model class (of a formula)
@@ -191,6 +192,7 @@
 %%logic relations <
 \newcommand{\satis}{\models} %satisfaction relation
 \newcommand{\consq}{\models} %consequence relation
+\newcommand{\withassgn}[1]{[#1]} %with assignment #1; used in conjunction with \satis: \strct{A} \satis \varphi\withassgn{a} means the structure \strct{A} together with the assignment a satisfies \varphi
 %% >
 
 %%logic operations <
@@ -203,6 +205,14 @@
 \newcommand{\consqfin}{\consq_\fin} %consequence relation restricted to finite structures
 %% >
 
+%%random notions and theory <
+\newcommand{\rand}{\mathrm{rand}} %random
+\newcommand{\theory}{\mathit{T}} %theory
+\newcommand{\randstrtheory}{\theory_\rand} %random structure theory
+\newcommand{\infrandstr}{\strct{R}} %the infinite random structure
+\newcommand{\randgrtheory}{\theory_{\rand, \gr}} %random graph theory
+%% >
+
 %%nullary relations and predicates <
 \newcommand{\true}{\mathrm{TRUE}} %TRUE symbol
 \newcommand{\false}{\mathrm{FALSE}} %FALSE symbol
@@ -210,7 +220,7 @@
 \newcommand{\fls}{\mathrm{F}} %F symbol
 %% >
 
-%%operations on formulas and structures <
+%%operations on formulas with structures <
 \newcommand{\tuplesby}[2]{{#1^{#2}(\_)}} %tuples defined by formula #1 and structure #2
 \newcommand{\rltv}[2]{#1^{#2}} %formula #1 relativized to the set #2
 %% >
@@ -226,7 +236,7 @@
 
 %%extension axioms <
 \newcommand{\extaxm}[1][]{\ifthenelse{\equal{#1}{}}{\chi}{\chi_{#1}}} %extension axiom with optional parameter #1 (set of formulas)
-\newcommand{\conjextaxm}[1]{\epsilon_{#1}} %conjunction of extension axioms with variables indexed no more than #1
+\newcommand{\conjextaxm}[2][]{\ifthenelse{\equal{#1}{}}{\epsilon_{#2}}{#1^{#2}}} %conjunction of extension axioms where variables indexed no more than #2; if #1 is present then this gives the conjunction of #1 with extension axioms where variables are indexed no more than #2 that are compatible with the sentence #1
 %% >
 
 %%labeled/unlabeled classes and probabilities <
@@ -235,7 +245,6 @@
 \newcommand{\uclass}[1]{\mathit{U}_{#1}} %unlabeled class of strcutures
 \newcommand{\uprob}[1][]{\ifthenelse{\equal{#1}{}}{\mathit{u}}{\mathit{u}_{#1}}} %unlabeled probability over the class of structures of cardinality #1 or unlabeld asymptotic probability
 \newcommand{\wrt}{\mid} %with respect to; the separator between two classes in probability notation
-\newcommand{\distinct}{\mathrel{\mathrm{distinct}}} %distinct variables in formulas
 %% >
 
 

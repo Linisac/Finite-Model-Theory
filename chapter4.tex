@@ -111,7 +111,7 @@ F^{\vect{i}} = \bintsc^\infty_{j = 1} E^{\vect{i}}_j. \tag{$\ast\ast\ast$}
 It follows that
 \[
 \begin{array}{lll}
-\    & (\text{the probability that \mathmode{\strct{R} \satis \neg\chi}}) & \cr
+\    & (\text{the probability that \mathmode{\strct{R}' \satis \neg\chi}}) & \cr
 =    & (\text{the probability for the event \mathmode{\bunion_{\vect{i} \in \cartpwr{\posint}{r}} F^{\vect{i}}}}) & \cr
 \leq & \sum_{\vect{i} \in \cartpwr{\posint}{r}} (\text{the probability for the event \mathmode{F^{\vect{i}}}}) & \cr
 =    & \sum_{\vect{i} \in \cartpwr{\posint}{r}} (\text{the probability for the event \mathmode{\bintsc^\infty_{j = 1} E^{\vect{i}}_j}}) & \text{(by (\ref{e4_1_8+4}))} \cr
@@ -121,16 +121,49 @@ It follows that
 \end{array}
 \]
 
-Therefore, we conclude that, with probability $1$, $\strct{R}'$ is a model of any extension axiom $\chi$ and hence of $\theory_\rand$.
+Therefore, we conclude that, with probability $1$, $\strct{R}'$ is a model of any extension axiom $\chi$ and hence of $\randstrtheory$.
 
 \begin{note}
-The \emph{values} of the random variable $\strct{R}'$ for which $\strct{R}'$ is a model of $\theory_\rand$ are exactly those $\tau$-structures that are isomorphic to the infinite random structure $\strct{R}$.
+The \emph{values} of the random variable $\strct{R}'$ for which $\strct{R}'$ is a model of $\randstrtheory$ are exactly those $\tau$-structures that are isomorphic to the infinite random structure $\infrandstr$.
 \end{note}
 %
-\item \header{Hint to Exercise 4.1.9}
+\item \header{Hint to Exercise 4.1.9} (INCOMPLETE)
 %
 \end{enumerate}
 %end of section 1-----------------------------------------------------------------------------
+
+
+%section 2------------------------------------------------------------------------------------
+\setcounter{section}{1}
+\section{Parametric Classes}
+\begin{enumerate}[1.]
+%
+\item \header{Note on Definition 4.2.1 and the Arguments Leading to Theorem 4.2.3} A parametric sentence may be a conjunction of sentences that involve different numbers of variables, in which the boolean combinations may contain different relation symbols. For example,
+\[
+\forall x Rxx \land \forall \distinct x y (\neg Rxy \lor Tyxy)
+\]
+is a parametric sentence.
+
+In the construction procedure leading to statement (1) before 4.2.3, notice that whether or not an $s$-tuple $b_1, \etc, b_s$ is in a relation $\intpr{R}{B}$ is independent of other tuples (not necessarily having length $s$) due to the fact that every atomic subformula of $\varphi_0$ contains exactly the variables that appear in its corresponding quantification and that every conjunct of $\varphi_0$ is a universal formula. This explains why the procedure works for parametric classes and why it may not work for classes of transitive properties (hence those properties are excluded in the consideration of parametric classes).
+
+To obtain (2), let $\strct{A}, \strct{B}$ be two models of $\randstrtheory(\varphi_0)$ and choose $I$ as in 3.2.11. Obviously $I \neq \emptyset$ as $\emptymap \mapsto \emptymap \in I$ since $\strct{A} \satis \tr \land \neg\fls$ and $\strct{B} \satis \tr \land \neg\fls$. For the forth property, let $\vect{a} \mapsto \vect{b} \in I$ and $\vect{a} = a_1, \etc, a_r$ and $\vect{b} = b_1, \etc, b_r$ each consist of distinct entries. Let $a_{r + 1} \in A$ be different from entries of $\vect{a}$ and consider $\Phi \subseteq \Delta_{r + 1}$ such that
+\[
+\strct{A} \satis (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi)\withassgn{\vect{a}a_{r + 1}}.
+\]
+It follows that $\strct{A} \satis \exists \distinct v_1 \etc v_rv_{r + 1} (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi)$ and hence $\extaxm[\Phi]$ is compatible with $\varphi_0$, which gives $\extaxm[\Phi] \in \randstrtheory(\varphi_0)$. As $\strct{B} \satis \randstrtheory(\varphi_0)$, there is a $b_{r + 1} \in B$ different from the entries of $\vect{b}$ such that
+\[
+\strct{B} \satis (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi)\withassgn{\vect{b}b_{r + 1}}.
+\]
+Therefore, $\vect{a}a_{r + 1} \mapsto \vect{b}b_{r + 1} \in I$. Similarly for the back property.
+
+Clearly, for every $r \geq 0$ the theory $\randstrtheory(\varphi_0)$ contains at least one $(r + 1)$-extension axiom: By (1) there is a model $\strct{A}$ of $\varphi_0$ of cardinality $r + 1$, say, having domain $A = \sete{a_1, \etc, a_{r + 1}}$. Let $\Phi \subseteq \Delta_{r + 1}$ such that
+\[
+\strct{A} \satis (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi) \withassgn{a_1, \etc, a_{r + 1}}.
+\]
+We then have $\strct{A} \satis \exists \distinct v_1 \etc v_{r + 1} (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi)$ and hence the $(r + 1)$-extension axiom $\extaxm[\Phi]$ is compatible with $\varphi_0$ and is in $\randstrtheory(\varphi_0)$.
+%
+\end{enumerate}
+%end of section 2-----------------------------------------------------------------------------
 
 
 %section 5------------------------------------------------------------------------------------
