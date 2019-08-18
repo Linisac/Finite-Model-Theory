@@ -144,7 +144,7 @@ The \emph{values} of the random variable $\strct{R}'$ for which $\strct{R}'$ is 
 \]
 is a parametric sentence.
 
-In the construction procedure leading to statement (1) before 4.2.3, notice that whether or not an $s$-tuple $b_1, \etc, b_s$ is in a relation $\intpr{R}{B}$ is independent of other tuples (not necessarily having length $s$) due to the fact that every atomic subformula of $\varphi_0$ contains exactly the variables that appear in its corresponding quantification and that every conjunct of $\varphi_0$ is a universal formula. This explains why the procedure works for parametric classes and why it may not work for classes of transitive properties (hence those properties are excluded in the consideration of parametric classes).
+In the construction process leading to statement (1) before 4.2.3, notice that whether or not an $s$-tuple $b_1, \etc, b_s$ is in a relation $\intpr{R}{B}$ is independent of other tuples (not necessarily having length $s$) due to the fact that every atomic subformula of $\varphi_0$ contains exactly the variables that appear in its corresponding quantification and that every conjunct of $\varphi_0$ is a universal formula. This explains why the process works for parametric classes and why it may not work for classes of transitive properties (hence those properties are excluded in the consideration of parametric classes).
 
 To obtain (2), let $\strct{A}, \strct{B}$ be two models of $\randstrtheory(\varphi_0)$ and choose $I$ as in 3.2.11. Obviously $I \neq \emptyset$ as $\emptymap \mapsto \emptymap \in I$ since $\strct{A} \satis \tr \land \neg\fls$ and $\strct{B} \satis \tr \land \neg\fls$. For the forth property, let $\vect{a} \mapsto \vect{b} \in I$ and $\vect{a} = a_1, \etc, a_r$ and $\vect{b} = b_1, \etc, b_r$ each consist of distinct entries. Let $a_{r + 1} \in A$ be different from entries of $\vect{a}$ and consider $\Phi \subseteq \Delta_{r + 1}$ such that
 \[
@@ -156,11 +156,29 @@ It follows that $\strct{A} \satis \exists \distinct v_1 \etc v_rv_{r + 1} (\blan
 \]
 Therefore, $\vect{a}a_{r + 1} \mapsto \vect{b}b_{r + 1} \in I$. Similarly for the back property.
 
-Clearly, for every $r \geq 0$ the theory $\randstrtheory(\varphi_0)$ contains at least one $(r + 1)$-extension axiom: By (1) there is a model $\strct{A}$ of $\varphi_0$ of cardinality $r + 1$, say, having domain $A = \sete{a_1, \etc, a_{r + 1}}$. Let $\Phi \subseteq \Delta_{r + 1}$ such that
+On the other hand, for every $r \geq 0$ the theory $\randstrtheory(\varphi_0)$ contains at least one $(r + 1)$-extension axiom: By (1) there is a model $\strct{A}$ of $\varphi_0$ of cardinality $r + 1$, say, having domain $A = \sete{a_1, \etc, a_{r + 1}}$. Let $\Phi \subseteq \Delta_{r + 1}$ such that
 \[
 \strct{A} \satis (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi) \withassgn{a_1, \etc, a_{r + 1}}.
 \]
 We then have $\strct{A} \satis \exists \distinct v_1 \etc v_{r + 1} (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi)$ and hence the $(r + 1)$-extension axiom $\extaxm[\Phi]$ is compatible with $\varphi_0$ and is in $\randstrtheory(\varphi_0)$.
+
+As for (3), a slight modification can be made to the construction procedure for the countable model of $\randstrtheory$ in 3.2.11 to obtain one for $\randstrtheory(\varphi_0)$: Let $\seq{\alpha_n}{n \geq 0}$ be as in 3.2.11 except that now we only consider extension axioms $\extaxm \in \randstrtheory(\varphi_0)$. We choose $\strct{A}_0$ with $A_0 = \sete{0}$ so that $\strct{A}_0 \satis \varphi_0$ according to (1). Suppose that $\strct{A}_n$ has been defined such that $\strct{A}_n \satis \varphi_0$. For $\alpha_n = (\vect{m}, \extaxm)$ where $\vect{m} = m_1, \etc, m_r$ and
+\[
+\extaxm \defas \forall \distinct v_1 \etc v_r \exists v_{r + 1} (\bland_{1 \leq i \leq r} \neg v_{r + 1} = v_i \land \bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi),
+\]
+define the relationship between $n + 1$ and $\vect{m}$ in $\strct{A}_{n + 1}$ as in 3.2.11 so that
+\[
+\strct{A}_{n + 1} \satis (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi) \withassgn{m_1, \etc, m_r, n + 1};
+\]
+and, in case $k \geq 2$, for every $2 \leq s \leq k$ and every $s$-tuple $\vect{m}'$ of distinct entries that contains $n + 1$ and an entry not in $\vect{m}$, define the ``shape'' of $\vect{m}'$ in $\strct{A}_{n + 1}$ in the same way as in the construction process leading to (1). To verify $\strct{A}_{n + 1} \satis \varphi_0$, it remains to show the substructure $\strct{A}'$ of $\strct{A}_{n + 1}$ with domain $A' = \sete{m_1, \etc, m_r, n + 1}$ is a model of $\varphi_0$: Since $\extaxm \in \randstrtheory(\varphi_0)$ for the extension axiom $\extaxm$ in $\alpha_n$, we have $\extaxm$ is compatible with $\varphi_0$ and thus
+\[
+\varphi_0 \land \exists \distinct v_1 \etc v_r v_{r + 1} (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi)
+\]
+is satisfiable, say, by $\strct{B}$. Suppose $b_1, \etc, b_r, b_{r + 1}$ are elements in $B$ such that
+\[
+\strct{B} \satis (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi) \withassgn{b_1, \etc, b_r, b_{r + 1}},
+\]
+then we have that the substructure $\strct{B}'$ of $\strct{B}$ with domain $B' = \sete{b_1, \etc, b_r, b_{r + 1}}$ is a model of $\varphi_0$ (since $\varphi_0$ is a conjunction of universal sentences) and $\strct{A}'$ and $\strct{B}'$ are isomorphic. We conclude that $\strct{A}' \satis \varphi_0$.
 %
 \end{enumerate}
 %end of section 2-----------------------------------------------------------------------------
