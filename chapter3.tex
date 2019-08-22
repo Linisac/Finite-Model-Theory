@@ -247,10 +247,10 @@ and for $1 \leq i \leq s$,
 %%
 \end{enumerate}
 %
-\item \header{Note on the $s$-$m$-Isomorphism Type $\ityp[s]{m}{\strct{A}, \vect{a}}$} Unlike $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$, the game $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ consists of moves that \emph{replace} pairs of elements in partial isomorphisms rather than \emph{extend} partial isomorphisms with pairs of elements. This is reflected in the definition of $\ityp{m + 1}{\strct{A}, \vect{a}}$:
+\item \header{Note on the $s$-$m$-Isomorphism Type $\ityp[s]{m}{\strct{A}, \vect{a}}$} Unlike $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$, the game $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ consists of moves that \emph{substitute} pairs of elements in partial isomorphisms rather than \emph{extend} partial isomorphisms with pairs of elements. This is reflected in the definition of $\ityp{m + 1}{\strct{A}, \vect{a}}$:
 \begin{enumerate}[(1)]
 %%
-\item The running conjunction $\bland\limits_{1 \leq i \leq s}$ specifies the valid positions for replacement, and the formula $\ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}}$ specifies that $\vect{a}\sbst{a}{i} \mapsto \vect{b}\sbst{b}{i}$ is an $s$-partial isomorphism whose constituent pairs can be replaced $m$ times (given the premise $\strct{B} \satis \ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}}[\vect{b}\sbst{b}{i}]$).
+\item The running conjunction $\bland\limits_{1 \leq i \leq s}$ specifies the valid positions for substitution, and the formula $\ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}}$ specifies that $\vect{a}\sbst{a}{i} \mapsto \vect{b}\sbst{b}{i}$ is an $s$-partial isomorphism whose constituent pairs can be substituted $m$ times (given the premise $\strct{B} \satis \ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}}[\vect{b}\sbst{b}{i}]$).
 %%
 \item The conjunct $\ityp{0}{\strct{A}, \vect{a}}$ is necessary because it describes the relation among the elements in $\vect{a}$ so that if $\strct{B} \satis \ityp{0}{\strct{A}, \vect{a}}[\vect{b}]$ then $\vect{a} \mapsto \vect{b}$ is an $s$-partial isomorphism from $\strct{A}$ to $\strct{B}$ (and vice versa), whereas the other conjunct $\bland\limits_{1 \leq i \leq s}(\bland\limits_{a \in A} \exists v_i \ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}} \land \forall v_i \blor\limits_{a \in A} \ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}})$ does not have this effect. In fact, we have
 \[
@@ -276,13 +276,23 @@ iff & $\strct{B} \satis (\bland\limits_{m \in \nat} \ityp[s]{m}{\strct{A}, \vect
 \end{tabular}
 \end{center}
 %
-\item \header{Note on 3.3.11} The underlying vocabulary $\tau$ is relational, as in 3.2.11.
+\item \header{Note on 3.3.11} The underlying vocabulary $\tau$ is relational, as in 3.2.11. Also, for $s \geq 1$, $\conjextaxm{s}$ is satisfiable because $\randstrtheory \consq \conjextaxm{s}$.
+
+The first statement that \emph{every model of $\conjextaxm{s}$ has at least $s$ elements} can be proved by induction on $s$, using the fact that $\conjextaxm{s + 1}$ is the conjunction of all $(s + 1)$-extension axioms with $\conjextaxm{s}$.
 
 To prove the second statement that \emph{every two models $\strct{A}$ and $\strct{B}$ of $\epsilon_s$ are $s$-partially isomorphic}, consider the set
 \[
 I \defas \sett{\vect{a} \mapsto \vect{b}}{\mathmode{\vect{a} \in \cartpwr{(A \union \sete{\ast})}{s}}, \mathmode{\vect{b} \in \cartpwr{(B \union \sete{\ast})}{s}}, and \mathmode{\ityp{0}{\strct{A}, \vect{a}} = \ityp{0}{\strct{B}, \vect{b}}}}
 \]
-and show that it has the back and forth properties. Since $\tau$ is relational, $\ast\etc\ast \mapsto \ast\etc\ast \in I$.
+and show that it has the back and forth properties. In proving the forth property, for example, suppose that $\vect{a} \mapsto \vect{b}$ is an $s$-partial isomorphism from $\strct{A}$ to $\strct{B}$ where $\vect{a}$ and $\vect{b}$ can be assumed to consist of distinct elements and $a$ is not an entry of $\vect{a}$, to show there is a $b$ (that is different from all entries in $\vect{b}$) such that, say, $\vect{a}\sbst{a}{i} \mapsto \vect{b}\sbst{b}{i}$ is an $s$-partial isomorphism, there are two cases to consider:
+\begin{enumerate}[(1)]
+%%
+\item If $a_i = \ast$ (\emph{extension} case), then we argue as for usual partial isomorphisms.
+%%
+\item If $a_i \neq \ast$ (\emph{substitution} case), then observe that $\vect{a}' \mapsto \vect{b}'$ is also an $s$-partial isomorphism where $\vect{a}'$ and $\vect{b}'$ are $\vect{a}$ and $\vect{b}$ with $a_i$ and $b_i$ removed, respectively. We then reduce this to the above extension case.
+%%
+\end{enumerate}
+Since $\tau$ is relational, we have $\ast\etc\ast \mapsto \ast\etc\ast \in I$ and hence $I \neq \emptyset$.
 %
 \item \header{Note on 3.3.13} See Note on Example 2.3.5 on how to extend the result to arbitrary $\tau$.
 %

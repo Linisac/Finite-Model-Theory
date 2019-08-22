@@ -21,6 +21,10 @@ and let $\strct{A}$ with domain $A = \sete{1, \etc, n}$ be a random structure. T
 \leq & n^r \mul (\frac{c - 1}{c})^{n - r}. \cr
 \end{array}
 \]
+
+\begin{note}
+The proof yields that for sufficiently large $n$, every extension axiom $\extaxm$ has a model of cardinality $n$.
+\end{note}
 %
 \item \header{Hint to Exercise 4.1.6} By 2.2.6, the set
 \[
@@ -156,29 +160,70 @@ It follows that $\strct{A} \satis \exists \distinct v_1 \etc v_rv_{r + 1} (\blan
 \]
 Therefore, $\vect{a}a_{r + 1} \mapsto \vect{b}b_{r + 1} \in I$. Similarly for the back property.
 
+As for (3), a slight modification can be made to the construction procedure for the countable model of $\randstrtheory$ in 3.2.11 to obtain one for $\randstrtheory(\varphi_0)$: Let $\seq{\alpha_n}{n \geq 0}$ be as in 3.2.11 except that now we only consider extension axioms $\extaxm \in \randstrtheory(\varphi_0)$. We choose $\strct{A}_0$ with $A_0 = \sete{0}$ so that $\strct{A}_0 \satis \varphi_0$ according to (1). Suppose that $\strct{A}_n$ has been defined such that $\strct{A}_n \satis \varphi_0$. For $\alpha_n = (\vect{m}, \extaxm[\Phi])$ where $\vect{m} = m_1, \etc, m_r$ that are distinct elements not greater than $n$ (if $r = 0$ then $\vect{m} = \emptyseq$) and $\Phi \subseteq \Delta_{r + 1}$, we show how to construct a model $\strct{A}_{n + 1}$ of $\varphi_0$ so that $(\strct{A}_{n + 1}, m_1, \etc, m_r, n + 1) \satis \Phi$:
+\begin{itemize}
+%%
+\item Let, as in 3.2.11,
+\begin{center}
+$\strct{A}_{n + 1} \satis \varphi \withassgn{m_1, \etc, m_r, n + 1}$ \ \ \ iff \ \ \ $\varphi \in \Phi$.
+\end{center}
+%%
+\item In case $n > r$ and $k \geq 2$, for every $2 \leq s \leq k$ and for every $s$-tuple $\vect{m}'$ that contains $n + 1$ and an entry $\leq n$ not in $\vect{m}$, we apply the construction process for (1) to $\vect{m}'$.
+%%
+\end{itemize}
+Note that the second step is independent of $\Phi$, and thus in order to verify $\strct{A}_{n + 1} \satis \varphi_0$, it remains to show that for every conjunct
+\[
+\forall \distinct v_1 \etc v_t \psi
+\]
+of $\varphi_0$ and every $t$-tuple $\vect{a} = a_1, \etc, a_t$ (not necessarily distinct) that contains $n + 1$ and has all its other entries (if any) from $\vect{m}$, we have $\strct{A}_{n + 1} \satis \psi \withassgn{\vect{a}}$. In fact, letting $\psi'$ be obtained from $\psi$ by changing $v_i$ ($1 \leq i \leq t$) to $v_j$ ($1 \leq j \leq r$) if $a_i = m_j$ and to $v_{r + 1}$ if $a_i = n + 1$, we have that $\psi'$ is a conjunction of some formulas in $\Delta_{r + 1}$ and
+\begin{center}
+$\strct{A}_{n + 1} \satis \psi \withassgn{\vect{a}}$ \ \ \ iff \ \ \ $\strct{A}_{n + 1} \satis \psi' \withassgn{\vect{m}, n + 1}$.
+\end{center}
+As $\extaxm[\Phi]$ is compatible with $\varphi_0$, there is a model $\strct{B}$ of
+\[
+\varphi_0 \land \exists \distinct v_1 \etc v_r v_{r + 1} (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi).
+\]
+Consider an $(r + 1)$-tuple $\vect{b} = b_1, \etc, b_{r + 1}$ of distinct elements such that
+\[
+\strct{B} \satis (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi) \withassgn{\vect{b}},
+\]
+then
+\begin{center}
+$\strct{A}_{n + 1} \satis \psi' \withassgn{\vect{m}, n + 1}$ \ \ \ iff \ \ \ $\strct{B} \satis \psi' \withassgn{\vect{b}}$
+\end{center}
+(recall $\psi'$ is a conjunction of some formulas in $\Delta_{r + 1}$). But it is true that $\strct{B} \satis \psi' \withassgn{\vect{b}}$ because $\strct{B}$ is a model of $\varphi_0$. We conclude that $\strct{A}_{n + 1} \satis \psi \withassgn{\vect{a}}$.
+
 On the other hand, for every $r \geq 0$ the theory $\randstrtheory(\varphi_0)$ contains at least one $(r + 1)$-extension axiom: By (1) there is a model $\strct{A}$ of $\varphi_0$ of cardinality $r + 1$, say, having domain $A = \sete{a_1, \etc, a_{r + 1}}$. Let $\Phi \subseteq \Delta_{r + 1}$ such that
 \[
 \strct{A} \satis (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi) \withassgn{a_1, \etc, a_{r + 1}}.
 \]
 We then have $\strct{A} \satis \exists \distinct v_1 \etc v_{r + 1} (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi)$ and hence the $(r + 1)$-extension axiom $\extaxm[\Phi]$ is compatible with $\varphi_0$ and is in $\randstrtheory(\varphi_0)$.
 
-As for (3), a slight modification can be made to the construction procedure for the countable model of $\randstrtheory$ in 3.2.11 to obtain one for $\randstrtheory(\varphi_0)$: Let $\seq{\alpha_n}{n \geq 0}$ be as in 3.2.11 except that now we only consider extension axioms $\extaxm \in \randstrtheory(\varphi_0)$. We choose $\strct{A}_0$ with $A_0 = \sete{0}$ so that $\strct{A}_0 \satis \varphi_0$ according to (1). Suppose that $\strct{A}_n$ has been defined such that $\strct{A}_n \satis \varphi_0$. For $\alpha_n = (\vect{m}, \extaxm)$ where $\vect{m} = m_1, \etc, m_r$ and
-\[
-\extaxm \defas \forall \distinct v_1 \etc v_r \exists v_{r + 1} (\bland_{1 \leq i \leq r} \neg v_{r + 1} = v_i \land \bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi),
-\]
-define the relationship between $n + 1$ and $\vect{m}$ in $\strct{A}_{n + 1}$ as in 3.2.11 so that
-\[
-\strct{A}_{n + 1} \satis (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi) \withassgn{m_1, \etc, m_r, n + 1};
-\]
-and, in case $k \geq 2$, for every $2 \leq s \leq k$ and every $s$-tuple $\vect{m}'$ of distinct entries that contains $n + 1$ and an entry not in $\vect{m}$, define the ``shape'' of $\vect{m}'$ in $\strct{A}_{n + 1}$ in the same way as in the construction process leading to (1). To verify $\strct{A}_{n + 1} \satis \varphi_0$, it remains to show the substructure $\strct{A}'$ of $\strct{A}_{n + 1}$ with domain $A' = \sete{m_1, \etc, m_r, n + 1}$ is a model of $\varphi_0$: Since $\extaxm \in \randstrtheory(\varphi_0)$ for the extension axiom $\extaxm$ in $\alpha_n$, we have $\extaxm$ is compatible with $\varphi_0$ and thus
-\[
-\varphi_0 \land \exists \distinct v_1 \etc v_r v_{r + 1} (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi)
-\]
-is satisfiable, say, by $\strct{B}$. Suppose $b_1, \etc, b_r, b_{r + 1}$ are elements in $B$ such that
-\[
-\strct{B} \satis (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi) \withassgn{b_1, \etc, b_r, b_{r + 1}},
-\]
-then we have that the substructure $\strct{B}'$ of $\strct{B}$ with domain $B' = \sete{b_1, \etc, b_r, b_{r + 1}}$ is a model of $\varphi_0$ (since $\varphi_0$ is a conjunction of universal sentences) and $\strct{A}'$ and $\strct{B}'$ are isomorphic. We conclude that $\strct{A}' \satis \varphi_0$.
+The above argument also yields that for every $s \geq 1$ and every $r < s$, $\conjextaxm[\varphi_0]{s}$ contains at least one $(r + 1)$-extension axiom as a conjunct.
+
+Statement (3) immediately implies that for $s \geq 1$, $\conjextaxm[\varphi_0]{s}$ is satisfiable by a model of $\varphi_0$, because $\randstrtheory(\varphi_0) \consq \conjextaxm[\varphi_0]{s}$.
+
+As in 3.3.11, we can conclude that
+\begin{itemize}
+%%
+\item Every model of $\conjextaxm[\varphi_0]{s}$ has at least $s$ elements (by induction on $s$, using the fact that $\conjextaxm[\varphi_0]{s + 1}$ is the conjunction of $\conjextaxm[\varphi_0]{s}$ and at least one $(s + 1)$-extension axiom).
+%%
+\item Every two models of $\conjextaxm[\varphi_0]{s}$ are $s$-partially isomorphic (argue as for (2) above and as in 3.3.11 simultaneously), from which we obtain (4).
+%%
+\end{itemize}
+
+Finally, let $A$ be a set such that $\card{A} = n \geq r + 1$ and let $\Phi \subseteq \Delta_{r + 1}$ such that $\extaxm[\Phi]$ is compatible with $\varphi_0$, we show how to construct a model $\strct{A}$ of $\varphi_0$ with domain $A$ such that $(\strct{A}, a_1 \etc a_ra) \satis \Phi$ in which $a_1, \etc, a_r, a$ are all distinct.\footnote{I suspect that there is a typo in the parenthesized argument after (5).} The construction consists of two steps:
+\begin{itemize}
+%%
+\item For every $0 \leq m \leq r$ and $(m + 1)$-tuple $\vect{a} = a_{i_1} \etc a_{i_m}a$ with $1 \leq i_1 < i_2 < \etc < i_m \leq r$ (if $m = 0$ then $\vect{a} = a$) and $\varphi(v_{i_1}, \etc, v_{i_m}, v_{r + 1}) = Ry_1 \etc y_n$ with $\sete{y_1, \etc, y_n} = \sete{v_{i_1}, \etc, v_{i_m}, v_{r + 1}}$, let
+\begin{center}
+$\strct{A} \satis \varphi \withassgn{\vect{a}}$ \ \ \ iff \ \ \ $\varphi \in \Phi$.
+\end{center}
+%%
+\item For all other tuples $\vect{a}'$ (which may or may not contain $a$ and is not a permutation of those $\vect{a}$ considered above) and all $R \in \tau$ we use the construction procedure leading to (1) for the $\vect{a}$-part of $\intpr{R}{A}$.
+%%
+\end{itemize}
+It is easy to show that $\strct{A} \satis \varphi_0$ using the same argumentation as for (3) and thus omitted. Also observe that the second step is independent of $\Phi$, so we can focus on $\Phi$ when proving (5) using the same method as for 4.1.2.
 %
 \end{enumerate}
 %end of section 2-----------------------------------------------------------------------------
