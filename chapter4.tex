@@ -1,6 +1,8 @@
 \setcounter{chapter}{3}
 \chapter{0-1 Laws}
 %section 1------------------------------------------------------------------------------------
+\setcounter{section}{0}
+\section{0-1 Laws for $\folog$ and $\inflog[\omega]$}
 \begin{enumerate}[1.]
 %
 \item \header{Note on the Proof of Lemma 4.1.2} Denote
@@ -227,6 +229,33 @@ It is easy to show that $\strct{A} \satis \varphi_0$ using the same argumentatio
 %
 \end{enumerate}
 %end of section 2-----------------------------------------------------------------------------
+
+
+%section 3------------------------------------------------------------------------------------
+\setcounter{section}{2}
+\section{Unlabeled 0-1 Laws}
+\begin{enumerate}[1.]
+%
+\item \header{Two Methods to Check Automorphisms} Let $\strct{A}$ be a $\tau$-structure with domain $A = \sete{a_1, \etc, a_n}$ that is represented as a collection of tables one for each relation and constant symbol so that
+\begin{itemize}
+%%
+\item the table for a $k$-ary $R$ has an entry for every $k$-tuple $(a_{i_1}, \etc, a_{i_k})$, with a $\bullet$ in it if $(a_{i_1}, \etc, a_{i_k}) \in \intpr{R}{A}$ and a $\circ$ otherwise; and
+%%
+\item the table for a constant $c$ has an entry for every element $a_i$, with a $\bullet$ in it if $\intpr{c}{A} = a_i$ and a $\circ$ otherwise.
+%%
+\end{itemize}
+Below are two methods to check whether a permutation $\pi$ over $A$ is an automorphism of $\strct{A}$. For simplicity, let $\pi$ be a permutation over the set of indices $\sete{1, \etc, n}$ of elements rather than over $A$ itself.
+\begin{enumerate}[(1)]
+%%
+\item In all tables change every element $a_i$ to $a_{\pi(i)}$ and then rearrange all entries into the usual lexicographic order based on the ordering $a_1, \etc, a_n$. Check if the resulting collection of tables is identical to that for $\strct{A}$ entrywise.
+%%
+\item In all tables rearrange the entries into the lexicographic order based on the ordering $a_{\pi(1)}, \etc, a_{\pi(n)}$. Check if the resulting collection of tables is identical to that for $\strct{A}$ entrywise.
+%%
+\end{enumerate}
+In fact, it is easy to verify the correctness of the two methods. In the first method, we can think of every element $a_i$ as having a more informative subscript $i \to \pi(i)$ (it is intended to mean moving from \emph{source} $i$ to \emph{destination} $\pi(i)$) so that $a_i$ is actually $a_{i \to \pi(i)}$, and by rearranging all entries by the $\pi(i)$'s following the arrow $\to$ in the subscripts and comparing the resulting tables with the original ones we are in effect checking whether the structure is preserved or altered under $\pi$. Likewise, in the second method, we think of $a_i$ as subscripted $a_{i \from \inv{\pi}(i)}$ (recall the inverse $\inv{\pi}$ of a permutation $\pi$ is also a permutation), and rearranging all entries by the $\inv{\pi}(i)$'s (in the usual order of $1, \etc, n$) and comparing the resultant tables with the original ones does the same job.
+%
+\end{enumerate}
+%end of section 3-----------------------------------------------------------------------------
 
 
 %section 5------------------------------------------------------------------------------------
