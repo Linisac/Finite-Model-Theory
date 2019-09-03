@@ -150,7 +150,7 @@ The \emph{values} of the random variable $\strct{R}'$ for which $\strct{R}'$ is 
 \]
 is a parametric sentence.
 
-In the construction process leading to statement (1) before 4.2.3, notice that whether or not an $s$-tuple $b_1, \etc, b_s$ is in a relation $\intpr{R}{B}$ is independent of other tuples (not necessarily having length $s$) due to the fact that every atomic subformula of $\varphi_0$ contains exactly the variables that appear in its corresponding quantification and that every conjunct of $\varphi_0$ is a universal formula. This explains why the process works for parametric classes and why it may not work for classes of transitive properties (hence those properties are excluded in the consideration of parametric classes).
+In the construction process leading to statement (1) before 4.2.3, the definition of parametric sentences gives us that whether or not an $s$-tuple $b_1, \etc, b_s$ is in a relation $\intpr{R}{B}$ is independent of other tuples (not necessarily having length $s$) due to the fact that every atomic subformula of $\varphi_0$ contains exactly the variables that appear in its corresponding quantification and that every conjunct of $\varphi_0$ is a universal formula. This explains why the process works for parametric classes and why it may not work for classes of transitive properties (hence those properties are excluded in the consideration of parametric classes).
 
 To obtain (2), let $\strct{A}, \strct{B}$ be two models of $\randstrtheory(\varphi_0)$ and choose $I$ as in 3.2.11. Obviously $I \neq \emptyset$ as $\emptymap \mapsto \emptymap \in I$ since $\strct{A} \satis \tr \land \neg\fls$ and $\strct{B} \satis \tr \land \neg\fls$. For the forth property, let $\vect{a} \mapsto \vect{b} \in I$ and $\vect{a} = a_1, \etc, a_r$ and $\vect{b} = b_1, \etc, b_r$ each consist of distinct entries. Let $a_{r + 1} \in A$ be different from entries of $\vect{a}$ and consider $\Phi \subseteq \Delta_{r + 1}$ such that
 \[
@@ -253,6 +253,68 @@ Below are two methods to check whether a permutation $\pi$ over $A$ is an automo
 %%
 \end{enumerate}
 In fact, it is easy to verify the correctness of the two methods. In the first method, we can think of every element $a_i$ as having a more informative subscript $i \to \pi(i)$ (it is intended to mean moving from \emph{source} $i$ to \emph{destination} $\pi(i)$) so that $a_i$ is actually $a_{i \to \pi(i)}$, and by rearranging all entries by the $\pi(i)$'s following the arrow $\to$ in the subscripts and comparing the resulting tables with the original ones we are in effect checking whether the structure is preserved or altered under $\pi$. Likewise, in the second method, we think of $a_i$ as subscripted $a_{i \from \inv{\pi}(i)}$ (recall the inverse $\inv{\pi}$ of a permutation $\pi$ is also a permutation), and rearranging all entries by the $\inv{\pi}(i)$'s (in the usual order of $1, \etc, n$) and comparing the resultant tables with the original ones does the same job.
+%
+\item \header{Note on Lemma 4.3.1} This lemma gives us the intuitive ideas:
+\begin{enumerate}[\rm(1)]
+%%
+\item The more rigid a structure $\strct{A}$ is, the more automorphisms it has.
+%%
+\item The higher proportion of rigid structures a class $H$ has (in the unlabeled sense), the larger factor $\lclass{n}(H)$ is to $\uclass{n}(H)$. (This factor ranges between $1$ and $n!$.)
+%%
+\end{enumerate}
+
+In the proof for part (c), a better choice for the symbol denoting a nontrivial automorphism in this context is $\sigma : \strct{A} \isom \strct{A}$. Since
+\[
+\sigma = (\inv{\pi} \cmps \pi) \cmps \sigma = \inv{\pi} \cmps (\pi \cmps \sigma),
+\]
+we have by ($\ast$) that
+\[
+\strct{A}_\pi = \strct{A}_{\pi \cmps \sigma}
+\]
+(here $\pi \cmps \sigma$ takes the place of $\rho$). In fact, if we view two automorphisms $\pi, \rho$ as equivalent when $\strct{A}_\pi = \strct{A}_\rho$, then the above argument gives that every equivalence class has the same size and furthermore,
+\[
+(\text{number of structures isomorphic to \mathmode{\strct{A}}}) \times (\text{number of automorphisms of \mathmode{\strct{A}}}) = n!
+\]
+in which only structures with domain $\sete{1, \etc, n}$ are considered.
+
+Finally, note that $\lclass{n}$ is not necessarily a multiple of $\uclass{n}$: Consider the class $H$ of digraphs, then we have $\lclass{2}(H) = 4$ and $\uclass{2}(H) = 3$.
+%
+\item \header{Note on Lemma 4.3.2} Consider the vocabulary $\tau = \sete{P_1, \etc, P_k}$ of unary relation symbols ($k \geq 1$) and the two $\tau$-structures $\strct{A}, \strct{B}$ with $A = B = \sete{1, \etc, 2^k}$ such that every subset $S_1 \intsc \etc \intsc S_k$ of $A$ contains exactly one element where $S_i = \intpr{P_i}{A}$ or $S_i = A \setminus \intpr{P_i}{A}$ and $\intpr{P_i}{B} = \emptyset$.
+
+Let $H$ consist of structures that are isomorphic to $\strct{A}$ or $\strct{B}$. Then we have that
+\begin{center}
+$\lprob[2^k](\rigid \wrt H) = \frac{\lclass{2^k}(\rigid \intsc H)}{\lclass{2^k}(H)} = \frac{(2^k)!}{(2^k)! + 1}$, \ and $\uprob[2^k](\rigid \wrt H) = \frac{\uclass{2^k}(\rigid \intsc H)}{\uclass{2^k}(H)} = \frac{1}{2}$.
+\end{center}
+
+This example shows that for some $n$ (in this case $n = 2^k$) the labeled and unlabeled probabilities can differ greatly.
+%
+\item \header{Note on Theorem 4.3.4} As explained in the footnote, here
+\[
+\lprob(K \wrt H) = \uprob(K \wrt H)
+\]
+actually stands for
+\[
+\lim_{n \to \infty} \lprob[n](K \wrt H) = \lim_{n \to \infty} \uprob[n](K \wrt H),
+\]
+which means that either both sides converge to the same value or both diverge.
+
+Below we justify that $\lprob(K \wrt H) = \lprob(K \wrt \rigid \intsc H)$ and $\uprob(K \wrt H) = \uprob(K \wrt \rigid \intsc H)$ given $\uprob(\rigid \wrt H) = 1$. Since
+\[
+\lim_{n \to \infty} \frac{\lclass{n}(\cmpl{\rigid} \intsc H)}{\lclass{n}(H)} = \lim_{n \to \infty} \frac{\lclass{n}(H)}{\lclass{n}(H)} - \lim_{n \to \infty} \frac{\lclass{n}(\rigid \intsc H)}{\lclass{n}(H)} = 1 - \lprob(\rigid \wrt H) = 1 - 1 = 0
+\]
+and $0 \leq \frac{\lclass{n}(K \intsc \cmpl{\rigid} \intsc H)}{\lclass{n}(H)} \leq \frac{\lclass{n}(\cmpl{\rigid} \intsc H)}{\lclass{n}(H)}$, we have $\lim_{n \to \infty} \frac{\lclass{n}(K \intsc \cmpl{\rigid} \intsc H)}{\lclass{n}(H)} = 0$ and hence
+\[
+\begin{array}{lll}
+\lprob(K \wrt H) & = & \displaystyle \lim_{n \to \infty} \frac{\lclass{n}(K \intsc H)}{\lclass{n}(H)} \cr
+\ & = & \displaystyle \lim_{n \to \infty} \frac{\lclass{n}(K \intsc \rigid \intsc H)}{\lclass{n}(H)} + \lim_{n \to \infty} \frac{\lclass{n}(K \intsc \cmpl{\rigid} \intsc H)}{\lclass{n}(H)} \cr
+\ & = & \displaystyle \lim_{n \to \infty} \frac{\lclass{n}(K \intsc \rigid \intsc H)}{\lclass{n}(\rigid \intsc H)} \mul \lim_{n \to \infty} \frac{\lclass{n}(\rigid \intsc H)}{\lclass{n}(H)} + \lim_{n \to \infty} \frac{\lclass{n}(K \intsc \cmpl{\rigid} \intsc H)}{\lclass{n}(H)} \cr
+\ & = & \lprob(K \wrt \rigid \intsc H) \mul \lprob(\rigid \wrt H) + 0 \cr
+\ & = & \lprob(K \wrt \rigid \intsc H).
+\end{array}
+\]
+Likewise for $\uprob(K \wrt H) = \uprob(K \wrt \rigid \intsc H)$.
+%
+\item \header{Note on the Proof of 4.3.7} The statement given in the parentheses that \emph{any boolean combination of formulas $R_i x$ can be written as a disjunction of formulas $R^\alpha x$} (essentially) follows from the theorem on disjunctive normal form for propositional logic.
 %
 \end{enumerate}
 %end of section 3-----------------------------------------------------------------------------
