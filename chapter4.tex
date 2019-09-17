@@ -1,5 +1,6 @@
 \setcounter{chapter}{3}
 \chapter{0-1 Laws}
+Almost everywhere in this chapter the vocabulary $\tau$ is assumed to be nonempty and relational. In case $\tau = \emptyset$ (and hence obviously $\tau$ is relational), the results derived in section 4.1 are valid, and so are those in 4.2 and 4.3 but then are obvious because the only parametric class is the class $\modclass(\emptyset)$ of merely finite sets.
 %section 1------------------------------------------------------------------------------------
 \setcounter{section}{0}
 \section{0-1 Laws for $\folog$ and $\inflog[\omega]$}
@@ -314,7 +315,31 @@ and $0 \leq \frac{\lclass{n}(K \intsc \cmpl{\rigid} \intsc H)}{\lclass{n}(H)} \l
 \]
 Likewise for $\uprob(K \wrt H) = \uprob(K \wrt \rigid \intsc H)$.
 %
-\item \header{Note on the Proof of 4.3.7} The statement given in the parentheses that \emph{any boolean combination of formulas $R_i x$ can be written as a disjunction of formulas $R^\alpha x$} (essentially) follows from the theorem on disjunctive normal form for propositional logic.
+\item \header{Note on the Proof of 4.3.7} By definition, there are three cases where a nontrivial parametric class $H$ is nonfree:
+\begin{enumerate}[(1)]
+%%
+\item The underlying vocabulary $\tau$ is empty.
+%%
+\item The underlying vocabulary $\tau$ contains only unary relation symbols.
+%%
+\item The underlying vocabulary $\tau$ contains a nonunary relation symbol, and for every $m \geq 2$, every $r$-ary $R$ ($r \geq m$), and every surjection $i : \sete{1, \etc, r} \to \sete{1, \etc, m}$,
+\begin{center}
+either \ \ $\varphi_0 \consq \forall \distinct x_1 \etc x_m Rx_{i(1)} \etc x_{i(r)}$ \ \ or \ \ $\varphi_0 \consq \forall \distinct x_1 \etc x_m \neg Rx_{i(1)} \etc x_{i(r)}$.
+\end{center}
+(Since $\varphi_0$ is nontrivial parametric, it has a model of size $m$ and hence at least one of the sentences
+\[
+\varphi_0 \land \exists \distinct x_1 \etc x_m Rx_{i(1)} \etc x_{i(r)}
+\]
+and
+\[
+\varphi_0 \land \exists \distinct x_1 \etc x_m \neg Rx_{i(1)} \etc x_{i(r)}
+\]
+is satisfiable.)
+%%
+\end{enumerate}
+Case (1) is obvious because the only parametric class is $\modclass(\tau)$ (for the parametric sentence that is the empty conjunction) and $\lclass{n}(\tau) = \uclass{n}(\tau) = 1$. Case (3) can be reduced to case (2) because the ``shape'' of the relationship among different elements of the universe is fixed by $\varphi_0$; thus, $\tau$-structures $\strct{A}$ of the same size can only differ from each other in the induced unary relations $\setm{a}{\intpr{R}{\strct{A}} a \etc a}$, making those induced unary relations all that is relevant in the counting (cf.\ the last paragraph of the proof). The proof mainly handles case (2).
+
+On the other hand, the statement given in the parentheses that \emph{any boolean combination of formulas $R_i x$ can be written as a disjunction of formulas $R^\alpha x$} (essentially) follows from the theorem on disjunctive normal form for propositional logic.
 %
 \end{enumerate}
 %end of section 3-----------------------------------------------------------------------------
