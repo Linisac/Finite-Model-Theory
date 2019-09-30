@@ -1,6 +1,6 @@
 \setcounter{chapter}{3}
 \chapter{0-1 Laws}
-Almost everywhere in this chapter the vocabulary $\tau$ is assumed to be nonempty and relational. In case $\tau = \emptyset$ (and hence obviously $\tau$ is relational), the results derived in section 4.1 are valid, and so are those in 4.2 and 4.3 but then are obvious because the only parametric class is the class $\modclass(\emptyset)$ of merely finite sets.
+Almost everywhere in this chapter the vocabulary $\tau$ is assumed to be nonempty and relational. In case $\tau = \emptyset$ (and hence obviously $\tau$ is relational), the results derived in section 4.1 are valid, and so are those in 4.2 and 4.3 but then are also obvious because the only parametric class is the class $\modclass(\emptyset)$ of merely finite sets.
 %section 1------------------------------------------------------------------------------------
 \setcounter{section}{0}
 \section{0-1 Laws for $\folog$ and $\inflog[\omega]$}
@@ -315,6 +315,18 @@ and $0 \leq \frac{\lclass{n}(K \intsc \cmpl{\rigid} \intsc H)}{\lclass{n}(H)} \l
 \]
 Likewise for $\uprob(K \wrt H) = \uprob(K \wrt \rigid \intsc H)$.
 %
+\item \header{Note on Parametric Classes Being (Non)free} In case (relational) $\tau$ does not contain a relation of arity at least $2$, no parametric classes are free. In particular, if $\tau = \emptyset$ then there is only one parametric class, namely the class of all finite $\emptyset$-structures (sets), and for relational vocabularies $\tau$ that contains only unary relation symbols no parametric classes are free.
+
+On the other hand, suppose that $\varphi_0$ is a nontrivial free parametric sentence or, more precisely that $\strct{A}$ and $\strct{B}$ are models of
+\[
+\varphi_0 \land \exists \distinct x_1 \etc x_m Rx_{i(1)} \etc x_{i(r)}
+\]
+and
+\[
+\varphi_0 \land \exists \distinct x_1 \etc x_m \neg Rx_{i(1)} \etc x_{i(r)},
+\]
+respectively, then, by applying the procedure given at the bottom of page 75 (that leads to (1) on page 76) in textbook we can extend $\strct{A}$ and $\strct{B}$ to an arbitrarily larger model of the respective sentence.
+%
 \item \header{Note on the Proof of 4.3.7} By definition, there are three cases where a nontrivial parametric class $H$ is nonfree:
 \begin{enumerate}[(1)]
 %%
@@ -345,7 +357,7 @@ On the other hand, the statement given in the parentheses that \emph{any boolean
 \[
 \chi \defas \text{``\mathmode{P} is an ordering''}.
 \]
-Then $\psi = \chi \lor \neg\varphi$ and for structures of cardinality at least $2$ we have that $\chi$ logically implies $\varphi$. Hence, for structures $\strct{A}$ with $\card{A} \geq 2$ the sentences $\chi$ and $\varphi \land \psi$ are logically equivalent, and so are $\neg\varphi$ and $\neg\varphi \land \psi$; in other words, models of $\psi$ of size at least $2$ consist of two disjoint groups of ($\sigma$- or $\tau$-) structures that satisfy either $\chi$ or $\neg\varphi$.
+Then $\psi = \chi \lor \neg\varphi$ and for structures of cardinality at least $2$ we have that $\chi$ logically implies $\varphi$. Hence, for structures $\strct{A}$ with $\card{A} \geq 2$ the sentences $\chi$ and $\varphi \land \psi$ are logically equivalent, and so are $\neg\varphi$ and $\neg\varphi \land \psi$; in other words, models of $\psi$ of size at least $2$ consist of two disjoint classes of ($\sigma$- or $\tau$-) structures that satisfy $\chi$ and $\neg\varphi$, respectively.
 
 Let $n \geq 2$ and consider the $\sigma$- and $\tau$-structures $\strct{A}$ that satisfy $\psi$.
 \begin{enumerate}[(1)]
@@ -367,7 +379,7 @@ It follows that
 \[
 \lprob^\tau(\varphi \wrt \psi) = \lim_{n \to \infty} \frac{\lclass{n}^\tau(\chi)}{\lclass{n}^\tau(\chi) + \lclass{n}^\tau(\neg\varphi)} = 1
 \]
-and with
+and, with
 \[
 \frac{\uclass{n}^\tau(\chi)}{\uclass{n}^\tau(\chi) + \uclass{n}^\tau(\neg\varphi)} = \frac{\uclass{n}^\tau(\chi)}{\uclass{n}^\tau(\chi) + \frac{\lclass{n}^\tau(\neg\varphi)}{n!} \mul \frac{\uclass{n}^\tau(\neg\varphi) \mul n!}{\lclass{n}^\tau(\neg\varphi)}},
 \]
@@ -377,6 +389,14 @@ that
 \]
 %%
 \end{enumerate}
+%
+\item \header{Note on Proposition 4.3.11} (INCOMPLETE) In the proof it is assumed that $\card{\tau} = 1$, and this is valid because for every vocabulary $\tau' \supset \tau$ and every rigid $\tau$-structure $\strct{A}$, any $\tau'$-expansion $\strct{A}'$ of $\strct{A}$ must also be rigid and hence
+\[
+\uprob[n]^{\tau'}(\rigid) = \frac{\uclass{n}^{\tau'}(\rigid)}{\uclass{n}(\tau')} \geq \frac{\uclass{n}^\tau(\rigid) \times \text{(number of interpretations of symbols in \mathmode{\tau' \setminus \tau})}}{\uclass{n}(\tau) \times \text{(number of interpretations of symbols in \mathmode{\tau' \setminus \tau})}} = \uprob[n]^{\tau}(\rigid).
+\]
+Also note that the argument in the proof (with $\tau = \sete{E}$) can be generalized to any $r$-ary $E$ ($r \geq 2$) but does not work when $\tau$ contains only unary relation symbols.
+
+On the other hand, this proposition immediately implies that $\uprob(\rigid \wrt H) = 1$ if $H$ is a nontrivial free parametric class with $\lim_{n \to \infty} \uprob(H) > 0$. Therefore, to obtain a full version of 4.3.5 it suffices to hand the case where $\lim_{n \to \infty} \uprob(H) = 0$. (How?)
 %
 \end{enumerate}
 %end of section 3-----------------------------------------------------------------------------
