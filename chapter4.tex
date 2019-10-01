@@ -394,7 +394,7 @@ that
 \[
 \uprob[n]^{\tau'}(\rigid) = \frac{\uclass{n}^{\tau'}(\rigid)}{\uclass{n}(\tau')} \geq \frac{\uclass{n}^\tau(\rigid) \times \text{(number of interpretations of symbols in \mathmode{\tau' \setminus \tau})}}{\uclass{n}(\tau) \times \text{(number of interpretations of symbols in \mathmode{\tau' \setminus \tau})}} = \uprob[n]^{\tau}(\rigid).
 \]
-Also note that the argument in the proof (with $\tau = \sete{E}$) can be generalized to any $r$-ary $E$ ($r \geq 2$) but does not work when $\tau$ contains only unary relation symbols.
+Also note that the argument in the proof (with $\tau = \sete{E}$) can be generalized to any $r$-ary $E$ where $r \geq 2$. However, it does not work when $\tau$ contains only unary relation symbols. In fact, if $\tau = \sete{P_1, \etc, P_m}$ then $\uprob(\rigid) = 0$: For structures $\strct{A}$ the sets $\intpr{P_1}{A}, \etc, \intpr{P_m}{A}$ partition the domain $A$ into $2^m$ subsets, and if $\card{A} > 2^m$ then there are, by the pigeonhole principle, at least two elements that are in the same subset and hence $\strct{A}$ is not rigid.
 
 On the other hand, this proposition immediately implies that $\uprob(\rigid \wrt H) = 1$ if $H$ is a nontrivial free parametric class with $\lim_{n \to \infty} \uprob(H) > 0$. Therefore, to obtain a full version of 4.3.5 it suffices to hand the case where $\lim_{n \to \infty} \uprob(H) = 0$. (How?)
 %
