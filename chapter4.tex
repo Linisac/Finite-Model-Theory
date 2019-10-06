@@ -402,6 +402,41 @@ On the other hand, this proposition immediately implies that $\uprob(\rigid \wrt
 %end of section 3-----------------------------------------------------------------------------
 
 
+%section 4------------------------------------------------------------------------------------
+\setcounter{section}{3}
+\section{Examples and Consequences}
+\begin{enumerate}[1.]
+%
+\item \header{Note on the Proof of Proposition 4.4.2} Using the definition for extension axioms to be compatible with parametric sentences, we have
+\begin{fact}
+Let $\varphi_0$ be a parametric sentence, and $\strct{B}$ a model of $\varphi_0$ with $B = \sete{b_1, \etc, b_s}$. Then for $r \leq s$,
+\[
+\conjextaxm[\varphi_0]{s} \consq \exists v_1 \etc \exists v_r \hint{0}{\strct{B}, b_1, \etc, b_r}(v_1, \etc, v_r).
+\]
+In particular, $\exists v_1 \etc \exists v_s \hint{0}{\strct{B}, b_1, \etc, b_s}(v_1, \etc, v_s)$ is a consequence of $\conjextaxm[\varphi_0]{s}$.
+\end{fact}
+To argue for the above fact, start with the trivial case $r = 1$ and work towards larger values of $r$, concluding at each stage what extension axiom is a conjunct of $\conjextaxm[\varphi_0]{s}$. This fact justifies the statement that any model of $\conjextaxm[\varphi_0]{s}$ contains a substructure isomorphic to $\strct{B}$ for part (a).
+
+The statement for part (b) that
+\[
+\forall \vect{v}(\hint{0}{\strct{A}, \vect{a}}(\vect{v}) \lthen \exists \vect{w} \hint{0}{\strct{B}, \vect{a}\vect{b}}(\vect{v}, \vect{w}))
+\]
+is a consequence of the extension axioms in $\randstrtheory(\varphi_0)$ can be justified likewise.
+%
+\item \header{Note on the Proof of Proposition 4.4.3} A notation conflict is in the proof: $\pi$ appears to be an isomorphism from $\strct{B}$ to $\strct{C}$ first and later an automorphism of $\infrandstr(\varphi_0)$. A suggested remedy for this is to name the isomorphism from $\strct{B}$ to $\strct{C}$ as $\pi'$.
+%
+\item \header{Note on $\randstrtheory(\varphi_\gr)$ and $\theory_{\rand, \gr}$ in the Paragraph for Graphs} It is clear that
+\[
+\varphi_\gr \consq \forall x \neg Exx,
+\]
+therefore the axioms in $\theory_{\rand, \gr}$ except $\varphi_\gr$ and $\cardatleast{2}$ are immediate consequences of the extension axioms in $\randstrtheory(\varphi_\gr)$.
+
+On the other hand, any two models of $\theory_{\rand, \gr}$ can be shown to be partially isomorphic using the same argument as in 3.2.11. This immediately implies that any model $\strct{A}$ of $\theory_{\rand, \gr}$ is partially isomorphic to any model $\strct{B}$ of $\randstrtheory(\varphi_\gr)$ (since $\strct{B}$ is also a model of $\theory_{\rand, \gr}$), which in turn implies that $\strct{A}$ is a model of $\randstrtheory(\varphi_\gr)$ (because $\strct{A}$ and $\strct{B}$ are partially isomorphic, i.e.\ they satisfy the same $\inflog[\omega]$-sentences).
+%
+\end{enumerate}
+%end of section 4-----------------------------------------------------------------------------
+
+
 %section 5------------------------------------------------------------------------------------
 \setcounter{section}{4}
 \section{Probabilities of Monadic Second Order Properties}
