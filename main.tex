@@ -49,15 +49,17 @@
 %%%special classes of structures
 %%%extension axioms
 %%labeled/unlabeled classes and probabilities
+%%(formal) language operations
 %% >
 
 %%general <
 \newcommand{\ds}[1]{{\displaystyle #1}}
 \newcommand{\header}[1]{{\rm\textbf{#1.}}}
+\newcommand{\mathtext}[1]{\mbox{\rm#1}}
 \newcommand{\refitem}[1]{{\rm#1}}
 \newcommand{\mathmode}[1]{\begin{math}#1\end{math}}
 \newcommand{\paren}[1]{\left(#1\right)} %flexible parentheses
-\newcommand{\of}[1]{{[#1]}} %logic or class with vocabulary #1
+\newcommand{\of}[1]{{[#1]}} %logic (or ordered class} with vocabulary #1
 \newcommand{\prmt}[2]{\mathrm{P}^{#1}_{#2}} %permutation (in combinatorics)
 \newcommand{\cmbn}[2]{\mathrm{C}^{#1}_{#2}} %combination (in combinatorics)
 \newcommand{\from}{\leftarrow} %the inverse of \to
@@ -84,7 +86,7 @@
 %%set operations <
 \newcommand{\sete}[1]{{\{#1\}}} %set by enumeration. sete{a, b, c} = {a, b, c}
 \newcommand{\setm}[2]{{\{#1 \mid #2\}}} %set by math description. setd{#1}{#2} = {#1 | #2}
-\newcommand{\sett}[2]{{\{#1 \mid \text{\rm #2}\}}} %set by text description. sett{#1}{#2} = {#1 | #2}, where #2 is a text
+\newcommand{\sett}[2]{{\{#1 \mid \mathtext{#2}\}}} %set by text description. sett{#1}{#2} = {#1 | #2}, where #2 is a text
 \newcommand{\cart}{\mathop{\times}} %cartesian product of two sets
 \newcommand{\cartpwr}[2]{#1^{#2}} %(#2)nd cartesian power of set #1
 \newcommand{\intsc}{\mathop{\cap}} %intersection
@@ -129,7 +131,7 @@
 %% >
 
 %%elementary equivalence <
-\newcommand{\equv}[1][]{\ifthenelse{\equal{#1}{}}{\equiv}{\equiv^{#1}}} %equivalence in (#1)-logic
+\newcommand{\equv}{\equiv} %equivalence (in a logic)
 %% >
 
 %%Ehrenfeucht-Fraisse games <
@@ -182,7 +184,7 @@
 \newcommand{\existatleast}[1]{\exists^{\atleast{#1}}} %exist at least #1
 \newcommand{\existatmost}[1]{\exists^{\atmost{#1}}} %exist at most #1
 \newcommand{\existexactly}[1]{\exists^{\exactly{#1}}} %exist exactly #1
-\newcommand{\distinct}{\mathrel{\mathrm{distinct}}} %distinct variables in formulas
+\newcommand{\distinct}{\mathop{\mathrm{distinct}}} %distinct variables in formulas
 \newcommand{\free}{\mathrm{free}} %set of free variables of #1
 \newcommand{\qr}{\mathrm{qr}} %quantifier rank (of a formula)
 \newcommand{\modclass}{\mathrm{Mod}} %model class (of a formula)
@@ -234,7 +236,7 @@
 %% >
 
 %%special classes of structures <
-\newcommand{\ordclass}{\mathcal{O}} %class of finite ordered structures (in a vocabulary)
+\newcommand{\ordclass}[1][]{\ifthenelse{\equal{#1}{}}{\mathrm{ORD}}{\mathcal{O}\of{#1}}} %class of finite ordered structures (in a vocabulary)
 \newcommand{\even}{\mathrm{EVEN}} %class of finite structures of even cardinality (in a vocabulary)
 \newcommand{\rigid}{\mathrm{RIG}} %class of finite rigid structures
 %% >
@@ -252,6 +254,9 @@
 \newcommand{\wrt}{\mid} %with respect to; the separator between two classes in probability notation
 %% >
 
+%%(formal) language operations <
+\newcommand{\kleene}[1]{#1^\ast}
+%% >
 
 \newenvironment{quoteno}[1]{(#1)\hfill}{\hfill\phantom{(+)}}
 

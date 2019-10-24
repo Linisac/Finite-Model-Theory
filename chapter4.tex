@@ -1,10 +1,12 @@
 \setcounter{chapter}{3}
 \chapter{0-1 Laws}
-Almost everywhere in this chapter the vocabulary $\tau$ is assumed to be nonempty and relational. In case $\tau = \emptyset$ (and hence obviously $\tau$ is relational), the results derived in section 4.1 are valid, and so are those in 4.2 and 4.3 but then are also obvious because the only parametric class is the class $\modclass(\emptyset)$ of merely finite sets.
+Almost everywhere in this chapter the vocabulary $\tau$ is assumed to be nonempty and relational, that is to say $\tau$ contains only relation symbols. We will assume this throughout this document unless stated otherwise. In case $\tau = \emptyset$ (and hence obviously $\tau$ is relational), the results derived in section 4.1 are valid, and so are those in 4.2 and 4.3 but then are also obvious because the only parametric class is the class $\modclass(\emptyset)$ of merely finite sets.
 %section 1------------------------------------------------------------------------------------
 \setcounter{section}{0}
 \section{0-1 Laws for $\folog$ and $\inflog[\omega]$}
 \begin{enumerate}[1.]
+%
+\item \header{The results 4.1.2 - 4.1.5 remain valid when $\tau$ only contains unary relation symbols}
 %
 \item \header{Note on the Proof of Lemma 4.1.2} Denote
 \[
@@ -145,7 +147,7 @@ The \emph{values} of the random variable $\strct{R}'$ for which $\strct{R}'$ is 
 \section{Parametric Classes}
 \begin{enumerate}[1.]
 %
-\item \header{Note on Definition 4.2.1 and the Arguments Leading to Theorem 4.2.3} A parametric sentence may be a conjunction of sentences that involve different numbers of variables, in which the boolean combinations may contain different relation symbols. For example,
+\item \header{Note on Definition 4.2.1 and the Argument Leading to Theorem 4.2.3} A parametric sentence may be a conjunction of sentences that involve different numbers of variables, in which the boolean combinations may contain different relation symbols. For example,
 \[
 \forall x Rxx \land \forall \distinct x y (\neg Rxy \lor Tyxy)
 \]
@@ -163,38 +165,21 @@ It follows that $\strct{A} \satis \exists \distinct v_1 \etc v_rv_{r + 1} (\blan
 \]
 Therefore, $\vect{a}a_{r + 1} \mapsto \vect{b}b_{r + 1} \in I$. Similarly for the back property.
 
-As for (3), a slight modification can be made to the construction procedure for the countable model of $\randstrtheory$ in 3.2.11 to obtain one for $\randstrtheory(\varphi_0)$: Let $\seq{\alpha_n}{n \geq 0}$ be as in 3.2.11 except that now we only consider extension axioms $\extaxm \in \randstrtheory(\varphi_0)$. We choose $\strct{A}_0$ with $A_0 = \sete{0}$ so that $\strct{A}_0 \satis \varphi_0$ according to (1). Suppose that $\strct{A}_n$ has been defined such that $\strct{A}_n \satis \varphi_0$. For $\alpha_n = (\vect{m}, \extaxm[\Phi])$ where $\vect{m} = m_1, \etc, m_r$ that are distinct elements not greater than $n$ (if $r = 0$ then $\vect{m} = \emptyseq$) and $\Phi \subseteq \Delta_{r + 1}$, we show how to construct a model $\strct{A}_{n + 1}$ of $\varphi_0$ so that $(\strct{A}_{n + 1}, m_1, \etc, m_r, n + 1) \satis \Phi$:
+As for (3), a slight modification can be made to the construction procedure for the countable model of $\randstrtheory$ in 3.2.11 to obtain one for $\randstrtheory(\varphi_0)$: Let $\seq{\alpha_n}{n \geq 0}$ be as in 3.2.11 except that now we only consider extension axioms $\extaxm \in \randstrtheory(\varphi_0)$. We choose $\strct{A}_0$ with $A_0 = \sete{0}$ so that $\strct{A}_0$ is isomorphic to a model of $\varphi_0$ of cardinality $1$ (by (1)). Suppose that $\strct{A}_n$ has been defined such that $\strct{A}_n \satis \varphi_0$. For $\alpha_n = (\vect{m}, \extaxm[\Phi])$ where $\vect{m} = m_1, \etc, m_r$ that are distinct elements not greater than $n$ (if $r = 0$ then $\vect{m} = \emptyseq$) and $\Phi \subseteq \Delta_{r + 1}$, we show how to construct a model $\strct{A}_{n + 1}$ of $\varphi_0$ so that $(\strct{A}_{n + 1}, m_1, \etc, m_r, n + 1) \satis \Phi$:
 \begin{itemize}
 %%
-\item Let, as in 3.2.11,
+\item For $\varphi \in \Delta_{r + 1}$, let
 \begin{center}
 $\strct{A}_{n + 1} \satis \varphi \withassgn{m_1, \etc, m_r, n + 1}$ \ \ \ iff \ \ \ $\varphi \in \Phi$.
 \end{center}
 %%
-\item In case $n > r$ and $k \geq 2$, for every $2 \leq s \leq k$ and for every $s$-tuple $\vect{m}'$ that contains $n + 1$ and an entry $\leq n$ not in $\vect{m}$, we apply the construction process for (1) to $\vect{m}'$.
+\item In case $\tau$ contains nonunary relation symbols, we use the construction procedure for (1). More precisely, for any tuple $\vect{m}' \neq \vect{m}$ of distinct elements $0 \leq m_1', \etc, m_s' \leq n$ where $s \leq k - 1$, any $t$-ary relation symbol $R$ ($s + 1 \leq t \leq k$), and any surjection $f : \sete{1, \etc, t} \to \sete{1, \etc, s + 1}$, let $\varphi(v_1, \etc, v_{s + 1}) = Rv_{f(1)} \etc v_{f(t)}$, and choose any model $\strct{B}$ of $\varphi_0$ of cardinality $\geq s + 1$ (recall from (1) that $\varphi_0$ has models in all cardinalities) together with distinct elements $b_1, \etc, b_{s + 1} \in B$, we define
+\begin{center}
+$\strct{A}_{n + 1} \satis \varphi(m_1', \etc, m_s', n + 1)$ \ :iff \ $\strct{B} \satis \varphi(b_1, \etc, b_{s + 1})$.
+\end{center}
 %%
 \end{itemize}
-Note that the second step is independent of $\Phi$, and thus in order to verify $\strct{A}_{n + 1} \satis \varphi_0$, it remains to show that for every conjunct
-\[
-\forall \distinct v_1 \etc v_t \psi
-\]
-of $\varphi_0$ and every $t$-tuple $\vect{a} = a_1, \etc, a_t$ (not necessarily distinct) that contains $n + 1$ and has all its other entries (if any) from $\vect{m}$, we have $\strct{A}_{n + 1} \satis \psi \withassgn{\vect{a}}$. In fact, letting $\psi'$ be obtained from $\psi$ by changing $v_i$ ($1 \leq i \leq t$) to $v_j$ ($1 \leq j \leq r$) if $a_i = m_j$ and to $v_{r + 1}$ if $a_i = n + 1$, we have that $\psi'$ is a conjunction of some formulas in $\Delta_{r + 1}$ and
-\begin{center}
-$\strct{A}_{n + 1} \satis \psi \withassgn{\vect{a}}$ \ \ \ iff \ \ \ $\strct{A}_{n + 1} \satis \psi' \withassgn{\vect{m}, n + 1}$.
-\end{center}
-As $\extaxm[\Phi]$ is compatible with $\varphi_0$, there is a model $\strct{B}$ of
-\[
-\varphi_0 \land \exists \distinct v_1 \etc v_r v_{r + 1} (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi).
-\]
-Consider an $(r + 1)$-tuple $\vect{b} = b_1, \etc, b_{r + 1}$ of distinct elements such that
-\[
-\strct{B} \satis (\bland_{\varphi \in \Phi} \varphi \land \bland_{\varphi \in \cmpl{\Phi}} \neg\varphi) \withassgn{\vect{b}},
-\]
-then
-\begin{center}
-$\strct{A}_{n + 1} \satis \psi' \withassgn{\vect{m}, n + 1}$ \ \ \ iff \ \ \ $\strct{B} \satis \psi' \withassgn{\vect{b}}$
-\end{center}
-(recall $\psi'$ is a conjunction of some formulas in $\Delta_{r + 1}$). But it is true that $\strct{B} \satis \psi' \withassgn{\vect{b}}$ because $\strct{B}$ is a model of $\varphi_0$. We conclude that $\strct{A}_{n + 1} \satis \psi \withassgn{\vect{a}}$.
+Obviously, $\strct{A} \defas \bunion_{n \geq 0} \strct{A}_n$ is a model of extension axioms in $\randstrtheory(\varphi_0)$. To verify $\strct{A}$ is a model of $\varphi_0$, it suffices to show by induction on $n$ that $\strct{A}_n \satis \varphi_0$ for all $n \geq 0$ since $\varphi_0$ is (equivalent to) a universal sentence. The induction proof is easy and hence omitted; the definition of an extension axiom being compatible with $\varphi_0$ will be used in the induction step.
 
 On the other hand, for every $r \geq 0$ the theory $\randstrtheory(\varphi_0)$ contains at least one $(r + 1)$-extension axiom: By (1) there is a model $\strct{A}$ of $\varphi_0$ of cardinality $r + 1$, say, having domain $A = \sete{a_1, \etc, a_{r + 1}}$. Let $\Phi \subseteq \Delta_{r + 1}$ such that
 \[
@@ -227,6 +212,10 @@ $\strct{A} \satis \varphi \withassgn{\vect{a}}$ \ \ \ iff \ \ \ $\varphi \in \Ph
 %%
 \end{itemize}
 It is easy to show that $\strct{A} \satis \varphi_0$ using the same argumentation as for (3) and thus omitted. Also observe that the second step is independent of $\Phi$, so we can focus on $\Phi$ when proving (5) using the same method as for 4.1.2.
+
+\begin{remark}
+The results in this section of textbook remain valid when $\tau$ contains only unary relation symbols.
+\end{remark}
 %
 \end{enumerate}
 %end of section 2-----------------------------------------------------------------------------
@@ -327,7 +316,7 @@ and
 \]
 respectively, then, by applying the procedure given at the bottom of page 75 (that leads to (1) on page 76) in textbook we can extend $\strct{A}$ and $\strct{B}$ to an arbitrarily larger model of the respective sentence.
 %
-\item \header{Note on the Proof of 4.3.7} By definition, there are three cases where a nontrivial parametric class $H$ is nonfree:
+\item \header{Note on Proposition 4.3.7} In the proof, note that, by definition, there are three cases where a nontrivial parametric class $H$ is nonfree:
 \begin{enumerate}[(1)]
 %%
 \item The underlying vocabulary $\tau$ is empty.
@@ -352,6 +341,8 @@ is satisfiable.)
 Case (1) is obvious because the only parametric class is $\modclass(\tau)$ (for the parametric sentence that is the empty conjunction) and $\lclass{n}(\tau) = \uclass{n}(\tau) = 1$. Case (3) can be reduced to case (2) because the ``shape'' of the relationship among different elements of the universe is fixed by $\varphi_0$; thus, $\tau$-structures $\strct{A}$ of the same size can only differ from each other in the induced unary relations $\setm{a}{\intpr{R}{\strct{A}} a \etc a}$, making those induced unary relations all that is relevant in the counting (cf.\ the last paragraph of the proof). The proof mainly handles case (2).
 
 On the other hand, the statement given in the parentheses that \emph{any boolean combination of formulas $R_i x$ can be written as a disjunction of formulas $R^\alpha x$} (essentially) follows from the theorem on disjunctive normal form for propositional logic.
+
+Finally, given the proof in text, the statement of this proposition should be ``\emph{Let $H$ be any nontrivial parametric class. Then the labeled and the unlabeled asymptotic probabilities of $\inflog[\omega]$- and hence of $\folog$-sentences with respect to $H$ coincide}'' because only classes defined $\inflog[\omega]$-sentences are handled.
 %
 \item \header{Solution to Exercise 4.3.9} For brevity, let
 \[
@@ -415,7 +406,11 @@ Let $\varphi_0$ be a parametric sentence, and $\strct{B}$ a model of $\varphi_0$
 \]
 In particular, $\exists v_1 \etc \exists v_s \hint{0}{\strct{B}, b_1, \etc, b_s}(v_1, \etc, v_s)$ is a consequence of $\conjextaxm[\varphi_0]{s}$.
 \end{fact}
-To argue for the above fact, start with the trivial case $r = 1$ and work towards larger values of $r$, concluding at each stage what extension axiom is a conjunct of $\conjextaxm[\varphi_0]{s}$. This fact justifies the statement that any model of $\conjextaxm[\varphi_0]{s}$ contains a substructure isomorphic to $\strct{B}$ for part (a).
+To argue for the above fact, start with the trivial case $r = 1$ and work towards larger values of $r$, concluding at each stage what compatible extension axiom is included as a conjunct of $\conjextaxm[\varphi_0]{s}$ (using the fact that $\strct{B}$ together with elements $b_1, \etc, b_r$ satisfies the consistency requirement for compatibility). This fact justifies the statement that any model of $\conjextaxm[\varphi_0]{s}$ contains a substructure isomorphic to $\strct{B}$ for part (a).
+
+\begin{remark}
+Note that by 4.4.1, we also have $\uprob(\conjextaxm[\varphi_0]{s} \wrt \varphi_0) = 1$ in the proof of part (a). Thus, the statement of part (a) is also true for, say, graphs in the unlabeled sense: \emph{Let $\strct{G}$ be a graph. Then almost all graphs contain $\strct{G}$ as an (induced) subgraph.}
+\end{remark}
 
 The statement for part (b) that
 \[
@@ -432,6 +427,16 @@ is a consequence of the extension axioms in $\randstrtheory(\varphi_0)$ can be j
 therefore the axioms in $\theory_{\rand, \gr}$ except $\varphi_\gr$ and $\cardatleast{2}$ are immediate consequences of the extension axioms in $\randstrtheory(\varphi_\gr)$.
 
 On the other hand, any two models of $\theory_{\rand, \gr}$ can be shown to be partially isomorphic using the same argument as in 3.2.11. This immediately implies that any model $\strct{A}$ of $\theory_{\rand, \gr}$ is partially isomorphic to any model $\strct{B}$ of $\randstrtheory(\varphi_\gr)$ (since $\strct{B}$ is also a model of $\theory_{\rand, \gr}$), which in turn implies that $\strct{A}$ is a model of $\randstrtheory(\varphi_\gr)$ (because $\strct{A}$ and $\strct{B}$ are partially isomorphic, i.e.\ they satisfy the same $\inflog[\omega]$-sentences).
+%
+\item \header{Note on 4.4.7, 4.4.8 and 4.4.9} The statement in 4.4.7 remains valid if we replace $\uprob(\psi \wrt \varphi_0)$ with $\lprob(\psi \wrt \varphi_0)$ due to 4.4.1\footnote{Note that 4.4.1 summarizes the results including 4.3.7, and the textbook suggests applying 4.3.7 (to 4.4.7, presumably) for the transition from unlabeled asymptotic probabilities to labeled ones before 4.4.9. This is not quite obvious, however, because the statement in 4.3.7 should be refined so as to refer to classes defined by $\inflog[\omega]$-sentences only but not arbitrary classes. See \textbf{Note on Proposition 4.3.7}.} (or alternatively, using (5) on page 76 of the textbook in the proof of 4.4.7). Therefore, we also have 4.4.8 valid when substituting $\lprob(\varphi \wrt \varphi_0)$ for $\uprob(\varphi \wrt \varphi_0)$, which implies 4.4.9.
+%
+\item \header{Note on Examples 4.4.10} Note that in part (a) the sentence
+\[
+\forall x (\forall y \neg y < x \lthen Px)
+\]
+is equivalent to $\varphi$ over finite linear orderings (or more generally, over linear orderings that have the least element). These sentences are not equivalent over (infinite) orderings that have no least element.
+
+In part (b), observe that $\ordclass \subset \rigid$, hence $\uprob(\rigid \wrt \ordclass) = 1$ and by 4.3.4 it follows that $\uprob(K \wrt \ordclass) = \lprob(K \wrt \ordclass)$ for any class $K$.
 %
 \end{enumerate}
 %end of section 4-----------------------------------------------------------------------------
