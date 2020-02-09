@@ -6,7 +6,7 @@
 \begin{enumerate}[1.]
 %
 \item \header{Note on Definition 2.2.1} A partial isomorphism need not be finite.
-\medskip\\
+\newpar
 Also note that the condition for a map $p$ to be a partial isomorphism from $\strct{A}$ to $\strct{B}$ is slightly different in \cite{EFT}: there the designated constants $\intpr{c}{A}$ are not required to be in $\dm(p)$ but if they are, the condition $p(\intpr{c}{A}) = \intpr{c}{B}$ must be satisfied.
 %
 \item \header{Note on Remarks 2.2.2} For part (a), note that the empty map $p = \emptymap$ is \emph{not} a partial isomorphism if $\tau$ does contain constants (cf.\ 2.2.1).
@@ -22,35 +22,63 @@ Also note that if $\tau$ contains constants then the notation $\vect{a} \mapsto 
 Finally, if $\vect{a} \mapsto \vect{b}$ is a partial isomorphism, then so are its permutations (rearrangements of the indices of the pairs $(a_i, b_i)$ in $\vect{a} \mapsto \vect{b}$) and repetitions (in which some pair(s) $(a_i, b_i)$ are repeated in $\vect{a} \mapsto \vect{b}$).
 %
 \item \header{Note on Ehrenfeucht Games} It is clear from definition that at most one of the players has a winning strategy for the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
-\medskip\\
+\newpar
 On the other hand, it is also true that at least one of the players has a winning strategy for the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$, i.e.\ \emph{if the duplicator does not win $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ then the spoiler wins it.} See 2.3.16 in text.
 %
 \item \header{Note on the Proof of Lemma 2.2.3(b)} The statement ``Then $p : \vect{a} \mapsto \vect{b} \in \partisoms(\strct{A}, \strct{B})$ with $\dm(p) = A$'' follows from the fact that a submap of a partial isomorphism is also a partial isomorphism (see the next note).
 %
-\item \header{Note on Lemma 2.2.4} Part (c) is equivalent to say that a submap (i.e.\ a map that is a subset of another map in terms of their graphs) of a partial isomorphism is also a partial isomorphism.
-\medskip\\
+\item \header{Note on Lemma 2.2.4} Part (a) is equivalent to the statement \emph{the spoiler wins $\game{0}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ if and only $\vect{a} \mapsto \vect{b}$ is not a partial isomorphism}.
+\newpar
+Part (b) also suggests that \emph{for every $m > 0$, the spoiler wins $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ if and only if there is an $a \in A$ such that for all $b \in B$ the spoiler wins the game $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}, \vect{b}b)$ or there is a $b \in B$ such that for all $a \in A$ the spoiler wins the game $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}, \vect{b}b)$}.
+\newpar
+Part (c) is equivalent to say that a submap (i.e.\ a map that is a subset of another map in terms of their graphs) of a partial isomorphism is also a partial isomorphism.
+\newpar
 On the other hand, it is useful to use the alternative logically equivalent forms (such as contraposition) of parts (b) or (c) in deriving properties of the Ehrenfeucht games. For example, part (c) implies that
-\medskip\\
+\newpar
 \emph{If the spoiler wins $\game{m'}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ and if $m' < m$, then the spoiler wins $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.}
 %
 \item \header{Note on Definition 2.2.5} What is $\hint{0}{\strct{A}, \emptyseq}$? If the underlying vocabulary $\tau$ contains constants, then it is the conjunction of sentences that are atomic or negated atomic formulas describing the relation between the constants. If $\tau$ is relational, then it is $\tr \land \neg\fls$ (see Part B in Chapter 1).
 %
 \item \header{Note on Lemma 2.2.6 and the Remark below It} It is better to prove the lemma and the remark that ``the conjunctions and disjunctions in the definition of $\hint{m}{\strct{A}, \vect{a}}$ are finite'' all at once:
-\medskip\\
+\newpar
 \emph{For $s, m \geq 0$, $\hint{m}{\strct{A}, \vect{a}}$ is a well-formed formula - i.e.\ the conjunctions and disjunctions (if any) in it are finite - for any structure $\strct{A}$ and $\vect{a} \in \cartpwr{A}{s}$ and the set $\sett{\hint{m}{\strct{A}, \vect{a}}}{\begin{math}\strct{A}\end{math} a structure and \begin{math}\vect{a} \in \cartpwr{A}{s}\end{math}}$ is finite.}
-\medskip\\
+\newpar
 The induction is performed on $m$. The base case follows from that for $s > 0$, the set
 \[
 \sett{\varphi(v_1, \etc, v_s)}{\begin{math}\varphi\end{math} atomic or negated atomic}
 \]
 is finite.
 %
-\item \header{Note on the Proof of 2.2.8 (Ehrenfeucht's Theorem)} To prove (i) implies (iii), the case $m = 0$ can be handled by applying 2.2.4(a) in addition to the equivalence between (i) and (ii) of 2.2.2(c).
-\medskip\\
-The induction part of (i) implying (iii) in fact proves $\strct{A} \satis \varphi[\vect{a}]$ iff $\strct{B} \satis \varphi[\vect{b}]$.
+\item \header{Note on the Proof of 2.2.8 (Ehrenfeucht's Theorem)} To prove (i) implies (iii), the base case $m = 0$ can be handled alternatively by applying 2.2.4(a) in addition to the equivalence between (i) and (ii) of 2.2.2(c). The inductive case $m > 0$ in text only proves $\strct{A} \satis \varphi[\vect{a}]$ implies $\strct{B} \satis \varphi[\vect{b}]$; the direction $\strct{B} \satis \varphi[\vect{b}]$ implies $\strct{A} \satis \varphi[\vect{a}]$ can be done symmetrically.
+\newpar
+Note that the proof (implicitly) suggests that \emph{the following two statements are equivalent:
+\begin{enumerate}[\rm(i)]
+%%
+\item The spoiler wins $\game{m}(\strct{A}, \vect{a}, \vect{B}, \vect{b})$.
+%%
+\item There is a formula $\varphi(x_1, \etc, x_s)$ with $\qr(\varphi) \leq m$ such that
+\begin{itemize}
+%%%
+\item $\strct{A} \satis \varphi[\vect{a}]$ and $\strct{B} \not\satis \varphi[\vect{b}]$, or
+%%%
+\item $\strct{A} \not\satis \varphi[\vect{a}]$ and $\strct{B} \satis \varphi[\vect{b}]$.
+%%%
+\end{itemize}
+%%
+\end{enumerate}
+}
+To see (i) implies (ii), simply take $\varphi \defas \hint{m}{\strct{A}, \vect{a}}$. The direction from (ii) to (i) can be done in parallel to the direction from (iii) to (i) in the proof of 2.2.8. In particular, for the case $m > 0$ and $\varphi = \exists y \psi$, assume that $\strct{A} \satis \varphi[\vect{a}]$ and $\strct{B} \not\satis \varphi[\vect{b}]$, then there is an $a \in A$ such that for all $b \in B$ it is true that $\strct{A} \satis \psi[\vect{a}a]$ and $\strct{B} \not\satis \psi[\vect{b}b]$. The induction hypothesis yields
+\begin{center}
+there is a an $a \in A$ such that for all $b \in B$, the spoiler wins $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}, \vect{b}b)$.
+\end{center}
+Hence, by 2.2.4(b) (also see the discussion in \textbf{Note on Lemma 2.2.4}), we have that the spoiler wins $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$. The other case that $\strct{A} \not\satis \varphi[\vect{a}]$ and $\strct{B} \satis \varphi[\vect{b}]$ can be handled symmetrically.\qed
+\newpar
+The above discussion now makes it clear that the spoiler's winning strategy for the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ consists of always choosing an appropriate element for the existential quantifier $\exists$ from the corresponding structure. Thus, a winning strategy for the spoiler can be converted into a formula, and vice versa.
+\newpar
+In general, however, the more typical use is to come up with a winning strategy for the spoiler and turn it into a formula to distinguish $(\strct{A}, \vect{a})$ and $(\strct{B}, \vect{b})$; likewise, it is more useful to conclude they are indistinguishable by presenting a winning strategy for the duplicator.
 %
 \item \header{Note on 2.2.10} The direction from left to right is obtained by 2.2.3(b) and 2.2.9; the direction from right to left is by definition of $\strct{A}$ and $\strct{B}$ being isomorphic.
-\medskip\\
+\newpar
 By 2.2.4(c) and 2.2.9, in fact, we get a stronger statement than the original equivalence
 \begin{center}
 \emph{for $m' > m$: \ \ $\strct{B} \satis \hint{m'}{\strct{A}}$ \ iff \ $\strct{A} \isom \strct{B}$.}
@@ -74,13 +102,13 @@ There is a typo: ``$\emptymap \mapsto \emptymap \in I_j$'' should be replaced by
 \end{remark}
 %
 \item \header{Note on Corollary 2.3.4} For $s = 0$ the statement of 2.3.3(iii) becomes
-\medskip\\
+\newpar
 \begin{quoteno}{$\ast$}
 There is $\seq{I_j}{j \leq m}$ with $\emptyseq \mapsto \emptyseq \in I_m$ such that $\seq{I_j}{j \leq m} : \strct{A} \isom_m \strct{B}$.
 \end{quoteno}
-\medskip\\
+\newpar
 It is equivalent to 2.3.4(iii): The latter obviously follows the former; to derive the former from the latter, note that by 2.3.2 if $\seq{I_j}{j \leq m} : \strct{A} \isom_m \strct{B}$ then $\seq{\tilde{I}_j}{j \leq m} : \strct{A} \isom_m \strct{B}$ and $\emptyseq \mapsto \emptyseq \in \tilde{I}_m$.
-\medskip\\
+\newpar
 On the other hand, we have for any relational $\tau$ and any $\tau$-structures $\strct{A}$ and $\strct{B}$ the following
 \begin{enumerate}[(1)]
 %%
@@ -127,7 +155,7 @@ Obviously, $\strct{A} \in \even\of{\tau}$ iff $\strct{B} \notin \even\of{\tau}$.
 \item \header{Note on Example 2.3.8} There is a typo: ``$\dist[j](a, a')$'' appearing in the definition of distance function should be replaced by ``$\dist[j](a, b)$''.
 %
 \item \header{Hint to Exercise 2.3.9} For simplicity, take the structure $\strct{C}_l$ that is isomorphic to $\strct{B}_l \dunion \strct{D}_l$, where $C_l \defas \sete{0, \ldots, 2l + 1}$ and the substructures $\sbstrct{\sete{0, \ldots, l}}{\strct{C}_l}$ induced by $\sete{0, \ldots, l}$ and $\sbstrct{\sete{l + 1, \ldots, 2l + 1}}{\strct{C}_l}$ induced by $\sete{l + 1, \ldots, 2l + 1}$ are isomorphic to $\strct{B}_l$ and $\strct{D}_l$, respectively.
-\medskip\\
+\newpar
 For $\strct{B}_l$ and $\strct{C}_l$ define the distance function $d$ on $B_l \cart B_l$ and on $C_l \cart C_l$ as
 \[
 \dist(h, k) \defas
@@ -145,7 +173,7 @@ and take the truncated version $\dist[j]$ where
 \end{cases}
 \]
 For $m \geq 0$ choose $l \geq 2^m$. Consider $\seq{I_j}{j \leq m}$ where $p \in I_j$ if and only if $p$ is a partial isomorphism from $\strct{B}_l$ to $\strct{C}_l$ such that $\card{p} \leq m - j + 2$, $p(0) = 0$, $p(l) = l$ and $\dist[j](h, k) = \dist[j](p(h), p(k))$ for $h, k \in \dm(p)$.
-\medskip\\
+\newpar
 It remains to verify $\seq{I_j}{j \leq m} : \strct{B}_l \isom_m \strct{C}_l$, which is omitted here. (For the forth-property, if $p \in I_{j + 1}$ and $b \in B_l$ then distinguish two cases according to whether it is true that ``there is a $b' \in B_l$ such that $\dist[j](b, b') < 2^j$ or $\dist[j](b', b) < 2^j$'', a technique used in 2.3.6.)
 %
 \item \header{Note on Corollary 2.3.11} Here $(\strct{A}, \vect{a}) \equv_m (\strct{B}, \vect{b})$ means ``$\vect{a}$ satisfies in $\strct{A}$ the same formulas of quantifier rank $\leq m$ as $\vect{b}$ in $\strct{B}$.'' (Consider the transition from 2.2.8(iii) to 2.2.9(iii).)
@@ -169,7 +197,7 @@ A similar exercise is XII.3.17 in \cite{EFT}.
 %
 \item \header{Hint to Exercise 2.3.13} (INCOMPLETE)
 Think of $\ordsum^n \strct{A}$ as an $n$-element linear ordering in which every point ``expands'' to $\strct{A}$.\\
-\medskip\\
+\newpar
 More precisely, define for $a, a'$ in the domain of $\ordsum^n \strct{A}$ the distance function
 \[
 \dist(a, a') \defas \abs{i - j},
@@ -186,9 +214,7 @@ This is statement (iii) of 2.3.3. Therefore this exercise is an immediate conseq
 The premise ``for $\vect{a} \mapsto \vect{b} \in \partisoms(\strct{A}, \strct{B})$'' is implied by the statements on both sides of ``iff'', so it can be weakened to ``for $\vect{a} \in A, \vect{b} \in B$''.
 \end{remark}
 %
-\item \header{Note on Remark 2.3.16} As an alternative proof for the last part of 2.2.8, one can show, contrapositively, that \emph{not \refitem{(iii)} implies not \refitem{(i)}}. To be more precise, in the inductive step let $m > 0, \qr(\varphi) = m$, and suppose that $\varphi(\vect{x}) = \exists y \psi$ where $\strct{A} \satis \varphi[\vect{a}]$ but not $\strct{B} \satis \varphi[\vect{b}]$. It follows that there is an $a \in A$ such that for all $b \in B$, $\strct{A} \satis \psi[\vect{a}a]$ but not $\strct{B} \satis \psi[\vect{b}b]$, hence by induction hypothesis the duplicator does not win the game $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}, \vect{b}b)$. By 2.2.4(b), therefore, we have that the duplicator does not win the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$. The other case where $\strct{B} \satis \varphi[\vect{b}]$ but not $\strct{A} \satis \varphi[\vect{a}]$ can be done symmetrically.
-\medskip\\
-The above argument suggests (the essential part of) a winning strategy of the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ for the spoiler when (iii) in 2.2.8 is false, say, there is a formula $\varphi(x_1, \etc, x_s)$ of quantifier rank $> 0$ such that $\strct{A} \satis \varphi[\vect{a}]$ but not $\strct{B} \satis \varphi[\vect{b}]$: If $\varphi = \exists y \psi$, then $\strct{A} \satis \exists y \psi[\vect{a}]$ and he picks an element $a \in A$ such that $\strct{A} \satis \psi[\vect{a}a]$; if $\varphi = \forall y \psi$, then not $\strct{B} \satis \varphi[\vect{b}]$ (hence $\strct{B} \satis \exists y \neg\psi[\vect{b}]$) and he picks an element $b \in B$ such that $\strct{B} \satis \neg\psi[\vect{b}b]$. That is to say, the spoiler always chooses an element of either $\strct{A}$ or $\strct{B}$ that corresponds to the existential quantifier.\footnote{Therefore, in case that there is a formula $\varphi(x_1, \etc, x_s)$ of quantifier rank $> 0$ such that $\strct{A} \satis \varphi[\vect{a}]$ but not $\strct{B} \satis \varphi[\vect{b}]$, it is justified to call the spoiler's moves in $\strct{A}$ the $\exists$-moves and his moves in $\strct{B}$ the $\forall$-moves.} The spoiler then makes his successive choices accordingly in his turns in every play of the game.
+\item \header{Note on Remark 2.3.16} Given $(\strct{A}, \vect{a}) \not\equv_m (\strct{B}, \vect{b})$, the spoiler of the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ always chooses an element of either $\strct{A}$ or $\strct{B}$ that corresponds to the existential quantifier. (See the discussion in \textbf{Note on the Proof of 2.2.8 (Ehrenfeucht’s Theorem)}.) In case that $\varphi(x_1, \etc, x_s) = \exists y \psi$ with $\qr(\varphi) \leq m$ and $\strct{A} \satis \varphi[\vect{a}]$ but $\strct{B} \not\satis \varphi[\vect{b}]$, it is justified to call the spoiler's moves in $\strct{A}$ the \emph{$\exists$-moves} and his moves in $\strct{B}$ the \emph{$\forall$-moves}. The spoiler then makes his successive choices accordingly in his turns in every play of the game.
 %
 \end{enumerate}
 %end of section 3-----------------------------------------------------------------------------
@@ -201,32 +227,32 @@ The above argument suggests (the essential part of) a winning strategy of the ga
 \item \header{Note on the First Paragraph on Page 27} Here the \emph{isomorphism type} of $(\ballstrct(r, a), a)$ might refer to the equivalent class of $(\ballstrct(r, a), a)$ induced by the isomorphism relation, i.e.\ the set of structures that are isomorphic to $(\ballstrct(r, a), a)$, where $(\ballstrct(r, a), a)$ might refer to the expansion of the structure $\ballstrct(r, a)$ in which $a$ is a distinguished constant.
 %
 \item \header{Note on the Proof of 2.4.1} Here $\length(\vect{a})$ refers to the length of the tuple $\vect{a}$, see the first paragraph on page 6.
-\medskip\\
+\newpar
 On the other hand, by the proof the requirement on the cardinality of $3^m$-balls may be weakened to ``at most $e$ elements.''
 %
 \item \header{Note on 2.4.2 and 2.4.3} For the proof of 2.4.3 to be valid, in the structure $(D_l, E'_l, P_1, \etc, P_r)$ there must be a point on each of the paths from $a$ to $b_-$ and from $b$ to $a_-$ that is in neither of the $3^m$-balls of $a$ and $b$, in other words, both cycles in the structure must have length greater than $2 \mul 3^m + 1$; otherwise the $3^m$-ball type of $a$ (or $b$) would be different from that of $a$ (or $b$, respectively) in $(\strct{D}_l, P_1, \etc, P_r)$ - the former $3^m$-ball is a cycle, whereas the latter is not.
-\medskip\\
+\newpar
 In fact, 2.4.3 can be strengthened to allow such points.
 %
 \item \header{Note on 2.4.4} By definition, the Gaifman graph $\gaifman(\strct{A})$ of a digraph $\strct{A}$ is the associated (undirected) graph of $\strct{A}$.
 %
 \item \header{Note on 2.4.5} By the same argument in the proof, it follows that \emph{the class of finite graphs that are not connected cannot be axiomatized by a formula of the form $\exists P_1 \etc \exists P_r \psi$, either.}
-\medskip\\
+\newpar
 As an immediate consequence, we have that \emph{both classes cannot be axiomatized by a formula of the form $\forall P_1 \etc \forall P_r \chi$.}
 %
 \item \header{Note on 2.4.6} In the proof there is a (possible) typo: $\intpr{R}{A}$ in $(\strct{G}, \intpr{R}{A})$ should be replaced by $\intpr{R}{G}$ or $\intpr{R}{\strct{G}}$.
-\medskip\\
+\newpar
 On the other hand, this proposition implies that \emph{the class of finite graphs that are not connected can be axiomatized by a formula of the form $\forall R \chi$.} (Just take the negation of $\exists R \psi$.)
 %
 \item \header{Brief Solution to Exercise 2.4.7} Using a similar method (basically the pigeonhole principle) we can obtain the corresponding result to 2.4.2, in which the distance $\dist(a, b)$ is greater than $2 \mul 3^m + 1$ (cf.\ \header{Note on 2.4.2 and 2.4.3}). Now let $a_-$ and $b_-$ be the two points such that $(a_-, a)$ and $(b_-, b)$ are edges in $\strct{H}_l$. Obtain the structure $\strct{H}'_l$ from $\strct{H}_l$ by removing these two edges and adding $(b_-, a)$ and $(a_-, b)$. Then likewise we obtain the corresponding result to 2.4.3, and hence that to 2.4.5.
-\medskip\\
+\newpar
 As for the corresponding result to 2.4.6, note that a digraph is cyclic if and only if there is a linear ordering over a set of at least two points in which there is an edge from $x$ to $y$ if and only if $y$ is immediately greater than $x$ or $x$ is the greatest element and $y$ the least in the linear ordering. Finally, formulate the condition and take the negation.
 \begin{note}
 It does not seem possible to axiomatize this class by a formula of the form $\forall P \psi$ where $P$ is unary and $\psi$ first-order (by the corresponding result to 2.4.5 mentioned above and the discussion in \header{Note on 2.4.5}) or the form $\exists R \psi$ where $R$ is binary and $\psi$ first-order as required (this is conjectured, however).
 \end{note}
 %
 \item \header{Brief Solution to Exercise 2.4.8} An informal formulation for $\psi(x, y)$ is already present in the description of the exercise.
-\medskip\\
+\newpar
 Also observe that the formula $\forall x \forall y \exists P \varphi$ axiomatizes the class of finite and connected graphs, and hence by 2.4.5 is not equivalent to a sentence of the form $\exists P_1 \etc \exists P_r \chi$.
 %
 \item \header{Note on the Definition of Basic Local Sentences} In the definition given in textbook, the condition $\rltv{\psi}{\ball(r, x_n)}$ is missing; therefore, it should be replaced by
@@ -244,7 +270,7 @@ where $n \geq 1$. (The sentence that precedes 2.5.1 thus should be modified acco
 \begin{enumerate}[1.]
 %
 \item \header{Note on the Proof of 2.5.2} In case 1, note that, as in the proof of 2.4.1, $\ball(7^j, \vect{a}a) \subseteq \ball(7^{j + 1}, \vect{a})$, so $\ballstrct[{\ballstrct[\strct{A}](7^{j + 1}, \vect{a})}](7^j, \vect{a}a) = \ballstrct[\strct{A}](7^j, \vect{a}a)$.
-\medskip\\
+\newpar
 In case 2, it seems sufficient to have $g(j + 1)$ no smaller than the quantifier rank of sentences in (2) and (3). Moreover, we have $\strct{A} \satis \psi^j_a(a)$ and hence $\strct{A} \satis \exists x_1 \delta_1(x_1)$ (here $\exists x_1 \delta_1(x_1) = \exists x_1 \psi^j_a(x_1)$), so $i \geq 1$. Also note the following:
 \begin{enumerate}[(a)]
 %%
@@ -278,7 +304,19 @@ since, similarly, $\ball(7^j, \vect{b}) \subseteq \ball(7^{j + 1}, \vect{b})$ an
 %
 \item \header{Hint to Exercise 2.5.4} Use the fact that $\nat$ is well-founded.
 %
-\item \header{Note on Sentences Preserved under Homomorphisms} If a sentence $\varphi$ is preserved under homomorphisms, then it is preserved under strict homomorphisms. Thus, Theorem 2.5.5 can be strengthened accordingly.
+\item \header{Note on Sentences Preserved under (Strict) Homomorphisms} Note that the definition of a sentence $\varphi$ to be preserved under (strict) homomorphisms is
+\begin{enumerate}[(1)]
+%%
+\item for all $\strct{A}, \strct{B}$,
+%%
+\item for any (strict) homomorphism $h: A \to B$ (i.e.\ for any mapping $h: A \to B$ that is a homomorphism from $\strct{A}$ to $\strct{B}$),
+%%
+\item if $\strct{A} \satis \varphi$ then $\strct{B} \satis \varphi$.
+%%
+\end{enumerate}
+Therefore, in case that no (strict) homomorphism $h: A \to B$ exists for given $\strct{A}, \strct{B}$, there is no need to check (3) on $\strct{A}, \strct{B}$ for $\varphi$ being preserved under (strict) homomorphisms or not.
+\newpar
+On the other hand, a strict homomorphism is a homomorphism. Thus if a sentence is preserved under homomorphisms, then it is preserved under strict homomorphisms, and the result of 2.5.5 can be strengthened.
 %
 \item \header{Note on the Proof of 2.5.5} The choice of $m \defas 2^k + 1$ ensures that there are $a, a' \in M$ such that $a \neq a'$ and they satisfy the same formulas among $\rho_1, \etc, \rho_k$, by the Pigeonhole Principle.
 %

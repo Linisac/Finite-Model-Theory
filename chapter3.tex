@@ -115,7 +115,7 @@ The results given in textbook remain valid in this case.
 \item \header{Hint to Exercise 3.2.13} Note that $x_1$ is the first element of the tuple $\vect{x}$ and therefore the sentence $\forall \vect{x} (\existexactly{1}x F\vect{x}x \land F\vect{x}x_1)$ formalizes the idea that $F$ is a (total) function that projects a tuple of parameter(s) onto its first parameter.
 %
 \item \header{Solution to Exercise 3.2.14} Without loss of generality let us assume that $A$ is finite and that $\card{A} = \min\sete{\card{A}, \card{B}}$. We also assume, for simplicity, that partial isomorphisms from $\strct{A}$ to $\strct{B}$ take the form $\vect{a} \mapsto \vect{b}$ (having finite domains and ranges) in which $\vect{a}$ and $\vect{b}$ consist of distinct elements.
-\medskip\\
+\newpar
 Now we distinguish three cases:
 \begin{enumerate}[(1)]
 %%
@@ -127,9 +127,9 @@ Now we distinguish three cases:
 %%
 \end{enumerate}
 In case (1), we have that $\winpos{\infty}(\strct{A}, \strct{B}) = \winpos{0}(\strct{A}, \strct{B}) = \partisoms(\strct{A}, \strct{B}) \neq \emptyset$, which contains all isomorphisms from $\strct{A}$ to $\strct{B}$. Thus, set $m_0 \defas 0$.
-\medskip\\
+\newpar
 In case (2), it follows in particular that for any $\vect{a} \in A$ and $\vect{b} \in B$, not $(\strct{A}, \vect{a}) \isom_0 (\strct{B}, \vect{b})$. Hence $\winpos{\infty}(\strct{A}, \strct{B}) = \winpos{0}(\strct{A}, \strct{B}) = \partisoms(\strct{A}, \strct{B}) = \emptyset$. Thus, set $m_0 \defas 0$.
-\medskip\\
+\newpar
 In case (3), we may assume, with no loss of generality, that $m \leq \card{A}$ and for any $\vect{a'} \in A$ and $\vect{b'} \in B$, not $(\strct{A}, \vect{a'}) \isom_{m + 1} (\strct{B}, \vect{b'})$. So we have
 \[
 \winpos{0}(\strct{A}, \strct{B}) \neq \emptyset, \etc, \winpos{m}(\strct{A}, \strct{B}) \neq \emptyset
@@ -205,25 +205,25 @@ Then take the conjunction of the following $\folog[2]$-sentences that together d
 \item For the `if' direction, note that the partial isomorphisms of size $s$ from $\strct{A}$ to $\strct{B}$ resulted from all possible rounds of the game $\game[s]{m}(\strct{A}, \strct{B})$ with the additional condition after $s$ moves provide a winning strategy for the duplicator in the same game without that condition.
 %%
 \item Suppose that $\tau$ is relational and all its relation symbols have arity $\leq s$, where $s \geq 1$ by definition (cf.\ Part A in Chapter 1). Moreover, suppose that $\card{A} = \card{B} \leq s + 1$ and that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$. Our goal then is to show that $\strct{A} \isom \strct{B}$. We further assume $\tau \neq \emptyvoc$, since otherwise it is trivial that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ and $\strct{A} \isom \strct{B}$.
-\medskip\\
-First observe the assumption that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ immediately implies that he wins $\game[s]{m}(\strct{A}, \strct{B})$ for $m \geq 1$. By Theorem \thesection.5, then, we have for every $m \geq 1$, $\strct{A} \equv^s_m \strct{B}$. Therefore, it suffices to find a sentence $\varphi_\strct{A} \in \folog[s]\of{\tau}$ that characterizes $\strct{A}$ up to isomorphism given the fixed cardinality $\card{A}$, i.e.
+\newpar
+First observe the assumption that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ immediately implies that he wins $\game[s]{m}(\strct{A}, \strct{B})$ for $m \geq 1$. By Theorem \thesection.5, then, we have for every $m \geq 1$, $\strct{A} \equv^s_m \strct{B}$. Therefore, it suffices to find a sentence $\delta_\strct{A} \in \folog[s]\of{\tau}$ that characterizes $\strct{A}$ up to isomorphism given the fixed cardinality $\card{A}$, i.e.
 \begin{center}
-for every structure $\strct{A}'$ with $\card{A'} = \card{A}$, \ $\strct{A}' \satis \varphi_\strct{A}$ \ iff \ $\strct{A}' \isom \strct{A}$.
+for every structure $\strct{A}'$ with $\card{A'} = \card{A}$, \ $\strct{A}' \satis \delta_\strct{A}$ \ iff \ $\strct{A}' \isom \strct{A}$.
 \end{center}
-Then we are done: The first-order sentence $\varphi_\strct{A}$ has a (finite) quantifier rank, say $m$, and it follows that $\strct{A} \isom \strct{B}$ because $\strct{B} \satis \varphi_\strct{A}$ (implied by $\strct{A} \equv^s_m \strct{B}$ above).
-\medskip\\
-Next, the sentence $\varphi_\strct{A}$ depends on whether $\card{A} \leq s$ or $\card{A} = s + 1$. Recall the set of atomic formulas
+Then we are done: The first-order sentence $\delta_\strct{A}$ has a (finite) quantifier rank, say $m$, and it follows that $\strct{A} \isom \strct{B}$ because $\strct{B} \satis \delta_\strct{A}$ (implied by $\strct{A} \equv^s_m \strct{B}$ above).
+\newpar
+Next, the sentence $\delta_\strct{A}$ depends on whether $\card{A} \leq s$ or $\card{A} = s + 1$. Recall the set of atomic formulas
 \[
 \Theta_n \defas \sett{\psi}{\mathmode{\psi} has the form \mathmode{Rx_1 \etc x_k}, \mathmode{x = y} and variables among \mathmode{v_1, \etc, v_n}}
 \]
 used in the proof of 2.1.1. (There are no formulas of the form $c = x$ in $\Theta_n$ as $\tau$ is assumed to be relational.)
-\medskip\\
+\newpar
 The case $\card{A} \leq s$ is simple: If $\card{A} = n$, i.e.\ $A = \sete{a_1, \etc, a_n}$ then we choose
 \[
-\varphi_\strct{A} \defas \exists v_1 \etc \exists v_n (\bland\setm{\psi}{\psi \in \Theta_n, \strct{A} \satis \psi[\vect{a}]} \land \bland\setm{\neg\psi}{\psi \in \Theta_n, \strct{A} \satis \neg\psi[\vect{a}]})
+\delta_\strct{A} \defas \exists v_1 \etc \exists v_n (\bland\setm{\psi}{\psi \in \Theta_n, \strct{A} \satis \psi[\vect{a}]} \land \bland\setm{\neg\psi}{\psi \in \Theta_n, \strct{A} \satis \neg\psi[\vect{a}]})
 \]
 where $\vect{a}$ denotes $a_1 \etc a_n$.
-\medskip\\
+\newpar
 It remains to deal with the case $\card{A} = s + 1$, i.e.\ $A = \sete{a_1, \etc, a_{s + 1}}$. Remember that we only have $s$ distinct variables $v_1, \etc, v_s$ to describe $\strct{A}$. The idea is that, using these $s$ (quantified) variables, we describe the relations and (in)equalities
 \begin{enumerate}[(1)]
 %%
@@ -233,16 +233,16 @@ It remains to deal with the case $\card{A} = s + 1$, i.e.\ $A = \sete{a_1, \etc,
 %%
 \end{enumerate}
 Note that this is feasible as every relation symbol has arity at most $s$.
-\medskip\\
+\newpar
 For brevity, let us denote $a_1, \etc, a_{i - 1}, a_{s + 1}, a_{i + 1}, \etc, a_s$ ($a_{s + 1}$ is between $a_{i - 1}$ and $a_{i + 1}$ in this order) by $\vect{a}_i$ for $1 \leq i \leq s$; moreover, we also let $\vect{a}_0$ denote $a_1, \etc, a_s$. The desired sentence is thus
 \[
-\varphi_\strct{A} \defas \exists v_1 \etc \exists v_s \bland^s_{i = 0} \varphi_i,
+\delta_\strct{A} \defas \exists v_1 \etc \exists v_s \bland^s_{i = 0} \varphi_i,
 \]
 where
 \[
 \varphi_0 \defas \bland \setm{\psi}{\psi \in \Theta_s, \strct{A} \satis \psi[\vect{a}_0]} \land \bland \setm{\neg\psi}{\psi \in \Theta_s, \strct{A} \satis \neg\psi[\vect{a}_0]}
 \]
-and for $1 \leq i \leq s$,
+(note that $\strct{A} \satis \varphi_0[\vect{a}_0]$) and for $1 \leq i \leq s$,
 \[
 \varphi_i \defas
 \begin{cases}
