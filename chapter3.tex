@@ -160,24 +160,23 @@ By definition (cf.\ 3.2.4) and 2.2.4(c), we immediately have
 %
 \item \header{Note on Pebble Games $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$} They are different from the usual Ehrenfeucht-Fra\"iss\'e games $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ in that the number of pebbles are fixed ($s$ for each of $\strct{A}$ and $\strct{B}$ here) and the pebbles are on or off (denoted by $\ast$) the board; once a pebble is placed onto the board, it is never removed off of it. Thus, pebble games consist of putting the pebbles onto the board (extensions) and moving them around on the board (moves).
 %
-\item \header{Note on \thesection.6}
+\item \header{Note on 3.3.6}
 \begin{enumerate}[(a)]
 %%
 \item To be clear, the last statement should be ``for arbitrary \emph{$\emptyvoc$-structures} $\strct{A}$ and $\strct{B}$, the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ iff he wins $\game[s]{s}(\strct{A}, \strct{B})$.'' This is not true for arbitrary $\tau$, however, as can be seen in the example given in the next part.
 %%
-\item The spoiler wins $\game[3]{\infty}(\strct{G}_l, \strct{G}_l \dunion \strct{G}_l)$ but does not win $\game[3]{3}(\strct{G}_l, \strct{G}_l \dunion \strct{G}_l)$. As remarked in 2.3.16, the information that exactly one of the structures $\strct{G}_l$ and $\strct{G}_l \dunion \strct{G}_l$ satisfy the $\inflog[3]$-sentence expressing connectivity can be transformed into a winning strategy for the spoiler.
+\item Note the spoiler wins $\game[3]{m}(\strct{G}_l, \strct{G}_l \dunion \strct{G}_l)$ for $m > \frac{l}{2}$, and his winning strategy can be transformed into a $\folog\of{\sete{E}}$-formula of quantifier rank $m$ to distinguish $\strct{G}_l$ and $\strct{G}_l \dunion \strct{G}_l$ (cf.\ 2.3.16).
 %%
 \end{enumerate}
-
 %
-\item \header{Hint to Exercise \thesection.7}
+\item \header{Hint to Exercise 3.3.7}
 \begin{enumerate}[(a)]
 %%
 \item For the `if' direction, assume that $A = \sete{a_0, \etc, a_k}$, where
 \[
 a_0 \mathrel{\intpr{<}{A}} \etc \mathrel{\intpr{<}{A}} a_k.
 \]
-Then take the conjunction of the following $\folog[2]$-sentences that together describe $\strct{A}$ up to isomorphism (where $\psi'_n$ is as in Examples \thesection.1).
+Then take the conjunction of the following $\folog[2]$-sentences that together describe $\strct{A}$ up to isomorphism (where $\psi'_n$ is as in Examples 3.3.1).
 \begin{itemize}
 %%%
 \item The size of $A$ ($\card{A} = k + 1$):
