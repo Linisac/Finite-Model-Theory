@@ -41,7 +41,7 @@ Using Corollary 2.3.4, we obtain a further equivalent statement:
 \item $\strct{B} \satis \bland_{j \in \nat} \hint{j}{\strct{A}}$,
 %%
 \end{enumerate}
-and, using Lemma 2.2.4(b), yet another equivalent statement, in parallel to Corollary 2.3.4(ii):
+(note that the sentence is in $\dlog{\omega_1}$) and, using Lemma 2.2.4(b), yet another equivalent statement, in parallel to Corollary 2.3.4(ii):
 \begin{enumerate}[(1)]
 \setcounter{enumii}{5}
 %%
@@ -73,6 +73,15 @@ To summarize, we have the successively weaker notions (where \refitem{(1)} clear
 On the other hand, this theorem does not seem to have a corresponding statement \refitem{(iv)} to that of Theorem 2.3.3. The statement $(\strct{B}, \vect{b}) \satis \bland_{j \in \nat} \hint{j}{\strct{A}, \vect{a}}$ does not work because it is equivalent to $(\strct{A}, \vect{a}) \equv (\strct{B}, \vect{b})$, namely $(\strct{A}, \vect{a}), (\strct{B}, \vect{b})$ satisfy the same first-order formulas $\varphi$ in which it is decisive whether or not $\strct{A} \satis \varphi[\vect{a}]$ (or equivalently, $\strct{B} \satis \varphi[\vect{b}]$) is the case (see the discussion in Note on 3.2.4 and 3.2.6).
 %
 \item \header{Note on \refitem{(iii)} of 3.2.8} To transition from \refitem{(iii)} of 3.2.7 for $s = 0$, one refers to 2.3.2 (also cf.\ the transition from 2.3.3 to 2.3.4 using 2.3.2).
+%
+\item \header{Note on 3.2.7 and 3.2.8 Collectively} Based on the observation made in \textbf{Note on 3.2.4 and 3.2.6}, I have
+\begin{conjecture}
+Let $\strct{A}, \strct{B}$ be two structures and $\kappa, \kappa'$ be two cardinalities such that $\kappa'$ is the immediate greater cardinality than $\kappa$. Then there is an $\dlog{\kappa'}$-sentence $\varphi_\strct{A}$ such that
+\begin{center}
+$\strct{A} \equv^{\dlog{\kappa}} \strct{B}$ if and only if $\strct{B} \satis \varphi_\strct{A}$.
+\end{center}
+\end{conjecture}
+This enhances 3.2.8. Similarly, 3.2.7 can be enhanced.
 %
 \item \header{Note on 3.2.11}
 \begin{enumerate}[(1)]
@@ -203,7 +212,7 @@ Then take the conjunction of the following $\folog[2]$-sentences that together d
 %%
 \item For the `if' direction, note that the partial isomorphisms of size $s$ from $\strct{A}$ to $\strct{B}$ resulted from all possible rounds of the game $\game[s]{m}(\strct{A}, \strct{B})$ with the additional condition after $s$ moves provide a winning strategy for the duplicator in the same game without that condition.
 %%
-\item Suppose that $\tau$ is relational and all its relation symbols have arity $\leq s$, where $s \geq 1$ by definition (cf.\ Part A in Chapter 1). Moreover, suppose that $\card{A} = \card{B} \leq s + 1$ and that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$. Our goal then is to show that $\strct{A} \isom \strct{B}$. We further assume $\tau \neq \emptyvoc$, since otherwise it is trivial that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ and $\strct{A} \isom \strct{B}$.
+\item (INCOMPLETE: PREMISE TOO STRONG?) Suppose that $\tau$ is relational and all its relation symbols have arity $\leq s$, where $s \geq 1$ by definition (cf.\ Part A in Chapter 1). Moreover, suppose that $\card{A} = \card{B} \leq s + 1$ and that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$. Our goal then is to show that $\strct{A} \isom \strct{B}$. We further assume $\tau \neq \emptyvoc$, since otherwise it is trivial that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ and $\strct{A} \isom \strct{B}$.
 \newpar
 First observe the assumption that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ immediately implies that he wins $\game[s]{m}(\strct{A}, \strct{B})$ for $m \geq 1$. By Theorem \thesection.5, then, we have for every $m \geq 1$, $\strct{A} \equv^s_m \strct{B}$. Therefore, it suffices to find a sentence $\delta_\strct{A} \in \folog[s]\of{\tau}$ that characterizes $\strct{A}$ up to isomorphism given the fixed cardinality $\card{A}$, i.e.
 \begin{center}
@@ -271,15 +280,25 @@ Note that the conjunct $\ityp{0}{\strct{A}, \vect{a}}$ is redundant and is impli
 %%
 \end{enumerate}
 %
-\item \header{Note on Part (a) of 3.3.9 and 3.3.10} It gives that
+\item \header{Note on Part (a) of 3.3.9 and 3.3.10} It implies that
 \begin{center}
 \begin{tabular}{ll}
 \   & $(\strct{A}, \vect{a}) \equv^s (\strct{B}, \vect{b})$ \cr
 iff & for every $m \in \nat$, $(\strct{A}, \vect{a}) \equv^s_m (\strct{B}, \vect{b})$ \cr
 iff & for every $m \in \nat$, $\strct{B} \satis \ityp[s]{m}{\strct{A}, \vect{a}}[\vect{b}]$ \cr
-iff & $\strct{B} \satis (\bland\limits_{m \in \nat} \ityp[s]{m}{\strct{A}, \vect{a}})[\vect{b}]$. \cr
+iff & $\strct{B} \satis (\bland\limits_{m \in \nat} \ityp[s]{m}{\strct{A}, \vect{a}})[\vect{b}]$ \cr
 \end{tabular}
 \end{center}
+for 3.3.9, and that
+\begin{center}
+\begin{tabular}{ll}
+\   & $\strct{A} \equv^s \strct{B}$ \cr
+iff & for every $m \in \nat$, $\strct{A} \equv^s_m \strct{B}$ \cr
+iff & for every $m \in \nat$, $\strct{B} \satis \ityp[s]{m}{\strct{A}}$ \cr
+iff & $\strct{B} \satis (\bland\limits_{m \in \nat} \ityp[s]{m}{\strct{A}})$ \cr
+\end{tabular}
+\end{center}
+for 3.3.10.
 %
 \item \header{Note on 3.3.11} As in 3.2.11, the underlying vocabulary $\tau$ is relational and the results remain valid when $\tau$ contains only unary relation symbols.
 
