@@ -14,24 +14,38 @@
 \section{Infinitary Logic: The Logics $\inflog$ and $\dlog{\omega_1}$}
 \begin{enumerate}[1.]
 %
+\item \header{Note on the Definition of $\inflog$} In the fourth clause $\Psi$ is a \emph{set} while $\inflog$ itself is a \emph{class}. In particular, we cannot obtain an ``$\inflog$-formula'' by taking the disjunction of all $\inflog$-formulas.
+
+Also, the set $\free(\varphi)$ of free variables in $\varphi \in \inflog$ may not be finite, as opposed to first-order formulas.
+%
 \item \header{Subformulas of $\inflog$-Sentences Only Have Finitely Many Free Variables} In fact, one can show by induction on the formation of formulas that if $\varphi \in \inflog$ has infinitely many free variables, then any $\inflog$-formula having $\varphi$ as a subformula must also have infinitely many free variables.
 %
-\item \header{Note on 3.2.3} One can easily see that $\varphi(\vect{x})$ is equivalent to a countable conjunction of first-order formulas:
+\item \header{Note on 3.2.3} Note that the proof can be done without assuming $\varphi(\vect{x})$ is a sentence since $\hint{\card{A} + 1}{\strct{A}, \vect{a}}$ characterizes $(\strct{A}, \vect{a})$ up to isomorphism: For any structure $\strct{B}$ and any tuple of elements $\vect{b} \in B$ such that $\strct{B} \satis \hint{\card{A} + 1}{\strct{A}, \vect{a}}[\vect{b}]$, the partial isomorphism $\vect{a} \mapsto \vect{b}$ can be extended to a (full) isomorphism $p: \strct{A} \isom \strct{B}$.
+
+Also note that this proposition has a similar flavor to Theorem 2.2.11, but the technique of using the formula
+\[
+\blor \sett{\hint{m}{\strct{A}, \vect{a}}}{\mathmode{\strct{A}} a structure, \mathmode{\vect{a} \in A}, and \mathmode{\strct{A} \satis \varphi[\vect{a}]}},
+\]
+where $\qr(\varphi) \leq m$, is not applicable here: For structures $\strct{A}$ with large enough $\card{A}$, the formula $\hint{m}{\strct{A}, \vect{a}}$ does not characterize $(\strct{A}, \vect{a})$ up to isomorphism; moreover, for a structure $\strct{B}$ and a tuple of elements $\vect{b} \in B$ with $\strct{B} \satis \hint{m}{\strct{A}, \vect{a}}[\vect{b}]$, it is not necessarily the case that $(\strct{A}, \vect{a})$ and $(\strct{B}, \vect{b})$ satisfy the same $\inflog$-formulas of quantifier rank $\leq m$, and hence $\strct{A} \satis \varphi[\vect{a}]$ may not imply $\strct{B} \satis \varphi[\vect{b}]$.
+
+On the other hand, using the trick employed in the proof of 2.1.2, one can easily see that $\varphi(\vect{x})$ is equivalent to a countable conjunction of first-order formulas:
 \[
 \bland \setm{\cardexactly{n} \lthen \blor\setm{\hint{\card{A} + 1}{\strct{A}, \vect{a}}(\vect{x})}{\card{A} = n, \vect{a} \in A, \strct{A} \satis \varphi[\vect{a}]}}{n \geq 1}.
 \]
-Note that the disjunction in every conjunct above is finite.
+Note that in the above formula the disjunction in every conjunct is finite.
 %
-\item \header{Note on 3.2.4 and 3.2.6} In fact, for any (finite) vocabulary $\tau$ and any $\tau$-structures $\strct{A}, \strct{B}$ the following statements are equivalent (cf.\ Chapter XII in \cite{EFT} for more details):
+\item \header{Note on 3.2.4 and 3.2.6} (INCOMPLETE) First, a partial isomorphism is not required to be a finite mapping, i.e.\ its graph is not necessarily finite, cf.\ Definition 2.2.1. Therefore, in 3.2.4 the notation $\vect{a}e_1e_2\etc \mapsto \vect{b}f_1f_2\etc$ can be considered a partial isomorphism from $\strct{A}$ to $\strct{B}$ if $\vect{a}e_1\etc e_i \mapsto \vect{b}f_1\etc f_i \in \partisoms(\strct{A}, \strct{B})$ for all $i$. The condition for the duplicator winning the game $\game{\infty}(\strct{A}, \strct{B})$ may be restated with this new notation.
+
+Next, for any vocabulary $\tau$ (recall that $\tau$ is finite) and any $\tau$-structures $\strct{A}, \strct{B}$ the following statements are equivalent:
 \begin{enumerate}[(1)]
 %%
-\item $\strct{A} \equv \strct{B}$, i.e.\ $\strct{A}$ and $\strct{B}$ are \emph{elementarily equivalent} ($\strct{A}$ and $\strct{B}$ satisfy the same $\folog\of{\tau}$-sentences)
+\item $\strct{A}$ and $\strct{B}$ are \emph{elementarily equivalent} (written: $\strct{A} \equv \strct{B}$), i.e.\ $\strct{A}$ and $\strct{B}$ satisfy the same $\folog\of{\tau}$-sentences.
 %%
-\item $\strct{A} \isom_\fin \strct{B}$, namely $\strct{A}$ and $\strct{B}$ are \emph{finitely isomorphic} (there is an infinite sequence $\seq{I_j}{j \in \nat}$ that satisfies the properties \refitem{(a) - (c)} in Definition 2.3.1 except that ``$j < m$'' is replaced by ``$j \in \nat$'' in conditions \refitem{(b)} and \refitem{(c)})
+\item $\strct{A}$ and $\strct{B}$ are \emph{finitely isomorphic} (written: $\strct{A} \isom_\fin \strct{B}$), i.e.\ there is an infinite sequence $\seq{I_j}{j \in \nat}$ that satisfies the properties \refitem{(a) - (c)} in Definition 2.3.1 except that ``$j < m$'' is replaced by ``$j \in \nat$'' in conditions \refitem{(b)} and \refitem{(c)}.
 %%
-\item For $j \in \nat$, the duplicator wins the game $\game{j}(\strct{A}, \strct{B})$
+\item For $j \in \nat$, the duplicator wins the game $\game{j}(\strct{A}, \strct{B})$.
 %%
-\item The duplicator wins the game $\fingame(\strct{A}, \strct{B})$ in which the spoiler begins the game by first choosing a natural number $r$ and then the game proceeds as in $\game{r}(\strct{A}, \strct{B})$.
+\item The duplicator wins the game $\fingame(\strct{A}, \strct{B})$ in which the spoiler begins the game by first choosing a natural number $j$ and then the game proceeds as $\game{j}(\strct{A}, \strct{B})$.
 %%
 \end{enumerate}
 Using Corollary 2.3.4, we obtain a further equivalent statement:
@@ -41,15 +55,16 @@ Using Corollary 2.3.4, we obtain a further equivalent statement:
 \item $\strct{B} \satis \bland_{j \in \nat} \hint{j}{\strct{A}}$,
 %%
 \end{enumerate}
-(note that the sentence is in $\dlog{\omega_1}$) and, using Lemma 2.2.4(b), yet another equivalent statement, in parallel to Corollary 2.3.4(ii):
+(note that the sentence $\bland_{j \in \nat} \hint{j}{\strct{A}}$ is in $\dlog{\omega_1}$) and, using Lemma 2.2.4(b), yet another equivalent statement, in parallel to Corollary 2.3.4(ii):
 \begin{enumerate}[(1)]
 \setcounter{enumii}{5}
 %%
 \item $\seq{\winpos{j}(\strct{A}, \strct{B})}{j \in \nat} : \strct{A} \isom_\fin \strct{B}$.
 %%
 \end{enumerate}
+It follows that, by Proposition 2.1.1, if $\strct{A}$ and $\strct{B}$ are both finite and if $\strct{A} \isom_\fin \strct{B}$, then $\strct{A} \isom \strct{B}$.
 
-The above should be easy to generalize so that we have $(\strct{A}, \vect{a}), (\strct{B}, \vect{b})$ in place of $\strct{A}, \strct{B}$, and $\vect{a} \mapsto \vect{b} \in I_j$ (or $\vect{a} \mapsto \vect{b} \in \winpos{j}(\strct{A}, \strct{B})$) for all $j$ in \refitem{(2)} (or \refitem{(6)}, respectively). For example, we can regard $(\strct{A}, \vect{a})$ and $(\strct{B}, \vect{b})$ as the $\tau \union \sete{\vect{c}}$-expansion of $\strct{A}$ and of $\strct{B}$ in which $\vect{c}$ is interpreted by $\vect{a}$ and $\vect{b}$, respectively.
+The above should be easy to generalize so that we have $(\strct{A}, \vect{a}), (\strct{B}, \vect{b})$ in place of $\strct{A}, \strct{B}$, as well as the additional conditions $\vect{a} \mapsto \vect{b} \in I_j$ in \refitem{(2)} and $\vect{a} \mapsto \vect{b} \in \winpos{j}(\strct{A}, \strct{B})$ in \refitem{(6)}.\footnote{For example, we can regard $(\strct{A}, \vect{a})$ and $(\strct{B}, \vect{b})$ as the $\tau \union \sete{\vect{c}}$-expansion of $\strct{A}$ and of $\strct{B}$ in which $\vect{c}$ is interpreted by $\vect{a}$ and $\vect{b}$, respectively.} In particular, we have that $(\strct{A}, \vect{a}) \equv (\strct{B}, \vect{b})$ if and only if $(\strct{A}, \vect{b}) \isom_\fin (\strct{B}, \vect{b})$.
 
 Notice that, however, the condition that the duplicator wins $\fingame(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ generally does not imply that he wins $\game{\infty}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ although the converse is obviously true. See Exercise XII.1.10 in \cite{EFT} to give an example of two finitely isomorphic structures that are not partially isomorphic; the same exercise problem also asks to give an example of two partially isomorphic structures that are not isomorphic.
 
@@ -67,10 +82,34 @@ To summarize, we have the successively weaker notions (where \refitem{(1)} clear
 \item $\strct{A} \isom_j \strct{B}$ in which $j \in \nat$.
 %%
 \end{enumerate}
-%
-\item \header{Note on Theorem 3.2.7} In the direction from \refitem{(iii)} to \refitem{(iv)} of the proof, the length $s$ of tuples in \refitem{($\ast$)} is better to be replaced by say $r$, since $s$ is fixed for the length of $\vect{a}$ and $\vect{b}$ whereas the tuples in \refitem{($\ast$)} may have different lengths. Also, there is a typo in the direction from \refitem{(iv)} to \refitem{(iii)}: ``$a \in I$'' should change to ``$a \in A$''.
 
-On the other hand, this theorem does not seem to have a corresponding statement \refitem{(iv)} to that of Theorem 2.3.3. The statement $(\strct{B}, \vect{b}) \satis \bland_{j \in \nat} \hint{j}{\strct{A}, \vect{a}}$ does not work because it is equivalent to $(\strct{A}, \vect{a}) \equv (\strct{B}, \vect{b})$, namely $(\strct{A}, \vect{a}), (\strct{B}, \vect{b})$ satisfy the same first-order formulas $\varphi$ in which it is decisive whether or not $\strct{A} \satis \varphi[\vect{a}]$ (or equivalently, $\strct{B} \satis \varphi[\vect{b}]$) is the case (see the discussion in Note on 3.2.4 and 3.2.6).
+\begin{remark}
+For more details see Chapter XII in \cite{EFT}.
+\end{remark}
+%
+\item \header{Note on Theorem 3.2.7} In the direction from \refitem{(iii)} to \refitem{(iv)} of the proof,
+\begin{itemize}
+%%
+\item transfinite induction is needed because the quantifier rank of an $\inflog$-formula may not be in $\omega$;
+%%
+\item the length $s$ of tuples in \refitem{($\ast$)} is better to be replaced by say $r$, since $s$ is fixed for the length of $\vect{a}$ and $\vect{b}$ whereas the tuples in \refitem{($\ast$)} may have different lengths.
+%%
+\end{itemize}
+Also, there is a typo in the direction from \refitem{(iv)} to \refitem{(iii)}: ``$a \in I$'' should change to ``$a \in A$''.
+
+\begin{remark}
+This theorem does not seem to have a corresponding statement \refitem{(iv)} to that of Theorem 2.3.3. As noted in \textbf{Note on the Definition of $\inflog$}, we cannot take a single $\inflog$-sentence $\varphi_\strct{A}$ that is the conjunction of all $\inflog$-sentences $\psi$ satisfied by $\strct{A}$ (such a \emph{sentence} $\varphi_\strct{A}$ does not exist because there are too many $\psi$ to fit into a \emph{set}) so that for every $\strct{B}$, $\strct{B} \satis \varphi_\strct{A}$ if and only if $\strct{A}$ and $\strct{B}$ satisfy the same $\inflog$-sentences.
+
+(INCOMPLETE) Nevertheless, we have for every $\strct{A}$ and every $\strct{B}$,
+\begin{center}
+\begin{tabular}{ll}
+\   & $\strct{A}$ and $\strct{B}$ satisfy the same $\inflog$-sentences \cr
+iff & for every cardinal $\kappa$, $\strct{A}$ and $\strct{B}$ satisfy the same $\dlog{\kappa}$-sentences \cr
+iff & for every cardinal $\kappa$, $\strct{B} \satis \varphi_{\strct{A}, \kappa}$, \cr
+\end{tabular}
+\end{center}
+where $\varphi_{\strct{A}, \kappa}$ is an $\inflog$-sentence that characterizes $\dlog{\kappa}$-equivalence to $\strct{A}$. The sentence $\varphi_{\strct{A}, \kappa}$ is expected to be in $\dlog{\kappa'}$ in which $\kappa'$ is the immediate larger cardinal than $\kappa$. For example, in the case $\kappa = \omega$, the $\dlog{\omega}$-equivalence (i.e.\ $\folog$-equivalence, or elementary equivalence) to $\strct{A}$ is characterized by an $\dlog{\omega_1}$-sentence. See \textbf{Note on 3.2.4 and 3.2.6}. The above discussion yields that $\bland_\kappa \varphi_{\strct{A}, \kappa}$ does not exist (in $\inflog$).
+\end{remark}
 %
 \item \header{Note on \refitem{(iii)} of 3.2.8} To transition from \refitem{(iii)} of 3.2.7 for $s = 0$, one refers to 2.3.2 (also cf.\ the transition from 2.3.3 to 2.3.4 using 2.3.2).
 %
@@ -280,25 +319,18 @@ Note that the conjunct $\ityp{0}{\strct{A}, \vect{a}}$ is redundant and is impli
 %%
 \end{enumerate}
 %
-\item \header{Note on Part (a) of 3.3.9 and 3.3.10} It implies that
+\item \header{Note on 3.3.9 and of 3.3.10} In 3.3.9, part (a) gives
 \begin{center}
 \begin{tabular}{ll}
 \   & $(\strct{A}, \vect{a}) \equv^s (\strct{B}, \vect{b})$ \cr
 iff & for every $m \in \nat$, $(\strct{A}, \vect{a}) \equv^s_m (\strct{B}, \vect{b})$ \cr
 iff & for every $m \in \nat$, $\strct{B} \satis \ityp[s]{m}{\strct{A}, \vect{a}}[\vect{b}]$ \cr
-iff & $\strct{B} \satis (\bland\limits_{m \in \nat} \ityp[s]{m}{\strct{A}, \vect{a}})[\vect{b}]$ \cr
+iff & $\strct{B} \satis (\bland\limits_{m \in \nat} \ityp[s]{m}{\strct{A}, \vect{a}})[\vect{b}]$. \cr
 \end{tabular}
 \end{center}
-for 3.3.9, and that
-\begin{center}
-\begin{tabular}{ll}
-\   & $\strct{A} \equv^s \strct{B}$ \cr
-iff & for every $m \in \nat$, $\strct{A} \equv^s_m \strct{B}$ \cr
-iff & for every $m \in \nat$, $\strct{B} \satis \ityp[s]{m}{\strct{A}}$ \cr
-iff & $\strct{B} \satis (\bland\limits_{m \in \nat} \ityp[s]{m}{\strct{A}})$ \cr
-\end{tabular}
-\end{center}
-for 3.3.10.
+Likewise for 3.3.10.
+
+On the other hand, part (b) of 3.3.9 (or 3.3.10) lacks the corresponding statement to \refitem{(iv)} of part (a), since there is no single formula (or sentence, respectively) in $\inflog[s]$ that characterizes the $\inflog[s]$-equivalence to $(\strct{A}, \vect{a})$ (or $\strct{A}$, respectively), cf.\ \textbf{Remark} in \textbf{Note on Theorem 3.2.7}.
 %
 \item \header{Note on 3.3.11} As in 3.2.11, the underlying vocabulary $\tau$ is relational and the results remain valid when $\tau$ contains only unary relation symbols.
 
