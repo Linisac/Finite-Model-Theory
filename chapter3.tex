@@ -17,22 +17,28 @@
 \item \header{Note on the Definition of $\inflog$} In the fourth clause $\Psi$ is a \emph{set} while $\inflog$ itself is a \emph{class}. In particular, we cannot obtain an ``$\inflog$-formula'' by taking the disjunction of all $\inflog$-formulas.
 
 Also, the set $\free(\varphi)$ of free variables in $\varphi \in \inflog$ may not be finite, as opposed to first-order formulas.
+
+Finally, we could have defined the \emph{quantifier rank} $\qr(\varphi)$ of a formula in $\inflog$ in the same way as in $\folog$. However, this may not be a finite number. For example, the sentence given in 3.2.1(a) that characterizes the class $\even\of{\tau}$.
 %
 \item \header{Subformulas of $\inflog$-Sentences Only Have Finitely Many Free Variables} In fact, one can show by induction on the formation of formulas that if $\varphi \in \inflog$ has infinitely many free variables, then any $\inflog$-formula having $\varphi$ as a subformula must also have infinitely many free variables.
 %
-\item \header{Note on 3.2.3} Note that the proof can be done without assuming $\varphi(\vect{x})$ is a sentence since $\hint{\card{A} + 1}{\strct{A}, \vect{a}}$ characterizes $(\strct{A}, \vect{a})$ up to isomorphism: For any structure $\strct{B}$ and any tuple of elements $\vect{b} \in B$ such that $\strct{B} \satis \hint{\card{A} + 1}{\strct{A}, \vect{a}}[\vect{b}]$, the partial isomorphism $\vect{a} \mapsto \vect{b}$ can be extended to a (full) isomorphism $p: \strct{A} \isom \strct{B}$.
+\item \header{Note on 3.2.2} Observe from the proof that, in both cases (a) and (b), the equivalent formula $\psi(\vect{x})$ constructed does not contain more quantifiers than does $\varphi(\vect{x})$.
+%
+\item \header{Note on 3.2.3} The proof can be done without assuming $\varphi(\vect{x})$ is a sentence since $\hint{\card{A} + 1}{\strct{A}, \vect{a}}$ characterizes $(\strct{A}, \vect{a})$ up to isomorphism: For any structure $\strct{B}$ and any tuple of elements $\vect{b} \in B$ such that $\strct{B} \satis \hint{\card{A} + 1}{\strct{A}, \vect{a}}[\vect{b}]$, the partial isomorphism $\vect{a} \mapsto \vect{b}$ can be extended to a (full) isomorphism $p: \strct{A} \isom \strct{B}$.
 
-Also note that this proposition has a similar flavor to Theorem 2.2.11, but the technique of using the formula
+Also note that this proposition has a similar flavor to Theorem 2.2.11, and in case the quantifier rank of $\varphi(\vect{x})$ is finite, say $\leq m$, the formula
 \[
-\blor \sett{\hint{m}{\strct{A}, \vect{a}}}{\mathmode{\strct{A}} a structure, \mathmode{\vect{a} \in A}, and \mathmode{\strct{A} \satis \varphi[\vect{a}]}},
+\blor \sett{\hint{m}{\strct{A}, \vect{a}}}{\mathmode{\strct{A}} a structure, \mathmode{\vect{a} \in A}, and \mathmode{\strct{A} \satis \varphi[\vect{a}]}}
 \]
-where $\qr(\varphi) \leq m$, is not applicable here: For structures $\strct{A}$ with large enough $\card{A}$, the formula $\hint{m}{\strct{A}, \vect{a}}$ does not characterize $(\strct{A}, \vect{a})$ up to isomorphism; moreover, for a structure $\strct{B}$ and a tuple of elements $\vect{b} \in B$ with $\strct{B} \satis \hint{m}{\strct{A}, \vect{a}}[\vect{b}]$, it is not necessarily the case that $(\strct{A}, \vect{a})$ and $(\strct{B}, \vect{b})$ satisfy the same $\inflog$-formulas of quantifier rank $\leq m$, and hence $\strct{A} \satis \varphi[\vect{a}]$ may not imply $\strct{B} \satis \varphi[\vect{b}]$.
+used there is also equivalent to $\varphi(\vect{x})$: If there are a structure $\strct{A}$ and elements $\vect{a}$ in $A$ such that $\strct{A} \satis \varphi[\vect{a}]$ and $\strct{B} \satis \hint{m}{\strct{A}, \vect{a}}[\vect{b}]$, then $(\strct{A}, \vect{a})$ and $(\strct{B}, \vect{b})$ satisfy the same first-order formulas of quantifier rank $\leq m$ in the variables $\vect{x}$. By 3.2.2(b), a suitable formula $\psi(\vect{x}) \in \folog$ can be chosen so that it is equivalent to $\varphi(\vect{x})$ for $\strct{A}$ and $\strct{B}$; notice that $\qr(\psi) \leq m$ (see \refitem{Note on 3.2.3}). It follows that $\strct{B} \satis \varphi[\vect{b}]$.
+
+However, when the quantifier rank of $\varphi(\vect{x})$ is infinite, we cannot use the above technique: The first-order formula $\psi(\vect{x})$ equivalent to $\varphi(\vect{x})$ yielded by 3.2.2(b) depends on both $\strct{A}$ and $\strct{B}$ and thus $\qr(\psi)$ may not be bounded (as opposed to $\qr(\psi)$ being bounded by $m$ in the previous case). Moreover, for small values of $m$ (compared to $\card{A}$), $\hint{m}{\strct{A}, \vect{a}}$ does not characterize $(\strct{A}, \vect{a})$ up to isomorphism; with $m = \card{A} + 1$, $\hint{m}{\strct{A}, \vect{a}}$ characterizes $(\strct{A}, \vect{a})$ up to isomorphism, and hence the formula given in this proposition.
 
 On the other hand, using the trick employed in the proof of 2.1.2, one can easily see that $\varphi(\vect{x})$ is equivalent to a countable conjunction of first-order formulas:
 \[
 \bland \setm{\cardexactly{n} \lthen \blor\setm{\hint{\card{A} + 1}{\strct{A}, \vect{a}}(\vect{x})}{\card{A} = n, \vect{a} \in A, \strct{A} \satis \varphi[\vect{a}]}}{n \geq 1}.
 \]
-Note that in the above formula the disjunction in every conjunct is finite.
+Note that in the above formula the disjunction in every conjunct is finite. An alternative way to obtain this is to first apply this proposition to $\neg\varphi$ to obtain a countable disjunction of first-order formulas and then negate the disjunction.
 %
 \item \header{Note on 3.2.4 and 3.2.6} (INCOMPLETE) First, a partial isomorphism is not required to be a finite mapping, i.e.\ its graph is not necessarily finite, cf.\ Definition 2.2.1. Therefore, in 3.2.4 the notation $\vect{a}e_1e_2\etc \mapsto \vect{b}f_1f_2\etc$ can be considered a partial isomorphism from $\strct{A}$ to $\strct{B}$ if $\vect{a}e_1\etc e_i \mapsto \vect{b}f_1\etc f_i \in \partisoms(\strct{A}, \strct{B})$ for all $i$. The condition for the duplicator winning the game $\game{\infty}(\strct{A}, \strct{B})$ may be restated with this new notation.
 
