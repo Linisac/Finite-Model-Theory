@@ -94,7 +94,17 @@ By 2.2.4(c) and 2.2.9, in fact, we get a stronger statement than the original eq
 \section{Examples and Fra\"{i}ss\'{e}'s Theorem}
 \begin{enumerate}[1.]
 %
-\item \header{Note that $\winpos{0}(\strct{A}, \strct{B}) = \partisoms(\strct{A}, \strct{B})$} An immediate result by 2.2.4(a).
+\item \header{Some Facts about the Sets $\winpos{m}(\strct{A}, \strct{B})$ of Winning Positions} \begin{enumerate}[(a)]
+%%
+\item $\winpos{0}(\strct{A}, \strct{B}) = \sett{p \in \partisoms(\strct{A}, \strct{B})}{\mathmode{p} is finite}$.\footnote{Note that winning positions are assumed to be finite maps but partial isomorphisms need not be finite by definition.} (cf.\ 2.2.4(a).)
+%%
+\item For $j \geq 0$, $\winpos{j + 1}(\strct{A}, \strct{B}) \subseteq \winpos{j}(\strct{A}, \strct{B})$. (cf.\ 2.2.4(c).)
+%%
+\item For $m \geq 0$, $\winpos{m}(\strct{A}, \strct{B}) \neq \emptyset$ if and only if $\seq{\winpos{j}(\strct{A}, \strct{B})}{j \leq m}: \strct{A} \isom_m \strct{B}$. (cf.\ 2.2.4(b).)
+%%
+\item Let $m \geq 0$. If $\seq{I_j}{j \leq m}: \strct{A} \isom_m \strct{B}$ then for $j \leq m$, $I_j \subseteq \winpos{j}(\strct{A}, \strct{B})$.
+%%
+\end{enumerate}
 %
 \item \header{Hint to Exercise 2.3.2} Note that $I_j \subseteq \tilde{I}_j$ and that if $p \in \partisoms(\strct{A}, \strct{B})$ and if $q \subseteq p$ then $q \in \partisoms(\strct{A}, \strct{B})$.
 \begin{remark}

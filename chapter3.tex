@@ -92,6 +92,28 @@ To summarize, we have the successively weaker notions (where \refitem{(1)} clear
 \begin{remark}
 For more details see Chapter XII in \cite{EFT}.
 \end{remark}
+
+Finally, there are some facts about the set $\winpos{\infty}(\strct{A}, \strct{B})$ of winning positions: \begin{enumerate}[(a)]
+%%
+\item $\winpos{\infty}(\strct{A}, \strct{B}) \subset \partisoms(\strct{A}, \strct{B})$.
+%%
+\item $\winpos{\infty}(\strct{A}, \strct{B}) \neq \emptyset$ if and only if $\winpos{\infty}(\strct{A}, \strct{B}): \strct{A} \isom_\partially \strct{B}$.
+%%
+\item If $I: \strct{A} \isom_\partially \strct{B}$ then $I \subseteq \winpos{\infty}(\strct{A}, \strct{B})$.
+%%
+\end{enumerate}
+
+\begin{remark}
+Note that there are cases where a partial isomorphism, finite or infinite, from $\strct{A}$ to $\strct{B}$ in which $\strct{A}$ and $\strct{B}$ are partially isomorphic, cannot be extended:
+\begin{enumerate}[(1)]
+%%
+\item Consider relational $\tau = \sete{E}$, $E$ binary, and $A = \sete{a_1, a_2}, \intpr{E}{A} = \sete{(a_1, a_2)}, B = \sete{b_1, b_2}, \intpr{E}{B} = \sete{(b_1, b_2)}$. Note that $\strct{A}$ and $\strct{B}$ are (partially) isomorphic digraphs. The partial isomorphism $p = \sete{(a_1, b_2)}$ cannot be extended.
+%%
+\item Consider $\tau = \emptyset$, $\strct{A} = \rat$, and $\strct{B} = \real$. Then $\strct{A}$ and $\strct{B}$ are partially isomorphic, and the partial isomorphism $p$ that is the identity cannot be extended.
+%%
+\end{enumerate}
+The proper inclusion in (a), even when $\winpos{\infty}(\strct{A}, \strct{B}) \neq \emptyset$, is justified by case (1); in addition, winning positions are assumed to be finite maps by definition.
+\end{remark}
 %
 \item \header{Note on Theorem 3.2.7} In the direction from \refitem{(iii)} to \refitem{(iv)} of the proof,
 \begin{itemize}
