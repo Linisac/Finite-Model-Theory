@@ -139,7 +139,7 @@ iff & for every cardinal $\kappa$, $\strct{B} \satis \varphi_{\strct{A}, \kappa}
 where $\varphi_{\strct{A}, \kappa}$ is an $\inflog$-sentence that characterizes $\dlog{\kappa}$-equivalence to $\strct{A}$. The sentence $\varphi_{\strct{A}, \kappa}$ is expected to be in $\dlog{\kappa'}$ in which $\kappa'$ is the immediate larger cardinal than $\kappa$. For example, in the case $\kappa = \omega$, the $\dlog{\omega}$-equivalence (i.e.\ $\folog$-equivalence, or elementary equivalence) to $\strct{A}$ is characterized by an $\dlog{\omega_1}$-sentence. See \textbf{Note on 3.2.4 and 3.2.6}. The above discussion yields that $\bland_\kappa \varphi_{\strct{A}, \kappa}$ does not exist (in $\inflog$).
 \end{remark}
 %
-\item \header{Note on \refitem{(iii)} of 3.2.8} To transition from \refitem{(iii)} of 3.2.7 for $s = 0$, one refers to 2.3.2 (also cf.\ the transition from 2.3.3 to 2.3.4 using 2.3.2).
+\item \header{Note on \refitem{(iii)} of 3.2.8} The equivalence between \refitem{(iii)} of 3.2.7 for $s = 0$ and that of 3.2.8 can be justified via 2.3.2 (cf.\ 2.3.4).
 %
 \item \header{Note on 3.2.7 and 3.2.8 Collectively} Based on the observation made in \textbf{Note on 3.2.4 and 3.2.6}, I have
 \begin{conjecture}
@@ -234,7 +234,7 @@ By definition (cf.\ 3.2.4) and 2.2.4(c), we immediately have
 \section{The Logics $\folog[s]$ and $\inflog[s]$}
 \begin{enumerate}[1.]
 %
-\item \header{Note on Pebble Games $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$} They are different from the usual Ehrenfeucht-Fra\"iss\'e games $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ in that the number of pebbles are fixed ($s$ for each of $\strct{A}$ and $\strct{B}$ here) and the pebbles are on or off (denoted by $\ast$) the board; once a pebble is placed onto the board, it is never removed off of it. Thus, pebble games consist of putting the pebbles onto the board (extensions) and moving them around on the board (moves).
+\item \header{Note on Pebble Games $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$} They are different from the usual Ehrenfeucht-Fra\"iss\'e games $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ in that the number of pebbles are fixed ($s$ for each of $\strct{A}$ and $\strct{B}$ here) and the pebbles are on or off (denoted by $\off$) the board; once a pebble is placed onto the board, it is never removed off of it. Thus, pebble games consist of putting the pebbles onto the board (extensions) and moving them around on the board (moves).
 %
 \item \header{Note on 3.3.6}
 \begin{enumerate}[(a)]
@@ -245,41 +245,54 @@ By definition (cf.\ 3.2.4) and 2.2.4(c), we immediately have
 %%
 \end{enumerate}
 %
-\item \header{Hint to Exercise 3.3.7}
+\item \header{Hint to Exercise 3.3.7} Observe that in parts (a) and (c), the structures $\strct{A}$ and $\strct{B}$ are both finite, so we have
+\begin{center}
+\begin{tabular}{lll}
+\   & the duplicator wins the game $\game[s]{\infty}(\strct{A}, \strct{B})$ & \cr
+iff & $\strct{A} \equv^{\inflog[s]} \strct{B}$ & (by \refitem{3.3.5(d)}) \cr
+iff & $\strct{A} \equv^s \strct{B}$ & (by 3.3.3). \cr
+\end{tabular}
+\end{center}
 \begin{enumerate}[(a)]
 %%
-\item For the `if' direction, assume that $A = \sete{a_0, \etc, a_k}$, where
-\[
-a_0 \mathrel{\intpr{<}{A}} \etc \mathrel{\intpr{<}{A}} a_k.
-\]
-Then take the conjunction of the following $\folog[2]$-sentences that together describe $\strct{A}$ up to isomorphism (where $\psi'_n$ is as in Examples 3.3.1).
+\item For the `if' direction, by the above observation it suffices to show that $\strct{A}$ is characterized by a $\folog[2]$-sentence up to isomorphism. Assume that $A = \sete{a_0, \etc, a_k}$, where $a_0 \mathrel{\intpr{<}{A}} \etc \mathrel{\intpr{<}{A}} a_k$.
+Then take the conjunction of the following (where $\psi'_n$ is as in Examples 3.3.1):
 \begin{itemize}
 %%%
 \item The size of $A$ ($\card{A} = k + 1$):
 \[
-\exists x \psi'_{k - 1} \land \forall x \neg\psi'_k.
+\exists x \psi'_k \land \forall x \neg\psi'_{k + 1}.
 \]
 %%%
 \item The interpretation of $c \in \tau$ in $\strct{A}$ ($\intpr{c}{\strct{A}} = a_i$):
 \[
-\exists x (x = c \land \psi'_i).
+\forall x (x = c \liff \psi'_i).
 \]
 %%%
-\item The elements of the interpretation $\intpr{P}{\strct{A}}$ of unary $P \in \tau$ in $\strct{A}$:
+\item The interpretation $\intpr{P}{\strct{A}}$ of unary $P \in \tau$ in $\strct{A}$:
 \[
 \forall x (Px \liff \blor \setm{\psi'_i}{a_i \in \intpr{P}{\strct{A}}}).
 \]
 %%%
-\item The elements of the interpretation $\intpr{R}{\strct{A}}$ of binary $R \in \tau$ in $\strct{A}$:
+\item The interpretation $\intpr{R}{\strct{A}}$ of binary $R \in \tau$ in $\strct{A}$:
 \[
 \forall x \forall y (Rxy \liff \blor \setm{\psi'_i \land \psi'_j\begin{perm}{c} yx \cr xy \end{perm}}{(a_i, a_j) \in \intpr{R}{\strct{A}}}).
 \]
 %%%
 \end{itemize}
 %%
-\item For the `if' direction, note that the partial isomorphisms of size $s$ from $\strct{A}$ to $\strct{B}$ resulted from all possible rounds of the game $\game[s]{m}(\strct{A}, \strct{B})$ with the additional condition after $s$ moves provide a winning strategy for the duplicator in the same game without that condition.
+\item By 3.3.5(c), this is equivalent to showing: $\strct{A} \equv^s_m \strct{B}$ iff $\strct{A}$ and $\strct{B}$ satisfy the same $\folog[s]$-sentences $\varphi$ with $\qr(\varphi) = t \leq m$ and in addition,
+\\
+\begin{tabular}{llll}
+if $t = 1$ & then $\varphi = Q_1v_1 \psi$ & with $\psi \in \folog[1]$ & and $\qr(\psi) = 0$; \cr
+if $1 < t \leq s$ & then $\varphi = Q_1v_1 \etc Q_tv_t(\psi \land \bland\limits_{1 \leq i < j \leq t} \neg v_i = v_j)$ & with $\psi \in \folog[t]$ & and $\qr(\psi) = 0$; \cr
+if $t > s$ & then $\varphi = Q_1v_1 \etc Q_sv_s(\psi \land \bland\limits_{1 \leq i < j \leq s} \neg v_i = v_j)$ & with $\psi \in \folog[s]$ & and $\qr(\psi) = t - s$, \cr
+\end{tabular}
+\\
+where $Q_k \in \sete{\exists, \forall}$.
+%For the `only if' direction, note that the partial isomorphisms of size $s$ from $\strct{A}$ to $\strct{B}$ resulted from all possible rounds of the game $\game[s]{m}(\strct{A}, \strct{B})$ with the additional condition after $s$ moves provide a winning strategy for the duplicator in the same game without that condition.
 %%
-\item (INCOMPLETE: PREMISE TOO STRONG?) Suppose that $\tau$ is relational and all its relation symbols have arity $\leq s$, where $s \geq 1$ by definition (cf.\ Part A in Chapter 1). Moreover, suppose that $\card{A} = \card{B} \leq s + 1$ and that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$. Our goal then is to show that $\strct{A} \isom \strct{B}$. We further assume $\tau \neq \emptyvoc$, since otherwise it is trivial that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ and $\strct{A} \isom \strct{B}$.
+\item (HERE) Suppose that $\tau$ is relational and all its relation symbols have arity $\leq s$, where $s \geq 1$ by definition (cf.\ Part A in Chapter 1). Moreover, suppose that $\card{A} = \card{B} \leq s + 1$ and that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$. Our goal then is to show that $\strct{A} \isom \strct{B}$. We further assume $\tau \neq \emptyvoc$, since otherwise it is trivial that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ and $\strct{A} \isom \strct{B}$.
 \newpar
 First observe the assumption that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$ immediately implies that he wins $\game[s]{m}(\strct{A}, \strct{B})$ for $m \geq 1$. By Theorem \thesection.5, then, we have for every $m \geq 1$, $\strct{A} \equv^s_m \strct{B}$. Therefore, it suffices to find a sentence $\delta_\strct{A} \in \folog[s]\of{\tau}$ that characterizes $\strct{A}$ up to isomorphism given the fixed cardinality $\card{A}$, i.e.
 \begin{center}
@@ -343,7 +356,7 @@ not $\consq \bland\limits_{1 \leq i \leq s}(\bland\limits_{a \in A} \exists v_i 
 \end{center}
 (for $\vect{a} \mapsto \vect{b}$ there may be an $a' \neq a_i$ or a $b' \neq b_i$ such that $\vect{a}\sbst{a'}{i} \mapsto \vect{b}$ or $\vect{a} \mapsto \vect{b}\sbst{b'}{i}$ is an $s$-partial isomorphism).
 
-Note that the conjunct $\ityp{0}{\strct{A}, \vect{a}}$ is redundant and is implied by the other conjunct only when $\vect{a} = \ast \etc \ast$.
+Note that the conjunct $\ityp{0}{\strct{A}, \vect{a}}$ is redundant and is implied by the other conjunct only when $\vect{a} = \off \etc \off$.
 %%
 \end{enumerate}
 %
@@ -366,17 +379,17 @@ The first statement that \emph{every model of $\conjextaxm{s}$ has at least $s$ 
 
 To prove the second statement that \emph{every two models $\strct{A}$ and $\strct{B}$ of $\epsilon_s$ are $s$-partially isomorphic}, consider the set
 \[
-I \defas \sett{\vect{a} \mapsto \vect{b}}{\mathmode{\vect{a} \in \cartpwr{(A \union \sete{\ast})}{s}}, \mathmode{\vect{b} \in \cartpwr{(B \union \sete{\ast})}{s}}, and \mathmode{\ityp{0}{\strct{A}, \vect{a}} = \ityp{0}{\strct{B}, \vect{b}}}}
+I \defas \sett{\vect{a} \mapsto \vect{b}}{\mathmode{\vect{a} \in \cartpwr{(A \union \sete{\off})}{s}}, \mathmode{\vect{b} \in \cartpwr{(B \union \sete{\off})}{s}}, and \mathmode{\ityp{0}{\strct{A}, \vect{a}} = \ityp{0}{\strct{B}, \vect{b}}}}
 \]
 and show that it has the back and forth properties. In proving the forth property, for example, suppose that $\vect{a} \mapsto \vect{b}$ is an $s$-partial isomorphism from $\strct{A}$ to $\strct{B}$ where $\vect{a}$ and $\vect{b}$ can be assumed to consist of distinct elements and $a$ is not an entry of $\vect{a}$, to show there is a $b$ (that is different from all entries in $\vect{b}$) such that, say, $\vect{a}\sbst{a}{i} \mapsto \vect{b}\sbst{b}{i}$ is an $s$-partial isomorphism, there are two cases to consider:
 \begin{enumerate}[(1)]
 %%
-\item If $a_i = \ast$ (\emph{extension} case), then we argue as for usual partial isomorphisms.
+\item If $a_i = \off$ (\emph{extension} case), then we argue as for usual partial isomorphisms.
 %%
-\item If $a_i \neq \ast$ (\emph{substitution} case), then observe that $\vect{a}' \mapsto \vect{b}'$ is also an $s$-partial isomorphism where $\vect{a}'$ and $\vect{b}'$ are $\vect{a}$ and $\vect{b}$ with $a_i$ and $b_i$ removed, respectively. We then reduce this to the above extension case.
+\item If $a_i \neq \off$ (\emph{substitution} case), then observe that $\vect{a}' \mapsto \vect{b}'$ is also an $s$-partial isomorphism where $\vect{a}'$ and $\vect{b}'$ are $\vect{a}$ and $\vect{b}$ with $a_i$ and $b_i$ removed, respectively. We then reduce this to the above extension case.
 %%
 \end{enumerate}
-Since $\tau$ is relational, we have $\ast\etc\ast \mapsto \ast\etc\ast \in I$ and hence $I \neq \emptyset$.
+Since $\tau$ is relational, we have $\off\etc\off \mapsto \off\etc\off \in I$ and hence $I \neq \emptyset$.
 
 Finally, observe for $s \geq 1$, we have $\randstrtheory \consq \conjextaxm{s}$, thus $\conjextaxm{s}$ is satisfiable (since $\randstrtheory$ has a model). With the third statement in the book, it also implies that for any $\inflog[\omega]$-sentence $\varphi$, $\randstrtheory \consq \varphi$ or $\randstrtheory \consq \neg\varphi$.
 %

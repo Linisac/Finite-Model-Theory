@@ -32,7 +32,7 @@
 %%%structure, symbol interpretation, structure operations, structure relations
 %%%partial isomorphism
 %%%elementary equivalence
-%%%Ehrenfeucht-Fraisse game
+%%%Ehrenfeucht-Fraisse game, pebble game
 %%%isomorphism types
 %%%graph, graph functions, graph relations
 %%%logic
@@ -119,7 +119,7 @@
 \newcommand{\strct}[1]{\mathcal{#1}} %structure
 \newcommand{\intpr}[2]{#1^{#2}} %symbol #1 interpreted under #2
 \newcommand{\sbstrct}[2]{#1^{#2}} %substructure of #2 induced by the subset #1
-\newcommand{\isom}[1][]{\ifthenelse{\equal{#1}{}}{\cong}{\cong^{#1}}} %isomorphic in #1 number of variables
+\newcommand{\isom}{\cong} %isomorphic
 \newcommand{\product}{\cart} %product of two structures
 \newcommand{\dunion}{\mathop{\dot{\cup}}} %disjoint union of two structures
 \newcommand{\ordsum}{\mathop{\lhd}} %ordered sum of two ordered structures
@@ -137,11 +137,12 @@
 \newcommand{\equv}{\equiv} %equivalence (in a logic)
 %% >
 
-%%Ehrenfeucht-Fraisse games <
-\newcommand{\efgame}{\mathrm{G}} %Ehrenfeucht-Fraisse game
+%%Ehrenfeucht-Fraisse game, pebble game <
+\newcommand{\efgame}{\mathrm{G}} %prototype of Ehrenfeucht-Fraisse game
 \newcommand{\fingame}{\efgame} %finite Ehrenfeucht-Fraisse game
 \newcommand{\game}[2][]{\ifthenelse{\equal{#1}{}}{{\efgame_{#2}}}{{\efgame^{#1}_{#2}}}} %the game G^#1_#2
 \newcommand{\winpos}[2][]{\ifthenelse{\equal{#1}{}}{\mathit{W}_{#2}}{\mathit{W}^{#1}_{#2}}}
+\newcommand{\off}{\ast} %off the board (in pebble games)
 \newcommand{\msogame}[1]{\operatorname{\MSO-\mathrm{G}}_{#1}} %the game in monadic second-order logic
 %% >
 
@@ -165,7 +166,7 @@
 \newcommand{\msolog}{\mathrm{MSO}} %monadic second-order logic
 \newcommand{\dqlog}[3][]{\ifthenelse{\equal{#1}{}}{\mathrm{L}_{#2#3}}{\mathrm{L}^{#1}_{#2#3}}} %logic parameterized by size of sets over which disjunction can be taken and depth of nested quantifiers and optionally number of variables
 \newcommand{\dlog}[2][]{\dqlog[#1]{#2}{\omega}} %logic parameterized by size of sets over which disjunction can be taken and optionally number of variables
-\newcommand{\inflog}[1][]{\dlog[#1]{\infty}} %infinitary logic optionally parameterized by number of variables
+\newcommand{\inflog}[1][]{\dlog[#1]{\infty}} %infinitary logic optionally parameterized by #1 number of variables
 \newcommand{\logic}{\mathcal{L}} %(general) logic
 %% >
 
