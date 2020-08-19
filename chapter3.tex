@@ -22,9 +22,15 @@ Finally, we could have defined the \emph{quantifier rank} $\qr(\varphi)$ of a fo
 %
 \item \header{Subformulas of $\inflog$-Sentences Only Have Finitely Many Free Variables} In fact, one can show by induction on the formation of formulas that if $\varphi \in \inflog$ has infinitely many free variables, then any $\inflog$-formula having $\varphi$ as a subformula must also have infinitely many free variables.
 %
-\item \header{Note on 3.2.2} Observe from the proof that, in both cases (a) and (b), the equivalent formula $\psi(\vect{x})$ constructed does not contain more quantifiers than does $\varphi(\vect{x})$.
+\item \header{Note on 3.2.2} Observe from the proof that, in both parts (a) and (b), the equivalent formula $\psi(\vect{x})$ constructed does not contain more quantifiers than does $\varphi(\vect{x})$. A bound variable in $\psi(\vect{x})$ may occur bound or free in $\varphi(\vect{x})$, whereas a free variable in $\psi(\vect{x})$ must occur free in $\varphi(\vect{x})$ (see the definition of a variable occurring free in a formula).
+
+On the other hand, in case $I_0$ is empty, we let $\psi \defas \forall x \neg x = x$.
+
+Finally, part (b) can be generalized to any finite collection of finite structures.
 %
-\item \header{Note on 3.2.3} The proof can be done without assuming $\varphi(\vect{x})$ is a sentence since $\hint{\card{A} + 1}{\strct{A}, \vect{a}}$ characterizes $(\strct{A}, \vect{a})$ up to isomorphism: For any structure $\strct{B}$ and any tuple of elements $\vect{b} \in B$ such that $\strct{B} \satis \hint{\card{A} + 1}{\strct{A}, \vect{a}}[\vect{b}]$, the partial isomorphism $\vect{a} \mapsto \vect{b}$ can be extended to a (full) isomorphism $p: \strct{A} \isom \strct{B}$.
+\item \header{Note on 3.2.3} The disjunction (or conjunction) is actually \emph{at most countable}.
+
+The proof can be done without assuming $\varphi(\vect{x})$ is a sentence since $\hint{\card{A} + 1}{\strct{A}, \vect{a}}$ characterizes $(\strct{A}, \vect{a})$ up to isomorphism: For any structure $\strct{B}$ and any tuple of elements $\vect{b} \in B$ such that $\strct{B} \satis \hint{\card{A} + 1}{\strct{A}, \vect{a}}[\vect{b}]$, the partial isomorphism $\vect{a} \mapsto \vect{b}$ can be extended to a (full) isomorphism $p: \strct{A} \isom \strct{B}$.
 
 Also note that this proposition has a similar flavor to Theorem 2.2.11, and in case the quantifier rank of $\varphi(\vect{x})$ is finite, say $\leq m$, the formula
 \[
@@ -234,7 +240,13 @@ By definition (cf.\ 3.2.4) and 2.2.4(c), we immediately have
 \section{The Logics $\folog[s]$ and $\inflog[s]$}
 \begin{enumerate}[1.]
 %
-\item \header{Note on Pebble Games $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$} They are different from the usual Ehrenfeucht-Fra\"iss\'e games $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ in that the number of pebbles are fixed ($s$ for each of $\strct{A}$ and $\strct{B}$ here) and the pebbles are on or off (denoted by $\off$) the board; once a pebble is placed onto the board, it is never put back. That is to say, the rounds of pebble games consist of both players putting the pebbles onto the board (extensions) and moving them around on the board (moves).
+\item \header{Note on 3.3.3} By the same argument, one can derive from 3.2.2(b) the statement: \emph{If $\strct{A}$ and $\strct{B}$ are finite then $\strct{A} \equv \strct{B}$ implies $\strct{A} \equv^{\inflog} \strct{B}$.}
+
+Alternatively, one can derive it using the fact that finite structures can be characterized in $\folog$ up to isomorphism (cf.~2.1.1).
+%
+\item \header{Note on Pebble Games $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$} They are different from the usual Ehrenfeucht-Fra\"iss\'e games $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ in that the number of pebbles are fixed ($s$ for each of $\strct{A}$ and $\strct{B}$ here) and the pebbles are on or off (denoted by $\off$) the board; once a pebble is placed onto the board, it is never put off the board. That is to say, the rounds of pebble games consist of both players putting the pebbles onto the board (extensions) and moving them around on the board (relocations).
+
+Also note that if $s < t$ and if the spoiler wins $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$, then he wins $\game[t]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
 %
 \item \header{Note on 3.3.6}
 \begin{enumerate}[(a)]
@@ -281,26 +293,27 @@ Then take the conjunction of the following (where $\psi'_n$ is as in Examples 3.
 %%%
 \end{itemize}
 %%
-\item By 3.3.5(c), this is equivalent to showing: $\strct{A} \equv^s_m \strct{B}$ iff $\strct{A}$ and $\strct{B}$ satisfy the same $\folog[s]$-sentences $\varphi$ with $\qr(\varphi) = t \leq m$ and in addition,
-\\
-\begin{tabular}{llll}
-if $t = 1$ & then $\varphi = Q_1v_1 \psi$ & with $\psi \in \folog[1]$ & and $\qr(\psi) = 0$; \cr
-if $1 < t \leq s$ & then $\varphi = Q_1v_1 \etc Q_tv_t(\psi \land \bland\limits_{1 \leq i < j \leq t} \neg v_i = v_j)$ & with $\psi \in \folog[t]$ & and $\qr(\psi) = 0$; \cr
-if $t > s$ & then $\varphi = Q_1v_1 \etc Q_sv_s(\psi \land \bland\limits_{1 \leq i < j \leq s} \neg v_i = v_j)$ & with $\psi \in \folog[s]$ & and $\qr(\psi) = t - s$, \cr
-\end{tabular}
-\\
-where $Q_k \in \sete{\exists, \forall}$.
+\item By 3.3.5(c), this is equivalent to showing: $\strct{A} \equv^s_m \strct{B}$ iff $\strct{A}$ and $\strct{B}$ satisfy the same $\folog[s]$-sentences $\varphi$ with $t \defas \qr(\varphi) \leq m$ such that
+\[
+\varphi = \left\lbrace
+\begin{array}{lll}
+Q_1v_1 \psi & \mbox{with \mathmode{\psi \in \folog[1]} and \mathmode{\qr(\psi) = 0}} & \mbox{if \mathmode{t = 1}} \cr
+Q_1v_1 \etc Q_tv_t(\psi \land \bland\limits_{1 \leq i < j \leq t} \neg v_i = v_j) & \mbox{with \mathmode{\psi \in \folog[t]} and \mathmode{\qr(\psi) = 0}} & \mbox{if \mathmode{1 < t \leq s}} \cr
+Q_1v_1 \etc Q_sv_s(\psi \land \bland\limits_{1 \leq i < j \leq s} \neg v_i = v_j) & \mbox{with \mathmode{\psi \in \folog[s]} and \mathmode{\qr(\psi) = t - s}} & \mbox{if \mathmode{t > s}} \cr
+\end{array}\right.
+\]
+where each $Q_k \in \sete{\exists, \forall}$.
 %For the `only if' direction, note that the partial isomorphisms of size $s$ from $\strct{A}$ to $\strct{B}$ resulted from all possible rounds of the game $\game[s]{m}(\strct{A}, \strct{B})$ with the additional condition after $s$ moves provide a winning strategy for the duplicator in the same game without that condition.
 %%
-\item (HERE) Suppose that $\tau$ is relational and all its relation symbols are of arity $\leq s$,\footnote{Note that $s \geq 1$ is implicitly assumed, see Part A in Chapter 1.} that $\card{A} = \card{B} \leq s + 1$ and that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$, then our goal is to show $\strct{A} \isom \strct{B}$. We further assume that $\tau \neq \emptyset$: If $\tau = \emptyset$, then obviously $\strct{A} \isom \strct{B}$ given $\card{A} = \card{B}$.
+\item Suppose that $\tau$ is relational and all its relation symbols are of arity $\leq s$,\footnote{Note that $s \geq 1$ is implicitly assumed, see Part A in Chapter 1.} that $\card{A} = \card{B} \leq s + 1$ and that the duplicator wins $\game[s]{\infty}(\strct{A}, \strct{B})$, then our goal is to show $\strct{A} \isom \strct{B}$. We further assume that $\tau \neq \emptyset$: If $\tau = \emptyset$, then obviously $\strct{A} \isom \strct{B}$ given $\card{A} = \card{B}$.
 
-By the earlier observation, it suffices to give a first-order sentence $\varphi_\strct{A} \defas \psi_{= \card{A}} \land \psi_{\intpr{R}{\strct{A}}}$ that characterizes $\strct{A}$ up to isomorphism, where $\psi_{= \card{A}} \in \folog[\card{A} + 1]\of{\emptyset}$ expresses the cardinality of $\strct{A}$ and $\psi_{\intpr{R}{\strct{A}}} \in \folog[s]\of{\tau}$ expresses the membership of each relation $\intpr{R}{\strct{A}}$. The sentence $\psi_{= \card{A}}$ is easy, as can be found at the end of Part B in Chapter 1. So let us move on to define $\psi_{\intpr{R}{\strct{A}}}$ below, and the set of atomic formulas
+By the earlier observation, it suffices to give a first-order sentence $\varphi_\strct{A} \defas \psi_{= \card{A}} \land \psi_{\intpr{R}{\strct{A}}}$ that characterizes $\strct{A}$ up to isomorphism, where $\psi_{= \card{A}} \in \folog[\card{A} + 1]\of{\emptyset}$ expresses the cardinality of $\strct{A}$ and $\psi_{\intpr{R}{\strct{A}}} \in \folog[s]\of{\tau}$ expresses the relations $\intpr{R}{\strct{A}}$. The sentence $\psi_{= \card{A}}$ is easy, as can be found at the end of Part B in Chapter 1. So let us move on to define $\psi_{\intpr{R}{\strct{A}}}$ below, and the set of atomic formulas
 \[
-\Theta_n \defas \sett{\theta}{\mathmode{\theta} has the form \mathmode{Rx_1 \etc x_k}, \mathmode{x = y} and variables among \mathmode{v_1, \etc, v_n}}
+\Theta_n \defas \sett{\theta}{\mathmode{\theta} has the form \mathmode{Rx_1 \etc x_k}, \mathmode{x = y} and the variables are among \mathmode{v_1, \etc, v_n}}
 \]
 employed in the proof of 2.1.1 will be useful here (note that there are no formulas of the form $c = x$ in $\Theta_n$ as $\tau$ is assumed to be relational).
 
-The sentence $\psi_{\intpr{R}{\strct{A}}}$ depends on whether $\card{A} \leq s$ or $\card{A} = s + 1$, and the case $\card{A} \leq s$ is simple: If $\card{A} = n \leq s$, say $A = \sete{a_1, \etc, a_n}$, then we choose
+The sentence $\psi_{\intpr{R}{\strct{A}}}$ depends on whether $\card{A} \leq s$ or $\card{A} = s + 1$. The case $\card{A} \leq s$ is simple: If $\card{A} = n \leq s$, say $A = \sete{a_1, \etc, a_n}$, then we choose
 \[
 \psi_{\intpr{R}{\strct{A}}} \defas \exists v_1 \etc \exists v_n (\bland\setm{\theta}{\theta \in \Theta_n, \strct{A} \satis \theta[\vect{a}]} \land \bland\setm{\neg\theta}{\theta \in \Theta_n, \strct{A} \satis \neg\theta[\vect{a}]})
 \]
@@ -311,7 +324,7 @@ Now let us turn to the case $\card{A} = s + 1$. Let $A = \sete{a_1, \etc, a_{s +
 %%
 \item among $a_1, \etc, a_s$ first, where $v_1, \etc, v_s$ are intended to represent $a_1, \etc, a_s$ respectively, and then
 %%
-\item among $a_1, \etc, a_{i - 1}, a_{i + 1}, \etc, a_{s + 1}$ for each $1 \leq i \leq s$ (i.e.\ among $a_2, \etc, a_{s + 1}$ when $i = 1$), where $v_1, \etc, v_{i - 1}, v_i, v_{i + 1}, \etc, v_s$ are intended to represent $a_1, \etc, a_{i - 1}, a_{s + 1}, a_{i + 1}, \etc, a_s$ ($a_{s + 1}$ is between $a_{i - 1}$ and $a_{i + 1}$ in this order), respectively.
+\item among $a_1, \etc, a_{s + 1}$ excluding $a_i$, where $v_1, \etc, v_s$ are intended to represent $a_1, \etc, a_s$ in this order, respectively, except that $v_i$ stands for $a_{s + 1}$ but not $a_i$, for each $1 \leq i \leq s$.
 %%
 \end{enumerate}
 In part (2), we will reuse the variables via quantification.
@@ -324,7 +337,7 @@ a_1, \etc, a_s & \mbox{if \mathmode{i = 0}} \cr
 a_1, \etc, a_{i - 1}, a_{s + 1}, a_{i + 1}, \etc, a_s & \mbox{if \mathmode{1 \leq i \leq s}} \cr
 \end{cases}
 \]
-($\vect{a}_1 = a_{s + 1}, a_2, \etc, a_s$). The desired sentence is thus
+($\vect{a}_1 = a_{s + 1}, a_2, \etc, a_s$ and $\vect{a}_s = a_1, \etc, a_{s - 1}, a_{s + 1}$). The desired sentence is thus
 \[
 \psi_{\intpr{R}{\strct{A}}} \defas \exists v_1 \etc \exists v_s \bland^s_{i = 0} \psi_i
 \]
@@ -341,6 +354,10 @@ corresponds to (1) and the formulas, for $1 \leq i \leq s$,
 \end{cases}
 \]
 altogether correspond to (2).
+
+\begin{remark}
+Observe that $\qr(\psi_{\intpr{R}{\strct{A}}}) = \card{A}$, we obtain a stronger version of the result: \emph{Suppose that $\tau$ is relational and all its relation symbol are of arity $\leq s$. If $\card{A} = \card{B} = n \leq s + 1$ and if the duplicator wins $\game[s]{n}(\strct{A}, \strct{B})$, then $\strct{A} \isom \strct{B}$.}
+\end{remark}
 %%
 \end{enumerate}
 %
@@ -374,7 +391,7 @@ iff & $\strct{B} \satis (\bland\limits_{m \in \nat} \ityp[s]{m}{\strct{A}, \vect
 \end{center}
 Likewise for 3.3.10.
 
-On the other hand, part (b) of 3.3.9 (or 3.3.10) lacks the corresponding statement to \refitem{(iv)} of part (a), since there is no single formula (or sentence, respectively) in $\inflog[s]$ that characterizes the $\inflog[s]$-equivalence to $(\strct{A}, \vect{a})$ (or $\strct{A}$, respectively), cf.\ \textbf{Remark} in \textbf{Note on Theorem 3.2.7}.
+On the other hand, part (b) of 3.3.9 (or 3.3.10) lacks the corresponding statement to \refitem{(iv)} of part (a), since there is no single formula (or sentence, respectively) in $\inflog[s]$ that characterizes the $\inflog[s]$-equivalence to $(\strct{A}, \vect{a})$ (or $\strct{A}$, respectively), see \textbf{Remark} in \textbf{Note on Theorem 3.2.7}.
 %
 \item \header{Note on 3.3.11} As in 3.2.11, the underlying vocabulary $\tau$ is relational and the results remain valid when $\tau$ contains only unary relation symbols.
 
