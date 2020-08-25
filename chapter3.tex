@@ -429,7 +429,20 @@ iff & $\strct{B} \satis \bland_{m \geq 0} \ityp[s]{m}{\strct{A}}$. \cr
 \end{center}
 Therefore, $\bland {^s\Psi_\strct{A}}$ is logically equivalent to $\bland_{m \geq 0} \ityp[s]{m}{\strct{A}}$. Both are a countable conjunction of $\folog[s]$-sentences, and the former can be used as an alternative to the latter in the $\inflog[s]$-sentence $\varphi \defas \blor_{\strct{A} \in K} \bland_{m \geq 0} \ityp[s]{m}{\strct{A}}$ mentioned in the proof.
 %
-\item \header{Note on 3.3.13} See Note on Example 2.3.5 on how to extend the result to arbitrary $\tau$.
+\item \header{Note on 3.3.13} To extend the result to arbitrary $\tau$, consider the two $\tau$-structures $\strct{A}_s, \strct{A}_{s + 1}$ for $s > 0$ as defined in \textbf{Note on Example 2.3.5} (there we employed the notations $\strct{A}_m, \strct{A}_{m + 1}$ where $m > 0$). Then $\strct{A}_s \in \even\of{\tau}$ iff $\strct{A}_{s + 1} \notin \even\of{\tau}$, but the duplicator wins the game $\game[s]{\infty}(\strct{A}_s, \strct{A}_{s + 1})$.
+
+\begin{remark}
+Observe that for $s > 0$, we have
+\begin{center}
+\begin{tabular}{ll}
+\   & the duplicator wins $\game[s]{\infty}(\strct{A}_s, \strct{A}_{s + 1})$ \cr
+iff & he wins $\game[s]{s}(\strct{A}_s, \strct{A}_{s + 1})$ \cr
+iff & he wins $\game[s]{s}(\strct{A}_s, \strct{A}_{s + 1})$ where in each move a new pebble must be placed on a distinct element \cr
+\   & (by 3.3.7(a)) \cr
+\end{tabular}
+\end{center}
+and indeed the last statement can easily be verified.
+\end{remark}
 %
 \item \header{Hint to 3.3.14} In part (a), note that for $s, m \in \nat$, the set
 \[
