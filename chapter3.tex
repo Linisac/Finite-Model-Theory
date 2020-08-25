@@ -401,17 +401,33 @@ To prove the second statement that \emph{every two models $\strct{A}$ and $\strc
 \[
 I \defas \sett{\vect{a} \mapsto \vect{b}}{\mathmode{\vect{a} \in \cartpwr{(A \union \sete{\off})}{s}}, \mathmode{\vect{b} \in \cartpwr{(B \union \sete{\off})}{s}}, and \mathmode{\ityp{0}{\strct{A}, \vect{a}} = \ityp{0}{\strct{B}, \vect{b}}}}
 \]
-and show that it has the back and forth properties. In proving the forth property, for example, suppose that $\vect{a} \mapsto \vect{b}$ is an $s$-partial isomorphism from $\strct{A}$ to $\strct{B}$ where $\vect{a}$ and $\vect{b}$ can be assumed to consist of distinct elements and $a$ is not an entry of $\vect{a}$, to show there is a $b$ (that is different from all entries in $\vect{b}$) such that, say, $\vect{a}\sbst{a}{i} \mapsto \vect{b}\sbst{b}{i}$ is an $s$-partial isomorphism, there are two cases to consider:
+and show that it has the back and forth properties. In proving the forth property, for instance, suppose that $\vect{a} \mapsto \vect{b}$ is an $s$-partial isomorphism from $\strct{A}$ to $\strct{B}$ where $\vect{a}$ and $\vect{b}$ can be assumed to consist of distinct elements and $a$ is not an entry of $\vect{a}$, to show there is a $b$ (that is different from all entries in $\vect{b}$) such that, say, $\vect{a}\sbst{a}{i} \mapsto \vect{b}\sbst{b}{i}$ is an $s$-partial isomorphism, there are two cases to consider:
 \begin{enumerate}[(1)]
 %%
 \item If $a_i = \off$ (\emph{extension} case), then we argue as for usual partial isomorphisms.
 %%
-\item If $a_i \neq \off$ (\emph{substitution} case), then observe that $\vect{a}' \mapsto \vect{b}'$ is also an $s$-partial isomorphism where $\vect{a}'$ and $\vect{b}'$ are $\vect{a}$ and $\vect{b}$ with $a_i$ and $b_i$ removed, respectively. We then reduce this to the above extension case.
+\item If $a_i \neq \off$ (\emph{relocation} case), then observe that $\vect{a}' \mapsto \vect{b}'$ is also an $s$-partial isomorphism where $\vect{a}'$ and $\vect{b}'$ are $\vect{a}$ and $\vect{b}$ with $a_i$ and $b_i$ removed (in fact, with $a_i$ and $b_i$ both replaced by $\off$), respectively. We then reduce this to the above extension case.
 %%
 \end{enumerate}
 Since $\tau$ is relational, we have $\off\etc\off \mapsto \off\etc\off \in I$ and hence $I \neq \emptyset$.
 
-Finally, observe for $s \geq 1$, we have $\randstrtheory \consq \conjextaxm{s}$, thus $\conjextaxm{s}$ is satisfiable (since $\randstrtheory$ has a model). With the third statement in the book, it also implies that for any $\inflog[\omega]$-sentence $\varphi$, $\randstrtheory \consq \varphi$ or $\randstrtheory \consq \neg\varphi$.
+Finally, observe for $s \geq 1$, we have $\randstrtheory \consq \conjextaxm{s}$, thus $\conjextaxm{s}$ is satisfiable (since $\randstrtheory$ has a model).
+%
+\item \header{Note on the Direction that (i) Implies (ii) in the Proof of 3.3.12(a)} For every finite structure $\strct{A}$, let
+\[
+^s\Psi^m_\strct{A} \defas \sett{\psi \in \folog[s]}{\mathmode{\qr(\psi) = m} and \mathmode{\strct{A} \satis \psi}}
+\]
+for $m \geq 0$ and let $^s\Psi_\strct{A} \defas \bunion_{m \geq 0} {^s\Psi^m_\strct{A}}$. Note that both $^s\Psi^m_\strct{A}$ and $^s\Psi_\strct{A}$ are countable sets of $\folog[s]$-sentences. Clearly, the $\inflog[s]$-sentence $\bland {^s\Psi^m_\strct{A}}$ is logically equivalent to -- and nevertheless \emph{syntactically more complicated} than -- the $\folog[s]$-sentence $\ityp[s]{m}{\strct{A}}$, since $\ityp[s]{m}{\strct{A}} \in {^s\Psi^m_\strct{A}}$. Thus, for any structure $\strct{B}$ (not necessarily finite), 
+\begin{center}
+\begin{tabular}{ll}
+\   & $\strct{B} \satis {^s\Psi_\strct{A}}$ \cr
+iff & for every $m \geq 0$, $\strct{B} \satis {^s\Psi^m_\strct{A}}$ \cr
+iff & for every $m \geq 0$, $\strct{B} \satis \bland {^s\Psi^m_\strct{A}}$ \cr
+iff & for every $m \geq 0$, $\strct{B} \satis \ityp[s]{m}{\strct{A}}$ \cr
+iff & $\strct{B} \satis \bland_{m \geq 0} \ityp[s]{m}{\strct{A}}$. \cr
+\end{tabular}
+\end{center}
+Therefore, $\bland {^s\Psi_\strct{A}}$ is logically equivalent to $\bland_{m \geq 0} \ityp[s]{m}{\strct{A}}$. Both are a countable conjunction of $\folog[s]$-sentences, and the former can be used as an alternative to the latter in the $\inflog[s]$-sentence $\varphi \defas \blor_{\strct{A} \in K} \bland_{m \geq 0} \ityp[s]{m}{\strct{A}}$ mentioned in the proof.
 %
 \item \header{Note on 3.3.13} See Note on Example 2.3.5 on how to extend the result to arbitrary $\tau$.
 %
