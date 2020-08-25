@@ -133,34 +133,17 @@ On the other hand, we have for any relational $\tau$ and any $\tau$-structures $
 \end{enumerate}
 by 2.2.2(a) (that $\emptymap \in \partisoms(\strct{A}, \strct{B})$) and 2.3.4.
 %
-\item \header{Note on Example 2.3.5} Consider an arbitrary vocabulary $\tau = \sete{c_1, \etc, c_n} \union \sete{P_1, \etc, P_r}$ for some $n, r \in \nat$.
-
-Also, for any $m \in \nat$, consider the two $\tau$-structures $\strct{A}$ and $\strct{B}$:
+\item \header{Note on Example 2.3.5} Consider an arbitrary vocabulary $\tau = \sete{c_1, \etc, c_n} \union \sete{P_1, \etc, P_r}$ for some $n, r \in \nat$ and, for any $m > 0$, the two $\tau$-structures $\strct{A}_m$ and $\strct{A}_{m + 1}$ such that
 \begin{enumerate}[(1)]
 %%
-\item \begin{itemize}
-%%%
-\item $A = \sete{a_1, \etc, a_{m + 1}} \union \sete{\intpr{c_1}{\strct{A}}, \etc, \intpr{c_n}{\strct{A}}}$
-%%%
-\item for $1 \leq i < j \leq n$, $\intpr{c_i}{\strct{A}} \neq \intpr{c_j}{\strct{A}}$
-%%%
-\item for $1 \leq k \leq r$, $\intpr{P_k}{\strct{A}} = \emptyset$
-%%%
-\end{itemize}
+\item $A_m = \sete{a_1, \etc, a_{m + n}}$ and $A_{m + 1} = \sete{a_1, \etc, a_{m + n + 1}}$
 %%
-\item \begin{itemize}
-%%%
-\item $B = \sete{b_1, \etc, b_{m + 2}} \union \sete{\intpr{c_1}{\strct{B}}, \etc, \intpr{c_n}{\strct{B}}}$
-%%%
-\item for $1 \leq i < j \leq n$, $\intpr{c_i}{\strct{B}} \neq \intpr{c_j}{\strct{B}}$
-%%%
-\item for $1 \leq k \leq r$, $\intpr{P_k}{\strct{B}} = \emptyset$
-%%%
-\end{itemize}
+\item for $1 \leq i \leq n$, $\intpr{c_i}{\strct{A}_m} = \intpr{c_i}{\strct{A}_{m + 1}} = a_i$
+%%
+\item for $1 \leq i \leq r$, $\intpr{P_i}{\strct{A}_m} = \intpr{P_i}{\strct{A}_{m + 1}} = \emptyset$.
 %%
 \end{enumerate}
-
-Obviously, $\strct{A} \in \even\of{\tau}$ iff $\strct{B} \notin \even\of{\tau}$. However, clearly the duplicator wins $\game{m}(\strct{A}, \strct{B})$. Thus $\even\of{\tau}$ is not axiomatizable by 2.2.12.
+It follows that $\strct{A}_m \in \even\of{\tau}$ iff $\strct{A}_{m + 1} \notin \even\of{\tau}$; but the duplicator wins $\game{m}(\strct{A}_m, \strct{A}_{m + 1})$. Thus $\even\of{\tau}$ is not axiomatizable by 2.2.12.
 %
 \item \header{Note on Example 2.3.8} There is a typo: ``$\dist[j](a, a')$'' appearing in the definition of distance function should be replaced by ``$\dist[j](a, b)$''.
 \newpar
@@ -208,8 +191,8 @@ A similar exercise is XII.3.17 in \cite{EFT}.
 \end{remark}
 %
 \item \header{Hint to Exercise 2.3.13} (INCOMPLETE)
-Think of $\ordsum^n \strct{A}$ as an $n$-element linear ordering in which every point ``expands'' to $\strct{A}$.\\
-\newpar
+Think of $\ordsum^n \strct{A}$ as an $n$-element linear ordering in which every point ``expands'' to $\strct{A}$.
+
 More precisely, define for $a, a'$ in the domain of $\ordsum^n \strct{A}$ the distance function
 \[
 \dist(a, a') \defas \abs{i - j},
