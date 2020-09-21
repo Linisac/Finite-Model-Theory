@@ -14,11 +14,11 @@
 \section{Infinitary Logic: The Logics $\inflog$ and $\dlog{\omega_1}$}
 \begin{enumerate}[1.]
 %
-\item \header{Note on the Definition of $\inflog$} In the fourth clause $\Psi$ is a \emph{set} while $\inflog$ itself is a \emph{class}. In particular, we cannot obtain an ``$\inflog$-formula'' by taking the disjunction of all $\inflog$-formulas.
+\item \header{Note on the Definition of $\inflog$} In the fourth clause $\Psi$ must be a \emph{set}. Since $\inflog$ is not a set but a \emph{class}, we cannot obtain an ``$\inflog$-formula'' by taking the disjunction of all $\inflog$-formulas.
 
-Also, the set $\free(\varphi)$ of free variables in $\varphi \in \inflog$ may not be finite, as opposed to first-order formulas.
+As opposed to first-order formulas, the set $\free(\varphi)$ of free variables in an $\inflog$-formula $\varphi$ may not be finite.
 
-Finally, we could have defined the \emph{quantifier rank} $\qr(\varphi)$ of a formula in $\inflog$ in the same way as in $\folog$. However, this may not be a finite number. For example, the sentence given in 3.2.1(a) that characterizes the class $\even\of{\tau}$.
+Finally, the \emph{quantifier rank} $\qr(\varphi)$ of an $\inflog$-formula $\varphi$ could have been defined in the same way as in $\folog$. However, this may not be a finite number (take the sentence given in 3.2.1(a) that characterizes the class $\even\of{\tau}$ for an example).
 %
 \item \header{Subformulas of $\inflog$-Sentences Only Have Finitely Many Free Variables} In fact, one can show by induction on the formation of formulas that if $\varphi \in \inflog$ has infinitely many free variables, then any $\inflog$-formula having $\varphi$ as a subformula must also have infinitely many free variables.
 %
@@ -26,7 +26,14 @@ Finally, we could have defined the \emph{quantifier rank} $\qr(\varphi)$ of a fo
 
 On the other hand, in case $I_0$ is empty, we let $\psi \defas \forall x \neg x = x$.
 
-Finally, part (b) can be generalized to any finite collection of finite structures.
+Finally, part (b) can be generalized to any finite collection $\sete{\strct{A}_1, \etc, \strct{A}_n}$ of finite structures. Moreover, we can use part (b) to prove the following results that go parallel to 3.3.3 (recall that $\strct{A} \equv \strct{B}$ means $\strct{A}$ and $\strct{B}$ satisfy the same first-order sentences):
+\begin{enumerate}[(1)]
+%%
+\item \emph{If $\strct{A}$ and $\strct{B}$ are finite and if $\vect{a}$ satisfies in $\strct{A}$ the same $\folog$-formulas $\psi(\vect{x})$ as $\vect{b}$ in $\strct{B}$, then $\vect{a}$ satisfies in $\strct{A}$ the same $\inflog$-formulas $\varphi(\vect{x})$ as $\vect{b}$ in $\strct{B}$.}
+%%
+\item \emph{If $\strct{A}$ and $\strct{B}$ are finite then $\strct{A} \equv \strct{B}$ implies $\strct{A} \equv^{\inflog} \strct{B}$.}
+%%
+\end{enumerate}
 %
 \item \header{Note on 3.2.3} The disjunction (or conjunction) is actually \emph{at most countable}.
 
@@ -78,7 +85,7 @@ It follows that, by Proposition 2.1.1, if $\strct{A}$ and $\strct{B}$ are both f
 
 The above should be easy to generalize so that we have $(\strct{A}, \vect{a}), (\strct{B}, \vect{b})$ in place of $\strct{A}, \strct{B}$, as well as the additional conditions $\vect{a} \mapsto \vect{b} \in I_j$ in \refitem{(2)} and $\vect{a} \mapsto \vect{b} \in \winpos{j}(\strct{A}, \strct{B})$ in \refitem{(6)}.\footnote{For example, we can regard $(\strct{A}, \vect{a})$ and $(\strct{B}, \vect{b})$ as the $\tau \union \sete{\vect{c}}$-expansion of $\strct{A}$ and of $\strct{B}$ in which $\vect{c}$ is interpreted by $\vect{a}$ and $\vect{b}$, respectively.} In particular, we have that $(\strct{A}, \vect{a}) \equv (\strct{B}, \vect{b})$ if and only if $(\strct{A}, \vect{b}) \isom_\fin (\strct{B}, \vect{b})$.
 
-Notice that, however, the condition that the duplicator wins $\fingame(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ generally does not imply that he wins $\game{\infty}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ although the converse is obviously true. See Exercise XII.1.10 in \cite{EFT} to give an example of two finitely isomorphic structures that are not partially isomorphic; the same exercise problem also asks to give an example of two partially isomorphic structures that are not isomorphic.
+Notice that, however, the condition that the duplicator wins $\fingame(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ generally does not imply that he wins $\game{\infty}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ although the converse is obviously true. See Exercise XII.1.10 in \cite{EFT} for an example of two finitely isomorphic structures that are not partially isomorphic; the same exercise problem also asks to give an example of two partially isomorphic structures that are not isomorphic.
 
 On the other hand, consider the $\emptyvoc$-structures (i.e.\ sets) $\strct{A}, \strct{B}$ that consist of the domains $A = \sete{0, 1}, B = \sete{0, 1, 2}$, respectively. Then it follows that $\strct{A} \isom_2 \strct{B}$ but not $\strct{A} \isom_\fin \strct{B}$ (since not $\strct{A} \isom_3 \strct{B}$).
 
@@ -143,6 +150,32 @@ iff & for every cardinal $\kappa$, $\strct{B} \satis \varphi_{\strct{A}, \kappa}
 \end{tabular}
 \end{center}
 where $\varphi_{\strct{A}, \kappa}$ is an $\inflog$-sentence that characterizes $\dlog{\kappa}$-equivalence to $\strct{A}$. The sentence $\varphi_{\strct{A}, \kappa}$ is expected to be in $\dlog{\kappa'}$ in which $\kappa'$ is the immediate larger cardinal than $\kappa$. For example, in the case $\kappa = \omega$, the $\dlog{\omega}$-equivalence (i.e.\ $\folog$-equivalence, or elementary equivalence) to $\strct{A}$ is characterized by an $\dlog{\omega_1}$-sentence. See \textbf{Note on 3.2.4 and 3.2.6}. The above discussion yields that $\bland_\kappa \varphi_{\strct{A}, \kappa}$ does not exist (in $\inflog$).
+
+Moreover, observe that
+\begin{center}
+\begin{tabular}{lll}
+\   & $(\strct{A}, \vect{a}) \equv (\strct{B}, \vect{b})$ & \cr
+iff & for $m \geq 0$, $(\strct{A}, \vect{a}) \equv_m (\strct{B}, \vect{b})$ & \cr
+iff & for $m \geq 0$, $\strct{B} \satis \hint{m}{\strct{A}, \vect{a}}[\vect{b}]$ & (by 2.3.3) \cr
+iff & $\strct{B} \satis (\bland\limits_{m \geq 0} \hint{m}{\strct{A}, \vect{a}})[\vect{b}]$. & \cr
+\end{tabular}
+\end{center}
+If $\strct{A}$ and $\strct{B}$ are finite, then by the discussion in \textbf{Note on 3.2.2} we have
+\begin{center}
+\begin{tabular}{ll}
+\   & $(\strct{A}, \vect{a}) \equv^{\inflog} (\strct{B}, \vect{b})$ \cr
+iff & $(\strct{A}, \vect{a}) \equv (\strct{B}, \vect{b})$ \cr
+\end{tabular}
+\end{center}
+Hence
+\begin{enumerate}[(1)]
+%%
+\item \emph{Let $\strct{A}$ and $\strct{B}$ be finite. Then $\vect{a}$ satisfies in $\strct{A}$ the same formulas of $\inflog$ as $\vect{b}$ in $\strct{B}$ iff $\strct{B} \satis (\bland\limits_{m \geq 0} \hint{m}{\strct{A}, \vect{a}})[\vect{b}]$.}
+%%
+\item \emph{Let $\strct{A}$ and $\strct{B}$ be finite. Then $\strct{A} \equv^{\inflog} \strct{B}$ iff $\strct{B} \satis (\bland\limits_{m \geq 0} \hint{m}{\strct{A}})$.}
+%%
+\end{enumerate}
+Here is a simple explanation to the above dramatic change to the existence of a single $\inflog$-formula (or $\inflog$-sentence) to characterize $\equv^{\inflog}$ with (or without) free variables to $(\strct{A}, \vect{a})$ (or $\strct{A}$): Given that $\strct{A}$ is finite, there is an $\inflog$-sentence (in fact, $\folog$-sentence) that characterizes $\strct{A}$ up to isomorphism (cf.~2.1.1).
 \end{remark}
 %
 \item \header{Note on \refitem{(iii)} of 3.2.8} The equivalence between \refitem{(iii)} of 3.2.7 for $s = 0$ and that of 3.2.8 can be justified via 2.3.2 (cf.\ 2.3.4).
@@ -240,9 +273,22 @@ By definition (cf.\ 3.2.4) and 2.2.4(c), we immediately have
 \section{The Logics $\folog[s]$ and $\inflog[s]$}
 \begin{enumerate}[1.]
 %
-\item \header{Note on 3.3.3} By the same argument, one can derive from 3.2.2(b) the statement: \emph{If $\strct{A}$ and $\strct{B}$ are finite then $\strct{A} \equv \strct{B}$ implies $\strct{A} \equv^{\inflog} \strct{B}$.}
+\item \header{Note on Disjunction over Formulas Indexed by a Class of Finite Structures (together with Tuples)} Such a class must be a (countable) \emph{set}. Thus, $\inflog$-formulas like
+\[
+\blor \setm{\varphi_\strct{A}}{\strct{A} \in K}
+\]
+where $K$ is a class of finite structures are valid according to the formation rules of $\inflog$.
+%
+\item \header{Note on 3.3.3} By the same argument, one can derive from 3.2.2(b) the result:
+\begin{center}
+\emph{If $\strct{A}$ and $\strct{B}$ are finite then $\strct{A} \equv \strct{B}$ implies $\strct{A} \equv^{\inflog} \strct{B}$.}
+\end{center}
+See \textbf{Note on 3.2.2} for more details. Alternatively, one can derive it using the fact that finite structures can be characterized in $\folog$ up to isomorphism (cf.~2.1.1).
 
-Alternatively, one can derive it using the fact that finite structures can be characterized in $\folog$ up to isomorphism (cf.~2.1.1).
+On the other hand, we write $(\strct{A}, \vect{a}) \equv^s (\strct{B}, \vect{b})$ and $(\strct{A}, \vect{a}) \equv^{\inflog[s]} (\strct{B}, \vect{b})$, where $\vect{a} \in \cartpwr{A}{s}$ and $\vect{b} \in \cartpwr{B}{s}$, to mean $\vect{a}$ satisfies in $\strct{A}$ the same formulas of $\folog[s]$ and of $\inflog[s]$, respectively, as $\vect{b}$ in $\strct{B}$. Then using 3.3.2 one can likewise argue:
+\begin{center}
+\emph{If $\strct{A}$ and $\strct{B}$ are finite, and if $\vect{a} \in \cartpwr{(A \union \sete{\off})}{s}$ and $\vect{b} \in \cartpwr{(B \union \sete{\off})}{s}$ with $\supp(\vect{a}) = \supp(\vect{b})$, then $(\strct{A}, \vect{a}) \equv^s (\strct{B}, \vect{b})$ implies $(\strct{A}, \vect{a}) \equv^{\inflog[s]} (\strct{B}, \vect{b})$.}
+\end{center}
 %
 \item \header{Note on Pebble Games $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$} They are different from the usual Ehrenfeucht-Fra\"iss\'e games $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ in that the number of pebbles are fixed ($s$ for each of $\strct{A}$ and $\strct{B}$ here) and the pebbles are on or off (denoted by $\off$) the board; once a pebble is placed onto the board, it is never put off the board. That is to say, the rounds of pebble games consist of both players putting the pebbles onto the board (extensions) and moving them around on the board (relocations).
 
@@ -356,13 +402,16 @@ corresponds to (1) and the formulas, for $1 \leq i \leq s$,
 altogether correspond to (2).
 
 \begin{remark}
-Observe that $\qr(\psi_{\intpr{R}{\strct{A}}}) = \card{A}$, we obtain a stronger version of the result: \emph{Suppose that $\tau$ is relational and all its relation symbol are of arity $\leq s$. If $\card{A} = \card{B} = n \leq s + 1$ and if the duplicator wins $\game[s]{n}(\strct{A}, \strct{B})$, then $\strct{A} \isom \strct{B}$.}
+Observing that $\qr(\psi_{\intpr{R}{\strct{A}}}) = \card{A}$, we obtain a stronger result:
+\begin{center}
+\emph{Suppose that $\tau$ is relational in which all relation symbols are of arity $\leq s$ and that $\card{A} = \card{B} \leq s + 1$. Let $n \defas \card{A}$. If the duplicator wins $\game[s]{n}(\strct{A}, \strct{B})$, then $\strct{A} \isom \strct{B}$.}
+\end{center}
 \end{remark}
 %%
 \end{enumerate}
 %
 \item \header{Note on the $s$-$m$-Isomorphism Type $\ityp[s]{m}{\strct{A}, \vect{a}}$} Unlike $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$, the game $\game[s]{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ consists of moves that \emph{substitute} pairs of elements in partial isomorphisms rather than \emph{extend} partial isomorphisms with pairs of elements. This is reflected in the definition of $\ityp{m + 1}{\strct{A}, \vect{a}}$:
-\begin{enumerate}[(1)]
+\begin{itemize}
 %%
 \item The running conjunction $\bland\limits_{1 \leq i \leq s}$ specifies the valid positions for substitution, and the formula $\ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}}$ specifies that $\vect{a}\sbst{a}{i} \mapsto \vect{b}\sbst{b}{i}$ is an $s$-partial isomorphism whose constituent pairs can be substituted $m$ times (given the premise $\strct{B} \satis \ityp{m}{\strct{A}, \vect{a}\sbst{a}{i}}[\vect{b}\sbst{b}{i}]$).
 %%
@@ -378,20 +427,62 @@ not $\consq \bland\limits_{1 \leq i \leq s}(\bland\limits_{a \in A} \exists v_i 
 
 Note that the conjunct $\ityp{0}{\strct{A}, \vect{a}}$ is redundant and is implied by the other conjunct only when $\vect{a} = \off \etc \off$.
 %%
+\end{itemize}
+
+Finally, in parallel to 2.2.6 and 2.2.7, one can prove:
+\begin{enumerate}[(1)]
+%%
+\item \emph{For $s, m \geq 0$, the set $\sett{\ityp[s]{m}{\strct{A}, \vect{a}}}{\mathmode{\strct{A}} a structure and \mathmode{\vect{a} \in \cartpwr{(A \union \sete{\off})}{s}}}$ is finite.}
+%%
+\item \emph{Let $\strct{A}$ be a structure, $s \geq 0$ and $\vect{a} \in \cartpwr{(A \union \sete{\off})}{s}$.
+\begin{enumerate}[\rm(a)]
+%%%
+\item For any $m \geq 0$, $\qr(\ityp{m}{\strct{A}, \vect{a}}) = m$.
+%%%
+\item For any $m \geq 0$, $\strct{A} \satis \ityp{m}{\strct{A}, \vect{a}}[\vect{a}]$.
+%%%
+\item If $\vect{a}'$ is the subsequence of $\vect{a}$ with indices in $\supp(\vect{a})$, then $\ityp{0}{\strct{A}, \vect{a}} = \hint{0}{\strct{A}, \vect{a}'}$. Hence for any structure $\strct{B}$ and any $\vect{b} \in \cartpwr{(B \union \sete{\off})}{s}$ with $\supp(\vect{b}) = \supp(\vect{a})$, if $\vect{b}'$ is the subsequence of $\vect{b}$ with indices in $\supp(\vect{b})$, then
+\begin{center}
+$\strct{B} \satis \ityp{0}{\strct{A}, \vect{a}}[\vect{b}]$ \ \ iff \ \ $\vect{a} \mapsto \vect{b}$ is an $s$-partial isomorphism.
+\end{center}
+%%%
+\end{enumerate}}
+%%
 \end{enumerate}
 %
-\item \header{Note on 3.3.9 and of 3.3.10} In 3.3.9, part (a) gives
+\item \header{Note on 3.3.9 and of 3.3.10} We have
+\begin{itemize}
+%%
+\item For structures $\strct{A}$ and $\strct{B}$, and for $s$-tuples $\vect{a} \in \cartpwr{(A \union \sete{\off})}{s}$ and $\vect{b} \in \cartpwr{(B \union \sete{\off})}{s}$ with $\supp(\vect{a}) = \supp(\vect{b})$,
 \begin{center}
-\begin{tabular}{ll}
-\   & $(\strct{A}, \vect{a}) \equv^s (\strct{B}, \vect{b})$ \cr
-iff & for every $m \in \nat$, $(\strct{A}, \vect{a}) \equv^s_m (\strct{B}, \vect{b})$ \cr
-iff & for every $m \in \nat$, $\strct{B} \satis \ityp[s]{m}{\strct{A}, \vect{a}}[\vect{b}]$ \cr
-iff & $\strct{B} \satis (\bland\limits_{m \in \nat} \ityp[s]{m}{\strct{A}, \vect{a}})[\vect{b}]$. \cr
+\begin{tabular}{lll}
+\   & $(\strct{A}, \vect{a}) \equv^s (\strct{B}, \vect{b})$ & \cr
+iff & for every $m \geq 0$, $(\strct{A}, \vect{a}) \equv^s_m (\strct{B}, \vect{b})$ & \cr
+iff & for every $m \geq 0$, $\strct{B} \satis \ityp[s]{m}{\strct{A}, \vect{a}}[\vect{b}]$ & (by 3.3.9(a))\cr
+iff & $\strct{B} \satis (\bland\limits_{m \geq 0} \ityp[s]{m}{\strct{A}, \vect{a}})[\vect{b}]$. \cr
 \end{tabular}
 \end{center}
-Likewise for 3.3.10.
+%%
+\item For structures $\strct{A}$ and $\strct{B}$,
+\begin{center}
+\begin{tabular}{lll}
+\   & $\strct{A} \equv^s \strct{B}$ & \cr
+iff & for every $m \geq 0$, $\strct{A} \equv^s_m \strct{B}$ & \cr
+iff & for every $m \geq 0$, $\strct{B} \satis \ityp[s]{m}{\strct{A}}$ & (by 3.3.10(a))\cr
+iff & $\strct{B} \satis (\bland\limits_{m \geq 0} \ityp[s]{m}{\strct{A}})$. \cr
+\end{tabular}
+\end{center}
+%%
+\end{itemize}
 
-On the other hand, part (b) of 3.3.9 (or 3.3.10) lacks the corresponding statement to \refitem{(iv)} of part (a), since there is no single formula (or sentence, respectively) in $\inflog[s]$ that characterizes the $\inflog[s]$-equivalence to $(\strct{A}, \vect{a})$ (or $\strct{A}$, respectively), see \textbf{Remark} in \textbf{Note on Theorem 3.2.7}.
+On the other hand, part (b) of 3.3.9 (or 3.3.10) lacks the corresponding statement to \refitem{(iv)} of part (a), since there is no single formula (or sentence, respectively) in $\inflog[s]$ that characterizes the $\inflog[s]$-equivalence to $(\strct{A}, \vect{a})$ (or $\strct{A}$, respectively), see \textbf{Remark} in \textbf{Note on Theorem 3.2.7}. In case that $\strct{A}$ and $\strct{B}$ are \emph{finite}, however, we have that $\strct{A} \equv^s \strct{B}$ iff $\strct{A} \equv^{\inflog[s]} \strct{B}$, and that $(\strct{A}, \vect{a}) \equv^s (\strct{B}, \vect{b})$ iff $(\strct{A}, \vect{a}) \equv^{\inflog[s]} (\strct{B}, \vect{b})$, by 3.3.3 and \textbf{Note on 3.3.3}, respectively. Hence
+\begin{enumerate}[(1)]
+%%
+\item \emph{Let $\strct{A}, \strct{B}$ be finite structures, and $\vect{a} \in \cartpwr{(A \union \sete{\off})}{s}, \vect{b} \in \cartpwr{(B \union \sete{\off})}{s}$ be $s$-tuples such that $\supp(\vect{a}) = \supp(\vect{b})$. Then $(\strct{A}, \vect{a}) \equv^{\inflog[s]} (\strct{B}, \vect{b})$ iff $\strct{B} \satis (\bland\limits_{m \geq 0} \ityp[s]{m}{\strct{A}, \vect{a}})[\vect{b}]$.}
+%%
+\item \emph{Let $\strct{A}, \strct{B}$ be finite structures. Then $\strct{A} \equv^s \strct{B}$ iff $\strct{B} \satis (\bland\limits_{m \geq 0} \ityp[s]{m}{\strct{A}})$.}
+%%
+\end{enumerate}
 %
 \item \header{Note on 3.3.11} As in 3.2.11, the underlying vocabulary $\tau$ is relational and the results remain valid when $\tau$ contains only unary relation symbols.
 
@@ -444,11 +535,22 @@ iff & he wins $\game[s]{s}(\strct{A}_s, \strct{A}_{s + 1})$ where in each move a
 and indeed the last statement can easily be verified.
 \end{remark}
 %
-\item \header{Hint to 3.3.14} In part (a), note that for $s, m \in \nat$, the set
+\item \header{Hint to 3.3.14} For part (a), note that for $s, m \in \nat$, the set
 \[
-\sett{\ityp{m}{\strct{A}, \vect{a}}}{\mathmode{\strct{A}} a structure and \mathmode{\vect{a} \in \cartpwr{A}{s}}}
+\sett{\ityp{m}{\strct{A}, \vect{a}}}{\mathmode{\strct{A}} is a structure and \mathmode{\vect{a} \in \cartpwr{A}{s}}}
 \]
-is finite.
+is finite, as remarked in \textbf{Note on the $s$-$m$-Isomorphism Type $\ityp[s]{m}{\strct{A}, \vect{a}}$}.
+
+To show (ii) implies (i) in part (b), let each occurrence of $\off\etc\off$ contain exactly $(s - n)$ $\off$'s in the following and observe that a result derived in \textbf{Note on 3.3.9 and of 3.3.10} yields for any \emph{finite} structures $\strct{A}$ and $\strct{B}$ and for any tuples $\vect{a} \in \cartpwr{A}{n}$ and $\vect{b} \in \cartpwr{B}{n}$, $(\strct{A}, \vect{a}\off\etc\off) \equv^{\inflog[s]} (\strct{B}, \vect{b}\off\etc\off)$ iff $\strct{B} \satis (\bland\limits_{m \geq 0} \ityp[s]{m}{\strct{A}, \vect{a}\off\etc\off})[\vect{b}\off\etc\off]$. Set
+\[
+\varphi \defas \blor\sett{\bland\limits_{m \geq 0} \ityp[s]{m}{\strct{A}, \vect{a}\off\etc\off}}{\mathmode{\strct{A} \in K} and \mathmode{\vect{a} \in \Gamma(\strct{A})}}
+\]
+and use 3.3.9(b) together with a result derived in \textbf{Note on the $s$-$m$-Isomorphism Type $\ityp[s]{m}{\strct{A}, \vect{a}}$}.
+\begin{remark}[INCOMPLETE]
+It is attempting to take the ``conjunction'' of all $\inflog[s]$-formulas
+\end{remark}
+%
+\item \header{Solution to 3.3.15} (INCOMPLETE) Prove a parallel result to 2.3.10 and use 3.3.6(a).
 %
 \end{enumerate}
 %end of section 3-----------------------------------------------------------------------------
