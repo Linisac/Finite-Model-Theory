@@ -172,10 +172,19 @@ For $m \geq 0$ choose $l \geq 2^m$. Consider $\seq{I_j}{j \leq m}$ where $p \in 
 It remains to verify $\seq{I_j}{j \leq m} : \strct{B}_l \isom_m \strct{C}_l$, which is omitted here. (For the forth-property, if $p \in I_{j + 1}$ and $b \in B_l$ then distinguish two cases according to whether it is true that ``there is a $b' \in B_l$ such that $\dist[j](b, b') < 2^j$ or $\dist[j](b', b) < 2^j$'', a technique used in 2.3.6.)
 %
 \item \header{Note on Corollary 2.3.11} Here $(\strct{A}, \vect{a}) \equv_m (\strct{B}, \vect{b})$ means ``$\vect{a}$ satisfies in $\strct{A}$ the same formulas of quantifier rank $\leq m$ as $\vect{b}$ in $\strct{B}$.'' (Consider the transition from 2.2.8(iii) to 2.2.9(iii).)
-%
-\item \header{Note on Corollary 2.3.11} Is it true that ``\emph{if $(\strct{A}_1, \vect{a}_1) \equv_m (\strct{B}_1, \vect{b}_1)$ and $(\strct{A}_2, \vect{a}_2) \equv_m (\strct{B}_2, \vect{b}_2)$ then $(\strct{A}_1 \product \strct{A}_2, \vect{a}_1 \cart \vect{a}_2) \equv_m (\strct{B}_1 \product \strct{B}_2, \vect{b}_1 \cart \vect{b}_2)$}''?
 
-My guess is yes. Note that if $\vect{a}_1 \isom \vect{b}_1$ and $\vect{a}_2 \isom \vect{b}_2$ then $\vect{a}_1 \cart \vect{a}_2 \isom \vect{b}_1 \cart \vect{b}_2$.
+On the other hand, (INCOMPLETE) we have \emph{isomorphism is preserved under product}, namely
+\begin{fact}
+If $\strct{A}_1, \strct{A}_2, \strct{B}_1, \strct{B}_2$ are structures such that $\strct{A}_1 \isom \strct{A}_2$ and $\strct{B}_1 \isom \strct{B}_2$, then $\strct{A}_1 \cart \strct{A}_2 \isom \strct{B}_1 \cart \strct{B}_2$.
+\end{fact}
+This leads to
+\begin{observation}
+Let $\strct{A}$ and $\strct{B}$ be structures, and let $p_\strct{A}$ and $p_\strct{B}$ be partial isomorphisms in $\strct{A}$ and in $\strct{B}$, respectively. Then $p_\strct{A} \cart p_\strct{B}$ is a partial isomorphism in $\strct{A} \cart \strct{B}$.
+\end{observation}
+The observation suggests that the following should be true.
+\begin{conjecture}
+If $(\strct{A}_1, \vect{a}_1) \equv_m (\strct{B}_1, \vect{b}_1)$ and $(\strct{A}_2, \vect{a}_2) \equv_m (\strct{B}_2, \vect{b}_2)$ then $(\strct{A}_1 \product \strct{A}_2, \vect{a}_1 \cart \vect{a}_2) \equv_m (\strct{B}_1 \product \strct{B}_2, \vect{b}_1 \cart \vect{b}_2)$.
+\end{conjecture}
 %
 \item \header{Hint to Exercise 2.3.12} An equivalent condition to ``$\min\sete{\card{A_\alpha}, m} = \min\sete{\card{B_\alpha}, m}$'' is:
 \begin{quote}

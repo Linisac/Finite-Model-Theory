@@ -71,14 +71,14 @@ Using Corollary 2.3.4, we obtain a further equivalent statement:
 \begin{enumerate}[(1)]
 \setcounter{enumii}{4}
 %%
-\item $\strct{B} \satis \bland_{j \in \nat} \hint{j}{\strct{A}}$,
+\item $\strct{B} \satis \bland_{j \geq 0} \hint{j}{\strct{A}}$,
 %%
 \end{enumerate}
-(note that the sentence $\bland_{j \in \nat} \hint{j}{\strct{A}}$ is in $\dlog{\omega_1}$) and, using Lemma 2.2.4(b), yet another equivalent statement, in parallel to Corollary 2.3.4(ii):
+(note that the sentence $\bland_{j \geq 0} \hint{j}{\strct{A}}$ is in $\dlog{\omega_1}$) and, using Lemma 2.2.4(b), yet another equivalent statement, in parallel to Corollary 2.3.4(ii):
 \begin{enumerate}[(1)]
 \setcounter{enumii}{5}
 %%
-\item $\seq{\winpos{j}(\strct{A}, \strct{B})}{j \in \nat} : \strct{A} \isom_\fin \strct{B}$.
+\item $\seq{\winpos{j}(\strct{A}, \strct{B})}{j \geq 0} : \strct{A} \isom_\fin \strct{B}$.
 %%
 \end{enumerate}
 It follows that, by Proposition 2.1.1, if $\strct{A}$ and $\strct{B}$ are both finite and if $\strct{A} \isom_\fin \strct{B}$, then $\strct{A} \isom \strct{B}$.
@@ -546,11 +546,52 @@ To show (ii) implies (i) in part (b), let each occurrence of $\off\etc\off$ cont
 \varphi \defas \blor\sett{\bland\limits_{m \geq 0} \ityp[s]{m}{\strct{A}, \vect{a}\off\etc\off}}{\mathmode{\strct{A} \in K} and \mathmode{\vect{a} \in \Gamma(\strct{A})}}
 \]
 and use 3.3.9(b) together with a result derived in \textbf{Note on the $s$-$m$-Isomorphism Type $\ityp[s]{m}{\strct{A}, \vect{a}}$}.
-\begin{remark}[INCOMPLETE]
-It is attempting to take the ``conjunction'' of all $\inflog[s]$-formulas
+\begin{remark}
+It is tempting in the direction (ii) implying (i) in part (b) to take the ``conjunction'' $\chi_{\strct{A}, \vect{a}}$ of all $\inflog[s]$-formulas satisfied by the given $\strct{A} \in K$ and $\vect{a} \in \cartpwr{A}{n}$ to obtain an $\inflog[s]$-formula characterizing $\equv^{\inflog[s]}$-equivalence to $(\strct{A}, \vect{a})$ (and then take the ``disjunction'' $\blor \setm{\chi_{\strct{A}, \vect{a}}}{\strct{A} \satis \varphi[\vect{a}]}$). However, $\chi_{\strct{A}, \vect{a}}$ does not exist because there are too many $\inflog[s]$-formulas satisfied by $(\strct{A}, \vect{a})$ to fit in a \emph{set}, see the discussion in \textbf{Note on the Definition of $\inflog$}.
 \end{remark}
 %
-\item \header{Solution to 3.3.15} (INCOMPLETE) Prove a parallel result to 2.3.10 and use 3.3.6(a).
+\item \header{The Product, the Disjoint Union, and the Ordered Sum with $\equv^s_m$ and $\equv^{\inflog[s]}$} Similarly to 2.3.10, we have \emph{for structures $\strct{A}_1$, $\strct{B}_1$, $\strct{A}_2$ and $\strct{B}_2$,
+\begin{enumerate}[\rm(a)]
+%%
+\item If $\strct{A}_1 \equv^s_m \strct{B}_1$ and $\strct{A}_2 \equv^s_m \strct{B}_2$ then $\strct{A}_1 \cart \strct{A}_2 \equv^s_m \strct{B}_1 \cart \strct{B}_2$.
+%%
+\item If $\strct{A}_1 \equv^s_m \strct{B}_1$ and $\strct{A}_2 \equv^s_m \strct{B}_2$ then $\strct{A}_1 \dunion \strct{A}_2 \equv^s_m \strct{B}_1 \dunion \strct{B}_2$.
+%%
+\item If $\strct{A}_1 \equv^s_m \strct{B}_1$ and $\strct{A}_2 \equv^s_m \strct{B}_2$ then $\strct{A}_1 \ordsum \strct{A}_2 \equv^s_m \strct{B}_1 \ordsum \strct{B}_2$.
+%%
+\end{enumerate}
+The above holds for $\equv^{\inflog[s]}$ in place of $\equv^s_m$.
+}
+
+And likewise a generalization as in 2.3.11 (INCOMPLETE):
+\begin{conjecture}
+For structures $\strct{A}_1$, $\strct{B}_1$, $\strct{A}_2$ and $\strct{B}_2$, and for tuples $\vect{a}_1, \vect{a}_2 \in A$ and $\vect{b}_1, \vect{b}_2 \in B$ with $\length(\vect{a}_1) = \length(\vect{b}_1) \leq s$ and $\length(\vect{a}_2) = \length(\vect{b}_2) \leq s$, let $l \defas \min\sete{\length(\vect{a}_1), \length(\vect{a}_2)}$ and $u \defas \max\sete{\length(\vect{a}_1), \length(\vect{a}_2)}$ in the following:
+\begin{enumerate}[\rm(a)]
+%%
+\item If $\strct{A}_1 \equv^s_m \strct{B}_1$ and $\strct{A}_2 \equv^s_m \strct{B}_2$, and if $\vect{c}$ is an $l$-tuple whose elements are from $\vect{a}_1 \cart \vect{a}_2$ and $\vect{d}$ is an $l$-tuple whose elements are from $\vect{b}_1 \cart \vect{b}_2$ with the corresponding indices, then $(\strct{A}_1 \cart \strct{A}_2, \vect{c}) \equv^s_m (\strct{B}_1 \cart \strct{B}_2, \vect{d})$.
+%%
+\item If $\strct{A}_1 \equv^s_m \strct{B}_1$ and $\strct{A}_2 \equv^s_m \strct{B}_2$, and if $\vect{c}$ is a $u$-tuple whose elements are from $\vect{a}_1\vect{b}_1$ and $\vect{d}$ is a $u$-tuple whose elements are from $\vect{a}_2\vect{b}_2$ with the corresponding indices, then $(\strct{A}_1 \dunion \strct{A}_2, \vect{c}) \equv^s_m (\strct{B}_1 \dunion \strct{B}_2, \vect{d})$.
+%%
+\item If $\strct{A}_1 \equv^s_m \strct{B}_1$ and $\strct{A}_2 \equv^s_m \strct{B}_2$, and if $\vect{c}$ is a $u$-tuple whose elements are from $\vect{a}_1\vect{b}_1$ and $\vect{d}$ is a $u$-tuple whose elements are from $\vect{a}_2\vect{b}_2$ with the corresponding indices, then $(\strct{A}_1 \ordsum \strct{A}_2, \vect{c}) \equv^s_m (\strct{B}_1 \ordsum \strct{B}_2, \vect{d})$.
+%%
+\end{enumerate}
+The above holds for $\equv^{\inflog[s]}$ in place of $\equv^s_m$.
+\end{conjecture}
+%
+\item \header{Hint to Exercise 3.3.15} (INCOMPLETE) If $\tau = \empty$ then we refer to the discussion in 3.3.6(a). So let us assume $\tau \sete{R_1, \etc, R_n}$ for some $n \geq 1$.
+%
+\item \header{Note on Exercise 3.3.16} The proof can be done along the lines of the proof of 2.2.11 and hence is skipped.
+
+Let us note that there might be a typo: The condition ``$\vect{a} \in A$'' in the set of formulas $\ityp{m}{\strct{A}, \vect{a}}$ over which the disjunction is taken should be replaced by ``$\vect{a} \in (A \union \sete{\off})$''.
+
+Also note that for any $\folog$-formula $\varphi$ there is an $s \geq 1$ such that $\varphi \in \folog^s$ and hence
+\[
+\blor \sett{\hint{m}{\strct{A}, \vect{a}}}{\mathmode{\strct{A}} a structure, \mathmode{\vect{a} \in A}, and \mathmode{\strct{A} \satis \varphi[\vect{a}]}}
+\]
+is logically equivalent to
+\[
+\blor \sett{\ityp{m}{\strct{A}, \vect{a}}}{\mathmode{\strct{A}} a structure, \mathmode{\vect{a} \in (A \union \sete{\off})}, and \mathmode{\strct{A} \satis \varphi[\vect{a}]}}.
+\]
 %
 \end{enumerate}
 %end of section 3-----------------------------------------------------------------------------
