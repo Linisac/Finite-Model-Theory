@@ -568,17 +568,62 @@ And likewise a generalization as in 2.3.11 (INCOMPLETE):
 For structures $\strct{A}_1$, $\strct{B}_1$, $\strct{A}_2$ and $\strct{B}_2$, and for tuples $\vect{a}_1, \vect{a}_2 \in A$ and $\vect{b}_1, \vect{b}_2 \in B$ with $\length(\vect{a}_1) = \length(\vect{b}_1) \leq s$ and $\length(\vect{a}_2) = \length(\vect{b}_2) \leq s$, let $l \defas \min\sete{\length(\vect{a}_1), \length(\vect{a}_2)}$ and $u \defas \max\sete{\length(\vect{a}_1), \length(\vect{a}_2)}$ in the following:
 \begin{enumerate}[\rm(a)]
 %%
-\item If $\strct{A}_1 \equv^s_m \strct{B}_1$ and $\strct{A}_2 \equv^s_m \strct{B}_2$, and if $\vect{c}$ is an $l$-tuple whose elements are from $\vect{a}_1 \cart \vect{a}_2$ and $\vect{d}$ is an $l$-tuple whose elements are from $\vect{b}_1 \cart \vect{b}_2$ with the corresponding indices, then $(\strct{A}_1 \cart \strct{A}_2, \vect{c}) \equv^s_m (\strct{B}_1 \cart \strct{B}_2, \vect{d})$.
+\item If $(\strct{A}_1, \vect{a}_1) \equv^s_m (\strct{B}_1, \vect{b}_1)$ and $(\strct{A}_2, \vect{a}_2) \equv^s_m (\strct{B}_2, \vect{b}_2)$, and if $\vect{c}$ is an $l$-tuple whose elements are from $\vect{a}_1 \cart \vect{a}_2$ and $\vect{d}$ is an $l$-tuple whose elements are from $\vect{b}_1 \cart \vect{b}_2$ with the corresponding indices, then $(\strct{A}_1 \cart \strct{A}_2, \vect{c}) \equv^s_m (\strct{B}_1 \cart \strct{B}_2, \vect{d})$.
 %%
-\item If $\strct{A}_1 \equv^s_m \strct{B}_1$ and $\strct{A}_2 \equv^s_m \strct{B}_2$, and if $\vect{c}$ is a $u$-tuple whose elements are from $\vect{a}_1\vect{b}_1$ and $\vect{d}$ is a $u$-tuple whose elements are from $\vect{a}_2\vect{b}_2$ with the corresponding indices, then $(\strct{A}_1 \dunion \strct{A}_2, \vect{c}) \equv^s_m (\strct{B}_1 \dunion \strct{B}_2, \vect{d})$.
+\item If $(\strct{A}_1, \vect{a}_1) \equv^s_m (\strct{B}_1, \vect{b}_1)$ and $(\strct{A}_2, \vect{a}_2) \equv^s_m (\strct{B}_2, \vect{b}_2)$, and if $\vect{c}$ is a $u$-tuple whose elements are from $\vect{a}_1\vect{a}_2$ and $\vect{d}$ is a $u$-tuple whose elements are from $\vect{b}_1\vect{b}_2$ with the corresponding indices, then $(\strct{A}_1 \dunion \strct{A}_2, \vect{c}) \equv^s_m (\strct{B}_1 \dunion \strct{B}_2, \vect{d})$.
 %%
-\item If $\strct{A}_1 \equv^s_m \strct{B}_1$ and $\strct{A}_2 \equv^s_m \strct{B}_2$, and if $\vect{c}$ is a $u$-tuple whose elements are from $\vect{a}_1\vect{b}_1$ and $\vect{d}$ is a $u$-tuple whose elements are from $\vect{a}_2\vect{b}_2$ with the corresponding indices, then $(\strct{A}_1 \ordsum \strct{A}_2, \vect{c}) \equv^s_m (\strct{B}_1 \ordsum \strct{B}_2, \vect{d})$.
+\item If $(\strct{A}_1, \vect{a}_1) \equv^s_m (\strct{B}_1, \vect{b}_1)$ and $(\strct{A}_2, \vect{a}_2) \equv^s_m (\strct{B}_2, \vect{b}_2)$, and if $\vect{c}$ is a $u$-tuple whose elements are from $\vect{a}_1\vect{a}_2$ and $\vect{d}$ is a $u$-tuple whose elements are from $\vect{b}_1\vect{b}_2$ with the corresponding indices, then $(\strct{A}_1 \ordsum \strct{A}_2, \vect{c}) \equv^s_m (\strct{B}_1 \ordsum \strct{B}_2, \vect{d})$.
 %%
 \end{enumerate}
 The above holds for $\equv^{\inflog[s]}$ in place of $\equv^s_m$.
 \end{conjecture}
 %
-\item \header{Hint to Exercise 3.3.15} (INCOMPLETE) If $\tau = \empty$ then we refer to the discussion in 3.3.6(a). So let us assume $\tau \sete{R_1, \etc, R_n}$ for some $n \geq 1$.
+\item \header{Hint to Exercise 3.3.15} (INCOMPLETE) It suffices to show $\winpos[s]{s}(\strct{A}, \strct{B}) \subseteq \winpos[s]{\infty}(\strct{A}, \strct{B})$ for relational $\tau$.
+
+If $\tau = \emptyset$ then $\strct{A}$ and $\strct{B}$ are actually sets $A$ and $B$, respectively. Suppose that $\vect{a} \mapsto \vect{b} \in \winpos[s]{s}(\strct{A}, \strct{B})$ where $\vect{a} \in \cartpwr{(A \union \sete{\off})}{s}$ and $\vect{b} \in \cartpwr{(B \union \sete{\off})}{s}$ and $\supp(\vect{a}) = \supp(\vect{b})$, namely the duplicator wins the game $\game[s]{s}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$. Now observe:
+\begin{itemize}
+%%
+\item If $\card{A} < s$, then $\card{A} = \card{B}$. Since otherwise the spoiler can make at most $s$ moves to reveal that $\card{A} \neq \card{B}$ by placing exactly one pebble on each element of either $A$ or $B$, whichever has fewer elements, and then placing one pebble on an arbitrary element in the other domain that is currently not pebbled, thereby winning the game $\game[s]{s}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
+%%
+\item If $\card{A} \geq s$, then $\card{B} \geq s$ as well. Since otherwise $\card{B} < s$ and again the spoiler can make at most $s$ moves to reveal $\card{A} \neq \card{B}$, using the same strategy as above. Note that $\card{A}$ and $\card{B}$ need not be equal in this case, because there are only $s$ pebbles available for each structure; even if $\card{A} \neq \card{B}$, the spoiler has no way to reveal it (too few pebbles).
+%%
+\end{itemize}
+Therefore, we have that
+\begin{center}
+either $\card{A} = \card{B} < s$ or both $\card{A} \geq s$ and $\card{B} \geq s$.
+\end{center}
+This enables the duplicator to respond to whatever move made by the spoiler and maintain an $s$-partial isomorphism between the pebbled elements in any play of the game $\game[s]{\infty}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$. Thus, $\vect{a} \mapsto \vect{b} \in \winpos[s]{\infty}(\strct{A}, \strct{B})$.
+
+Now let us turn to the case $\tau \neq \emptyset$, assuming $\tau \sete{R_1, \etc, R_n}$ for some $n \geq 1$. For any $n$-tuple $\vect{t} \in \cartpwr{\sete{0, 1}}{n}$, let
+\[
+A_{\vect{t}, i} \defas \begin{cases}
+\intpr{R_i}{\strct{A}} & \mbox{if \mathmode{t_i = 0}}\cr
+A \setminus \intpr{R_i}{\strct{A}} & \mbox{otherwise}\cr
+\end{cases}
+\]
+for $1 \leq i \leq n$, and put
+\[
+A_{\vect{t}} \defas \bintsc^n_{i = 1} A_{\vect{t}, i}.
+\]
+Likewise for $B_{\vect{t}, i}$ and $B_{\vect{t}}$. By the same argument as given previously, we have
+\begin{center}
+for any $\vect{t} \in \cartpwr{\sete{0, 1}}{n}$, either $\card{A_{\vect{t}}} = \card{B_{\vect{t}}}$ or both $\card{A_{\vect{t}}} \geq s$ and $\card{B_{\vect{t}}} \geq s$.
+\end{center}
+This allows the duplicator a winning strategy for the game $\game[s]{\infty}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
+
+\begin{remark}
+The last statement above can be made more explicit: For every $\vect{t} \in \cartpwr{\sete{0, 1}}{n}$, if $A_{\vect{t}} \neq \emptyset$ then we denote $\strct{A}_{\vect{t}}$ the substructure of $\strct{A}$ induced by $A_{\vect{t}}$. Likewise for $\strct{B}_{\vect{t}}$. Then
+\begin{itemize}
+%%
+\item $\strct{A}_{\vect{t}} \equv^{\inflog[s]} \strct{B}_{\vect{t}}$ for any $\vect{t} \in \cartpwr{\sete{0, 1}}{n}$ such that $A_{\vect{t}} \neq \emptyset$ (and at the same time $B_{\vect{t}} \neq \emptyset$).
+%%
+\item $\ds{\strct{A} = \dunion_{\mbox{\scriptsize\mathmode{\vect{t} \in \cartpwr{\sete{0, 1}}{n}} such that \mathmode{A_{\vect{t}} \neq \emptyset}}} \strct{A}_{\vect{t}}}$.
+%%
+\item $\ds{\strct{B} = \dunion_{\mbox{\scriptsize\mathmode{\vect{t} \in \cartpwr{\sete{0, 1}}{n}} such that \mathmode{B_{\vect{t}} \neq \emptyset}}} \strct{B}_{\vect{t}}}$.
+%%
+\end{itemize}
+Using a suitable extension of part (b) of the conjecture in \textbf{The Product, the Disjoint Union, and the Ordered Sum with $\equv^s_m$ and $\equv^{\inflog[s]}$}, we obtain that $(\strct{A}, \vect{a}) \equv^{\inflog[s]} (\strct{B}, \vect{b})$ and so the duplicator wins the game $\game[s]{\infty}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
+\end{remark}
 %
 \item \header{Note on Exercise 3.3.16} The proof can be done along the lines of the proof of 2.2.11 and hence is skipped.
 
