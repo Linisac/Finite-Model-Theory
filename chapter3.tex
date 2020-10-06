@@ -578,23 +578,23 @@ For structures $\strct{A}_1$, $\strct{B}_1$, $\strct{A}_2$ and $\strct{B}_2$, an
 The above holds for $\equv^{\inflog[s]}$ in place of $\equv^s_m$.
 \end{conjecture}
 %
-\item \header{Hint to Exercise 3.3.15} (INCOMPLETE) It suffices to show $\winpos[s]{s}(\strct{A}, \strct{B}) \subseteq \winpos[s]{\infty}(\strct{A}, \strct{B})$ for relational $\tau$.
+\item \header{Hint to Exercise 3.3.15} It suffices to show $\winpos[s]{s}(\strct{A}, \strct{B}) \subseteq \winpos[s]{\infty}(\strct{A}, \strct{B})$ for relational $\tau$.
 
 If $\tau = \emptyset$ then $\strct{A}$ and $\strct{B}$ are actually sets $A$ and $B$, respectively. Suppose that $\vect{a} \mapsto \vect{b} \in \winpos[s]{s}(\strct{A}, \strct{B})$ where $\vect{a} \in \cartpwr{(A \union \sete{\off})}{s}$ and $\vect{b} \in \cartpwr{(B \union \sete{\off})}{s}$ and $\supp(\vect{a}) = \supp(\vect{b})$, namely the duplicator wins the game $\game[s]{s}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$. Now observe:
 \begin{itemize}
 %%
 \item If $\card{A} < s$, then $\card{A} = \card{B}$. Since otherwise the spoiler can make at most $s$ moves to reveal that $\card{A} \neq \card{B}$ by placing exactly one pebble on each element of either $A$ or $B$, whichever has fewer elements, and then placing one pebble on an arbitrary element in the other domain that is currently not pebbled, thereby winning the game $\game[s]{s}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
 %%
-\item If $\card{A} \geq s$, then $\card{B} \geq s$ as well. Since otherwise $\card{B} < s$ and again the spoiler can make at most $s$ moves to reveal $\card{A} \neq \card{B}$, using the same strategy as above. Note that $\card{A}$ and $\card{B}$ need not be equal in this case, because there are only $s$ pebbles available for each structure; even if $\card{A} \neq \card{B}$, the spoiler has no way to reveal it (too few pebbles).
+\item If $\card{A} \geq s$, then $\card{B} \geq s$ as well. Since otherwise $\card{B} < s$ and again the spoiler can make at most $s$ moves to reveal $\card{A} \neq \card{B}$, using the same strategy as above. Note that $\card{A}$ and $\card{B}$ need not be equal in this case as long as both $\card{A} \geq s$ and $\card{B} \geq s$, because there are only $s$ pebbles available for each structure; even if $\card{A} \neq \card{B}$, the spoiler has no way to reveal it (too few pebbles).
 %%
 \end{itemize}
 Therefore, we have that
 \begin{center}
 either $\card{A} = \card{B} < s$ or both $\card{A} \geq s$ and $\card{B} \geq s$.
 \end{center}
-This enables the duplicator to respond to whatever move made by the spoiler and maintain an $s$-partial isomorphism between the pebbled elements in any play of the game $\game[s]{\infty}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$. Thus, $\vect{a} \mapsto \vect{b} \in \winpos[s]{\infty}(\strct{A}, \strct{B})$.
+This enables the duplicator to respond to whatever move made by the spoiler and maintain an isomorphism between the pebbled elements of each structure and hence an $s$-partial isomorphism between each structure in any play of the game $\game[s]{\infty}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$: For every $a \in A$ that has some pebble(s) $\alpha_{i_1}, \etc, \alpha_{i_k}$ on it ($1 \leq i_1 < \etc < i_k \leq s$), there is a $b \in B$ that has the pebble(s) $\beta_{i_1}, \etc, \beta_{i_k}$ on it with exactly the same index or indices $i_1, \etc, i_k$ (and vice versa). Thus, $\vect{a} \mapsto \vect{b} \in \winpos[s]{\infty}(\strct{A}, \strct{B})$.
 
-Now let us turn to the case $\tau \neq \emptyset$, assuming $\tau \sete{R_1, \etc, R_n}$ for some $n \geq 1$. For any $n$-tuple $\vect{t} \in \cartpwr{\sete{0, 1}}{n}$, let
+Now let us turn to the case $\tau \neq \emptyset$, assuming $\tau = \sete{R_1, \etc, R_n}$ for some $n \geq 1$. For any $n$-tuple $\vect{t} \in \cartpwr{\sete{0, 1}}{n}$, let
 \[
 A_{\vect{t}, i} \defas \begin{cases}
 \intpr{R_i}{\strct{A}} & \mbox{if \mathmode{t_i = 0}}\cr
@@ -605,21 +605,21 @@ for $1 \leq i \leq n$, and put
 \[
 A_{\vect{t}} \defas \bintsc^n_{i = 1} A_{\vect{t}, i}.
 \]
-Likewise for $B_{\vect{t}, i}$ and $B_{\vect{t}}$. By the same argument as given previously, we have
+Likewise for $B_{\vect{t}, i}$ and $B_{\vect{t}}$. Let $\vect{a} \mapsto \vect{b} \in \winpos[s]{s}(\strct{A}, \strct{B})$ where $\vect{a} \in \cartpwr{(A \union \sete{\off})}{s}$ and $\vect{b} \in \cartpwr{(B \union \sete{\off})}{s}$ and $\supp(\vect{a}) = \supp(\vect{b})$, i.e.~the duplicator wins the game $\game[s]{s}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$. By the same argument as given previously, we have
 \begin{center}
-for any $\vect{t} \in \cartpwr{\sete{0, 1}}{n}$, either $\card{A_{\vect{t}}} = \card{B_{\vect{t}}}$ or both $\card{A_{\vect{t}}} \geq s$ and $\card{B_{\vect{t}}} \geq s$.
+for any $\vect{t} \in \cartpwr{\sete{0, 1}}{n}$, either $\card{A_{\vect{t}}} = \card{B_{\vect{t}}} < s$ or both $\card{A_{\vect{t}}} \geq s$ and $\card{B_{\vect{t}}} \geq s$.
 \end{center}
-This allows the duplicator a winning strategy for the game $\game[s]{\infty}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
+This allows the duplicator to maintain an isomorphism between the pebbled elements of $A_{\vect{t}}$ and $B_{\vect{t}}$ for any $\vect{t} \in \cartpwr{\sete{0, 1}}{n}$ and hence an $s$-partial isomorphism between each structure, whatever moves the spoiler makes. Therefore, the duplicator has a winning strategy for the game $\game[s]{\infty}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ and so $\vect{a} \mapsto \vect{b} \in \winpos[s]{\infty}(\strct{A}, \strct{B})$.
 
 \begin{remark}
-The last statement above can be made more explicit: For every $\vect{t} \in \cartpwr{\sete{0, 1}}{n}$, if $A_{\vect{t}} \neq \emptyset$ then we denote $\strct{A}_{\vect{t}}$ the substructure of $\strct{A}$ induced by $A_{\vect{t}}$. Likewise for $\strct{B}_{\vect{t}}$. Then
+The last statement above can be derived alternatively: For every $\vect{t} \in \cartpwr{\sete{0, 1}}{n}$, if $A_{\vect{t}} \neq \emptyset$ then we denote $\strct{A}_{\vect{t}}$ the substructure of $\strct{A}$ induced by $A_{\vect{t}}$. Likewise for $\strct{B}_{\vect{t}}$. Then
 \begin{itemize}
 %%
 \item $\strct{A}_{\vect{t}} \equv^{\inflog[s]} \strct{B}_{\vect{t}}$ for any $\vect{t} \in \cartpwr{\sete{0, 1}}{n}$ such that $A_{\vect{t}} \neq \emptyset$ (and at the same time $B_{\vect{t}} \neq \emptyset$).
 %%
-\item $\ds{\strct{A} = \dunion_{\mbox{\scriptsize\mathmode{\vect{t} \in \cartpwr{\sete{0, 1}}{n}} such that \mathmode{A_{\vect{t}} \neq \emptyset}}} \strct{A}_{\vect{t}}}$.
+\item $\ds{\strct{A} = \bdunion_{\mbox{\scriptsize\mathmode{\vect{t} \in \cartpwr{\sete{0, 1}}{n}} such that \mathmode{A_{\vect{t}} \neq \emptyset}}} \strct{A}_{\vect{t}}}$.
 %%
-\item $\ds{\strct{B} = \dunion_{\mbox{\scriptsize\mathmode{\vect{t} \in \cartpwr{\sete{0, 1}}{n}} such that \mathmode{B_{\vect{t}} \neq \emptyset}}} \strct{B}_{\vect{t}}}$.
+\item $\ds{\strct{B} = \bdunion_{\mbox{\scriptsize\mathmode{\vect{t} \in \cartpwr{\sete{0, 1}}{n}} such that \mathmode{B_{\vect{t}} \neq \emptyset}}} \strct{B}_{\vect{t}}}$.
 %%
 \end{itemize}
 Using a suitable extension of part (b) of the conjecture in \textbf{The Product, the Disjoint Union, and the Ordered Sum with $\equv^s_m$ and $\equv^{\inflog[s]}$}, we obtain that $(\strct{A}, \vect{a}) \equv^{\inflog[s]} (\strct{B}, \vect{b})$ and so the duplicator wins the game $\game[s]{\infty}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
