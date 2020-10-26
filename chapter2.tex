@@ -21,9 +21,16 @@ Also note that if $\tau$ contains constants then the notation $\vect{a} \mapsto 
 
 Finally, if $\vect{a} \mapsto \vect{b}$ is a partial isomorphism, then so are its permutations (rearrangements of the indices of the pairs $(a_i, b_i)$ in $\vect{a} \mapsto \vect{b}$) and repetitions (in which some pair(s) $(a_i, b_i)$ are repeated in $\vect{a} \mapsto \vect{b}$).
 %
-\item \header{Note on Ehrenfeucht Games} It is clear from definition that at most one of the players has a winning strategy for the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
-\newpar
-On the other hand, it is also true that at least one of the players has a winning strategy for the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$, i.e.\ \emph{if the duplicator does not win $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ then the spoiler wins it.} See 2.3.16 in text.
+\item \header{Note on Players' Winning Strategy for Ehrenfeucht-Fra\"iss\'e Game} By definition, every round of the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ concludes with exactly one winner, either the spoiler or the duplicator.
+
+\begin{fact}
+If the duplicator does not have a winning strategy for $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$, i.e.~if he does not win every round of the game, then the spoiler has a winning strategy to ensure he wins every round of $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
+\end{fact}
+\begin{proof}
+(INCOMPLETE) Construct a game tree for the spoiler: There is a choice for the spoiler such that for all choices for the duplicator\ldots
+\end{proof}
+
+See 2.3.16 in text for an example of spoiler having a winning strategy.
 %
 \item \header{Note on the Proof of Lemma 2.2.3(b)} The statement ``Then $p : \vect{a} \mapsto \vect{b} \in \partisoms(\strct{A}, \strct{B})$ with $\dm(p) = A$'' follows from the fact that a submap of a partial isomorphism is also a partial isomorphism (see the next note).
 %
