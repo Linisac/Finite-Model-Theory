@@ -36,13 +36,11 @@ See 2.3.16 in text for an example of spoiler having a winning strategy.
 %
 \item \header{Note on Lemma 2.2.4} Part (a) is equivalent to the statement \emph{the spoiler wins $\game{0}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ if and only $\vect{a} \mapsto \vect{b}$ is not a partial isomorphism}.
 \newpar
-Part (b) also suggests that \emph{for every $m > 0$, the spoiler wins $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ if and only if there is an $a \in A$ such that for all $b \in B$ the spoiler wins the game $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}, \vect{b}b)$ or there is a $b \in B$ such that for all $a \in A$ the spoiler wins the game $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}, \vect{b}b)$}.
+Likewise, part (b) is equivalent to the statement \emph{for every $m > 0$, the spoiler wins $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ if and only if there is an $a \in A$ such that for all $b \in B$ the spoiler wins the game $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}, \vect{b}b)$ or there is a $b \in B$ such that for all $a \in A$ the spoiler wins the game $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}, \vect{b}b)$}.
 \newpar
-Part (c) is equivalent to say that a submap (i.e.\ a map that is a subset of another map in terms of their graphs) of a partial isomorphism is also a partial isomorphism.
+Finally, part (c) is equivalent to saying that a submap (i.e.\ a map that is a subset of another map in terms of their graphs) of a partial isomorphism is also a partial isomorphism.
 \newpar
-On the other hand, it is useful to use the alternative logically equivalent forms (such as contraposition) of parts (b) or (c) in deriving properties of the Ehrenfeucht games. For example, part (c) implies that
-\newpar
-\emph{If the spoiler wins $\game{m'}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ and if $m' < m$, then the spoiler wins $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.}
+Note that it is sometimes useful to adopt the contrapositive form of parts (b) or (c) when deriving properties of the Ehrenfeucht-Fra\"iss\'e game. For example, the contraposition of part (c) is \emph{if the spoiler wins $\game{m'}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ and if $m' < m$, then the spoiler wins $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.}
 %
 \item \header{Note on Definition 2.2.5} What is $\hint{0}{\strct{A}, \emptyseq}$? If the underlying vocabulary $\tau$ contains constants, then it is the conjunction of sentences that are atomic or negated atomic formulas describing the relation between the constants. If $\tau$ is relational, then it is $\tr \land \neg\fls$ (see Part B in Chapter 1).
 %
@@ -58,8 +56,9 @@ is finite.
 %
 \item \header{Note on the Proof of 2.2.8 (Ehrenfeucht's Theorem)} To prove (i) implies (iii), the base case $m = 0$ can be handled alternatively by applying 2.2.4(a) in addition to the equivalence between (i) and (ii) of 2.2.2(c). The inductive case $m > 0$ in text only proves $\strct{A} \satis \varphi[\vect{a}]$ implies $\strct{B} \satis \varphi[\vect{b}]$; the direction $\strct{B} \satis \varphi[\vect{b}]$ implies $\strct{A} \satis \varphi[\vect{a}]$ can be done symmetrically.
 \newpar
-Note that the proof (implicitly) suggests that \emph{the following two statements are equivalent:
+The proof in text implies that \emph{the following two statements are equivalent:
 \begin{enumerate}[\rm(i)]
+\setcounter{enumii}{3}
 %%
 \item The spoiler wins $\game{m}(\strct{A}, \vect{a}, \vect{B}, \vect{b})$.
 %%
@@ -74,15 +73,17 @@ Note that the proof (implicitly) suggests that \emph{the following two statement
 %%
 \end{enumerate}
 }
-To see (i) implies (ii), simply take $\varphi \defas \hint{m}{\strct{A}, \vect{a}}$. The direction from (ii) to (i) can be done in parallel to the direction from (iii) to (i) in the proof of 2.2.8. In particular, for the case $m > 0$ and $\varphi = \exists y \psi$, assume that $\strct{A} \satis \varphi[\vect{a}]$ and $\strct{B} \not\satis \varphi[\vect{b}]$, then there is an $a \in A$ such that for all $b \in B$ it is true that $\strct{A} \satis \psi[\vect{a}a]$ and $\strct{B} \not\satis \psi[\vect{b}b]$. The induction hypothesis yields
-\begin{center}
-there is a an $a \in A$ such that for all $b \in B$, the spoiler wins $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}, \vect{b}b)$.
-\end{center}
-Hence, by 2.2.4(b) (also see the discussion in \textbf{Note on Lemma 2.2.4}), we have that the spoiler wins $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$. The other case that $\strct{A} \not\satis \varphi[\vect{a}]$ and $\strct{B} \satis \varphi[\vect{b}]$ can be handled symmetrically.\qed
+To see (iv) implies (v), simply take $\varphi \defas \hint{m}{\strct{A}, \vect{a}}$. The direction from (v) to (iv) is similar to the part of for the direction from (i) to (iii) in text. In particular, for the inductive case $m > 0$, if $\varphi = \neg\psi$, then we proceed to $\psi$. If $\varphi = \psi \lor \chi$, then we proceed to one of the disjuncts $\psi$ and $\chi$ that distinguishes $(\strct{A}, \vect{a})$ from $(\strct{B}, \vect{b})$ in terms of satisfaction. Thus, we can focus on $\varphi = \exists y \psi$. We distinguish two cases:
+\begin{itemize}
+%%%
+\item If $\strct{A} \satis \varphi[\vect{a}]$ and $\strct{B} \not\satis \varphi[\vect{b}]$, then there is an $a \in A$ such that for all $b \in B$, it holds that $\strct{A} \satis \psi[\vect{a}a]$ and $\strct{B} \not\satis \psi[\vect{b}b]$, which by induction hypothesis implies that the spoiler wins the game $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}, \vect{b}b)$.
+%%%
+\item If $\strct{A} \not\satis \varphi[\vect{a}]$ and $\strct{B} \satis \varphi[\vect{b}]$, then there is a $b \in B$ such that for all $a \in A$, it holds that $\strct{A} \not\satis \psi[\vect{a}a]$ and $\strct{B} \satis \psi[\vect{b}b]$, which by induction hypothesis implies that the spoiler wins the game $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}, \vect{b}b)$.
+%%%
+\end{itemize}
+Collectively, we have that \emph{there is a an $a \in A$ such that for all $b \in B$ the spoiler wins $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}$ or there is a $b \in B$ such that for all $a \in A$  the spoiler wins $\game{m - 1}(\strct{A}, \vect{a}a, \strct{B}$}. Hence, by 2.2.4(b) (also see the discussion in \textbf{Note on Lemma 2.2.4}), we have that the spoiler wins $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$.
 \newpar
-The above discussion now makes it clear that the spoiler's winning strategy for the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ consists of always choosing an appropriate element for the existential quantifier $\exists$ from the corresponding structure. Thus, a winning strategy for the spoiler can be converted into a formula, and vice versa.
-\newpar
-In general, however, the more typical use is to come up with a winning strategy for the spoiler and turn it into a formula to distinguish $(\strct{A}, \vect{a})$ and $(\strct{B}, \vect{b})$; likewise, it is more useful to conclude they are indistinguishable by presenting a winning strategy for the duplicator.
+The above discussion now makes it clear that a formula $\varphi$ that distinguishes $(\strct{A}, \vect{a})$ from $(\strct{B}, \vect{b})$ can be turned into a winning strategy of the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ for spoiler which consists of always choosing an appropriate element for the existential quantifier $\exists$ from the corresponding structure. More specifically, for $\varphi = \exists y \psi$, if $\strct{A} \satis \varphi[\vect{a}]$ and $\strct{B} \not\satis \varphi[\vect{b}]$, then choose a suitable $a \in A$; if $\strct{A} \not\satis \varphi[\vect{a}]$ and $\strct{B} \satis \varphi[\vect{b}]$, then choose a suitable $b \in B$.
 %
 \item \header{Note on 2.2.10} The direction from left to right is obtained by 2.2.3(b) and 2.2.9; the direction from right to left is by definition of $\strct{A}$ and $\strct{B}$ being isomorphic.
 \newpar
@@ -225,7 +226,43 @@ This is statement (iii) of 2.3.3. Therefore this exercise is an immediate conseq
 The premise ``for $\vect{a} \mapsto \vect{b} \in \partisoms(\strct{A}, \strct{B})$'' is implied by the statements on both sides of ``iff'', so it can be weakened to ``for $\vect{a} \in A, \vect{b} \in B$''.
 \end{remark}
 %
-\item \header{Note on Remark 2.3.16} Given $(\strct{A}, \vect{a}) \not\equv_m (\strct{B}, \vect{b})$, the spoiler of the game $\game{m}(\strct{A}, \vect{a}, \strct{B}, \vect{b})$ always chooses an element of either $\strct{A}$ or $\strct{B}$ that corresponds to the existential quantifier. (See the discussion in \textbf{Note on the Proof of 2.2.8 (Ehrenfeucht’s Theorem)}.) In case that $\varphi(x_1, \etc, x_s) = \exists y \psi$ with $\qr(\varphi) \leq m$ and $\strct{A} \satis \varphi[\vect{a}]$ but $\strct{B} \not\satis \varphi[\vect{b}]$, it is justified to call the spoiler's moves in $\strct{A}$ the \emph{$\exists$-moves} and his moves in $\strct{B}$ the \emph{$\forall$-moves}. The spoiler then makes his successive choices accordingly in his turns in every play of the game.
+\item \header{Note on Remark 2.3.16} If $(\strct{A}, \vect{a}) \not\equv_m (\strct{B}, \vect{b})$, then there is a formula $\varphi(\vect{x})$ of quantifier rank $\leq m$ that distinguishes $(\strct{A}, \vect{a})$ from $(\strct{B}, \vect{b})$. As discussed in \textbf{Note on the Proof of 2.2.8 (Ehrenfeucht’s Theorem)}, the spoiler's winning strategy consists of choosing an appropriate element for $\exists$ from the corresponding structure.
+
+In the example given in Remark 2.3.16, we see that
+\begin{center}
+$\strct{Z} \satis \exists \underline{x} \exists \underline{y} (x < y \land \forall z \neg (x < z \land z < y))$ \hspace{1em} and \hspace{1em} $\strct{Q} \satis \forall x \forall y (x < y \lthen \exists \underline{z} (x < z \land z < y))$
+\end{center}
+The spoiler chooses $5, 6 \in \zah$ for the variables $x, y$ and $\frac{a + b}{2} \in \rat$ for the variable $z$, and these variables, underlined in the above, are all existentially quantified in the respective statement. Note that $x, y$ are existentially quantified in $\exists x \exists y (x < y \land \forall z \neg (x < z \land z < y))$ while $z$ is universally quantified in it.
+
+Thus, in general, the spoiler's moves in $\strct{A}$ are called the \emph{$\exists$-moves} and his moves in $\strct{B}$ the \emph{$\forall$-moves}.
+%
+\item \header{Note on the Isomorphism Type $\itset{m}(\strct{A}, \vect{a})$ as a Set} One can show by induction on $m$ that for all $\strct{A}, \vect{a} \in A$ and all $\strct{B}, \vect{b} \in B$ that
+\begin{center}
+$\itset{m}(\strct{A}, \vect{a}) = \itset{m}(\strct{B}, \vect{b})$ \hspace{2em} iff \hspace{2em} $\hint{m}{\strct{A}, \vect{a}} = \hint{m}{\strct{B}, \vect{b}}$.
+\end{center}
+Note that the equality in $\hint{m}{\strct{A}, \vect{a}} = \hint{m}{\strct{B}, \vect{b}}$ is up to permutation and repetition of the conjuncts\\
+\centerline{$\exists v_{s + 1}\hint{m - 1}{\strct{A}, \vect{a}a}(\vect{v}, v_{s + 1})$}\\
+in $\bland$ and of the disjuncts\\
+\centerline{$\hint{m - 1}{\strct{A}, \vect{a}a}(\vect{v}, v_{s + 1})$}\\
+in $\blor$ in the respective formula $\hint{m}{\strct{A}, \vect{a}}(\vect{v})$. In other words, one should take
+\[
+\bland \setm{\exists v_{s + 1}\hint{m - 1}{\strct{A}, \vect{a}a}(\vect{v}, v_{s + 1})}{a \in A} \land \forall v_{s + 1} \blor \setm{\hint{m - 1}{\strct{A}, \vect{a}a}(\vect{v}, v_{s + 1})}{a \in A}
+\]
+as the definition of the formula $\hint{m}{\strct{A}, \vect{a}}(\vect{v})$. Also observe that there is a one-to-one correspondence between formulas of the form $\hint{m - 1}{\strct{A}, \vect{a}a}(\vect{v}, v_{s + 1})$ and formulas of the form $\exists v_{s + 1}\hint{m - 1}{\strct{A}, \vect{a}a}(\vect{v}, v_{s + 1})$. At the induction step, we have
+\begin{center}
+\begin{tabular}{ll}
+\   & $\itset{m + 1}(\strct{A}, \vect{a}) = \itset{m + 1}(\strct{B}, \vect{b})$ \cr
+iff & $\itset{m + 1}(\strct{A}, \vect{a}) \subseteq \itset{m + 1}(\strct{B}, \vect{b})$ and $\itset{m + 1}(\strct{B}, \vect{b}) \subseteq \itset{m + 1}(\strct{A}, \vect{a})$ \cr
+iff & for all $a \in A$ there is $b \in B$ such that $\itset{m}(\strct{A}, \vect{a}a) = \itset{m}(\strct{B}, \vect{b}b)$, and \cr
+\   & for all $b \in B$ there is $a \in A$ such that $\itset{m}(\strct{A}, \vect{a}a) = \itset{m}(\strct{B}, \vect{b}b)$ \cr
+iff & for all $a \in A$ there is $b \in B$ such that $\hint{m}{\strct{A}, \vect{a}a} = \hint{m}{\strct{B}, \vect{b}b}$, and \cr
+\   & for all $b \in B$ there is $a \in A$ such that $\hint{m}{\strct{A}, \vect{a}a} = \hint{m}{\strct{B}, \vect{b}b}$ \hspace{2em} (by induction hypothesis) \cr
+iff & $\setm{\hint{m}{\strct{A}, \vect{a}a}}{a \in A} \subseteq \setm{\hint{m}{\strct{B}, \vect{b}b}}{b \in B}$ and $\setm{\hint{m}{\strct{B}, \vect{b}b}}{b \in B} \subseteq \setm{\hint{m}{\strct{A}, \vect{a}a}}{a \in A}$ \cr
+iff & $\setm{\hint{m}{\strct{A}, \vect{a}a}}{a \in A} = \setm{\hint{m}{\strct{B}, \vect{b}b}}{b \in B}$ \cr
+iff & $\setm{\hint{m}{\strct{A}, \vect{a}a}}{a \in A} = \setm{\hint{m}{\strct{B}, \vect{b}b}}{b \in B}$ and $\setm{\exists v_{s + 1}\hint{m}{\strct{A}, \vect{a}a}}{a \in A} = \setm{\exists v_{s + 1}\hint{m}{\strct{B}, \vect{b}b}}{b \in B}$ \cr
+iff & $\hint{m + 1}{\strct{A}, \vect{a}} = \hint{m}{\strct{B}, \vect{b}}$. \cr
+\end{tabular}
+\end{center}
 %
 \end{enumerate}
 %end of section 3-----------------------------------------------------------------------------

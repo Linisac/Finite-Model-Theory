@@ -149,7 +149,8 @@
 
 %%isomorphism types <
 \newcommand{\hint}[2]{\varphi^{#1}_{#2}} %(#1)-isomorphic type (Hintikka formula) over #2 in first-order logic
-\newcommand{\ityp}[3][]{\ifthenelse{\equal{#1}{}}{{\psi^{#2}_{#3}}}{{^{#1}\psi^{#2}_{#3}}}} %(#2)-isomorphism type over #2 in other logics in #1 number of variables
+\newcommand{\itset}[1]{\mathrm{IT}^{#1}} %isomorphism type as a set
+\newcommand{\ityp}[3][]{\ifthenelse{\equal{#1}{}}{{\psi^{#2}_{#3}}}{{^{#1}\psi^{#2}_{#3}}}} %(#2)-isomorphism type over #3 in other logics in #1 number of variables
 %% >
 
 %%graph, graph functions, graph relations <
@@ -288,8 +289,8 @@
 \titleformat{\chapter}[hang]{\Large\bfseries}{\thechapter.}{.5em}{}
 \titleformat{\section}[hang]{\large\bfseries}{\thesection}{.5em}{}
 %\input{chapter1}
-%\input{chapter2}
-\input{chapter3}
+\input{chapter2}
+%\input{chapter3}
 %\input{chapter4}
 
 \begin{thebibliography}{10}
